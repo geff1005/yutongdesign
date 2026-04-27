@@ -2,8 +2,9 @@
 
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useHls, HLS_SRC } from "./useHls";
+import { SITE } from "@/lib/site";
 
-const ROLES = ["Creative", "Fullstack", "Founder", "Scholar"];
+const ROLES = SITE.roles;
 
 export function Hero() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -51,18 +52,15 @@ export function Hero() {
 
       <div className="hero-content">
         <div className="hero-eyebrow eyebrow blur-in">COLLECTION &rsquo;26</div>
-        <h1 className="hero-name name-reveal">Julian Zhu</h1>
+        <h1 className="hero-name name-reveal">{SITE.name}</h1>
         <p className="hero-role blur-in">
           A&nbsp;
           <span key={roleIdx} className="hero-role-word animate-role-fade-in">
             {ROLES[roleIdx]}
           </span>
-          &nbsp;living in Chicago.
+          &nbsp;based in {SITE.location}.
         </p>
-        <p className="hero-desc blur-in">
-          Designing seamless digital interactions by focusing on the unique nuances
-          which bring systems to life.
-        </p>
+        <p className="hero-desc blur-in">{SITE.pitch}</p>
         <div className="hero-ctas blur-in">
           <a className="btn btn-solid" href="#work">
             <span className="btn-gradient-ring" />

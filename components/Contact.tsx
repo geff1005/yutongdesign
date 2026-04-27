@@ -2,15 +2,15 @@
 
 import { useLayoutEffect, useRef } from "react";
 import { useHls, HLS_SRC } from "./useHls";
+import { SITE } from "@/lib/site";
 
 const SOCIALS = [
-  { name: "Twitter", icon: "𝕏" },
-  { name: "LinkedIn", icon: "in" },
-  { name: "Dribbble", icon: "●" },
-  { name: "GitHub", icon: "◉" },
+  { name: "LinkedIn", icon: "in", href: SITE.socials.linkedin },
+  { name: "GitHub", icon: "◉", href: SITE.socials.github },
+  { name: "Email", icon: "@", href: SITE.socials.email },
 ];
 
-const MARQUEE = new Array(10).fill("BUILDING THE FUTURE");
+const MARQUEE = new Array(10).fill(SITE.marquee);
 
 export function Contact() {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -71,24 +71,31 @@ export function Contact() {
             <br />
             something good.
           </h2>
-          <a className="email-btn" href="mailto:hello@julianzhu.com">
-            <span>hello@julianzhu.com</span>
+          <a className="email-btn" href={`mailto:${SITE.email}`}>
+            <span>{SITE.email}</span>
             <span aria-hidden>↗</span>
           </a>
         </div>
 
         <div className="footer-bar">
-          <div className="footer-copy">© 2026 Julian Zhu. All rights reserved.</div>
+          <div className="footer-copy">© 2026 {SITE.name}. All rights reserved.</div>
           <div className="footer-socials">
             {SOCIALS.map((s) => (
-              <a key={s.name} className="footer-social" href="#" aria-label={s.name}>
+              <a
+                key={s.name}
+                className="footer-social"
+                href={s.href}
+                target={s.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={s.href.startsWith("mailto:") ? undefined : "noopener noreferrer"}
+                aria-label={s.name}
+              >
                 {s.icon}
               </a>
             ))}
           </div>
           <div className="footer-available">
             <span className="dot-green animate-pulse-dot" />
-            Available for projects
+            Open to Product Designer roles
           </div>
         </div>
       </div>

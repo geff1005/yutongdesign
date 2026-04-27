@@ -1,8 +1,6 @@
-const STATS = [
-  { num: "20+", label: "Years Experience" },
-  { num: "95+", label: "Projects Done" },
-  { num: "200%", label: "Satisfied Clients" },
-] as const;
+import { SITE } from "@/lib/site";
+
+const STATS = SITE.stats;
 
 export function Stats() {
   return (

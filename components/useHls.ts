@@ -9,6 +9,8 @@ export function useHls(videoRef: RefObject<HTMLVideoElement | null>, src: string
     let hls: { destroy: () => void } | undefined;
     let cancelled = false;
 
+    if (!src) return; // No source — leave the <video> element empty.
+
     (async () => {
       const mod = await import("hls.js");
       const Hls = mod.default;
@@ -30,4 +32,5 @@ export function useHls(videoRef: RefObject<HTMLVideoElement | null>, src: string
   }, [videoRef, src]);
 }
 
-export const HLS_SRC = "https://stream.mux.com/Aa02T7oM1wH5Mk5EEVDYhbZ1ChcdhRsS2m1NYyx4Ua1g.m3u8";
+// TODO: replace with Julian's own showreel HLS / mp4 once recorded.
+export const HLS_SRC = "";
