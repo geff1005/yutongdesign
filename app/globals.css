@@ -929,6 +929,12 @@ section { position: relative; }
   letter-spacing: 0.25em;
   color: hsl(var(--muted));
 }
+.journal-item-pinned .press-tag-wrap {
+  border-color: hsl(var(--text) / 0.4);
+}
+.journal-item-pinned .press-tag {
+  color: hsl(var(--text));
+}
 
 /* === Case Study (/work/[slug]) === */
 .case-study {

@@ -9,9 +9,18 @@ export type PressItem = {
   outlet: string; // who published it
   url: string;
   tag?: string; // optional category label
+  pinned?: boolean; // floats to the top regardless of date — for tier-1 outlets
 };
 
 export const PRESS: PressItem[] = [
+  {
+    date: "2026-03-05",
+    title: "How art school creators are adapting to the age of AI",
+    outlet: "The Guardian",
+    url: "https://www.theguardian.com/everything-you-never-imagined/2026/mar/05/how-art-school-creators-are-adapting-to-the-age-of-ai",
+    tag: "Feature",
+    pinned: true,
+  },
   {
     date: "2026-04-27",
     title:
@@ -27,13 +36,6 @@ export const PRESS: PressItem[] = [
     outlet: "Royal College of Art",
     url: "https://www.rca.ac.uk/news-and-events/news/rca-and-sodexo-announce-winners-of-innovative-eats-and-algorithms-project-to-design-sustainable-solutions-for-digitising-food/",
     tag: "News",
-  },
-  {
-    date: "2026-03-05",
-    title: "How art school creators are adapting to the age of AI",
-    outlet: "The Guardian",
-    url: "https://www.theguardian.com/everything-you-never-imagined/2026/mar/05/how-art-school-creators-are-adapting-to-the-age-of-ai",
-    tag: "Feature",
   },
   {
     date: "2025-03-12",

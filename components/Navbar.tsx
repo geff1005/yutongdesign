@@ -2,7 +2,13 @@
 
 import { useEffect, useState } from "react";
 
-const LINKS = ["Home", "Work", "Resume"];
+type Link = { label: string; href: string; external?: boolean };
+const LINKS: Link[] = [
+  { label: "Home", href: "#home" },
+  { label: "Work", href: "#work" },
+  { label: "Press", href: "#journal" },
+  { label: "Resume", href: "/resume.pdf", external: true },
+];
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -23,12 +29,15 @@ export function Navbar() {
         <span className="nav-divider" />
         {LINKS.map((l) => (
           <a
-            key={l}
-            href={"#" + l.toLowerCase()}
-            className={"nav-link" + (active === l ? " active" : "")}
-            onClick={() => setActive(l)}
+            key={l.label}
+            href={l.href}
+            target={l.external ? "_blank" : undefined}
+            rel={l.external ? "noopener noreferrer" : undefined}
+            className={"nav-link" + (active === l.label ? " active" : "")}
+            onClick={() => setActive(l.label)}
           >
-            {l}
+            {l.label}
+            {l.external && <span aria-hidden> ↗</span>}
           </a>
         ))}
         <span className="nav-divider" />

@@ -28,28 +28,36 @@ export function Journal() {
         </div>
 
         <div className="journal-list">
-          {PRESS.map((item) => (
-            <a
-              key={item.url}
-              href={item.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="journal-item"
-            >
-              <div className="journal-thumb press-tag-wrap">
-                <span className="press-tag eyebrow">{item.tag ?? "Link"}</span>
-              </div>
-              <div className="journal-body">
-                <h3 className="journal-title">{item.title}</h3>
-                <div className="journal-meta">
-                  <span>{item.outlet}</span>
-                  <span>·</span>
-                  <span>{formatDate(item.date)}</span>
+          {[...PRESS]
+            .sort((a, b) => {
+              if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
+              return a.date < b.date ? 1 : -1;
+            })
+            .map((item) => (
+              <a
+                key={item.url}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={"journal-item" + (item.pinned ? " journal-item-pinned" : "")}
+              >
+                <div className="journal-thumb press-tag-wrap">
+                  <span className="press-tag eyebrow">
+                    {item.pinned ? "★ " : ""}
+                    {item.tag ?? "Link"}
+                  </span>
                 </div>
-              </div>
-              <span className="journal-arrow" aria-hidden>↗</span>
-            </a>
-          ))}
+                <div className="journal-body">
+                  <h3 className="journal-title">{item.title}</h3>
+                  <div className="journal-meta">
+                    <span>{item.outlet}</span>
+                    <span>·</span>
+                    <span>{formatDate(item.date)}</span>
+                  </div>
+                </div>
+                <span className="journal-arrow" aria-hidden>↗</span>
+              </a>
+            ))}
         </div>
       </div>
     </section>

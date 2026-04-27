@@ -1,0 +1,42 @@
+name: Sync from Notion
+
+on:
+  schedule:
+    # Daily at 03:00 UTC (≈ 04:00 BST / 11:00 CST)
+    - cron: "0 3 * * *"
+  workflow_dispatch: # allow manual trigger from Actions tab
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "npm"
+
+      - name: Install deps
+        # Use install (not ci) so lockfile drift between local + CI doesn't break runs.
+        run: npm install --no-audit --no-fund
+
+      - name: Run Notion sync
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+        run: npm run sync
+
+      - name: Commit & push if changed
+        run: |
+          git config user.name "yutongdesign-bot"
+          git config user.email "bot@yutongdesign.art"
+          if [[ -n "$(git status --porcelain lib/projects.ts lib/press.ts)" ]]; then
+            git add lib/projects.ts lib/press.ts
+            git commit -m "chore(sync): refresh content from Notion [skip ci]"
+            git push
+          else
+            echo "No content changes — nothing to commit."
+          fi
