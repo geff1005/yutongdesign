@@ -915,6 +915,21 @@ section { position: relative; }
 .aspect-4-3 { aspect-ratio: 4 / 3; }
 .aspect-3-4 { aspect-ratio: 3 / 4; }
 
+/* === Press tag (used inside Journal/Press item thumb slot) === */
+.press-tag-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 8px;
+}
+.press-tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: hsl(var(--muted));
+}
+
 /* === Case Study (/work/[slug]) === */
 .case-study {
   min-height: 100vh;

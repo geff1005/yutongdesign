@@ -1,6 +1,8 @@
 // Projects pulled from Notion Projects DB on 2026-04-27.
-// Source DB: https://www.notion.so/20b9f7ed1e088013905ceccaf0bae66f
-// Update process: when Notion DB changes, regenerate this file (future: Notion API at build time).
+// Source DB (new): https://www.notion.so/20b9f7ed1e088013905ceccaf0bae66f
+// Source DB (old, with Framer-hosted thumbnails):
+//   https://www.notion.so/c916d4c6ccc74a3f95c93adea2f2774c
+// Thumbnails: framerusercontent.com (CDN) when available, else local /public/thumbnails/.
 
 export type Project = {
   slug: string;
@@ -12,9 +14,9 @@ export type Project = {
   year: number;
   tags: string[];
   featured: boolean;
-  thumbnail: string; // path under /public
+  thumbnail: string;
   videoUrl?: string;
-  href: string; // route or external link
+  href: string;
 };
 
 export const PROJECTS: Project[] = [
@@ -29,7 +31,7 @@ export const PROJECTS: Project[] = [
     year: 2023,
     tags: ["Smart Systems", "Data Driven", "HCI"],
     featured: true,
-    thumbnail: "/thumbnails/syncoe.jpg",
+    thumbnail: "https://framerusercontent.com/images/ItIE3LjjpIh7r6cbWRLgv0KD41A.png",
     videoUrl: "",
     href: "/work/syncoe",
   },
@@ -44,7 +46,7 @@ export const PROJECTS: Project[] = [
     year: 2023,
     tags: ["Smart Systems", "UX/UI", "HMI"],
     featured: true,
-    thumbnail: "/thumbnails/syncoe.jpg", // TODO: BEATROL-specific thumbnail
+    thumbnail: "/thumbnails/beatrol.jpg",
     videoUrl: "https://vimeo.com/817694480",
     href: "/work/beatrol",
   },
@@ -59,7 +61,7 @@ export const PROJECTS: Project[] = [
     year: 2025,
     tags: ["UX/UI", "Smart Systems"],
     featured: true,
-    thumbnail: "/thumbnails/syncoe.jpg", // TODO: SprayScape-specific thumbnail
+    thumbnail: "https://framerusercontent.com/images/swsE03EafovXxtL53gEI0UQUr8.png",
     videoUrl: "https://vimeo.com/883701939",
     href: "/work/sprayscape",
   },
@@ -74,7 +76,7 @@ export const PROJECTS: Project[] = [
     year: 2024,
     tags: ["Embodied Interaction"],
     featured: true,
-    thumbnail: "/thumbnails/wildfire-whispers.jpg",
+    thumbnail: "https://framerusercontent.com/images/oyzMDOHWVh6rgkG7cfZqhJwwXtU.png",
     videoUrl: "https://vimeo.com/883703201",
     href: "/work/wildfire-whispers",
   },
@@ -89,7 +91,7 @@ export const PROJECTS: Project[] = [
     year: 2023,
     tags: ["AI", "Digital Art", "GenAI"],
     featured: true,
-    thumbnail: "/thumbnails/poeticform.jpg",
+    thumbnail: "https://framerusercontent.com/images/JKkVLtCfp0YK7xRsEp9DDLTBE.jpg",
     videoUrl: "https://vimeo.com/1079210038",
     href: "/work/poeticform",
   },
@@ -104,7 +106,7 @@ export const PROJECTS: Project[] = [
     year: 2021,
     tags: ["UX/UI"],
     featured: true,
-    thumbnail: "/thumbnails/lunacy.jpg",
+    thumbnail: "https://framerusercontent.com/images/uLavaDKo8wVaIV5gV0iwZeyOHIY.png",
     videoUrl: "https://vimeo.com/883707048",
     href: "/work/lunacy",
   },
@@ -119,7 +121,7 @@ export const PROJECTS: Project[] = [
     year: 2023,
     tags: ["Embodied Interaction"],
     featured: true,
-    thumbnail: "/thumbnails/botanictrum.jpg",
+    thumbnail: "https://framerusercontent.com/images/3kJj9nkoMq8ZxDS8OoA0OB0VmXI.jpg",
     videoUrl: "https://vimeo.com/883703983",
     href: "/work/botanictrum",
   },
@@ -132,7 +134,7 @@ export const PROJECTS: Project[] = [
     year: 2020,
     tags: ["UX/UI"],
     featured: true,
-    thumbnail: "/thumbnails/meta-station.jpg",
+    thumbnail: "https://framerusercontent.com/images/q1KWuBoFjXN9Sdr3v9JbwL5QQW0.png",
     videoUrl: "https://vimeo.com/883705290",
     href: "/work/meta-station",
   },
@@ -144,7 +146,7 @@ export const PROJECTS: Project[] = [
     year: 2024,
     tags: ["UX/UI"],
     featured: true,
-    thumbnail: "/thumbnails/syncoe.jpg", // TODO: Neon-NIKE specific thumbnail
+    thumbnail: "https://framerusercontent.com/images/9RxJa7zlJTN3uQ7PmhMOb3uYRAk.jpg",
     href: "/work/neon-nike",
   },
 ];
