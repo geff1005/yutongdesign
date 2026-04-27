@@ -1,1 +1,77 @@
 @AGENTS.md
+
+# About Julian (Yutong) Zhu — Site Owner
+
+Source-of-truth identity facts (CV verified, do not invent). When the site needs personal info, read these — don't guess.
+
+- **Brand name**: Julian Zhu (display) / Julian Yutong Zhu (canonical)
+- **Email**: julianyutongzhu@gmail.com
+- **Phone**: +44 07857 160 706 (UK)
+- **Location**: London (NOT Chicago — that was placeholder text from the original Next.js template, now removed)
+- **LinkedIn**: linkedin.com/in/yutongdesign
+- **GitHub**: github.com/geff1005
+- **Site**: yutongdesign.art
+- **Education**: RCA MDes Design Futures (Dec 2024 – Dec 2025), Sichuan Fine Arts BA Digital Media (Aug 2020 – Jun 2024)
+- **Industry**: RCA Executive Education facilitator → SKG Studio web designer → HUAWEI UX intern → ByteDance visual designer
+- **Key press**: The Guardian feature (Mar 2026) "How art school creators are adapting to the age of AI"
+- **Key awards**: Red Dot Concept Shortlist 2023, IDA Silver+Bronze 2023, European Product Design Top Design 2023
+
+# Job Search Context
+
+Active job applications shape what gets featured on the site. Currently:
+
+- **Accenture — GenAI Creative Technologist** (active application). The role wants ComfyUI / Weavy / Runway / HeyGen / ElevenLabs / node-based environments / repeatable workflows / art direction + emerging tech / marketing & content creation. SWOT analysis lives in Apple Note `ACCenture 匹配JD FOCUS`. **Not a generic Product Designer role** — academic BCI/industrial case studies (Synco-E, BEATROL) are secondary; ComfyUI / Six Hats Rebuild / ByteDance Filters / HUAWEI workflow / Symposium campaign are primary.
+- **Product Designer roles in general** — Sodexo (SmaTaste) is the highest-leverage PD case study (real client + AI + tech systems + UIUX flow). Make it a Featured top-tier story whenever that audience is targeted.
+
+# User Priorities (read this before strategising)
+
+These are Julian's own stated priorities — defer to them.
+
+1. **Sodexo / SmaTaste as #1 PD case study** ⭐
+   - Real corporate client (Sodexo) + RCA collaboration → high credibility
+   - Software system + AI + tech angle (matches "real PD work")
+   - End-to-end UIUX flow makes it perfect for Product Designer applications
+   - Press already exists (RCA × Sodexo articles in link tree DB)
+   - Source assets: iCloud `Design hub/SmaTaste-SOD121-Design Innovation（sodexo）/` (204 MB) + Figma teams (likely "涌现小组" or "DF Symposium 25" — confirm). Currently NOT in the new Notion Projects DB.
+   - When integrating: surface Sodexo collaboration prominently, keep AI/tech framing, structure narrative around UIUX flow.
+
+2. **Six Thinking Hats Rebuild / CoCereb (毕设) = Julian's own time priority** 🎓
+   - This is Julian's RCA thesis live-demo work — **Julian ships it, not me**
+   - Apple Note `🎩 Project: Six Thinking Hats Rebuild` has the spec (Next.js 15 + Spline + LLM agents + Vercel AI SDK + Web Speech)
+   - Vercel Builder's Night cofounder lead is real — this project is part of a potential collab
+   - CoCereb Agent IRP (the AI in education thesis) lives in `iCloud/CoCereb Agent-IRP-P-R/`
+   - **My job**: leave space for these on the site, prepare slots / Featured cards, but don't reimplement them. Once Julian ships, we link them in.
+
+3. **Site is built for Julian, not for me to over-design**
+   - Don't propose huge restructures unprompted
+   - Replace placeholders with real data (already done in Phase 0)
+   - Each subsequent change should be requested or clearly justified
+   - Phase tracking: see docs/ROADMAP.md (V2 — Accenture-aligned)
+
+# Asset Locations Quick Reference
+
+Full registry: `docs/_HUB_REGISTRY.md` and `Design hub/_HUB/REGISTRY.md`. Quick paths:
+
+- **Per-project raw assets**: `~/iCloud/.../Design hub/<Project>/` (20+ folders, ~270 GB total)
+- **Polished portfolio PDFs (8)**: `Design hub/0-Portfolio/` and `Design hub/_HUB/FINAL_PDFS/`
+- **Notion**: 3 DBs — Projects (new) `20b9f7ed1e088013905ceccaf0bae66f`, Design Projects (old, has framer thumbnails) `c916d4c6ccc74a3f95c93adea2f2774c`, link tree (press) `1a19f7ed1e0880ebab4fc39fca75417f`
+- **Figma**: 13 teams. Known files: ALL Design Universe `3UWWwCbnRRubuvUgeAmb5g`, 00-ZHU-V2 `lvGC5pqs9F8fNdYmlTvKq4`, Symposium-25 `4VUeNNXEkPAHVYOBluXN7O`
+- **Apple Notes**: Accenture JD analysis ⭐, Six Thinking Hats Rebuild ⭐, Linkedin Post draft, 伦敦两年上岸计划
+- **External HD (T7 Shield / TTBase)**: RCA archive, DJI footage, DaVinci, SKG+, Designer-Jeff Eagle library (23,912 items)
+
+# Site Architecture (current)
+
+- Next.js 16 (App Router, Turbopack)
+- Hosted: Vercel `judeforlove13-4509s-projects/yutongdesign`, deployed via auto-deploy on `main` push
+- Domain: yutongdesign.art (DNS at Aliyun: A @ 76.76.21.21 + CNAME www → cname.vercel-dns.com)
+- Content: `lib/site.ts` (identity), `lib/projects.ts` (auto-generated from Notion via sync), `lib/press.ts` (auto-generated via sync)
+- Sync: `npm run sync` locally OR daily GitHub Action (needs `NOTION_TOKEN` secret — see `docs/AUTOMATION_SETUP.md`)
+- Routes: `/` home, `/work/[slug]` per-project case study (statically pre-generated)
+
+# Editing Conventions
+
+- Don't introduce CMS / database without justification — current TS files are fine for the project size
+- Real data > placeholders, always. If something must be temporarily fake, mark it with `// TODO:` and explain
+- Image hosts to allow: framerusercontent.com (CDN, used for thumbnails) — no need for Next/Image because we use plain `<img>`
+- All long content (audits, registries) goes in `docs/` not in component code
+- Brand voice: Julian = creative + technical, calm, declarative, no emoji on user-facing copy

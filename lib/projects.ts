@@ -21,6 +21,22 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "smataste",
+    title: "SmaTaste",
+    description:
+      "AI-driven dining experience for Sodexo: Smart Taste Index combining preference + nutrition signals, with explainable AI interfaces.",
+    researchQuestion:
+      "How can explainable AI rebalance efficiency and ethics in everyday food services?",
+    intro:
+      "SmaTaste integrates XAI into a canteen service. As Research Assistant on the RCA × Sodexo France AiD Lab project, I worked across interface design, participatory research, and evaluation — producing a deployable service artifact and evidence package.",
+    type: "Service Design · HCI Research · AI",
+    year: 2024,
+    tags: ["Service Design", "AI / LLM", "HCI", "Real Client"],
+    featured: true,
+    thumbnail: "/thumbnails/smataste.jpg",
+    href: "/work/smataste",
+  },
+  {
     slug: "syncoe",
     title: "Synco-E",
     description: "Next generation BCI Device for Esports Training",
@@ -151,12 +167,15 @@ export const PROJECTS: Project[] = [
   },
 ];
 
-// Featured 4 for the home Selected Works bento grid
+// Featured 4 for the home Selected Works bento grid.
+// SmaTaste leads (real client + AI + UIUX flow = top PD case study);
+// Synco-E and BEATROL provide range (BCI + automotive HMI);
+// SprayScape rounds out with recent service-design work.
 export const SELECTED_FEATURED = [
+  PROJECTS.find((p) => p.slug === "smataste")!,
   PROJECTS.find((p) => p.slug === "beatrol")!,
   PROJECTS.find((p) => p.slug === "sprayscape")!,
   PROJECTS.find((p) => p.slug === "syncoe")!,
-  PROJECTS.find((p) => p.slug === "wildfire-whispers")!,
 ];
 
 // Explorations (Tier B / lighter projects) — 6 cards for the parallax section
