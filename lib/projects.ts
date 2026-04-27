@@ -31,7 +31,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/syncoe.jpg",
     videoUrl: "",
-    href: "#syncoe",
+    href: "/work/syncoe",
   },
   {
     slug: "beatrol",
@@ -46,7 +46,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/syncoe.jpg", // TODO: BEATROL-specific thumbnail
     videoUrl: "https://vimeo.com/817694480",
-    href: "#beatrol",
+    href: "/work/beatrol",
   },
   {
     slug: "sprayscape",
@@ -61,7 +61,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/syncoe.jpg", // TODO: SprayScape-specific thumbnail
     videoUrl: "https://vimeo.com/883701939",
-    href: "#sprayscape",
+    href: "/work/sprayscape",
   },
   {
     slug: "wildfire-whispers",
@@ -76,7 +76,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/wildfire-whispers.jpg",
     videoUrl: "https://vimeo.com/883703201",
-    href: "#wildfire",
+    href: "/work/wildfire-whispers",
   },
   {
     slug: "poeticform",
@@ -91,7 +91,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/poeticform.jpg",
     videoUrl: "https://vimeo.com/1079210038",
-    href: "#poeticform",
+    href: "/work/poeticform",
   },
   {
     slug: "lunacy",
@@ -106,7 +106,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/lunacy.jpg",
     videoUrl: "https://vimeo.com/883707048",
-    href: "#lunacy",
+    href: "/work/lunacy",
   },
   {
     slug: "botanictrum",
@@ -121,7 +121,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/botanictrum.jpg",
     videoUrl: "https://vimeo.com/883703983",
-    href: "#botanictrum",
+    href: "/work/botanictrum",
   },
   {
     slug: "meta-station",
@@ -134,7 +134,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     thumbnail: "/thumbnails/meta-station.jpg",
     videoUrl: "https://vimeo.com/883705290",
-    href: "#meta-station",
+    href: "/work/meta-station",
   },
   {
     slug: "neon-nike",
@@ -145,7 +145,7 @@ export const PROJECTS: Project[] = [
     tags: ["UX/UI"],
     featured: true,
     thumbnail: "/thumbnails/syncoe.jpg", // TODO: Neon-NIKE specific thumbnail
-    href: "#neon-nike",
+    href: "/work/neon-nike",
   },
 ];
 
