@@ -22,10 +22,12 @@ export const SITE = {
     instagram: "",
     email: "mailto:julianyutongzhu@gmail.com",
   },
-  // Real, verifiable numbers — replaces the fabricated "20+ years / 200% satisfied" stats.
+  // Real, verifiable numbers — sourced from CV (BA 2020-2024 + MDes 2024-2025
+  // + 4 industry roles), Notion Projects DB (20+ projects, 10 featured),
+  // and Resume Awards section (Red Dot + IDA + EUPD = 3 award programs in 2023).
   stats: [
-    { num: "12+", label: "Years Practice" },
-    { num: "9", label: "Featured Works" },
+    { num: "5+", label: "Years Practice" },
+    { num: "20+", label: "Projects" },
     { num: "3", label: "Design Awards" },
   ] as const,
   // Awards (sourced from Resume + Notion 06-荣誉奖项)
