@@ -935,6 +935,43 @@ section { position: relative; }
 .journal-item-pinned .press-tag {
   color: hsl(var(--text));
 }
+/* Press thumbnail (when og:image is available) */
+.press-thumb-img-wrap {
+  position: relative;
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 8px;
+  overflow: hidden;
+}
+.press-thumb-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.press-thumb-star {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  pointer-events: none;
+}
+.press-meta-tag {
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: hsl(var(--muted));
+  border: 1px solid hsl(var(--stroke));
+  padding: 2px 8px;
+  border-radius: 999px;
+  margin-right: 4px;
+}
+.journal-item-pinned .press-meta-tag {
+  color: hsl(var(--text));
+  border-color: hsl(var(--text) / 0.4);
+}
 
 /* === Case Study (/work/[slug]) === */
 .case-study {

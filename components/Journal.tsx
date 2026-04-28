@@ -41,15 +41,29 @@ export function Journal() {
                 rel="noopener noreferrer"
                 className={"journal-item" + (item.pinned ? " journal-item-pinned" : "")}
               >
-                <div className="journal-thumb press-tag-wrap">
-                  <span className="press-tag eyebrow">
-                    {item.pinned ? "★ " : ""}
-                    {item.tag ?? "Link"}
-                  </span>
-                </div>
+                {item.thumbnail ? (
+                  <div className="journal-thumb press-thumb-img-wrap">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="press-thumb-img"
+                      loading="lazy"
+                    />
+                    {item.pinned && <span className="press-thumb-star">★</span>}
+                  </div>
+                ) : (
+                  <div className="journal-thumb press-tag-wrap">
+                    <span className="press-tag eyebrow">
+                      {item.pinned ? "★ " : ""}
+                      {item.tag ?? "Link"}
+                    </span>
+                  </div>
+                )}
                 <div className="journal-body">
                   <h3 className="journal-title">{item.title}</h3>
                   <div className="journal-meta">
+                    {item.tag && <span className="press-meta-tag">{item.tag}</span>}
                     <span>{item.outlet}</span>
                     <span>·</span>
                     <span>{formatDate(item.date)}</span>

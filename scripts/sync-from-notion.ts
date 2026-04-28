@@ -219,6 +219,7 @@ type PressOut = {
   outlet: string;
   url: string;
   tag?: string;
+  thumbnail?: string;
   pinned?: boolean;
 };
 
@@ -261,15 +262,24 @@ async function buildPress(): Promise<PressOut[]> {
     const name = txt(props["Name"]).replace(/^\[?\s*🔗?\s*link\s*\]?\s*—?\s*/i, "").trim();
     const url = txt(props["URL"]) || txt(props["official link"]);
     if (!name || !url) continue;
-    const created: string = props["Created"]?.created_time || row.created_time || "";
+    // Prefer the user-set "Published Date" over Notion's auto Created stamp.
+    const publishedStart: string =
+      props["Published Date"]?.date?.start || "";
+    const created: string =
+      publishedStart ||
+      props["Created"]?.created_time ||
+      row.created_time ||
+      "";
     const tags = multi(props["Tags"]);
     const pinned = TIER1_HOSTS.some((h) => url.toLowerCase().includes(h));
+    const thumbnail = txt(props["Thumbnail"]) || undefined;
     out.push({
       date: created.slice(0, 10),
       title: name,
       outlet: inferOutlet(name, url),
       url,
       tag: tags[0] || undefined,
+      thumbnail,
       pinned: pinned || undefined,
     });
   }
