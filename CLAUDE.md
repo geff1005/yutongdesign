@@ -81,11 +81,16 @@ When integrating a project into the website case study (`/work/[slug]`):
 3. Look in `Design hub/<Project>/images/` and `docs/` for visuals
 4. Combine → write the case study page
 
-Currently scaffolded:
-- `SmaTaste-SOD121-Design Innovation（sodexo）/` — RCA × Sodexo
-- `Meta Station#元宇宙方案/` — HUAWEI HarmonyOS Theme work also lives here (clarify with Julian which subfolder)
-- `SKG+/` — newly created (raw assets still on T7 Shield)
-- `CoCereb Agent-IRP-P-R/` — Six Thinking Hats / Co Cerebral
+Currently scaffolded (using Tier-prefix folder convention as of 2026-04-29):
+- `A01-SmaTaste-Sodexo-AID/` — RCA × Sodexo (Featured #1, PD hero)
+- `A02-CoCereb-IRP-Six-Hats/` — RCA thesis · Six Thinking Hats agentic UX (Featured #2, contains stakeholder-map.pdf + IRP-Graphic-123.zip)
+- `A03-SKG-Plus-Web/` — SKG+ contract web design (Featured #3, merged from old "SKG WebDeisgn")
+- `A04-Beatrol-Cockpit-L4/` — L4 fatigue cockpit (Featured #4)
+- `A05` to `A08` — Sync-E-BCI / SprayScape-Spatial / Wildfire-Whispers / Meta-Station-Huawei
+- `B01` to `B08` — Library tier (Pulse / Bamboo-Wind / Botanictrum / Lunacy-Moon / Walking-Heaven / Poetic-Form / GreenMove / Massbot-Digital-Legacy)
+- `C01` to `C05` — Experiments / archive (Runway-ISEE / SP-AI-Collab / Mercury-Piano / Profile-Promo)
+
+Folder convention: `{Tier}{NN}-{Slug-EN}` (no spaces, no parens, no hashtags). Tier prefix sorts in Finder. See `docs/RENAME_PLAN.md` for full mapping.
 
 # Editing Conventions
 
