@@ -162,8 +162,8 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* Spline 3D scenes if available */}
-      {project.splineEmbeds && project.splineEmbeds.length > 0 && (
+      {/* Standalone Spline scenes (those NOT anchored to a section render here) */}
+      {project.splineEmbeds && project.splineEmbeds.filter((s) => !s.section).length > 0 && (
         <section className="case-section case-spline-section">
           <div className="case-prose">
             <h2 className="case-h2">
@@ -174,23 +174,25 @@ export default async function WorkDetailPage({
             </p>
           </div>
           <div className="case-spline-grid">
-            {project.splineEmbeds.map((scene, i) => (
-              <div key={i} className="case-spline-tile">
-                <div className="case-spline-frame-wrap">
-                  <iframe
-                    src={scene.url}
-                    className="case-spline-frame"
-                    loading="lazy"
-                    allow="autoplay; fullscreen; xr-spatial-tracking"
-                    allowFullScreen
-                    title={scene.caption ?? `${project.title} 3D scene ${i + 1}`}
-                  />
+            {project.splineEmbeds
+              .filter((s) => !s.section)
+              .map((scene, i) => (
+                <div key={i} className="case-spline-tile">
+                  <div className="case-spline-frame-wrap">
+                    <iframe
+                      src={scene.url}
+                      className="case-spline-frame"
+                      loading="lazy"
+                      allow="autoplay; fullscreen; xr-spatial-tracking"
+                      allowFullScreen
+                      title={scene.caption ?? `${project.title} 3D scene ${i + 1}`}
+                    />
+                  </div>
+                  {scene.caption && (
+                    <div className="case-spline-caption">{scene.caption}</div>
+                  )}
                 </div>
-                {scene.caption && (
-                  <div className="case-spline-caption">{scene.caption}</div>
-                )}
-              </div>
-            ))}
+              ))}
           </div>
         </section>
       )}
@@ -252,6 +254,56 @@ export default async function WorkDetailPage({
                   ))}
                 </div>
               )}
+              {(() => {
+                const sectionSplines =
+                  project.splineEmbeds?.filter((s) => s.section === key) ?? [];
+                if (sectionSplines.length === 0) return null;
+                return (
+                  <div className="case-spline-stack">
+                    {sectionSplines.map((scene, i) => {
+                      const isLiveDemo = scene.emphasis === "live-demo";
+                      return (
+                        <div
+                          key={i}
+                          className={
+                            "case-spline-tile" +
+                            (isLiveDemo ? " case-spline-tile-live-demo" : "")
+                          }
+                        >
+                          {isLiveDemo && (
+                            <div className="case-live-demo-eyebrow eyebrow">
+                              ★ Live Demo
+                            </div>
+                          )}
+                          <div
+                            className={
+                              "case-spline-frame-wrap" +
+                              (isLiveDemo ? " case-spline-frame-wrap-tall" : "")
+                            }
+                          >
+                            <iframe
+                              src={scene.url}
+                              className="case-spline-frame"
+                              loading="lazy"
+                              allow="autoplay; fullscreen; xr-spatial-tracking"
+                              allowFullScreen
+                              title={
+                                scene.caption ??
+                                `${project.title} 3D scene ${i + 1}`
+                              }
+                            />
+                          </div>
+                          {scene.caption && (
+                            <div className="case-spline-caption">
+                              {scene.caption}
+                            </div>
+                          )}
+                        </div>
+                      );
+                    })}
+                  </div>
+                );
+              })()}
             </section>
           );
         })}

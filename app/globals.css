@@ -1181,6 +1181,35 @@ section { position: relative; }
 }
 .case-paragraph-muted { color: hsl(var(--muted)); }
 
+
+/* === Section-anchored Spline embeds (rendered inline with case-study sections) === */
+.case-spline-stack {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+/* Live-demo emphasis — bigger, taller, more prominent */
+.case-spline-tile-live-demo {
+  margin-top: 16px;
+}
+.case-live-demo-eyebrow {
+  display: inline-block;
+  margin-bottom: 16px;
+  padding: 6px 14px;
+  border: 1px solid hsl(var(--text) / 0.4);
+  border-radius: 999px;
+  background: linear-gradient(90deg, hsl(var(--surface)), transparent);
+  color: hsl(var(--text));
+  letter-spacing: 0.25em;
+}
+.case-spline-frame-wrap-tall {
+  aspect-ratio: 16 / 10;
+  min-height: 480px;
+}
+@media (max-width: 700px) {
+  .case-spline-frame-wrap-tall { min-height: 320px; aspect-ratio: 4 / 3; }
+}
 /* === Case-study inline media (figures + captions) ===
    Renders below each section's prose, full-width within the section. */
 .case-media-stack {

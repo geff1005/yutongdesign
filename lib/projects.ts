@@ -16,7 +16,7 @@ export type Project = {
   featured: boolean;
   thumbnail: string;
   videoUrl?: string;
-  splineEmbeds?: { url: string; caption?: string }[];
+  splineEmbeds?: { url: string; caption?: string; section?: 'research' | 'strategy' | 'implementation' | 'results'; emphasis?: 'live-demo' }[];
   href: string;
   /** Optional rich case-study sections. Each is plain text or simple
    *  markdown — paragraphs split on blank lines, list lines start with "- ".
@@ -47,13 +47,13 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "co-cerebral",
-    title: "Co Cerebral",
+    title: "Co Cerebral · EduOS",
     description:
-      "An agentic learning environment built around the Six Thinking Hats — six LLM personas with distinct voices, embodied in a Spline 3D scene. Live demo coming soon.",
+      "A voice-first agentic learning environment. Each of the Six Thinking Hats becomes its own embodied LLM agent — distinct voice, presence, and reasoning style. Built on Next.js 15, Spline 3D, Vercel AI SDK, and Web Speech, running on a £0 stack.",
     researchQuestion:
-      "What does an agentic, voice-first learning interface look like when each cognitive mode has its own embodied agent?",
+      "An RCA thesis on what AI in education feels like when each cognitive mode has a voice and a body.",
     intro:
-      "Co Cerebral is my RCA thesis on AI in education. The current build pairs Edward de Bono's Six Thinking Hats methodology with a multi-agent LLM system on Next.js 15 + Spline + Vercel AI SDK + Web Speech — a voice-first thinking partner where each hat is a different agent.",
+      "Co Cerebral is my RCA Design Futures thesis. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct agent. The thinking partner you talk to instead of read.",
     type: "AI · Agentic UX · Live Build",
     year: 2026,
     tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
@@ -61,15 +61,67 @@ export const PROJECTS: Project[] = [
     thumbnail: "/thumbnails/co-cerebral.jpg",
     splineEmbeds: [
       {
+        section: "research",
         url: "https://app.spline.design/file/bd392fb8-d979-436b-bfd4-d63ef7aa29a0",
-        caption: "Six Thinking Hats — environment scene",
+        caption: "Research flow — how a learner moves through the Six Hats rotation, voice-mediated throughout.",
       },
       {
+        section: "results",
+        emphasis: "live-demo",
         url: "https://app.spline.design/file/4d007b5c-a1c9-4803-94bb-980e5aa44c1f",
-        caption: "Six Thinking Hats — agent embodiment",
+        caption: "EduOS live demo — drag to inspect each hat's embodiment.",
       },
     ],
     href: "/work/co-cerebral",
+    caseStudy: {
+      role: "Sole designer and engineer · RCA Design Futures thesis",
+      timeline: "Active build (2026, ongoing)",
+      team: "Solo build with supervisor support. Met a potential cofounder at Vercel Builder's Night who is interested in the education angle.",
+      impact:
+        "End-to-end working prototype on a £0 stack. Cofounder conversation in motion; thesis no longer just a demo.",
+      challenge:
+        `Most AI-in-education products today are static chat interfaces — text in, text out, no embodiment. As my RCA thesis on AI in Education, Co Cerebral asks a different question: what if each cognitive mode in a structured thinking framework had its own embodied agent — voice, visual presence, distinct personality — and you dialogued with the framework instead of reading about it?
+
+The thesis is also a product hypothesis. The framing came from Edward de Bono's Six Thinking Hats — White (facts), Red (emotion), Black (critical), Yellow (optimistic), Green (creative), Blue (process) — where structured cognitive disagreement produces better thinking than open-ended chat.`,
+      research:
+        `The research flow embedded above maps how a learner moves through the system: from a single question, through the rotation of perspectives, into synthesis — voice-mediated throughout.
+
+It is a learning interface designed around cognitive disagreement, not consensus. The hat structure is a constraint, and the constraint is the feature.`,
+      strategy:
+        `Three design commitments anchor the build:
+
+- Voice-first, not chat-first. Web Speech API for input and synthesis — the agent speaks back, you don't read.
+- Embodied, not disembodied. Each hat has a Spline 3D presence; agents are inhabited, not summoned.
+- Structured, not free-form. Six Hats is a constraint that produces better thinking than open-ended chat — the structure IS the feature, not a limitation.`,
+      implementation:
+        `Tech stack:
+
+- Frontend: Next.js 15 with TypeScript and Tailwind
+- 3D: @splinetool/react-spline (the same library powering the embeds on this page)
+- Spline Variables for material control across hat states
+- Voice in: Web Speech API (free, browser-native)
+- LLM: Vercel AI SDK v5 via AI Gateway
+- Voice out: Web Speech Synthesis
+- Deploy: Vercel Hobby
+- Total ongoing cost: £0
+
+This is intentional. A thesis that costs money to run is a thesis that doesn't survive past the deadline.`,
+      results:
+        `The live demo above is the working prototype. Drag the scene to inspect each hat's embodiment; speak to summon an agent. As of this writing the system is functional end-to-end on a £0 stack — and I am still iterating.
+
+Met a potential cofounder at Vercel Builder's Night who is interested in the education angle. Conversations are early; the project is no longer just a thesis demo, it is a possible product.`,
+      lessons:
+        `Two things stand out so far:
+
+- Constraints over features. Adding voice was hard but it changed the entire interaction quality. The hardest design decision wasn't a feature; it was choosing modality.
+- Spec stability. The Apple Note brief that started this rebuild has barely changed in two months — locking the tech stack early let me ship instead of debate.`,
+      nextSteps:
+        `Immediate: publish the Spline scenes to public URLs and open the demo to cohort testing.
+
+Then: decide K-12, corporate training, or adult learner as the wedge audience — currently undecided.
+
+Eventually: if the cofounder conversation goes anywhere, productise the methodology framework, not the Six Hats specifically.`,
+    },
   },
   {
     slug: "smataste",
