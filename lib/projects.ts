@@ -136,6 +136,38 @@ Tools: Figma (UI + clickable prototype), structured AI prompting research, Micro
         `If I redesigned this tomorrow, I'd collapse the all-in-one menu. Right now it's structured to be compatible with Sodexo's existing system, which forces every workflow through a tab-style UI. The more intuitive future is to keep only an AI-dialog interface after first-time setup — let the agent understand each diner over time, surface controls only when needed. An AI-native dining companion, not an AI-augmented menu app.
 
 The pilot now lives with Sodexo's engineers; the design baton has been passed. If pilot data surfaces, that's the moment to revisit the agent-vs-menu question with real adoption metrics, not user-test guesses.`,
+      media: [
+        {
+          section: 'research',
+          src: '/work/smataste/research-evaluation.jpg',
+          caption: 'Comparative analysis of healthy-eating market players (Frive, Gousto, Mindful Chef) against academic frontiers — the gap that opened the door for taste-as-design-surface.',
+          aspectRatio: '16/9',
+        },
+        {
+          section: 'strategy',
+          src: '/work/smataste/innovation-strategy.jpg',
+          caption: 'Innovation strategy: dual-AI architecture (taste prediction model for chefs · personal health memory model for diners), with explainability surfaces co-owned across the kitchen-to-diner loop.',
+          aspectRatio: '16/9',
+        },
+        {
+          section: 'implementation',
+          src: '/work/smataste/implementation-plan.jpg',
+          caption: 'Implementation plan: rolling out Smart Taste Index across the canteen service, with stakeholder touchpoints and data flows.',
+          aspectRatio: '16/9',
+        },
+        {
+          section: 'results',
+          src: '/work/smataste/prototype-b1.jpg',
+          caption: 'Smart Taste Index prototype — a single recommendation surface, with the "why" explanation always one tap away.',
+          aspectRatio: '16/9',
+        },
+        {
+          section: 'results',
+          src: '/work/smataste/prototype-all.jpg',
+          caption: 'Three iterations of the prototype, tested clickable with users between rounds.',
+          aspectRatio: '16/9',
+        },
+      ],
     },
   },
   {
