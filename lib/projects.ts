@@ -54,7 +54,7 @@ export const PROJECTS: Project[] = [
       "What does an agentic, voice-first learning interface look like when each cognitive mode has its own embodied agent?",
     intro:
       "Co Cerebral is my RCA thesis on AI in education. The current build pairs Edward de Bono's Six Thinking Hats methodology with a multi-agent LLM system on Next.js 15 + Spline + Vercel AI SDK + Web Speech — a voice-first thinking partner where each hat is a different agent.",
-    type: "AI / Agentic UX · Live Build",
+    type: "AI · Agentic UX · Live Build",
     year: 2026,
     tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
     featured: true,
@@ -75,21 +75,21 @@ export const PROJECTS: Project[] = [
     slug: "smataste",
     title: "SmaTaste",
     description:
-      "Interdisciplinary AI dining intervention for Sodexo Europe. Two models, one explainable UI. Won 3rd Place at the RCA × Sodexo Challenge — selected for 1–2 year pilot implementation.",
+      "An AI-driven workplace dining service for Sodexo. Two paired AI models — taste prediction for kitchens, personal health memory for diners — collaborate through one explainable interface. Won 3rd Place at the RCA × Sodexo Challenge; selected for 1–2 year pilot deployment.",
     researchQuestion:
-      "What if a canteen could understand that 'spicy' means something different in every mouth — and serve accordingly?",
+      "Redefining the workplace dining experience.",
     intro:
-      "SmaTaste is the RCA × Sodexo AiD Lab response to digitalising food services. As lead UX + AI on a 4-person interdisciplinary team, I owned the Smart Taste Index UI, the dual-AI flow architecture, and the final pitch. The unlock came from 'spicy' — same word, completely different in every mouth. Taste, not health, became the design surface.",
+      "SmaTaste is a workplace canteen service for Sodexo's hybrid Gen Z workforce. It pairs the Smart Taste Index — a personal health memory that adapts to mood, history, and explicit goals — with a taste-prediction model that feeds chefs parameterized raw-material data. As lead UX and AI on a 4-person interdisciplinary team, I owned the Smart Taste Index interface, the dual-model flow architecture, and the final pitch.",
     type: "Service Design · HCI Research · AI",
     year: 2024,
-    tags: ["Service Design", "AI / LLM", "HCI", "Real Client", "Pilot"],
+    tags: ["Service Design", "AI", "LLM", "HCI", "Real Client", "Pilot"],
     featured: true,
     thumbnail: "/thumbnails/smataste.jpg",
     href: "/work/smataste",
     caseStudy: {
-      role: "Lead UX + AI architecture · Research Assistant (RCA × Sodexo AiD Lab)",
+      role: "Lead UX and AI architecture · Research Assistant (RCA × Sodexo AiD Lab)",
       timeline: "Spring 2024 · RCA × Sodexo Studio Project Challenge (~10 weeks)",
-      team: "4-person interdisciplinary team across IoT/HCI privacy, market analysis, mobile front-end, and UX/AI. I owned the AI flow architecture, Smart Taste Index interface, scenario writing, and final pitch.",
+      team: "4-person interdisciplinary team across IoT and HCI privacy, market analysis, mobile front-end, and UX with AI. I owned the AI flow architecture, the Smart Taste Index interface, scenario writing, and the final pitch.",
       impact:
         "Won 3rd Place at the RCA × Sodexo Studio Project Challenge. Selected by Sodexo Europe for pilot implementation — Sodexo's engineering team is developing the system now for 1–2 year deployment.",
       challenge:
