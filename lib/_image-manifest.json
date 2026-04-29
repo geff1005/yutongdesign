@@ -1,177 +1,52 @@
 {
-  "smataste": [
+  "co-cerebral": [
     {
-      "section": "research",
-      "src": "/work/smataste/research/problem-statement-and-analysis.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/smataste/research/research-and-evaluation.jpg",
+      "section": "strategy",
+      "src": "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "strategy",
-      "src": "/work/smataste/strategy/business-presentation-strategy.jpg",
+      "src": "/work/co-cerebral/strategy/02-workshop-toolkit.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "strategy",
-      "src": "/work/smataste/strategy/design-strategies-and-models.jpg",
+      "src": "/work/co-cerebral/strategy/03-signal-frame-a.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "strategy",
-      "src": "/work/smataste/strategy/implementation-plan.jpg",
+      "src": "/work/co-cerebral/strategy/04-signal-frame-b.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "strategy",
-      "src": "/work/smataste/strategy/innovation-strategy.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "strategy",
-      "src": "/work/smataste/strategy/product-life-cycle.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "strategy",
-      "src": "/work/smataste/strategy/revenue-model-flow-chart.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "strategy",
-      "src": "/work/smataste/strategy/validation-process.jpg",
+      "src": "/work/co-cerebral/strategy/05-agents-comparison.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "results",
-      "src": "/work/smataste/results/prototype-for-alessio.jpg",
+      "src": "/work/co-cerebral/results/01-four-future-scenarios.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "results",
-      "src": "/work/smataste/results/prototype-b1.jpg",
+      "src": "/work/co-cerebral/results/02-one-page-intro.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     },
     {
       "section": "results",
-      "src": "/work/smataste/results/prototype-b2.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "results",
-      "src": "/work/smataste/results/prototype1.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "results",
-      "src": "/work/smataste/results/prototype2.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "results",
-      "src": "/work/smataste/results/prototype-all.jpg",
+      "src": "/work/co-cerebral/results/03-cscw-poster.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     }
-  ],
-  "co-cerebral": [],
-  "skgplus": [
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250512173658-24-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250512173709-22-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250512173709-23-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250512173713-21-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250514045315-15-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20250514045315-17-94.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20260306065544-78-3008.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20260306070032-81-3008.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20260306074435-104-3008.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/weixin-image-20260306105432-134-3008.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "research",
-      "src": "/work/skgplus/research/ref-schlosslichtspiele-karlsruhe-zkmk.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    },
-    {
-      "section": "strategy",
-      "src": "/work/skgplus/strategy/function-section-draft-planning.jpg",
-      "caption": "",
-      "aspectRatio": "16/9"
-    }
-  ],
-  "beatrol": [],
-  "syncoe": [],
-  "sprayscape": [],
-  "wildfire-whispers": [],
-  "meta-station": [],
-  "poeticform": [],
-  "botanictrum": [],
-  "lunacy": []
+  ]
 }

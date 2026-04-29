@@ -121,6 +121,56 @@ Met a potential cofounder at Vercel Builder's Night who is interested in the edu
 Then: decide K-12, corporate training, or adult learner as the wedge audience — currently undecided.
 
 Eventually: if the cofounder conversation goes anywhere, productise the methodology framework, not the Six Hats specifically.`,
+      media: [
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
+          caption: "Co-Cerebral Learning Transformation Roadmap — the design framework that maps how learning rituals shift as agentic AI is woven into education.",
+          aspectRatio: "21/9",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/05-agents-comparison.jpg",
+          caption: "Current vs future AI agents — a key-dimension comparison: from prompt-and-respond chat tools to agents with memory, role, and embodied presence.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/02-workshop-toolkit.jpg",
+          caption: "Co-Speculative Workshop Toolkit — the deck I designed to run cohort sessions on agentic learning futures.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/03-signal-frame-a.jpg",
+          caption: "Signals from horizon scanning — early indicators that informed the speculative scenarios.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/04-signal-frame-b.jpg",
+          caption: "Signals continued — clustering of weak signals into trajectory patterns.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "results",
+          src: "/work/co-cerebral/results/01-four-future-scenarios.jpg",
+          caption: "Four plausible 2050 scenarios for AI in education — the futures grid that the embodied Six Hats build is responding to.",
+          aspectRatio: "21/9",
+        },
+        {
+          section: "results",
+          src: "/work/co-cerebral/results/02-one-page-intro.jpg",
+          caption: "One-page introduction of Co Cerebral — the version shipped with the Mitsubishi presentation and RCA 2025 profile.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "results",
+          src: "/work/co-cerebral/results/03-cscw-poster.jpg",
+          caption: "CSCW 2025 poster — the academic-track presentation of the multi-agent architecture, accepted to the ACM Conference on Computer-Supported Cooperative Work.",
+          aspectRatio: "3/4",
+        },
+      ],
     },
   },
   {
