@@ -86,6 +86,16 @@ The thesis is also a product hypothesis. The framing came from Edward de Bono's 
       research:
         `The research flow embedded above maps how a learner moves through the system: from a single question, through the rotation of perspectives, into synthesis — voice-mediated throughout.
 
+The thesis sits on three claims about AI in education:
+
+- Over-reliance on AI undermines human agency, reduces critical thinking, and depresses creativity.
+- AI is already transforming traditional teaching roles and learning experiences, whether the field is ready or not.
+- A personalised, decentralised, privacy-first AI learning ecosystem is what closes the digital divide and advances learning equity.
+
+The preferable future I am designing toward is Co-Intelligence Learning 2050. By 2050, every campus hosts AI-literacy classrooms where collective learning unfolds between human learners, teachers, and AI Co-thinkers. In these mixed-reality hybrid arenas, AI agents take on six dynamic roles — Analyst, Empath, Critic, Optimist, Innovator, and Conductor — to surface biases, offer insights and emotions, and co-create inclusive agendas.
+
+Inside this collective intelligence ecosystem, learning is project-based, collaborative, and deeply personalised. Students co-learn with AI through tailored sessions that scaffold critical thinking and creativity. Teachers co-coach with AI to ensure privacy, inclusivity, and learner agency. Cloud deployments keep data in learners' hands.
+
 It is a learning interface designed around cognitive disagreement, not consensus. The hat structure is a constraint, and the constraint is the feature.`,
       strategy:
         `Three design commitments anchor the build:
@@ -109,6 +119,12 @@ This is intentional. A thesis that costs money to run is a thesis that doesn't s
       results:
         `The live demo above is the working prototype. Drag the scene to inspect each hat's embodiment; speak to summon an agent. As of this writing the system is functional end-to-end on a £0 stack — and I am still iterating.
 
+Three thesis outcomes anchor the project:
+
+- A Co-Speculation toolkit for imagining educational futures with cohorts.
+- The CoCereb AI Co-thinker artefact itself — the demo embedded above.
+- A Roadmap toward Co-Intelligence 2050, the strategic frame that connects the artefact to the larger education shift.
+
 Met a potential cofounder at Vercel Builder's Night who is interested in the education angle. Conversations are early; the project is no longer just a thesis demo, it is a possible product.`,
       lessons:
         `Two things stand out so far:
@@ -127,30 +143,6 @@ Eventually: if the cofounder conversation goes anywhere, productise the methodol
           src: "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
           caption: "Co-Cerebral Learning Transformation Roadmap — the design framework that maps how learning rituals shift as agentic AI is woven into education.",
           aspectRatio: "21/9",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/05-agents-comparison.jpg",
-          caption: "Current vs future AI agents — a key-dimension comparison: from prompt-and-respond chat tools to agents with memory, role, and embodied presence.",
-          aspectRatio: "16/9",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/02-workshop-toolkit.jpg",
-          caption: "Co-Speculative Workshop Toolkit — the deck I designed to run cohort sessions on agentic learning futures.",
-          aspectRatio: "16/9",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/03-signal-frame-a.jpg",
-          caption: "Signals from horizon scanning — early indicators that informed the speculative scenarios.",
-          aspectRatio: "16/9",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/04-signal-frame-b.jpg",
-          caption: "Signals continued — clustering of weak signals into trajectory patterns.",
-          aspectRatio: "16/9",
         },
         {
           section: "results",
