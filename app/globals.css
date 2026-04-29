@@ -915,14 +915,22 @@ section { position: relative; }
 .aspect-4-3 { aspect-ratio: 4 / 3; }
 .aspect-3-4 { aspect-ratio: 3 / 4; }
 
-/* === Press tag (used inside Journal/Press item thumb slot) === */
+/* === Press tag (used inside Journal/Press item thumb slot) ===
+   Dimensions match .press-thumb-img-wrap exactly so rows with and without
+   thumbnails align. */
 .press-tag-wrap {
+  width: 140px;
+  height: 88px;
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background: hsl(var(--surface));
   border: 1px solid hsl(var(--stroke));
-  border-radius: 8px;
+  border-radius: 12px;
+}
+@media (max-width: 640px) {
+  .press-tag-wrap { width: 100px; height: 64px; border-radius: 10px; }
 }
 .press-tag {
   font-size: 10px;
