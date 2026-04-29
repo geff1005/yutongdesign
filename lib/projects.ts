@@ -33,6 +33,14 @@ export type Project = {
     results?: string;
     lessons?: string;
     nextSteps?: string;
+    /** Images interspersed in the case-study flow.
+     *  Each renders below the section it's keyed to. */
+    media?: {
+      section: 'challenge' | 'research' | 'strategy' | 'implementation' | 'results' | 'lessons' | 'nextSteps';
+      src: string;
+      caption?: string;
+      aspectRatio?: '16/9' | '4/3' | '3/4' | '1/1' | '21/9';
+    }[];
   };
 };
 

@@ -216,6 +216,8 @@ export default async function WorkDetailPage({
         SECTION_META.map(({ key, title, emphasis }) => {
           const text = cs[key];
           if (!text || typeof text !== "string") return null;
+          const sectionMedia =
+            cs.media?.filter((m) => m.section === key) ?? [];
           return (
             <section key={key} className="case-section">
               <div className="case-prose">
@@ -224,6 +226,32 @@ export default async function WorkDetailPage({
                 </h2>
                 <ProseBlock text={text} />
               </div>
+              {sectionMedia.length > 0 && (
+                <div className="case-media-stack">
+                  {sectionMedia.map((m, i) => (
+                    <figure
+                      key={i}
+                      className="case-media-figure"
+                      style={{
+                        aspectRatio: m.aspectRatio?.replace("/", " / ") ?? "16 / 9",
+                      }}
+                    >
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={m.src}
+                        alt={m.caption ?? ""}
+                        className="case-media-image"
+                        loading="lazy"
+                      />
+                      {m.caption && (
+                        <figcaption className="case-media-caption">
+                          {m.caption}
+                        </figcaption>
+                      )}
+                    </figure>
+                  ))}
+                </div>
+              )}
             </section>
           );
         })}
