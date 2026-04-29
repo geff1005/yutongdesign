@@ -67,17 +67,68 @@ export const PROJECTS: Project[] = [
     slug: "smataste",
     title: "SmaTaste",
     description:
-      "AI-driven dining experience for Sodexo: Smart Taste Index combining preference + nutrition signals, with explainable AI interfaces.",
+      "Interdisciplinary AI dining intervention for Sodexo Europe. Two models, one explainable UI. Won 3rd Place at the RCA × Sodexo Challenge — selected for 1–2 year pilot implementation.",
     researchQuestion:
-      "How can explainable AI rebalance efficiency and ethics in everyday food services?",
+      "What if a canteen could understand that 'spicy' means something different in every mouth — and serve accordingly?",
     intro:
-      "SmaTaste integrates XAI into a canteen service. As Research Assistant on the RCA × Sodexo France AiD Lab project, I worked across interface design, participatory research, and evaluation — producing a deployable service artifact and evidence package.",
+      "SmaTaste is the RCA × Sodexo AiD Lab response to digitalising food services. As lead UX + AI on a 4-person interdisciplinary team, I owned the Smart Taste Index UI, the dual-AI flow architecture, and the final pitch. The unlock came from 'spicy' — same word, completely different in every mouth. Taste, not health, became the design surface.",
     type: "Service Design · HCI Research · AI",
     year: 2024,
-    tags: ["Service Design", "AI / LLM", "HCI", "Real Client"],
+    tags: ["Service Design", "AI / LLM", "HCI", "Real Client", "Pilot"],
     featured: true,
     thumbnail: "/thumbnails/smataste.jpg",
     href: "/work/smataste",
+    caseStudy: {
+      role: "Lead UX + AI architecture · Research Assistant (RCA × Sodexo AiD Lab)",
+      timeline: "Spring 2024 · RCA × Sodexo Studio Project Challenge (~10 weeks)",
+      team: "4-person interdisciplinary team across IoT/HCI privacy, market analysis, mobile front-end, and UX/AI. I owned the AI flow architecture, Smart Taste Index interface, scenario writing, and final pitch.",
+      impact:
+        "Won 3rd Place at the RCA × Sodexo Studio Project Challenge. Selected by Sodexo Europe for pilot implementation — Sodexo's engineering team is developing the system now for 1–2 year deployment.",
+      challenge:
+        `Sodexo asked us, across the RCA × Sodexo AiD Lab studio project, to design an interdisciplinary intervention for food-services digitalisation with implementation in mind for 2–5 years. The brief was wide — deliver a 'top-tier consumer experience' for hybrid-working Gen Z, while addressing social, societal, and environmental impacts.
+
+A 4-person team across engineering, user research, digital visual, and fashion. We began with conflicting hypotheses about what 'top-tier' even meant — and one academic quarter to converge.`,
+      research:
+        `Two rounds of research, layered:
+
+- Round 1 — 15 in-depth interviews with peers and adjacent users on dietary motivations, decision triggers, and what 'healthy' actually feels like to office workers.
+- Round 2 — Sodexo's internal data: interviews their interns had run, plus the company's ongoing customer-habit research, accessed through our partnership.
+
+The unlock came from a single word: spicy. 'Spicy' to a Chinese eater means chili oil — fragrant, layered, warming. 'Spicy' in the UK means peri-peri — fermented, sharp, acidic. Same word, two completely different mouths. If the system can't quantify that, it can't serve any of us.
+
+That insight redirected the project. We had been building toward generic meal-prep — until Gen Z interviewees told us flatly 'meal-prep doesn't taste good.' Taste, not nutrition, became the unlock.`,
+      strategy:
+        `Three commitments shaped the build:
+
+- Quantify taste, don't moralize about health. Replace 'eat this because it's healthy' with 'try this because it matches the taste profile you just told us about.' Health becomes a side-effect of preference, not a guilt trip.
+- Two AI models, two audiences. Model 1 (taste prediction) feeds Sodexo's R&D and procurement — parameterized raw-material data for chefs. Model 2 (personal health memory) feeds the diner — meal recommendations that adapt to mood, history, and explicit goals.
+- Explainability as a contract, not a feature. Every recommendation surfaces a 'why' — explainability is co-owned with chefs, diners, and Sodexo product, not bolted onto an AI engagement metric.`,
+      implementation:
+        `My ownership across the 4-person team:
+
+- Smart Taste Index UI — most of the consumer-facing interface, including the 'why' explanation surface and the dietary health calendar.
+- AI flow architecture — defined how Model 1 and Model 2 talk to each other and to the kitchen. Worked closely with Fangzhou Wu, who owned the information modules + UI implementation.
+- Final visual language — converged the team after 3 rounds of clickable-prototype testing with users.
+- Pitch leadership — owned the final in-person pitch deck and the data-acquisition meetings with Sodexo Europe (food supply chain Manager + Sodexo's internal designer).
+
+Tools: Figma (UI + clickable prototype), structured AI prompting research, Microsoft Decision-Making expert consultations facilitated by our supervisor Dr. Elif Özden Yenigün.`,
+      results:
+        `- 3rd Place at the RCA × Sodexo Studio Project Challenge
+- Pilot implementation signed under NDA — Sodexo's engineering team is now developing the system for 1–2 year deployment
+- 15 user interviews + access to Sodexo's internal customer-habit research base
+- 3 prototype iterations, each tested clickable with users
+- Sodexo Europe's response: 'You really understand Gen Z' — they specifically called out our framing of taste over health`,
+      lessons:
+        `Three carry-forwards:
+
+- Disagreement was the resource, not the bug. Four professional backgrounds (engineer, user researcher, digital visual, fashion) made our first month frustrating — and our second month productive. The 'spicy' insight wouldn't have surfaced from a homogeneous team.
+- Stakeholder access is a design output. Talking to a Sodexo Europe Manager and Sodexo's internal designer changed the brief mid-flight. Designing without speaking to the people who'll inherit the system is a student-project luxury we shouldn't get used to.
+- Explainability requires co-ownership. My notebook then: 'Embedding explainability into everyday services requires co-owning metrics with stakeholders, not just optimizing engagement.' That sentence has held up. If the chef doesn't agree with the 'why,' the diner won't either.`,
+      nextSteps:
+        `If I redesigned this tomorrow, I'd collapse the all-in-one menu. Right now it's structured to be compatible with Sodexo's existing system, which forces every workflow through a tab-style UI. The more intuitive future is to keep only an AI-dialog interface after first-time setup — let the agent understand each diner over time, surface controls only when needed. An AI-native dining companion, not an AI-augmented menu app.
+
+The pilot now lives with Sodexo's engineers; the design baton has been passed. If pilot data surfaces, that's the moment to revisit the agent-vs-menu question with real adoption metrics, not user-test guesses.`,
+    },
   },
   {
     slug: "skgplus",
