@@ -121,6 +121,39 @@ export default async function WorkDetailPage({
         </section>
       )}
 
+      {/* Spline 3D scenes if available */}
+      {project.splineEmbeds && project.splineEmbeds.length > 0 && (
+        <section className="case-section case-spline-section">
+          <div className="case-prose">
+            <h2 className="case-h2">
+              Live <em>scenes</em>
+            </h2>
+            <p className="case-paragraph case-paragraph-muted">
+              In-progress 3D environments. Drag to orbit; scroll to zoom.
+            </p>
+          </div>
+          <div className="case-spline-grid">
+            {project.splineEmbeds.map((scene, i) => (
+              <div key={i} className="case-spline-tile">
+                <div className="case-spline-frame-wrap">
+                  <iframe
+                    src={scene.url}
+                    className="case-spline-frame"
+                    loading="lazy"
+                    allow="autoplay; fullscreen; xr-spatial-tracking"
+                    allowFullScreen
+                    title={scene.caption ?? `${project.title} 3D scene ${i + 1}`}
+                  />
+                </div>
+                {scene.caption && (
+                  <div className="case-spline-caption">{scene.caption}</div>
+                )}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Description */}
       <section className="case-section">
         <div className="case-prose">

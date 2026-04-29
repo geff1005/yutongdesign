@@ -16,6 +16,7 @@ export type Project = {
   featured: boolean;
   thumbnail: string;
   videoUrl?: string;
+  splineEmbeds?: { url: string; caption?: string }[];
   href: string;
 };
 
@@ -34,6 +35,16 @@ export const PROJECTS: Project[] = [
     tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
     featured: true,
     thumbnail: "/thumbnails/co-cerebral.jpg",
+    splineEmbeds: [
+      {
+        url: "https://app.spline.design/file/bd392fb8-d979-436b-bfd4-d63ef7aa29a0",
+        caption: "Six Thinking Hats — environment scene",
+      },
+      {
+        url: "https://app.spline.design/file/4d007b5c-a1c9-4803-94bb-980e5aa44c1f",
+        caption: "Six Thinking Hats — agent embodiment",
+      },
+    ],
     href: "/work/co-cerebral",
   },
   {
