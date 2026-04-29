@@ -34,6 +34,48 @@ function vimeoEmbedUrl(url: string): string | null {
   return `https://player.vimeo.com/video/${match[1]}?title=0&byline=0&portrait=0`;
 }
 
+/** Render a markdown-lite block: paragraphs split by blank lines,
+ *  consecutive `- ` lines become a bullet list. */
+function ProseBlock({ text }: { text: string }) {
+  const blocks = text.split(/\n\s*\n/);
+  return (
+    <>
+      {blocks.map((block, i) => {
+        const lines = block.split("\n").filter((l) => l.trim().length > 0);
+        const isList = lines.every((l) => l.trim().startsWith("- "));
+        if (isList && lines.length > 0) {
+          return (
+            <ul key={i} className="case-list">
+              {lines.map((l, j) => (
+                <li key={j}>{l.replace(/^\s*-\s+/, "")}</li>
+              ))}
+            </ul>
+          );
+        }
+        return (
+          <p key={i} className="case-paragraph">
+            {block}
+          </p>
+        );
+      })}
+    </>
+  );
+}
+
+const SECTION_META: Array<{
+  key: keyof NonNullable<typeof PROJECTS[number]["caseStudy"]>;
+  title: string;
+  emphasis: string;
+}> = [
+  { key: "challenge", title: "The", emphasis: "Challenge" },
+  { key: "research", title: "Research &", emphasis: "Discovery" },
+  { key: "strategy", title: "Design", emphasis: "Strategy" },
+  { key: "implementation", title: "Implementation &", emphasis: "Pipeline" },
+  { key: "results", title: "Results &", emphasis: "Impact" },
+  { key: "lessons", title: "Lessons", emphasis: "Learned" },
+  { key: "nextSteps", title: "What's", emphasis: "Next" },
+];
+
 export default async function WorkDetailPage({
   params,
 }: {
@@ -44,6 +86,7 @@ export default async function WorkDetailPage({
   if (!project) notFound();
 
   const embed = project.videoUrl ? vimeoEmbedUrl(project.videoUrl) : null;
+  const cs = project.caseStudy;
   const otherProjects = PROJECTS.filter(
     (p) => p.slug !== project.slug && p.featured
   ).slice(0, 3);
@@ -82,26 +125,24 @@ export default async function WorkDetailPage({
         </div>
       </header>
 
-      {/* Overview metadata block */}
+      {/* Overview metadata block — uses caseStudy fields when present, else falls back */}
       <section className="case-section case-overview">
         <div className="case-overview-grid">
           <div>
-            <div className="eyebrow">Year</div>
-            <div className="case-meta">{project.year}</div>
+            <div className="eyebrow">Role</div>
+            <div className="case-meta">{cs?.role ?? "—"}</div>
           </div>
           <div>
-            <div className="eyebrow">Type</div>
-            <div className="case-meta">{project.type ?? "—"}</div>
+            <div className="eyebrow">Timeline</div>
+            <div className="case-meta">{cs?.timeline ?? String(project.year)}</div>
           </div>
           <div>
-            <div className="eyebrow">Tags</div>
-            <div className="case-meta">{project.tags.join(" · ")}</div>
+            <div className="eyebrow">Team</div>
+            <div className="case-meta">{cs?.team ?? "—"}</div>
           </div>
           <div>
-            <div className="eyebrow">Status</div>
-            <div className="case-meta">
-              {project.featured ? "Featured" : "Archive"}
-            </div>
+            <div className="eyebrow">Impact</div>
+            <div className="case-meta">{cs?.impact ?? project.tags.join(" · ")}</div>
           </div>
         </div>
       </section>
@@ -154,38 +195,53 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* Description */}
-      <section className="case-section">
-        <div className="case-prose">
-          <h2 className="case-h2">
-            About <em>this work</em>
-          </h2>
-          <p className="case-paragraph">{project.description}</p>
-          {project.intro && project.intro !== project.description && (
-            <p className="case-paragraph">{project.intro}</p>
-          )}
-        </div>
-      </section>
+      {/* Description (only show when no caseStudy is present, since caseStudy
+          covers it more thoroughly) */}
+      {!cs && (
+        <section className="case-section">
+          <div className="case-prose">
+            <h2 className="case-h2">
+              About <em>this work</em>
+            </h2>
+            <p className="case-paragraph">{project.description}</p>
+            {project.intro && project.intro !== project.description && (
+              <p className="case-paragraph">{project.intro}</p>
+            )}
+          </div>
+        </section>
+      )}
 
-      {/* Placeholder for the 7-section PD case study (to be filled) */}
-      <section className="case-section">
-        <div className="case-prose">
-          <h2 className="case-h2">
-            Process <em>&amp; reflection</em>
-          </h2>
-          <p className="case-paragraph case-paragraph-muted">
-            Detailed case study content — research, design strategy, implementation,
-            outcomes, and lessons learned — coming soon. Source materials live in the
-            project folder; the long-form write-up is being migrated from earlier
-            portfolio decks.
-          </p>
-          {project.videoUrl && (
+      {/* Rich case-study sections (when present) */}
+      {cs &&
+        SECTION_META.map(({ key, title, emphasis }) => {
+          const text = cs[key];
+          if (!text || typeof text !== "string") return null;
+          return (
+            <section key={key} className="case-section">
+              <div className="case-prose">
+                <h2 className="case-h2">
+                  {title} <em>{emphasis}</em>
+                </h2>
+                <ProseBlock text={text} />
+              </div>
+            </section>
+          );
+        })}
+
+      {/* Placeholder for projects without caseStudy yet */}
+      {!cs && (
+        <section className="case-section">
+          <div className="case-prose">
+            <h2 className="case-h2">
+              Process <em>&amp; reflection</em>
+            </h2>
             <p className="case-paragraph case-paragraph-muted">
-              In the meantime, the video above shows the project in motion.
+              Detailed case study — research, design strategy, implementation,
+              outcomes, and lessons learned — coming soon.
             </p>
-          )}
-        </div>
-      </section>
+          </div>
+        </section>
+      )}
 
       {/* More work */}
       {otherProjects.length > 0 && (
