@@ -111,7 +111,7 @@ export default async function WorkDetailPage({
           <h1 className="case-title">
             {project.title}
             {project.researchQuestion && (
-              <em className="case-title-em">— {project.researchQuestion}</em>
+              <em className="case-title-em">{project.researchQuestion}</em>
             )}
           </h1>
           {project.intro && <p className="case-intro">{project.intro}</p>}

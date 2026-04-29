@@ -231,14 +231,14 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       "How do you turn a studio's chaotic content backend into a launchable presence — and persuade the founder that restraint serves the work?",
     intro:
       "SKG+ is an immersive entertainment studio in mainland China. As contract Web Designer (remote, Apr 2025–Apr 2026), I rebuilt skgplus.cn from a brittle Framer back-end into a CMS-driven showroom — and shipped a parallel competition platform amacontest.com under a 3-week emergency timeline that drew 400+ teams from across Asia.",
-    type: "Web Design · CMS / Automation · Brand",
+    type: "Web Design · CMS Automation · Brand",
     year: 2025,
     tags: ["Web Design", "CMS", "Brand", "Real Client", "Automation"],
     featured: true,
     thumbnail: "/thumbnails/skgplus.jpg",
     href: "/work/skgplus",
     caseStudy: {
-      role: "Lead Web Designer · contract / remote",
+      role: "Lead Web Designer · contract · remote",
       timeline: "Apr 2025 – Apr 2026 (12 months, ongoing maintenance)",
       team: "Founder + internal content lead + principal creators. I owned design, IA, deployment, and the content pipeline.",
       impact:
@@ -248,7 +248,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       research:
         "I sat directly with the CEO and the principal creators to map their content workflow. Two findings drove everything that followed:\n\n- The Framer back-end was the real bottleneck — content updates broke layouts every release.\n- The founder's 'fancy' brief was a hypothesis, not a spec. What he actually meant was 'don't look generic.' Restraint, not maximalism, was the right answer once we held up examples of peer immersive studios.",
       strategy:
-        "Three decisions shaped the build:\n\n- Restraint as service. The studio's work IS the color; the web should be the frame. After A/B-comparing color-saturated mockups against a near-monochrome scaffold, the team agreed.\n- Pipeline before pages. Instead of manually uploading 170+ works to Framer, I built a Google Sheet → Make.com → Gumlet → Framer sync. Update one row in a sheet, the website refreshes.\n- Reusable design system. Components and tokens were structured so the amacontest.com 3-week emergency could lift the entire visual language and ship a new site without re-designing primitives.",
+        "Three decisions shaped the build:\n\n- Restraint as service. The studio's work IS the color; the web should be the frame. After comparing color-saturated mockups side-by-side against a near-monochrome scaffold, the team agreed.\n- Pipeline before pages. Instead of manually uploading 170+ works to Framer, I built a Google Sheet → Make.com → Gumlet → Framer sync. Update one row in a sheet, the website refreshes.\n- Reusable design system. Components and tokens were structured so the amacontest.com 3-week emergency could lift the entire visual language and ship a new site without re-designing primitives.",
       implementation:
         "I owned: brand visual, IA, interaction logic, deployment, ongoing content maintenance.\n\nPipeline stack:\n\n- Content layer: Google Sheet (creators + content team can edit)\n- Automation: Make.com scenarios trigger on sheet edits\n- Video hosting: Gumlet (paid, optimized)\n- Site: Framer (front-end)\n- Sync: sheet → Make.com → Framer CMS API → live\n\nThis turned content updates from a designer-blocker into a 30-second self-serve action.",
       results:
@@ -281,9 +281,9 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     researchQuestion: "How can AI-driven systems enhance safety in autonomous driving?",
     intro:
       "Driving fatigue is a serious global problem. Existing in-vehicle systems can only alert, not intervene.",
-    type: "Service / Experience Design",
+    type: "Service & Experience Design",
     year: 2023,
-    tags: ["Smart Systems", "UX/UI", "HMI"],
+    tags: ["Smart Systems", "UX UI", "HMI"],
     featured: true,
     thumbnail: "/thumbnails/beatrol.jpg",
     videoUrl: "https://vimeo.com/817694480",
@@ -298,7 +298,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       "A digital platform leveraging spatial computing and AR to bridge graffiti artists with local communities.",
     type: "Service Design",
     year: 2025,
-    tags: ["UX/UI", "Smart Systems"],
+    tags: ["UX UI", "Smart Systems"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/swsE03EafovXxtL53gEI0UQUr8.png",
     videoUrl: "https://vimeo.com/883701939",
@@ -326,7 +326,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     researchQuestion: "How does AI portray the shape of the poem?",
     intro:
       "Generation of customized Taihu stone digital sculptures based on Eastern aesthetics through sound or semantic information.",
-    type: "AIGC / Interaction Installation",
+    type: "AIGC Interaction Installation",
     year: 2023,
     tags: ["AI", "Digital Art", "GenAI"],
     featured: true,
@@ -341,9 +341,9 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     researchQuestion: "What role has the moon played in human culture and history?",
     intro:
       "A pseudo-archive from the future, dramatizing the narrative that the moon, once a living entity, was rendered lifeless by the march of science.",
-    type: "UI/UX",
+    type: "UI UX",
     year: 2021,
-    tags: ["UX/UI"],
+    tags: ["UX UI"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/uLavaDKo8wVaIV5gV0iwZeyOHIY.png",
     videoUrl: "https://vimeo.com/883707048",
@@ -369,9 +369,9 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     title: "Meta Station",
     description: "Interactive concept UI theme for HUAWEI Co., Ltd.",
     researchQuestion: "Will the Metaverse be the future of online network & remote work?",
-    type: "UI/UX",
+    type: "UI UX",
     year: 2020,
-    tags: ["UX/UI"],
+    tags: ["UX UI"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/q1KWuBoFjXN9Sdr3v9JbwL5QQW0.png",
     videoUrl: "https://vimeo.com/883705290",
@@ -383,7 +383,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     description: "A concept visual for NIKE",
     type: "Concept Visual",
     year: 2024,
-    tags: ["UX/UI"],
+    tags: ["UX UI"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/9RxJa7zlJTN3uQ7PmhMOb3uYRAk.jpg",
     href: "/work/neon-nike",
