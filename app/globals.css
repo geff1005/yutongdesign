@@ -1182,6 +1182,19 @@ section { position: relative; }
 .case-paragraph-muted { color: hsl(var(--muted)); }
 
 
+
+/* React Spline component fills the frame-wrap (replaces iframe with 3D canvas). */
+.case-spline-react {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+}
+.case-spline-react canvas {
+  width: 100% !important;
+  height: 100% !important;
+  display: block;
+}
 /* === Section-anchored Spline embeds (rendered inline with case-study sections) === */
 .case-spline-stack {
   margin-top: 32px;

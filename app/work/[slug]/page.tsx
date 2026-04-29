@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
+import Spline from "@splinetool/react-spline/next";
 import { PROJECTS } from "@/lib/projects";
 
 // Pre-generate one static page per project at build time.
@@ -281,17 +282,21 @@ export default async function WorkDetailPage({
                               (isLiveDemo ? " case-spline-frame-wrap-tall" : "")
                             }
                           >
-                            <iframe
-                              src={scene.url}
-                              className="case-spline-frame"
-                              loading="lazy"
-                              allow="autoplay; fullscreen; xr-spatial-tracking"
-                              allowFullScreen
-                              title={
-                                scene.caption ??
-                                `${project.title} 3D scene ${i + 1}`
-                              }
-                            />
+                            {scene.url.endsWith(".splinecode") ? (
+                              <Spline scene={scene.url} className="case-spline-react" />
+                            ) : (
+                              <iframe
+                                src={scene.url}
+                                className="case-spline-frame"
+                                loading="lazy"
+                                allow="autoplay; fullscreen; xr-spatial-tracking"
+                                allowFullScreen
+                                title={
+                                  scene.caption ??
+                                  `${project.title} 3D scene ${i + 1}`
+                                }
+                              />
+                            )}
                           </div>
                           {scene.caption && (
                             <div className="case-spline-caption">

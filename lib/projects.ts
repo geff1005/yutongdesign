@@ -62,14 +62,14 @@ export const PROJECTS: Project[] = [
     splineEmbeds: [
       {
         section: "research",
-        url: "https://app.spline.design/file/bd392fb8-d979-436b-bfd4-d63ef7aa29a0",
+        url: "https://prod.spline.design/V18jAhOA0xMr5FXB/scene.splinecode",
         caption: "Research flow — how a learner moves through the Six Hats rotation, voice-mediated throughout.",
       },
       {
         section: "results",
         emphasis: "live-demo",
-        url: "https://app.spline.design/file/4d007b5c-a1c9-4803-94bb-980e5aa44c1f",
-        caption: "EduOS live demo — drag to inspect each hat's embodiment.",
+        url: "https://prod.spline.design/pOvUuyOOoI23lcJQ/scene.splinecode",
+        caption: "EduOS live demo — drag to inspect each agent's embodiment.",
       },
     ],
     href: "/work/co-cerebral",
