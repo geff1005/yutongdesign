@@ -21,6 +21,22 @@ export type Project = {
 
 export const PROJECTS: Project[] = [
   {
+    slug: "co-cerebral",
+    title: "Co Cerebral",
+    description:
+      "An agentic learning environment built around the Six Thinking Hats — six LLM personas with distinct voices, embodied in a Spline 3D scene. Live demo coming soon.",
+    researchQuestion:
+      "What does an agentic, voice-first learning interface look like when each cognitive mode has its own embodied agent?",
+    intro:
+      "Co Cerebral is my RCA thesis on AI in education. The current build pairs Edward de Bono's Six Thinking Hats methodology with a multi-agent LLM system on Next.js 15 + Spline + Vercel AI SDK + Web Speech — a voice-first thinking partner where each hat is a different agent.",
+    type: "AI / Agentic UX · Live Build",
+    year: 2026,
+    tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
+    featured: true,
+    thumbnail: "/thumbnails/co-cerebral.jpg",
+    href: "/work/co-cerebral",
+  },
+  {
     slug: "smataste",
     title: "SmaTaste",
     description:
@@ -168,14 +184,15 @@ export const PROJECTS: Project[] = [
 ];
 
 // Featured 4 for the home Selected Works bento grid.
-// SmaTaste leads (real client + AI + UIUX flow = top PD case study);
-// Synco-E and BEATROL provide range (BCI + automotive HMI);
-// SprayScape rounds out with recent service-design work.
+// PD-track positioning: SmaTaste (real client + AI + UIUX flow) leads;
+// Co Cerebral (live build, GenAI angle) for AI-native PD audience;
+// SKG+ (deployed real-client web) and BEATROL (HMI/UX) round out.
+// HUAWEI Theme is in PROJECTS but not yet Featured here — pending case study scaffold.
 export const SELECTED_FEATURED = [
   PROJECTS.find((p) => p.slug === "smataste")!,
+  PROJECTS.find((p) => p.slug === "co-cerebral")!,
   PROJECTS.find((p) => p.slug === "beatrol")!,
   PROJECTS.find((p) => p.slug === "sprayscape")!,
-  PROJECTS.find((p) => p.slug === "syncoe")!,
 ];
 
 // Explorations (Tier B / lighter projects) — 6 cards for the parallax section

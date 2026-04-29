@@ -68,6 +68,25 @@ Full registry: `docs/_HUB_REGISTRY.md` and `Design hub/_HUB/REGISTRY.md`. Quick 
 - Sync: `npm run sync` locally OR daily GitHub Action (needs `NOTION_TOKEN` secret — see `docs/AUTOMATION_SETUP.md`)
 - Routes: `/` home, `/work/[slug]` per-project case study (statically pre-generated)
 
+# Per-Project README Convention (NEW)
+
+Each major project folder under `~/iCloud/.../Design hub/<Project>/` now has two canonical text files:
+
+- **`README.md`** — structured PD case study skeleton I scaffold from Notion + Resume. Has TODO bullets for Julian to fill.
+- **`thinking.md`** — Julian's brain-dump (bullets / Chinese / English / fragments). This is **the source of truth for what's in his head** — read this every time before writing case study content.
+
+When integrating a project into the website case study (`/work/[slug]`):
+1. Read `Design hub/<Project>/README.md` for known facts
+2. Read `Design hub/<Project>/thinking.md` for Julian's drafts
+3. Look in `Design hub/<Project>/images/` and `docs/` for visuals
+4. Combine → write the case study page
+
+Currently scaffolded:
+- `SmaTaste-SOD121-Design Innovation（sodexo）/` — RCA × Sodexo
+- `Meta Station#元宇宙方案/` — HUAWEI HarmonyOS Theme work also lives here (clarify with Julian which subfolder)
+- `SKG+/` — newly created (raw assets still on T7 Shield)
+- `CoCereb Agent-IRP-P-R/` — Six Thinking Hats / Co Cerebral
+
 # Editing Conventions
 
 - Don't introduce CMS / database without justification — current TS files are fine for the project size
