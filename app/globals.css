@@ -935,13 +935,21 @@ section { position: relative; }
 .journal-item-pinned .press-tag {
   color: hsl(var(--text));
 }
-/* Press thumbnail (when og:image is available) */
+/* Press thumbnail (when og:image is available)
+   — overrides .journal-thumb's circular shape with a rectangular, wider crop
+   so press hero images breathe properly. */
 .press-thumb-img-wrap {
   position: relative;
+  width: 140px;
+  height: 88px;
+  flex-shrink: 0;
   background: hsl(var(--surface));
   border: 1px solid hsl(var(--stroke));
-  border-radius: 8px;
+  border-radius: 12px;
   overflow: hidden;
+}
+@media (max-width: 640px) {
+  .press-thumb-img-wrap { width: 100px; height: 64px; border-radius: 10px; }
 }
 .press-thumb-img {
   width: 100%;
@@ -955,8 +963,9 @@ section { position: relative; }
   right: 8px;
   font-size: 14px;
   color: #fff;
-  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.85), 0 0 2px rgba(0, 0, 0, 0.6);
   pointer-events: none;
+  z-index: 2;
 }
 .press-meta-tag {
   font-size: 10px;

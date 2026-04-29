@@ -1,3 +1,5 @@
+"use client";
+
 import { PRESS } from "@/lib/press";
 
 function formatDate(iso: string): string {
@@ -49,6 +51,16 @@ export function Journal() {
                       alt={item.title}
                       className="press-thumb-img"
                       loading="lazy"
+                      onError={(e) => {
+                        // If thumbnail fails (broken URL / CORS), fall back to tag chip.
+                        const wrap = e.currentTarget.parentElement;
+                        if (!wrap) return;
+                        wrap.classList.remove("press-thumb-img-wrap");
+                        wrap.classList.add("press-tag-wrap");
+                        wrap.innerHTML = `<span class="press-tag eyebrow">${
+                          item.pinned ? "★ " : ""
+                        }${item.tag ?? "Link"}</span>`;
+                      }}
                     />
                     {item.pinned && <span className="press-thumb-star">★</span>}
                   </div>

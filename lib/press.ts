@@ -20,8 +20,7 @@ export const PRESS: PressItem[] = [
     outlet: "The Guardian",
     url: "https://www.theguardian.com/everything-you-never-imagined/2026/mar/05/how-art-school-creators-are-adapting-to-the-age-of-ai",
     tag: "Feature",
-    thumbnail:
-      "https://i.guim.co.uk/img/media/529635e40467a75cf191c6e06a7918a680144fc7/0_0_5000_4000/master/5000.jpg?width=1200&quality=85&auto=format&fit=max",
+    thumbnail: "/press/guardian.jpg",
     pinned: true,
   },
   {
@@ -31,8 +30,7 @@ export const PRESS: PressItem[] = [
     outlet: "Royal College of Art",
     url: "https://www.rca.ac.uk/news-and-events/news/rca-and-sodexo-announce-winners-of-innovative-eats-and-algorithms-project-to-design-sustainable-solutions-for-digitising-food/",
     tag: "News",
-    thumbnail:
-      "https://rca-media2.rca.ac.uk/images/IMG_7003.71770e5c.fill-1200x1200.jpg",
+    thumbnail: "/press/rca-sodexo-news.jpg",
   },
   {
     date: "2024-06-20",
@@ -41,8 +39,7 @@ export const PRESS: PressItem[] = [
     outlet: "Royal College of Art",
     url: "https://www.rca.ac.uk/business/case-studies/eats-and-algorithms-rca-and-sodexo-collaborate-on-sustainable-food-solutions-project/",
     tag: "Case Study",
-    thumbnail:
-      "https://rca-media2.rca.ac.uk/images/Sodexo_X_RCA_-_teams.2e16d0ba.fill-1200x1200.jpg",
+    thumbnail: "/press/rca-sodexo-case.jpg",
   },
   {
     date: "2023-12-15",
@@ -50,8 +47,7 @@ export const PRESS: PressItem[] = [
     outlet: "IDA",
     url: "https://www.idesignawards.com/winners/zoom.php?eid=9-49848-23",
     tag: "Award",
-    thumbnail:
-      "https://s3-us-west-2.amazonaws.com/idesignawards/uploads/60547/9-49848-23/full/84bd923652143616b326bea04fd6f2a5.png",
+    thumbnail: "/press/ida.jpg",
   },
   {
     date: "2023-09-12",
