@@ -196,18 +196,38 @@ The unlock came from a single word: spicy. 'Spicy' to a Chinese eater means chil
 
 That insight redirected the project. We had been building toward generic meal-prep — until Gen Z interviewees told us flatly 'meal-prep doesn't taste good.' Taste, not nutrition, became the unlock.`,
       strategy:
-        `Three commitments shaped the build:
+        `The build is one platform, two audiences, one feedback loop:
 
-- Quantify taste, don't moralize about health. Replace 'eat this because it's healthy' with 'try this because it matches the taste profile you just told us about.' Health becomes a side-effect of preference, not a guilt trip.
-- Two AI models, two audiences. Model 1 (taste prediction) feeds Sodexo's R&D and procurement — parameterized raw-material data for chefs. Model 2 (personal health memory) feeds the diner — meal recommendations that adapt to mood, history, and explicit goals.
-- Explainability as a contract, not a feature. Every recommendation surfaces a 'why' — explainability is co-owned with chefs, diners, and Sodexo product, not bolted onto an AI engagement metric.`,
+- B-side (kitchens): Forecast, Generate, Insight. AI Forecast turns historical demand and dietary-trend data into ingredient-consumption forecasts; AI Generation turns flavour signals into recipe drafts the chef can audit and ship.
+- C-side (diners): Recommend, HealthCare, Taste. AI Memory remembers what each diner likes; AI Recommend serves the next meal; AI Suggestion nudges health goals; AI Feedback closes the loop back to the kitchen.
+- Smataste AI in the middle. Both sides share the same Smart Taste Index, the same explainability contract, and the same data substrate — so the kitchen sees what the diner felt, and the diner trusts what the kitchen prepared.
+
+Three commitments shaped the build:
+
+- Quantify taste, don't moralize about health. 'Try this because it matches the taste profile you just told us about', not 'eat this because it's healthy'. Health becomes a side-effect of preference.
+- Two AI models, two audiences. Taste-prediction feeds Sodexo's R&D and procurement; personal health memory feeds the diner.
+- Explainability as a contract, not a feature. Every recommendation surfaces a 'why', co-owned with chefs, diners, and Sodexo product.`,
       implementation:
-        `My ownership across the 4-person team:
+        `Service tracks. Basic uses what's already in caterers today; Premier reads the diner's Smart Taste Index and personal health goal. Both ride a modular pack: Main, Side, Toppings, Drinks, Dips.
+
+Four C-side feature surfaces:
+
+- Healthy — Setting eating preference. Spicy tolerance, cuisine, label system. AI Memory writes the baseline.
+- Interactive — Talk to AI and order in seconds. Health recommendation, AI feedback. The diner negotiates the menu before the lunch line.
+- Tasty — Dietary trend, mood calendar, health insights. The agent remembers what the diner liked and dynamically supports the health goal.
+- Community — Share, rate and growth. Diner reviews flow back to the kitchen as ranked signal.
+
+Two B-side dashboards:
+
+- Let chef know customer's flavour. Flavor Dietary Trend Report plus AI Recipes Generation: the kitchen sees what the next week's diners want before procurement closes.
+- Forecast ingredient consumption. AI Ingredients Forecast: ranked stock list with predicted consumption against last week's mood and weather.
+
+My ownership across the 4-person team:
 
 - Smart Taste Index UI — most of the consumer-facing interface, including the 'why' explanation surface and the dietary health calendar.
-- AI flow architecture — defined how Model 1 and Model 2 talk to each other and to the kitchen. Worked closely with Fangzhou Wu, who owned the information modules + UI implementation.
+- AI flow architecture — defined how the two models talk to each other and to the kitchen. Worked closely with Fangzhou Wu, who owned the information modules and UI implementation.
 - Final visual language — converged the team after 3 rounds of clickable-prototype testing with users.
-- Pitch leadership — owned the final in-person pitch deck and the data-acquisition meetings with Sodexo Europe (food supply chain Manager + Sodexo's internal designer).
+- Pitch leadership — owned the final in-person pitch deck and the data-acquisition meetings with Sodexo Europe.
 
 Tools: Figma (UI + clickable prototype), structured AI prompting research, Microsoft Decision-Making expert consultations facilitated by our supervisor Dr. Elif Özden Yenigün.`,
       results:
@@ -215,7 +235,15 @@ Tools: Figma (UI + clickable prototype), structured AI prompting research, Micro
 - Pilot implementation signed under NDA — Sodexo's engineering team is now developing the system for 1–2 year deployment
 - 15 user interviews + access to Sodexo's internal customer-habit research base
 - 3 prototype iterations, each tested clickable with users
-- Sodexo Europe's response: 'You really understand Gen Z' — they specifically called out our framing of taste over health`,
+- Sodexo Europe's response: 'You really understand Gen Z' — they specifically called out our framing of taste over health
+
+Projected impact at scale (presented to Sodexo Europe in the final pitch, not yet measured live):
+
+- Decrease 25% of the time spent on R&D management
+- Increase user satisfaction to 90%
+- AI Forecasting projected to shave 30% prep time and 15% in ingredients cost
+- Zero-waste packaging across the modular pack
+- Tasting the Future — the team's framing for what AI-driven workplace dining looks like in 2 to 5 years.`,
       lessons:
         `Three carry-forwards:
 
@@ -228,34 +256,44 @@ Tools: Figma (UI + clickable prototype), structured AI prompting research, Micro
 The pilot now lives with Sodexo's engineers; the design baton has been passed. If pilot data surfaces, that's the moment to revisit the agent-vs-menu question with real adoption metrics, not user-test guesses.`,
       media: [
         {
+          section: 'challenge',
+          src: '/work/smataste/r3/r3-01.jpg',
+          caption: 'Smataste — Redefining Workplace Food Experiences. RCA × Sodexo team: Zixiang Feng, Fangzhou Wu, Yutong Zhu, Wenjinhan Chen.',
+        },
+        {
           section: 'research',
-          src: '/work/smataste/research-evaluation.jpg',
-          caption: 'Comparative analysis of healthy-eating market players (Frive, Gousto, Mindful Chef) against academic frontiers — the gap that opened the door for taste-as-design-surface.',
-          aspectRatio: '16/9',
+          src: '/work/smataste/r3/r3-02.jpg',
+          caption: "What's the problem in workplace dining — Gen Z expects healthy, fun and fast tasty; Sodexo struggles with diverse needs and procurement mismatches; high-pressure workplaces leave a gap between healthy intent and the canteen reality.",
         },
         {
           section: 'strategy',
-          src: '/work/smataste/innovation-strategy.jpg',
-          caption: 'Innovation strategy: dual-AI architecture (taste prediction model for chefs · personal health memory model for diners), with explainability surfaces co-owned across the kitchen-to-diner loop.',
-          aspectRatio: '16/9',
+          src: '/work/smataste/r3/r3-03.jpg',
+          caption: 'Our strategy — an AI-driven canteen platform built around three pillars: Smart Taste Index, Workspace Dietary Trend, and Personalized Dining. The service circle ties consumer food-care apps to Sodexo soft-facilities management through a shared algorithm.',
+        },
+        {
+          section: 'strategy',
+          src: '/work/smataste/r3/r3-09.jpg',
+          caption: 'Operations — the dual-loop architecture. To B: Forecast, Generate, Insight. To C: Recommend, HealthCare, Taste. Smataste AI sits in the middle, binding the food service circle to the soft-facilities management circle through a shared dataflow and feedback loop.',
         },
         {
           section: 'implementation',
-          src: '/work/smataste/implementation-plan.jpg',
-          caption: 'Implementation plan: rolling out Smart Taste Index across the canteen service, with stakeholder touchpoints and data flows.',
-          aspectRatio: '16/9',
+          src: '/work/smataste/r3/r3-04.jpg',
+          caption: 'Service tracks — Basic and Premier service tiers, riding a modular pack: Main, Side, Toppings, Drinks, Dips.',
+        },
+        {
+          section: 'implementation',
+          src: '/work/smataste/r3/r3-06.jpg',
+          caption: 'Interactive — Talk to AI and order in seconds, before you join the lunch line. C-side conversational ordering with health recommendation and AI feedback modules (C1, C2).',
+        },
+        {
+          section: 'implementation',
+          src: '/work/smataste/r3/r3-08.jpg',
+          caption: "Community plus B-side dashboards. Diners share, rate and grow; the kitchen reads the resulting flavour signal as Let chef know customer's flavour and Forecast ingredient consumption — the closing loop where C-side memory becomes B-side insight.",
         },
         {
           section: 'results',
-          src: '/work/smataste/prototype-b1.jpg',
-          caption: 'Smart Taste Index prototype — a single recommendation surface, with the "why" explanation always one tap away.',
-          aspectRatio: '16/9',
-        },
-        {
-          section: 'results',
-          src: '/work/smataste/prototype-all.jpg',
-          caption: 'Three iterations of the prototype, tested clickable with users between rounds.',
-          aspectRatio: '16/9',
+          src: '/work/smataste/r3/r3-10.jpg',
+          caption: 'Tasting the Future — projected impact: 25% less time on R&D management, 90% user satisfaction, AI forecasting projected to shave 30% prep time and 15% ingredient cost, with zero-waste packaging across the pack.',
         },
       ],
     },
