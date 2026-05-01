@@ -126,6 +126,36 @@ export default async function WorkDetailPage({
         </div>
       </header>
 
+      {/* Live-demo Spline as hero (when present) — top-prominent */}
+      {(() => {
+        const liveDemo = project.splineEmbeds?.find(
+          (s) => s.emphasis === "live-demo"
+        );
+        if (!liveDemo) return null;
+        return (
+          <section className="case-section case-live-demo-hero">
+            <div className="case-live-demo-eyebrow eyebrow">★ Live Demo</div>
+            <div className="case-spline-frame-wrap">
+              {liveDemo.url.endsWith(".splinecode") ? (
+                <Spline scene={liveDemo.url} className="case-spline-react" />
+              ) : (
+                <iframe
+                  src={liveDemo.url}
+                  className="case-spline-frame"
+                  loading="lazy"
+                  allow="autoplay; fullscreen; xr-spatial-tracking"
+                  allowFullScreen
+                  title={liveDemo.caption ?? `${project.title} live demo`}
+                />
+              )}
+            </div>
+            {liveDemo.caption && (
+              <div className="case-spline-caption">{liveDemo.caption}</div>
+            )}
+          </section>
+        );
+      })()}
+
       {/* Overview metadata block — uses caseStudy fields when present, else falls back */}
       <section className="case-section case-overview">
         <div className="case-overview-grid">
@@ -232,13 +262,7 @@ export default async function WorkDetailPage({
               {sectionMedia.length > 0 && (
                 <div className="case-media-stack">
                   {sectionMedia.map((m, i) => (
-                    <figure
-                      key={i}
-                      className="case-media-figure"
-                      style={{
-                        aspectRatio: m.aspectRatio?.replace("/", " / ") ?? "16 / 9",
-                      }}
-                    >
+                    <figure key={i} className="case-media-figure">
                       {/* eslint-disable-next-line @next/next/no-img-element */}
                       <img
                         src={m.src}
@@ -257,12 +281,15 @@ export default async function WorkDetailPage({
               )}
               {(() => {
                 const sectionSplines =
-                  project.splineEmbeds?.filter((s) => s.section === key) ?? [];
+                  project.splineEmbeds?.filter(
+                    (s) => s.section === key && s.emphasis !== "live-demo"
+                  ) ?? [];
                 if (sectionSplines.length === 0) return null;
                 return (
                   <div className="case-spline-stack">
                     {sectionSplines.map((scene, i) => {
                       const isLiveDemo = scene.emphasis === "live-demo";
+                      const isPano = scene.emphasis === "panoramic";
                       return (
                         <div
                           key={i}
@@ -279,7 +306,8 @@ export default async function WorkDetailPage({
                           <div
                             className={
                               "case-spline-frame-wrap" +
-                              (isLiveDemo ? " case-spline-frame-wrap-tall" : "")
+                              (isLiveDemo ? " case-spline-frame-wrap-tall" : "") +
+                              (isPano ? " case-spline-frame-wrap-pano" : "")
                             }
                           >
                             {scene.url.endsWith(".splinecode") ? (

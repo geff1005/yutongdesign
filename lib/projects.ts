@@ -16,7 +16,7 @@ export type Project = {
   featured: boolean;
   thumbnail: string;
   videoUrl?: string;
-  splineEmbeds?: { url: string; caption?: string; section?: 'research' | 'strategy' | 'implementation' | 'results'; emphasis?: 'live-demo' }[];
+  splineEmbeds?: { url: string; caption?: string; section?: 'research' | 'strategy' | 'implementation' | 'results'; emphasis?: 'live-demo' | 'panoramic' }[];
   href: string;
   /** Optional rich case-study sections. Each is plain text or simple
    *  markdown — paragraphs split on blank lines, list lines start with "- ".
@@ -62,6 +62,7 @@ export const PROJECTS: Project[] = [
     splineEmbeds: [
       {
         section: "research",
+        emphasis: "panoramic",
         url: "https://prod.spline.design/V18jAhOA0xMr5FXB/scene.splinecode",
         caption: "Research flow — how a learner moves through the Six Hats rotation, voice-mediated throughout.",
       },
@@ -113,11 +114,10 @@ It is a learning interface designed around cognitive disagreement, not consensus
 - LLM: Vercel AI SDK v5 via AI Gateway
 - Voice out: Web Speech Synthesis
 - Deploy: Vercel Hobby
-- Total ongoing cost: £0
 
-This is intentional. A thesis that costs money to run is a thesis that doesn't survive past the deadline.`,
+The stack is intentionally lean. A thesis that costs money to run is a thesis that doesn't survive past the deadline.`,
       results:
-        `The live demo above is the working prototype. Drag the scene to inspect each hat's embodiment; speak to summon an agent. As of this writing the system is functional end-to-end on a £0 stack — and I am still iterating.
+        `The live demo above is the working prototype. Drag the scene to inspect each hat's embodiment; speak to summon an agent. The system is functional end-to-end and still iterating.
 
 Three thesis outcomes anchor the project:
 
@@ -142,25 +142,21 @@ Eventually: if the cofounder conversation goes anywhere, productise the methodol
           section: "strategy",
           src: "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
           caption: "Co-Cerebral Learning Transformation Roadmap — the design framework that maps how learning rituals shift as agentic AI is woven into education.",
-          aspectRatio: "21/9",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/05-agents-comparison.jpg",
+          caption: "Current vs Future AI agents — a key-dimension comparison: from prompt-and-respond chat tools to agents with memory, role, and embodied presence.",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/07-stakeholder-map.jpg",
+          caption: "Stakeholder map across Reflection, Assessment, and Administration layers — the AI Co-thinker shows up as a different role at each layer (peer for students, data partner for tutors, governance partner for ethics and policy).",
         },
         {
           section: "results",
           src: "/work/co-cerebral/results/01-four-future-scenarios.jpg",
           caption: "Four plausible 2050 scenarios for AI in education — the futures grid that the embodied Six Hats build is responding to.",
-          aspectRatio: "21/9",
-        },
-        {
-          section: "results",
-          src: "/work/co-cerebral/results/02-one-page-intro.jpg",
-          caption: "One-page introduction of Co Cerebral — the version shipped with the Mitsubishi presentation and RCA 2025 profile.",
-          aspectRatio: "16/9",
-        },
-        {
-          section: "results",
-          src: "/work/co-cerebral/results/03-cscw-poster.jpg",
-          caption: "CSCW 2025 poster — the academic-track presentation of the multi-agent architecture, accepted to the ACM Conference on Computer-Supported Cooperative Work.",
-          aspectRatio: "3/4",
         },
       ],
     },

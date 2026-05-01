@@ -1223,6 +1223,27 @@ section { position: relative; }
 @media (max-width: 700px) {
   .case-spline-frame-wrap-tall { min-height: 320px; aspect-ratio: 4 / 3; }
 }
+.case-spline-frame-wrap-pano {
+  aspect-ratio: 21 / 9;
+  min-height: 360px;
+}
+@media (max-width: 700px) {
+  .case-spline-frame-wrap-pano { min-height: 220px; aspect-ratio: 16 / 9; }
+}
+
+/* === Live-demo hero block (top-prominent) === */
+.case-live-demo-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.case-live-demo-hero .case-spline-frame-wrap {
+  aspect-ratio: 16 / 10;
+  min-height: 520px;
+}
+@media (max-width: 700px) {
+  .case-live-demo-hero .case-spline-frame-wrap { min-height: 360px; aspect-ratio: 4 / 3; }
+}
 /* === Case-study inline media (figures + captions) ===
    Renders below each section's prose, full-width within the section. */
 .case-media-stack {
@@ -1240,8 +1261,7 @@ section { position: relative; }
 }
 .case-media-image {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
 }
 .case-media-caption {
