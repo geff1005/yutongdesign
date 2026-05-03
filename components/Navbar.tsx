@@ -6,6 +6,7 @@ type Link = { label: string; href: string; external?: boolean };
 const LINKS: Link[] = [
   { label: "Home", href: "#home" },
   { label: "Work", href: "#work" },
+  { label: "Play", href: "/play" },
   { label: "Press", href: "#journal" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];

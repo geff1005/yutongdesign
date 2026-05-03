@@ -1574,3 +1574,187 @@ section { position: relative; }
   .case-figma-tile { padding: 12px; }
   .case-figma-grid { gap: 20px; }
 }
+
+/* === /play index page === */
+.play-index {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  color: hsl(var(--text));
+}
+@media (max-width: 700px) {
+  .play-index { padding: 0 20px 48px; }
+}
+.play-index-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 0;
+  border-bottom: 1px solid hsl(var(--stroke));
+}
+.play-index-hero {
+  padding: 80px 0 48px;
+  border-bottom: 1px solid hsl(var(--stroke));
+}
+@media (max-width: 700px) {
+  .play-index-hero { padding: 48px 0 32px; }
+}
+.play-index-title {
+  font-family: var(--font-display);
+  font-size: clamp(72px, 12vw, 160px);
+  line-height: 1;
+  font-weight: 400;
+  margin: 16px 0 24px;
+}
+.play-index-title em {
+  font-style: italic;
+  color: hsl(var(--text));
+}
+.play-index-sub {
+  font-size: 16px;
+  line-height: 1.7;
+  color: hsl(var(--muted));
+  max-width: 640px;
+  margin: 0;
+}
+.play-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  padding: 56px 0;
+}
+@media (max-width: 1000px) {
+  .play-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 600px) {
+  .play-grid { grid-template-columns: 1fr; gap: 20px; }
+}
+.play-tile {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 16px;
+  overflow: hidden;
+  background: hsl(var(--surface));
+  transition: border-color 200ms ease, transform 200ms ease;
+}
+.play-tile:hover { border-color: hsl(var(--text) / 0.4); transform: translateY(-2px); }
+.play-tile-static { cursor: default; }
+.play-tile-static:hover { transform: none; border-color: hsl(var(--stroke)); }
+.play-tile-thumb-wrap {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  background: linear-gradient(135deg, hsl(var(--surface)), hsl(var(--bg)));
+}
+.play-tile-thumb {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.play-tile-thumb-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-display);
+  font-size: 96px;
+  color: hsl(var(--muted) / 0.4);
+  font-style: italic;
+}
+.play-tile-meta {
+  padding: 0 16px 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.play-tile-row {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.play-tile-name {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.play-tile-year {
+  font-size: 12px;
+  color: hsl(var(--muted));
+  letter-spacing: 0.05em;
+}
+.play-tile-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.play-tile-chip {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 999px;
+  color: hsl(var(--muted));
+  white-space: nowrap;
+}
+.play-tile-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: hsl(var(--text) / 0.85);
+}
+
+/* === /play/[slug] detail === */
+.play-detail {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px 80px;
+  color: hsl(var(--text));
+}
+@media (max-width: 700px) {
+  .play-detail { padding: 0 20px 48px; }
+}
+.play-detail-hero {
+  padding: 64px 0 32px;
+  border-bottom: 1px solid hsl(var(--stroke));
+}
+.play-detail-title {
+  font-family: var(--font-display);
+  font-size: clamp(48px, 8vw, 96px);
+  line-height: 1.05;
+  font-weight: 400;
+  margin: 16px 0 16px;
+}
+.play-detail-chips { margin: 8px 0 16px; }
+.play-detail-desc {
+  font-size: 16px;
+  line-height: 1.7;
+  color: hsl(var(--muted));
+  max-width: 640px;
+  margin: 0;
+}
+.play-detail-spline {
+  padding: 56px 0 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.play-detail-spline-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 480px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid hsl(var(--stroke));
+  background: hsl(var(--surface));
+}
+@media (max-width: 700px) {
+  .play-detail-spline-wrap { min-height: 320px; aspect-ratio: 4 / 3; }
+}
