@@ -156,9 +156,17 @@ export default async function WorkDetailPage({
         );
       })()}
 
-      {/* Overview metadata block — uses caseStudy fields when present, else falls back */}
+      {/* Impact promoted to a top-prominent block (lead with results) */}
+      {cs?.impact && (
+        <section className="case-section case-impact-hero">
+          <div className="eyebrow case-impact-eyebrow">Impact</div>
+          <p className="case-impact-text">{cs.impact}</p>
+        </section>
+      )}
+
+      {/* Overview metadata block — Role / Timeline / Team (Impact is above) */}
       <section className="case-section case-overview">
-        <div className="case-overview-grid">
+        <div className="case-overview-grid case-overview-grid-3">
           <div>
             <div className="eyebrow">Role</div>
             <div className="case-meta">{cs?.role ?? "—"}</div>
@@ -170,10 +178,6 @@ export default async function WorkDetailPage({
           <div>
             <div className="eyebrow">Team</div>
             <div className="case-meta">{cs?.team ?? "—"}</div>
-          </div>
-          <div>
-            <div className="eyebrow">Impact</div>
-            <div className="case-meta">{cs?.impact ?? project.tags.join(" · ")}</div>
           </div>
         </div>
       </section>

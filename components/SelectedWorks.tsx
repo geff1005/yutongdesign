@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { SELECTED_FEATURED } from "@/lib/projects";
 
 // Bento layout pattern: 7-5 / 5-7 alternating
@@ -19,12 +20,12 @@ export function SelectedWorks() {
               A selection of projects spanning industrial design, interaction, and AI-driven systems.
             </p>
           </div>
-          <button className="view-all-btn">
+          <Link href="/work" className="view-all-btn">
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
               View all work <span aria-hidden>→</span>
             </span>
-          </button>
+          </Link>
         </div>
 
         <div className="bento">
