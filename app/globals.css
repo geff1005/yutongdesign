@@ -1224,11 +1224,11 @@ section { position: relative; }
   .case-spline-frame-wrap-tall { min-height: 320px; aspect-ratio: 4 / 3; }
 }
 .case-spline-frame-wrap-pano {
-  aspect-ratio: 21 / 9;
-  min-height: 360px;
+  aspect-ratio: 16 / 10;
+  min-height: 480px;
 }
 @media (max-width: 700px) {
-  .case-spline-frame-wrap-pano { min-height: 220px; aspect-ratio: 16 / 9; }
+  .case-spline-frame-wrap-pano { min-height: 280px; aspect-ratio: 4 / 3; }
 }
 
 /* === Live-demo hero block (top-prominent) === */
