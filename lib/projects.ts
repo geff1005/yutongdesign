@@ -183,7 +183,7 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
       timeline: "Spring 2024 · RCA × Sodexo Studio Project Challenge (~10 weeks)",
       team: "4-person interdisciplinary team across IoT and HCI privacy, market analysis, mobile front-end, and UX with AI. I owned the AI flow architecture, the Smart Taste Index interface, scenario writing, and the final pitch.",
       impact:
-        "Won 3rd Place at the RCA × Sodexo Studio Project Challenge. Selected by Sodexo Europe for pilot implementation — Sodexo's engineering team is developing the system now for 1–2 year deployment.",
+        "A workplace dining service where Gen Z workers feel seen by what they eat, not lectured at by what they should eat. By replacing nutrition prescriptions with a personal taste memory and pairing every meal recommendation with an explainable 'why', SmaTaste shifts the canteen experience from compliance to consent. Won 3rd Place at the RCA × Sodexo Studio Project Challenge; selected by Sodexo Europe for 1–2 year pilot deployment.",
       challenge:
         `Sodexo asked us, across the RCA × Sodexo AiD Lab studio project, to design an interdisciplinary intervention for food-services digitalisation with implementation in mind for 2–5 years. The brief was wide — deliver a 'top-tier consumer experience' for hybrid-working Gen Z, while addressing social, societal, and environmental impacts.
 
@@ -320,7 +320,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       timeline: "Apr 2025 – Apr 2026 (12 months, ongoing maintenance)",
       team: "Founder + internal content lead + principal creators. I owned design, IA, deployment, and the content pipeline.",
       impact:
-        "170+ works officially listed via reusable automation. amacontest.com launched in 3 weeks and drew 400+ teams from across Asia.",
+        "A studio's brittle CMS replaced with a self-growing live archive — 170+ works now publish themselves, freeing the team to make work instead of file it. A parallel competition platform built in 3 weeks that gave 400+ design teams across Asia a real venue to compete in, instead of yet another social-media submission form.",
       challenge:
         "The studio's existing Framer back-end was breaking under maintenance — 170+ works were unmanageable to update. The founder asked for a 'fancy, color-matched' hero. But the studio's source work was already saturated, vivid, dense — adding visual density on top would create fatigue. And mid-project, an emergency: a 3-week window to launch amacontest.com (Asia Mapping Art Contest) with no extension.",
       research:
@@ -343,14 +343,77 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     description: "Next generation BCI Device for Esports Training",
     researchQuestion: "How will brain-computer interfaces shape our brains in the future?",
     intro:
-      "Esports is more about mentality than physicality. Pro-gamers might be making slower progress than necessary because their brains are limiting them.",
-    type: "Industrial Design",
-    year: 2023,
-    tags: ["Smart Systems", "Data Driven", "HCI"],
+      "A speculative BCI device for pro-esports training. Designed to make the cognitive layer — the part traditional training treats as invisible — visible to coach and player in real time.",
+    type: "Innovation Product Design · UX · HCI",
+    year: 2024,
+    tags: ["Industrial Design", "BCI", "HCI", "Speculative"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/ItIE3LjjpIh7r6cbWRLgv0KD41A.png",
     videoUrl: "",
     href: "/work/syncoe",
+    caseStudy: {
+      role: "Solo design lead · Sichuan Fine Arts BA Digital Media graduation track",
+      timeline: "2023–2024 graduation thesis (~16 weeks)",
+      team:
+        "Solo project, supervised. Field research with the A1 E-Sports team in Hangzhou (9 positions, 64 shortlisted candidates, average retirement age 24, ~100,000 youth-camp participants nationally). 45-player survey across psychological pressure, age, and stress dimensions.",
+      impact:
+        "A speculative BCI device that asks whether the next generation of competitive players should be measured by their EEG response curves the way runners are measured by their heart-rate zones. Designed to make mental fortitude — the layer esports training treats as invisible — visible to coaches and players in real time.",
+      challenge:
+        `China's pro-esports pipeline is expanding faster than its mental-health infrastructure. Players retire at 24. The same cortisol load as a race-car driver, sustained for hours daily, with no recognised pathway for psychological recovery. Existing training maps reps and reaction time, but says nothing about cognitive fatigue, rumination, or the mental ceilings that limit a player's ability to break through performance plateaus.`,
+      research:
+        `45-player survey across 'light/severe psychological pressure', age group, and stress comparison. Coach interviews at the Hangzhou A1 academy.
+
+Key insight from one coach: 'Esports athletes hit up to 400 movements on the keyboard and mouse per minute — four times the general population. The cortisol output is comparable to a race-car driver.' The same insight made the inverse possible: brainwave training has documented effects on rumination and cognitive recovery.`,
+      strategy:
+        `Three design commitments:
+
+- Make mental training visible. EEG + PPG + EDA + IR sensors feed a real-time cognitive dashboard for player and coach.
+- Design for the coach as much as the player. The neurofeedback loop only closes if the coach can read it during a match, not in a post-mortem PDF.
+- Modular, not monolithic. Bio-sensor band + detachable microphone + gaming earbuds + emotion-indicator LED ring — each component has a separate failure mode and a separate price point.`,
+      implementation:
+        `Hardware: multichannel bio-sensor headset with 4-channel active EEG (TDCS anodes/cathodes), PPG, EDA, and an IR sensor. Modular gaming earbuds, detachable microphone, flexible PCB band, indicator LED ring for coach-facing emotion state. CMF in PC ABS with sandblasted finish. Three head-size variants (140mm / 154mm / 179–186mm).
+
+Digital: training-review platform pairing EEG traces with match replays. Comparative metrics chart 'traditional training' (mechanical memory + repetition) against 'advanced training with EEG' (enhanced accuracy, faster skill execution, better mental performance, boosted visual working memory).
+
+Cutaway packaging model: easy carry plus organise on the go.`,
+      results:
+        `Two design outputs:
+
+- An EEG training device positioned for esports coaches and players, not generic 'brain training' consumers.
+- A neurofeedback training framework that pairs match data with cognitive state for shared coach-player review.
+
+Selected for the 27th Sichuan Fine Arts Institute Graduation Showcase (2024).`,
+      lessons:
+        `Three carry-forwards:
+
+- Mental health needs an interface, not just a campaign. Esports already has rich performance data; what was missing was a way for the cognitive layer to enter the conversation.
+- Two users, one device. A wearable that has to live on a player's head and on a coach's screen simultaneously is a different design problem than a consumer fitness tracker.
+- Speculative product, real measurement. Even if today's BCI fidelity is more aspirational than shipping-grade, the framework — pair every match with a cognitive-state trace — is real and adoptable now with cheaper sensors.`,
+      nextSteps:
+        `The framework generalises: any high-cognitive-load profession with a coach in the loop (chess, surgery training, music performance) could ride the same neurofeedback-plus-replay structure. The harder open question is what privacy looks like when a player's cognitive state is owned by their team.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/syncoe/portfolio/01-overview.jpg",
+          caption: "Project overview — esports mental-load research, A1 academy data, and the case for visible cognitive training.",
+        },
+        {
+          section: "research",
+          src: "/work/syncoe/portfolio/02-research-design.jpg",
+          caption: "Research and design — survey results, comparative training framework, and the human-centred AI positioning.",
+        },
+        {
+          section: "implementation",
+          src: "/work/syncoe/portfolio/03-product-structure.jpg",
+          caption: "Product display — multichannel bio-sensor headset, modular components, CMF treatment, and exploded structure view.",
+        },
+        {
+          section: "results",
+          src: "/work/syncoe/portfolio/04-platform.jpg",
+          caption: "Training-review platform — pairs EEG traces with match replays for shared coach–player review.",
+        },
+      ],
+    },
   },
   {
     slug: "beatrol",
@@ -358,14 +421,80 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     description: "L4 Safety Human-Vehicle Co-Driving Cockpit for Fatigue Intervention",
     researchQuestion: "How can AI-driven systems enhance safety in autonomous driving?",
     intro:
-      "Driving fatigue is a serious global problem. Existing in-vehicle systems can only alert, not intervene.",
-    type: "Service & Experience Design",
+      "A speculative L4 cockpit that treats driver fatigue as a design surface — not a single signal to wake someone up, but a graded handover where the vehicle takes more authority as the driver's attention degrades.",
+    type: "HMI · Experience Design · Product Design",
     year: 2023,
-    tags: ["Smart Systems", "UX UI", "HMI"],
+    tags: ["HMI", "UX", "Industrial Design", "Speculative", "AI"],
     featured: true,
     thumbnail: "/thumbnails/beatrol.jpg",
     videoUrl: "https://vimeo.com/817694480",
     href: "/work/beatrol",
+    caseStudy: {
+      role: "Solo design lead · Sichuan Fine Arts BA · Innovation Product Design",
+      timeline: "Spring–Summer 2023 (~12 weeks)",
+      team:
+        "Solo project, faculty supervised. Comparative experiment ran in a simulated cab with an EAGOLAB sensor set (EEG / ECG / EDA / forward-facing CV camera). Stimulus generators tested across tactile, vibration, and olfactory modules.",
+      impact:
+        "A speculative L4 cockpit that re-frames driver fatigue as a design surface — not a signal to wake the driver up, but a sequence for handing power back and forth between human and vehicle as attention degrades. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
+      challenge:
+        `Fatigue-related crashes account for around 30% of road accidents and a quarter of fatalities, with millions of incidents per year. The in-vehicle systems being shipped today can detect fatigue and beep — they cannot intervene. As autonomous driving moves toward L4, the design question stops being 'how do we wake a driver up?' and becomes 'how do we hand power back and forth between human and vehicle as the driver's attention degrades?'`,
+      research:
+        `Two questions framed the inquiry:
+
+- How do existing fatigue-driving interventions work — olfactory, auditory, visual, tactile — and where do they fail?
+- How can drivers and machines collaborate to reach a shared safety goal, instead of one yelling at the other?
+
+The literature converges on multimodality and on intervention curves keyed to fatigue level. The Karolinska Sleepiness Scale (KSS) anchors the measurement; the gap is in tying KSS bands to graded automation handovers.`,
+      strategy:
+        `Three design commitments anchor the build:
+
+- A fatigue state graph as the spine. Awake → Mild fatigue → Deep fatigue maps to intervention layers, not single triggers.
+- Sensors as a stack, not a single source. EEG, EDA, ECG, eye tracking, and a forward-facing CV camera feed a fused fatigue estimate.
+- Handover as a designed sequence. Active → semi-active → passive transition — the system steadily takes more control as the driver's fatigue band rises, ending in vehicle-led parking when 'deep fatigue' is detected.`,
+      implementation:
+        `Physical: a tactile steering wheel with programmable fabric (a Mini-LED display layer + flexible pressure sensors + vibration modules + camera location) that folds into a docking position when the system fully takes over.
+
+Digital: DIM dashboard with anti-fatigue pitch settings (mid fatigue 45–120 dB · deep fatigue 10–60 Hz), AI assistance with stand-by / listening / response visual feedback, and a multimodal intervention flow.
+
+Tested in a simulated cab with one driver across six lab sessions. SAM (subjective) and KSS (physiological) measures collected at each stimulus.`,
+      results:
+        `Three design outputs the project carries:
+
+- A fatigue-graded intervention framework — KSS bands as design surfaces.
+- A tactile-first steering wheel with a foldable handover state.
+- An anti-fatigue DIM dashboard with multimodal sensory layers (audio, vibration, light, scent).
+
+Submitted to industrial design competitions in 2023; the design language was framed as 'L4 sensory symbiosis space', not 'driver-monitoring product'.`,
+      lessons:
+        `Two carry-forwards:
+
+- Designing the handover, not the alarm. The hardest design problem wasn't detecting fatigue — sensors do that — it was choreographing the 30-second window where the system is taking over and the driver still feels like an agent, not a passenger.
+- Sensors are vocabulary, not data. EEG, EDA, eye-tracking each speak a different language about attention. The job was translating between them and surfacing only the parts the driver needed to feel.`,
+      nextSteps:
+        `Take the handover-as-choreography frame into other co-driving moments — lane-keeping under low confidence, urban-merge negotiations, valet handoff. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/beatrol/portfolio/01-overview.jpg",
+          caption: "Project overview — abstract, research questions, fatigue-state framing, and the 'L4 sensory symbiosis' positioning.",
+        },
+        {
+          section: "research",
+          src: "/work/beatrol/portfolio/02-system-prototype.jpg",
+          caption: "System map, multimodal output channels, KSS-based fatigue measurement, and the comparative experiment setup in the simulated cab.",
+        },
+        {
+          section: "strategy",
+          src: "/work/beatrol/portfolio/03-tactile-wheel.jpg",
+          caption: "Tactile steering wheel — programmable fabric with Mini-LEDs, pressure sensors, and folding intervention states.",
+        },
+        {
+          section: "implementation",
+          src: "/work/beatrol/portfolio/04-multimodal-ai.jpg",
+          caption: "Multimodal intervention process and DIM dashboard — voice, visual, vibration, tactile, audible, ambient light, and olfactory layers tied to fatigue level.",
+        },
+      ],
+    },
   },
   {
     slug: "sprayscape",
@@ -373,29 +502,140 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     description: "Street Art Trading Platform based on Spatial Computing for Urban Beautification",
     researchQuestion: "How can we harmonize graffiti culture with local community values?",
     intro:
-      "A digital platform leveraging spatial computing and AR to bridge graffiti artists with local communities.",
-    type: "Service Design",
-    year: 2025,
-    tags: ["UX UI", "Smart Systems"],
+      "A service-design proposal for a two-sided platform where graffiti artists and property owners negotiate space through spatial-computing previews — turning a tug-of-war over walls into a coordination problem.",
+    type: "Service Design · Culture Study · UX",
+    year: 2024,
+    tags: ["Service Design", "UX", "Spatial Computing", "AR"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/swsE03EafovXxtL53gEI0UQUr8.png",
     videoUrl: "https://vimeo.com/883701939",
     href: "/work/sprayscape",
+    caseStudy: {
+      role: "Solo design lead · Sichuan Fine Arts BA · Service Design / Culture Study / UX",
+      timeline: "2024 (~12 weeks)",
+      team:
+        "Solo project. Three case studies across Brooklyn (Graffiti Hall of Fame), Chongqing (UK), and Los Angeles. Site analysis across five style categories (taglines, murals, stickers, bombs, tags).",
+      impact:
+        "A service-design intervention that reframes graffiti from a legal liability into a negotiable urban asset. The proposal: a two-sided platform where artists and property owners agree on space through spatial-computing previews, so a city's walls become a coordination problem instead of a tug-of-war.",
+      challenge:
+        `Graffiti artists face a stack of structural barriers: tight legal frameworks, scarce sanctioned surfaces, limited display channels, and no infrastructure for repeat commissioning. Property owners and councils face the inverse problem: graffiti shows up uninvited, and there is no efficient way to commission what they actually want. Both sides lose: the artist loses creative freedom; the city loses both authentic culture and orderly walls.`,
+      research:
+        `Three case studies (Brooklyn, Chongqing, LA), site analysis across five style categories. Interviews with one artist, one buyer, and one community representative.
+
+Key insight, distilled from the interviews: 'Graffiti is updated quickly and lacks protection. It is distributed in many places — rooftops, under bridges, in parks. The graffiti management system is not well developed. Graffiti is in conflict with public organisations and is generally confrontational. Graffiti has aesthetic value and can beautify the city.'`,
+      strategy:
+        `A two-way platform connecting three perspectives:
+
+- Artists — sanctioned wall access, recognition, financial stability, urban-beautification credit.
+- Buyers — creative freedom, legal support, content matching for tone and culture.
+- Community — improved security, sustainable development, city exploration, emotional connection.
+
+Touchpoints across the loop: an AR platform to build a graffiti space, social-collaboration engagement, mapping contests, defined graffiti culture and public organisations, multi-party agreement synchronisation, digital platform, take-the-snap-as-an-internet-famous-site, special spatial-computing interaction layer, social media.`,
+      implementation:
+        `System map across three layers: an online platform connecting players with operators and merchants; a service system connecting ecosystem operators and stakeholders; and a mission frame oriented to high-quality street communities and cultural value, driving offline visits and a strong business ecology.
+
+Concept flow: Confirm → Creation Process → Outcome Check → Post & sharing.
+
+High-fidelity interface: hourly navigation, daily missions, creator profile, AR commission scout, reward levels, on-wall preview. Spatial layers: AR canvas overlays for real walls, viewable on phone or MR headset.`,
+      results:
+        `A complete service-design platform proposal — UI prototypes, system map, stakeholder map, and mission concept. Featured in Sichuan Fine Arts annual showcase.`,
+      lessons:
+        `Two carry-forwards:
+
+- The right question wasn't 'how do we control graffiti?' but 'how do we negotiate it?'. Designing the platform to give all three stakeholders something to defend turned a moral argument into a coordination problem.
+- Spatial computing as preview, not as product. Letting buyers see a piece on the wall before commissioning closes the trust gap that legal channels alone cannot.`,
+      nextSteps:
+        `The negotiation pattern generalises to other forms of contested public expression — busking, pop-up performance, political postering. Any domain where the artist, the audience, and the property owner are usually in a three-way standoff, and a digital previewing layer could let them rehearse the agreement first.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/sprayscape/portfolio/01-overview.jpg",
+          caption: "Project overview — three-city case study (Brooklyn, Chongqing, LA), site analysis, and the artist–buyer–community framing.",
+        },
+        {
+          section: "strategy",
+          src: "/work/sprayscape/portfolio/02-service-design.jpg",
+          caption: "Service strategy — three perspectives (artist, buyer, community), pains and gains, and the touchpoint roadmap from negotiation through publication.",
+        },
+        {
+          section: "implementation",
+          src: "/work/sprayscape/portfolio/03-platform-spatial.jpg",
+          caption: "Platform architecture — system map, stakeholder map, mission frame, and the Confirm → Create → Check → Share concept flow.",
+        },
+        {
+          section: "results",
+          src: "/work/sprayscape/portfolio/04-mr-experience.jpg",
+          caption: "High-fidelity interface and spatial layers — AR canvas overlays for real walls, on-wall preview, and the commission-scout flow.",
+        },
+      ],
+    },
   },
   {
     slug: "wildfire-whispers",
     title: "Wildfire-Whispers",
-    description: "Audio-visual mapping with gesture recognition",
+    description: "Data-driven immersive installation with embodied gesture design for climate awareness",
     researchQuestion: "How do humans coexist with extreme weather?",
     intro:
-      "An immersive interactive installation combining geometric wall-mounted physical work with interactive projection.",
-    type: "Interaction Design",
+      "A 3m×2m geometric installation paired with a satellite-data poster series. Real-time gesture recognition turns five years of wildfire records into something a body can feel.",
+    type: "Interaction Design · Information Visualization · Storytelling",
     year: 2024,
-    tags: ["Embodied Interaction"],
+    tags: ["Embodied Interaction", "Data Viz", "Installation", "Climate"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/oyzMDOHWVh6rgkG7cfZqhJwwXtU.png",
     videoUrl: "https://vimeo.com/883703201",
     href: "/work/wildfire-whispers",
+    caseStudy: {
+      role: "Solo design lead · Sichuan Fine Arts BA",
+      timeline: "Late 2022 – early 2024 (multi-stage build)",
+      team:
+        "Solo project. Source data: Fire Information for Resource Management System (FIRMS) wildfire database, 2017–2021. Inspired by the August 2022 Jinyun Mountain wildfire in Chongqing.",
+      impact:
+        "An immersive installation that turns five years of satellite wildfire data into something a body can feel. Gesture-driven projections plus a starburst-tree poster series invite a visitor to encounter climate intensity as a sensory event, not a chart.",
+      challenge:
+        `Wildfire awareness usually arrives as bar charts and dashboards — and gets scrolled past. As an undergraduate designer interested in how environmental data changes behaviour, the design question became: can the same data be felt rather than read, without trivialising the disaster, and without losing data integrity?`,
+      research:
+        `Inspiration drawn from Arrival — the alien language as circular, ink-blot symbols evoking the cyclic nature of time. That visual primitive translated cleanly to wildfire data: each fire has a start, an expansion arc, and a fade.
+
+Source data: global satellite wildfire records, 2017–2021 (FIRMS). The work uses both the data itself and a fictional frame ('In a futuristic world called Whispering Wildfire, wildfire has a deep connection with both humans and animals…') drawn through the project, mapped to UN SDG Goal 15 (Life on Land).`,
+      strategy:
+        `Three design commitments:
+
+- Two parts, one logic. Part 1 — a real-time installation with audio-visual mapping driven by gesture recognition. Part 2 — a data-visualisation poster series turning satellite wildfire data into 'starburst tree' compositions.
+- Body-first input. Leap Motion plus Unreal Engine for gesture-driven interaction; the visitor's hand becomes the cursor onto the data.
+- Role reversal as game design. In the interactive puzzle layer, players switch between 'New Human' and 'Animal' to experience two perspectives — as a New Human, you solve wildfire-related puzzles and protect the flora and fauna; as an Animal, you escape the flames and find food.`,
+      implementation:
+        `Hardware: a 3m × 2m geometric wall-mounted setup with responsive projections. Leap Motion sensor for gesture recognition. NVIDIA PhysX SDK + NVIDIA FLOW + a custom node-flow / dataflow pipeline.
+
+Software: real-time gesture-driven particle effects and parametric arrays of flowing, leaf-like shapes; the visitor's hand sets a sense of spatial physicality and energetic flow. Music visualisation as a secondary input.
+
+Visualisation series: selected global satellite data (2017–2021) → starburst-tree posters where fire severity drives the visual cadence.`,
+      results:
+        `Two design outputs:
+
+- An immersive embodied installation translating wildfire intensity into gesture-driven audio-visual response.
+- A data-visualisation poster series that holds up to scrutiny as both data work and as design objects.
+
+Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
+      lessons:
+        `Two carry-forwards:
+
+- Embodied data is design, not data. The same dataset earns a thousand different feelings depending on what the body does to interact with it. The design contribution sits in the gesture-to-mapping function, not in the dataset.
+- Speculative fiction earns the data its weight. Without the 'Whispering Wildfire' framing, the visualisations are pretty; with it, they have a story to live in.`,
+      nextSteps:
+        `The pattern — pair satellite environmental data with a body-first input layer — is portable to deforestation, glacial retreat, ocean acidification. Each one needs its own gestural vocabulary, but the underlying technique transfers.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/wildfire-whispers/portfolio/01-overview.jpg",
+          caption: "Project overview — concept, inspiration ('Arrival' as visual primitive), information architecture, and the New Human / Animal role-reversal frame.",
+        },
+        {
+          section: "implementation",
+          src: "/work/wildfire-whispers/portfolio/02-installation.jpg",
+          caption: "Installation build — gesture-driven audio-visual mapping with Leap Motion and Unreal, plus the satellite-data poster series and final exhibition at H.U.B Cherrytree Gallery, Chongqing.",
+        },
+      ],
+    },
   },
   {
     slug: "poeticform",
@@ -445,15 +685,62 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
   {
     slug: "meta-station",
     title: "Meta Station",
-    description: "Interactive concept UI theme for HUAWEI Co., Ltd.",
-    researchQuestion: "Will the Metaverse be the future of online network & remote work?",
-    type: "UI UX",
-    year: 2020,
-    tags: ["UX UI"],
+    description: "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction + 3D scene + day/night sensing.",
+    researchQuestion: "Will the metaverse be the future of online network and remote work?",
+    intro:
+      "A HUAWEI HarmonyOS theme that treats the lock screen as a small social place rather than a utility surface — designed during the UX internship at HUAWEI Co., Ltd in Chengdu.",
+    type: "UI · UX · 3D Scene",
+    year: 2022,
+    tags: ["UX", "UI", "3D", "Theme Design"],
     featured: true,
     thumbnail: "https://framerusercontent.com/images/q1KWuBoFjXN9Sdr3v9JbwL5QQW0.png",
     videoUrl: "https://vimeo.com/883705290",
     href: "/work/meta-station",
+    caseStudy: {
+      role: "UX Intern · HUAWEI Co., Ltd · Chengdu, China",
+      timeline: "2022 (internship)",
+      team:
+        "UX intern under the HUAWEI Theme Design team. Designed the lockscreen interaction system, the day/night state mode, the 3D scene, and the multi-wallpaper variants for a single theme product.",
+      impact:
+        "A HUAWEI HarmonyOS theme that treats the lock screen as a small social place rather than a utility surface. Day–night sensing, anecdote-pressing, and a lowpoly meta-city create a phone front-door that feels inhabited — mid-pandemic, when remote work made the boundary between online and offline porous.",
+      challenge:
+        `When the pandemic made online socialisation and online office the default, mobile interfaces were still designed around tap-and-go utility. The brief: imagine a HarmonyOS theme where the phone surface itself feels like a lowpoly virtual social space — somewhere between a wallpaper, a desktop pet, and a metaverse outpost. Built for the era of the full-fledged Internet.`,
+      research:
+        `Style direction: 3D bright tone, virtual nostalgic, modernism, fashion style, future-of-the-past 80s–90s. Target age groups: 21–35-year-old hot-company employees and content seekers, the same fashion as the world.
+
+Design philosophy borrowed from one internal note: 'Use the concept of meta-station to allow users to predict scenarios while navigating, creating fun in entertainment.'`,
+      strategy:
+        `Three design commitments:
+
+- The lock screen is the front door, not the doormat. Anecdote-pressing, swipe-left-or-right to look around, hidden eggs in the map.
+- Day and night sensing. The same scene shifts colour, light, and mood based on time. Day-time mode and night-time mode share characters and city, not just a hue swap.
+- Multiple wallpapers, single language. The wallpapers (city, desktop, weather widgets) sit inside the same lowpoly scene grammar so the theme feels like one place, not a folder of unrelated assets.`,
+      implementation:
+        `3D scene authoring + UI theme design + lockscreen interaction logic. Outputs: the meta-station 3D city environment, multiple wallpaper variants, day/night transition, and a weather-icon family for the theme's UI surfaces.
+
+Lockscreen interaction sequence: 01 — When the desktop is pressed, a floating panorama of the meta-station appears. 02 — When released, the view returns to the city centre. Anecdote-pressing reveals scene details; the user can swipe left or right to move the scene's POV and look for hidden eggs in the map.`,
+      results:
+        `A complete HUAWEI Theme product — UI theme + lockscreen interaction + 3D scene + day/night mode + multi-wallpaper system + weather-icon family. Shipped through HUAWEI Themes (Meta-Station UI).`,
+      lessons:
+        `Two carry-forwards:
+
+- A theme is a tiny game world, not a skin. Once the lockscreen has anecdotes, swipeable POV, and hidden details, it stops being decoration and starts being a place users return to.
+- Time as a design surface. Day/night isn't just a colour-palette switch — it's an opportunity to give the theme a life cycle that maps to the user's day.`,
+      nextSteps:
+        `Bring the same scene-as-place pattern into other small-screen surfaces — Apple Watch faces, in-flight entertainment lockscreens, smart-fridge ambient displays. Anywhere a screen sits in a person's life for hours but is treated as a static surface.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/meta-station/portfolio/01-overview.jpg",
+          caption: "Project overview — meta-station theme concept, target audience, and the lockscreen-as-front-door framing.",
+        },
+        {
+          section: "implementation",
+          src: "/work/meta-station/portfolio/02-3d-scenes.jpg",
+          caption: "3D scene system, lockscreen interaction (anecdote-pressing + swipeable POV), day/night mode, multiple wallpaper variants, and the weather-icon family.",
+        },
+      ],
+    },
   },
   {
     slug: "neon-nike",
