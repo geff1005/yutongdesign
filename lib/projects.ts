@@ -17,6 +17,8 @@ export type Project = {
   thumbnail: string;
   videoUrl?: string;
   splineEmbeds?: { url: string; caption?: string; section?: 'research' | 'strategy' | 'implementation' | 'results'; emphasis?: 'live-demo' | 'panoramic' }[];
+  /** Figma prototype embeds — clickable in-page demos. */
+  figmaEmbeds?: { url: string; caption?: string; viewport: 'mobile' | 'desktop'; audience?: 'diner' | 'kitchen' | 'general' }[];
   href: string;
   /** Optional rich case-study sections. Each is plain text or simple
    *  markdown — paragraphs split on blank lines, list lines start with "- ".
@@ -178,6 +180,32 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
     featured: true,
     thumbnail: "/thumbnails/smataste.jpg",
     href: "/work/smataste",
+    figmaEmbeds: [
+      {
+        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=883%3A1940&node-id=1014-1918&viewport=-6203%2C1291%2C0.43&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1014%3A1918&embed-host=share",
+        viewport: "mobile",
+        audience: "diner",
+        caption: "Diner — Smart Taste Index onboarding. Spicy tolerance, cuisine, and label preferences seed the AI Memory.",
+      },
+      {
+        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=796%3A295&node-id=796-301&viewport=18%2C450%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=796%3A301&embed-host=share",
+        viewport: "mobile",
+        audience: "diner",
+        caption: "Diner — Talk to AI and order in seconds. Conversational ordering with health recommendation and AI Feedback before the lunch line.",
+      },
+      {
+        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=1276%3A5226&node-id=1276-5233&p=f&viewport=90%2C251%2C0.18&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1276%3A5233&embed-host=share",
+        viewport: "desktop",
+        audience: "kitchen",
+        caption: "Kitchen — Forecast ingredient consumption. AI Ingredients Forecast turns the canteen's history and dietary trend into a ranked stock list.",
+      },
+      {
+        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=883%3A1219&node-id=1276-2925&p=f&viewport=403%2C85%2C0.12&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1276%3A2925&embed-host=share",
+        viewport: "desktop",
+        audience: "kitchen",
+        caption: "Kitchen — Let chef know customer's flavour. Flavor Dietary Trend Report plus AI Recipes Generation for next week's menu.",
+      },
+    ],
     caseStudy: {
       role: "Lead UX and AI architecture · Research Assistant (RCA × Sodexo AiD Lab)",
       timeline: "Spring 2024 · RCA × Sodexo Studio Project Challenge (~10 weeks)",
@@ -291,11 +319,6 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
           section: 'implementation',
           src: '/work/smataste/r3/r3-08.jpg',
           caption: "Community plus B-side dashboards. Diners share, rate and grow; the kitchen reads the resulting flavour signal as Let chef know customer's flavour and Forecast ingredient consumption — the closing loop where C-side memory becomes B-side insight.",
-        },
-        {
-          section: 'results',
-          src: '/work/smataste/r3/r3-10.jpg',
-          caption: 'Tasting the Future — projected impact: 25% less time on R&D management, 90% user satisfaction, AI forecasting projected to shave 30% prep time and 15% ingredient cost, with zero-waste packaging across the pack.',
         },
       ],
     },

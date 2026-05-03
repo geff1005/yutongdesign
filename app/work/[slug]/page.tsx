@@ -156,6 +156,44 @@ export default async function WorkDetailPage({
         );
       })()}
 
+      {/* Figma prototype embeds — clickable mini-demos at top of case study */}
+      {project.figmaEmbeds && project.figmaEmbeds.length > 0 && (
+        <section className="case-section case-figma-hero">
+          <div className="case-live-demo-eyebrow eyebrow">★ Live Prototype</div>
+          <p className="case-figma-intro">
+            Clickable Figma prototypes — drive the diner flow on mobile, the kitchen flow on desktop.
+          </p>
+          <div className="case-figma-grid">
+            {project.figmaEmbeds.map((fe, i) => (
+              <figure
+                key={i}
+                className={
+                  "case-figma-tile " +
+                  (fe.viewport === "mobile"
+                    ? "case-figma-tile-mobile"
+                    : "case-figma-tile-desktop")
+                }
+              >
+                <div className="case-figma-frame-wrap">
+                  <iframe
+                    src={fe.url}
+                    className="case-figma-frame"
+                    loading="lazy"
+                    allowFullScreen
+                    title={fe.caption ?? `${project.title} prototype ${i + 1}`}
+                  />
+                </div>
+                {fe.caption && (
+                  <figcaption className="case-figma-caption">
+                    {fe.caption}
+                  </figcaption>
+                )}
+              </figure>
+            ))}
+          </div>
+        </section>
+      )}
+
       {/* Impact promoted to a top-prominent block (lead with results) */}
       {cs?.impact && (
         <section className="case-section case-impact-hero">

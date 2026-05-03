@@ -1504,3 +1504,73 @@ section { position: relative; }
   line-height: 1.6;
   color: hsl(var(--text) / 0.85);
 }
+
+/* === Figma prototype embeds — clickable mini-demos at top of case study === */
+.case-figma-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.case-figma-intro {
+  margin: 0 0 8px;
+  font-size: 14px;
+  color: hsl(var(--muted));
+  letter-spacing: 0.01em;
+}
+.case-figma-grid {
+  display: grid;
+  gap: 28px;
+  /* Two columns on desktop: pair mobile + desktop or 2 mobile / 2 desktop */
+  grid-template-columns: 1fr;
+}
+@media (min-width: 900px) {
+  .case-figma-grid { grid-template-columns: repeat(2, 1fr); }
+}
+.case-figma-tile {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 16px;
+  background: hsl(var(--surface));
+  padding: 16px;
+}
+.case-figma-frame-wrap {
+  position: relative;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+.case-figma-tile-mobile .case-figma-frame-wrap {
+  /* Native Figma share viewport for mobile prototypes is 393x852 */
+  aspect-ratio: 393 / 852;
+  max-width: 393px;
+  margin: 0 auto;
+}
+.case-figma-tile-desktop .case-figma-frame-wrap {
+  /* Desktop prototypes: 1200x860 ≈ 1.39 */
+  aspect-ratio: 1200 / 860;
+  width: 100%;
+}
+.case-figma-frame {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: transparent;
+}
+.case-figma-caption {
+  font-size: 13px;
+  line-height: 1.55;
+  color: hsl(var(--muted));
+  padding: 4px 6px 0;
+}
+@media (max-width: 700px) {
+  .case-figma-tile { padding: 12px; }
+  .case-figma-grid { gap: 20px; }
+}
