@@ -49,12 +49,12 @@ export const PROJECTS: Project[] = [
     slug: "co-cerebral",
     title: "Co Cerebral · EduOS",
     description:
-      "A voice-first agentic learning environment. Each of the Six Thinking Hats becomes its own embodied LLM agent — distinct voice, presence, and reasoning style. Built on Next.js 15, Spline 3D, Vercel AI SDK, and Web Speech, running on a £0 stack.",
+      "A voice-first agentic learning environment for higher education. Each of the Six Thinking Hats becomes its own embodied LLM agent — distinct voice, presence, and reasoning style — so a study group can dialogue with the framework instead of reading about it.",
     researchQuestion:
-      "An RCA thesis on what AI in education feels like when each cognitive mode has a voice and a body.",
+      "Reimagining AI as a co-thinker for higher education — what does collaborative learning beyond automation feel like?",
     intro:
-      "Co Cerebral is my RCA Design Futures thesis. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct agent. The thinking partner you talk to instead of read.",
-    type: "AI · Agentic UX · Live Build",
+      "Co Cerebral is my RCA Design Futures thesis — Reimagining AI as Co-thinker: Shaping Cerebral Life in Higher Education by 2050. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct embodied agent. A thinking companion you dialogue with rather than prompt.",
+    type: "Design Futures Thesis · Agentic UX · AI",
     year: 2026,
     tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
     featured: true,
@@ -77,13 +77,15 @@ export const PROJECTS: Project[] = [
     caseStudy: {
       role: "Sole designer and engineer · RCA Design Futures thesis",
       timeline: "Active build (2026, ongoing)",
-      team: "Solo build with supervisor support. Met a potential cofounder at Vercel Builder's Night who is interested in the education angle.",
+      team: "Sole researcher and designer · supervised at the Royal College of Art Design Futures programme. Co-speculation workshop run with interdisciplinary students and tutors; questionnaire study targeted at AI-supported group learning.",
       impact:
-        "End-to-end working prototype on a £0 stack. Cofounder conversation in motion; thesis no longer just a demo.",
+        "A Design Futures thesis reimagining AI as a co-thinker for higher education by 2050. Through foresight, speculative design, and co-creation, the project proposes a preferable future where embodied AI agents scaffold critical reflection, collective decision-making, and richer learning outcomes for students and teachers — instead of accelerating cognitive offloading, automation bias, and motivational displacement.",
       challenge:
-        `Most AI-in-education products today are static chat interfaces — text in, text out, no embodiment. As my RCA thesis on AI in Education, Co Cerebral asks a different question: what if each cognitive mode in a structured thinking framework had its own embodied agent — voice, visual presence, distinct personality — and you dialogued with the framework instead of reading about it?
+        `Most AI-in-education tools today are static chat interfaces — text in, text out, no embodiment. They optimise for fluency, not for friction. The result, well-documented across the AI-in-education literature: cognitive offloading, motivational displacement, automation bias, and an erosion of the critical thinking and creativity that group learning is supposed to cultivate.
 
-The thesis is also a product hypothesis. The framing came from Edward de Bono's Six Thinking Hats — White (facts), Red (emotion), Black (critical), Yellow (optimistic), Green (creative), Blue (process) — where structured cognitive disagreement produces better thinking than open-ended chat.`,
+This thesis asks a different question, framed in the Design Futures tradition: what if each cognitive mode in a structured thinking framework had its own embodied agent — voice, visual presence, distinct reasoning style — and a study group dialogued with the framework rather than reading about it?
+
+The framing draws on Edward de Bono's Six Thinking Hats — White (facts), Red (emotion), Black (critical), Yellow (optimistic), Green (creative), Blue (process) — where structured cognitive disagreement is treated as the design surface, not a bug to smooth over.`,
       research:
         `The research flow embedded above maps how a learner moves through the system: from a single question, through the rotation of perspectives, into synthesis — voice-mediated throughout.
 
@@ -115,28 +117,28 @@ It is a learning interface designed around cognitive disagreement, not consensus
 - Voice out: Web Speech Synthesis
 - Deploy: Vercel Hobby
 
-The stack is intentionally lean. A thesis that costs money to run is a thesis that doesn't survive past the deadline.`,
+The stack is intentionally lean — small enough that the artefact survives the academic year and remains accessible to readers, peers, and educators after the thesis defends.`,
       results:
-        `The live demo above is the working prototype. Drag the scene to inspect each hat's embodiment; speak to summon an agent. The system is functional end-to-end and still iterating.
+        `Three design outcomes carry the thesis:
 
-Three thesis outcomes anchor the project:
+- A Co-Speculation toolkit — for cohorts and educators to imagine educational futures together. Used in the RCA workshop with interdisciplinary students and tutors.
+- The CoCereb AI Co-thinker artefact — the embodied demo above. Each hat's voice and presence is dialogue, not interface; the framework lives in the room with the learner.
+- A Roadmap toward Co-Intelligence 2050 — the strategic frame that ties the artefact and toolkit to the larger shift in higher education.
 
-- A Co-Speculation toolkit for imagining educational futures with cohorts.
-- The CoCereb AI Co-thinker artefact itself — the demo embedded above.
-- A Roadmap toward Co-Intelligence 2050, the strategic frame that connects the artefact to the larger education shift.
+For students and teachers, the design intent is concrete: scaffold critical reflection, support better collective decision-making, and reduce the risks the literature documents — cognitive offloading, automation bias, motivational displacement.
 
-Met a potential cofounder at Vercel Builder's Night who is interested in the education angle. Conversations are early; the project is no longer just a thesis demo, it is a possible product.`,
+The live demo above is the working artefact. Drag the scene to inspect each hat's embodiment; speak to summon an agent.`,
       lessons:
-        `Two things stand out so far:
+        `Two design lessons carry forward:
 
-- Constraints over features. Adding voice was hard but it changed the entire interaction quality. The hardest design decision wasn't a feature; it was choosing modality.
-- Spec stability. The Apple Note brief that started this rebuild has barely changed in two months — locking the tech stack early let me ship instead of debate.`,
+- Constraints over features. Adding voice was difficult, but it changed the interaction quality more than any feature could. The hardest design decision wasn't what to add; it was choosing modality.
+- Embodiment is the contribution, not the LLM. Giving each hat a voice and a body shifted how participants spoke to the system — closer to a panel of distinct minds than a chat with a chatbot. The design intervention sits in that shift, not in the underlying model.`,
       nextSteps:
-        `Immediate: publish the Spline scenes to public URLs and open the demo to cohort testing.
+        `Immediate: open the embodied demo to cohort testing — gather metacognition signals from interdisciplinary student groups using the Six Hats rotation in real coursework.
 
-Then: decide K-12, corporate training, or adult learner as the wedge audience — currently undecided.
+Then: extend the AI literacy framework with co-teaching strategies for educators and a competency framework for educational AI agents — both named in the thesis as research outputs and still in development.
 
-Eventually: if the cofounder conversation goes anywhere, productise the methodology framework, not the Six Hats specifically.`,
+Longer view: take the methodology — embodied, dissent-based, voice-mediated cognitive scaffolds — into other domains where collective reasoning under AI is fragile, not just higher education.`,
       media: [
         {
           section: "strategy",
