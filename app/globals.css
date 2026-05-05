@@ -159,11 +159,30 @@ a { color: inherit; text-decoration: none; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 50;
+  pointer-events: none;
+}
+
+/* Desktop pill nav — centered. Hidden on mobile. */
+.nav-wrap-desktop {
   display: flex;
   justify-content: center;
   padding: 20px 16px 0;
-  pointer-events: none;
 }
+@media (max-width: 767px) {
+  .nav-wrap-desktop { display: none; }
+}
+
+/* Mobile bar — JZ logo on left, hamburger on right. Visible <768px. */
+.nav-wrap-mobile {
+  display: none;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 0;
+}
+@media (max-width: 767px) {
+  .nav-wrap-mobile { display: flex; }
+}
+
 .nav-pill {
   pointer-events: auto;
   display: inline-flex;
@@ -181,6 +200,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 .nav-logo {
+  pointer-events: auto;
   width: 36px; height: 36px;
   border-radius: 999px;
   padding: 1.5px;
@@ -193,6 +213,10 @@ a { color: inherit; text-decoration: none; }
 .nav-logo:hover {
   transform: scale(1.1);
   background: linear-gradient(270deg, var(--accent-a) 0%, var(--accent-b) 100%);
+}
+/* Mobile logo — bigger touch target (44px+) */
+.nav-logo-mobile {
+  width: 44px; height: 44px;
 }
 .nav-logo-inner {
   width: 100%; height: 100%;
@@ -211,9 +235,6 @@ a { color: inherit; text-decoration: none; }
   height: 20px;
   background: hsl(var(--stroke));
   margin: 0 4px;
-}
-@media (max-width: 520px) {
-  .nav-divider { display: none; }
 }
 
 .nav-link {
@@ -260,6 +281,110 @@ a { color: inherit; text-decoration: none; }
   align-items: center;
   gap: 4px;
   color: hsl(var(--text));
+}
+
+/* === Mobile hamburger button === */
+.nav-hamburger {
+  pointer-events: auto;
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--stroke));
+  background: hsl(var(--surface) / 0.85);
+  backdrop-filter: blur(12px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+.nav-hamburger:hover {
+  border-color: hsl(var(--text) / 0.4);
+}
+.nav-hamburger-icon {
+  position: relative;
+  width: 18px;
+  height: 12px;
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-hamburger-icon span {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  border-radius: 2px;
+  background: hsl(var(--text));
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  transform-origin: center;
+}
+.nav-hamburger-icon.open span:nth-child(1) {
+  transform: translateY(5px) rotate(45deg);
+}
+.nav-hamburger-icon.open span:nth-child(2) {
+  transform: translateY(-5px) rotate(-45deg);
+}
+
+/* === Mobile fullscreen overlay === */
+.nav-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 49;
+  background: hsl(var(--bg) / 0.96);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-overlay.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.nav-overlay-inner {
+  width: 100%;
+  max-width: 360px;
+  padding: 0 24px;
+  transform: translateY(8px);
+  opacity: 0;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+}
+.nav-overlay.open .nav-overlay-inner {
+  transform: translateY(0);
+  opacity: 1;
+}
+.nav-overlay-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.nav-overlay-link {
+  display: flex;
+  align-items: center;
+  min-height: 56px;
+  padding: 12px 8px;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 7vw, 36px);
+  font-weight: 400;
+  line-height: 1.1;
+  color: hsl(var(--text));
+  border-bottom: 1px solid hsl(var(--stroke) / 0.4);
+  transition: color 0.15s ease, padding-left 0.15s ease;
+  text-decoration: none;
+}
+.nav-overlay-link:hover, .nav-overlay-link:active {
+  color: hsl(var(--text));
+  padding-left: 14px;
+}
+.nav-overlay-link-cta {
+  margin-top: 16px;
+  border-bottom: none;
+  font-style: italic;
+  color: hsl(var(--muted));
 }
 
 /* === Hero === */
