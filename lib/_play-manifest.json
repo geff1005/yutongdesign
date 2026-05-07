@@ -1,0 +1,238 @@
+{
+  "items": [
+    {
+      "slug": "3d-crystals",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-crystals.jpg",
+      "aspectRatio": "800/933",
+      "name": "Crystals",
+      "year": 2026
+    },
+    {
+      "slug": "3d-fuzzy-emerald",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-fuzzy-emerald.jpg",
+      "aspectRatio": "8/5",
+      "name": "Fuzzy Emerald",
+      "year": 2026
+    },
+    {
+      "slug": "3d-fuzzy-magenta",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-fuzzy-magenta.jpg",
+      "aspectRatio": "8/5",
+      "name": "Fuzzy Magenta",
+      "year": 2026
+    },
+    {
+      "slug": "3d-iridescent-wave",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-iridescent-wave.jpg",
+      "aspectRatio": "16/9",
+      "name": "Iridescent Wave",
+      "year": 2026
+    },
+    {
+      "slug": "3d-organic-green",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-organic-green.jpg",
+      "aspectRatio": "1600/1213",
+      "name": "Organic Green",
+      "year": 2026
+    },
+    {
+      "slug": "3d-organic-worm",
+      "category": "3d-art",
+      "kind": "image",
+      "src": "/play/seed/3d-organic-worm.jpg",
+      "aspectRatio": "8/5",
+      "name": "Organic Worm",
+      "year": 2026
+    },
+    {
+      "slug": "craft-blank-canvas",
+      "category": "fine-art-and-crafts",
+      "kind": "image",
+      "src": "/play/seed/craft-blank-canvas.jpg",
+      "aspectRatio": "400/521",
+      "name": "Blank Canvas",
+      "year": 2026
+    },
+    {
+      "slug": "craft-paper-collage",
+      "category": "fine-art-and-crafts",
+      "kind": "image",
+      "src": "/play/seed/craft-paper-collage.jpg",
+      "aspectRatio": "1600/2133",
+      "name": "Paper Collage",
+      "year": 2026
+    },
+    {
+      "slug": "craft-white-cloth",
+      "category": "fine-art-and-crafts",
+      "kind": "image",
+      "src": "/play/seed/craft-white-cloth.jpg",
+      "aspectRatio": "400/711",
+      "name": "White Cloth",
+      "year": 2026
+    },
+    {
+      "slug": "installation-eyeballs",
+      "category": "fine-art-and-crafts",
+      "kind": "image",
+      "src": "/play/seed/installation-eyeballs.jpg",
+      "aspectRatio": "1600/2137",
+      "name": "Eyeballs",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-bauhaus-exhibit",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-bauhaus-exhibit.jpg",
+      "aspectRatio": "16/9",
+      "name": "Bauhaus Exhibit",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-bauhaus-letters",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-bauhaus-letters.jpg",
+      "aspectRatio": "16/9",
+      "name": "Bauhaus Letters",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-book-pixel",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-book-pixel.jpg",
+      "aspectRatio": "1600/1007",
+      "name": "Book Pixel",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-glitch",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-glitch.jpg",
+      "aspectRatio": "800/471",
+      "name": "Glitch",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-nms-sp307",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-nms-sp307.jpg",
+      "aspectRatio": "800/901",
+      "name": "Nms Sp307",
+      "year": 2026
+    },
+    {
+      "slug": "graphic-print-spreads",
+      "category": "graphic-design",
+      "kind": "image",
+      "src": "/play/seed/graphic-print-spreads.jpg",
+      "aspectRatio": "1600/1051",
+      "name": "Print Spreads",
+      "year": 2026
+    },
+    {
+      "slug": "interaction-synth-hands",
+      "category": "interaction-design",
+      "kind": "image",
+      "src": "/play/seed/interaction-synth-hands.jpg",
+      "aspectRatio": "16/9",
+      "name": "Synth Hands",
+      "year": 2026
+    },
+    {
+      "slug": "logo-zhu-mark",
+      "category": "logo-design",
+      "kind": "image",
+      "src": "/play/seed/logo-zhu-mark.jpg",
+      "aspectRatio": "1/1",
+      "name": "Zhu Mark",
+      "year": 2026
+    },
+    {
+      "slug": "photo-blue-spotlight",
+      "category": "photography",
+      "kind": "image",
+      "src": "/play/seed/photo-blue-spotlight.jpg",
+      "aspectRatio": "1600/2133",
+      "name": "Blue Spotlight",
+      "year": 2026
+    },
+    {
+      "slug": "photo-light-painting",
+      "category": "photography",
+      "kind": "image",
+      "src": "/play/seed/photo-light-painting.jpg",
+      "aspectRatio": "800/533",
+      "name": "Light Painting",
+      "year": 2026
+    },
+    {
+      "slug": "photo-moon-figure",
+      "category": "photography",
+      "kind": "image",
+      "src": "/play/seed/photo-moon-figure.jpg",
+      "aspectRatio": "320/321",
+      "name": "Moon Figure",
+      "year": 2026
+    },
+    {
+      "slug": "photo-piano-purple",
+      "category": "photography",
+      "kind": "image",
+      "src": "/play/seed/photo-piano-purple.jpg",
+      "aspectRatio": "1600/1603",
+      "name": "Piano Purple",
+      "year": 2026
+    },
+    {
+      "slug": "photo-silhouette",
+      "category": "photography",
+      "kind": "image",
+      "src": "/play/seed/photo-silhouette.jpg",
+      "aspectRatio": "16/9",
+      "name": "Silhouette",
+      "year": 2026
+    },
+    {
+      "slug": "illustration-memoji-avatar",
+      "category": "illustration",
+      "kind": "image",
+      "src": "/play/seed/illustration-memoji-avatar.jpg",
+      "aspectRatio": "1/1",
+      "name": "Memoji Avatar",
+      "year": 2026
+    },
+    {
+      "slug": "illustration-pink-figure",
+      "category": "illustration",
+      "kind": "image",
+      "src": "/play/seed/illustration-pink-figure.jpg",
+      "aspectRatio": "1600/901",
+      "name": "Pink Figure",
+      "year": 2026
+    },
+    {
+      "slug": "illustration-yellow-black-pop",
+      "category": "illustration",
+      "kind": "image",
+      "src": "/play/seed/illustration-yellow-black-pop.jpg",
+      "aspectRatio": "1600/2133",
+      "name": "Yellow Black Pop",
+      "year": 2026
+    }
+  ]
+}

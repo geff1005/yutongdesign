@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "sync": "tsx scripts/sync-from-notion.ts",
-    "sync-images": "node scripts/sync-images.mjs"
+    "sync-images": "node scripts/sync-images.mjs",
+    "sync-play": "node scripts/sync-play.mjs"
   },
   "dependencies": {
     "@notionhq/client": "^2.3.0",

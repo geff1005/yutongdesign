@@ -92,6 +92,27 @@ Currently scaffolded (using Tier-prefix folder convention as of 2026-04-29):
 
 Folder convention: `{Tier}{NN}-{Slug-EN}` (no spaces, no parens, no hashtags). Tier prefix sorts in Finder. See `docs/RENAME_PLAN.md` for full mapping.
 
+# Play track image sync (0-Category ↔ /play)
+
+The `/play` page is auto-populated from the iCloud `0-Category ` folder. Source of truth is on disk; the website re-syncs on demand.
+
+**To add a poster / GIF / video to `/play`:**
+1. Drop the file into `~/Design hub/0-Category /<Behance category>/`. Folder names follow the `*Xx_<full name>` pattern (e.g. `*Gr-Graphic_Brainding`, `*Ph_Photography`).
+2. Run `npm run sync-play` from the repo root.
+3. Commit + push.
+
+The sync script (`scripts/sync-play.mjs`):
+- walks the 17 category subfolders
+- compresses each image to `public/play/seed/<slug>.jpg` (max 1600px wide, JPEG q80) via macOS `sips`
+- copies GIFs and MP4s straight through
+- writes `lib/_play-manifest.json` with `{slug, category, kind, src, aspectRatio, name, year}` per item
+
+`lib/play.ts` merges this manifest with a `MANUAL` array for hand-curated entries (Spline live demos, items needing custom chips/descriptions/external URLs). Manual entries win on slug clash.
+
+**To customise an auto-imported item** (better name, custom chips, description), add a manual entry to `MANUAL` in `lib/play.ts` with the same slug — the merge keeps the manual version and drops the manifest version.
+
+Folder → category mapping is hard-coded in `FOLDER_TO_SLUG` inside `scripts/sync-play.mjs`. If a new top-level category folder appears in `0-Category `, add it there.
+
 # Editing Conventions
 
 ## Hard rules — do not break
