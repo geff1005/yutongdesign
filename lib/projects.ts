@@ -327,11 +327,11 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
     slug: "skgplus",
     title: "SKG+",
     description:
-      "End-to-end web rebuild + CMS automation for an immersive entertainment studio. Plus a 3-week emergency launch of amacontest.com — 400+ teams from across Asia.",
+      "Rebuilt skgplus.cn as a CMS-driven live archive. Shipped amacontest.com in three weeks; 400+ Asian teams competed.",
     researchQuestion:
-      "How do you turn a studio's chaotic content backend into a launchable presence — and persuade the founder that restraint serves the work?",
+      "How does a studio's brittle backend become a presence that publishes itself?",
     intro:
-      "SKG+ is an immersive entertainment studio in mainland China. As contract Web Designer (remote, Apr 2025–Apr 2026), I rebuilt skgplus.cn from a brittle Framer back-end into a CMS-driven showroom — and shipped a parallel competition platform amacontest.com under a 3-week emergency timeline that drew 400+ teams from across Asia.",
+      "SKG+ is an immersive entertainment studio in mainland China. I joined as remote contract Web Designer for a year and rebuilt skgplus.cn into a CMS-driven live archive. Then a three-week emergency: amacontest.com, a competition platform that drew 400+ teams across Asia.",
     type: "Web Design · CMS Automation · Brand",
     year: 2025,
     tags: ["Web Design", "CMS", "Brand", "Real Client", "Automation"],
@@ -384,7 +384,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       challenge:
         `China's pro-esports pipeline is expanding faster than its mental-health infrastructure. Players retire at 24. The same cortisol load as a race-car driver, sustained for hours daily, with no recognised pathway for psychological recovery. Existing training maps reps and reaction time, but says nothing about cognitive fatigue, rumination, or the mental ceilings that limit a player's ability to break through performance plateaus.`,
       research:
-        `45-player survey across 'light/severe psychological pressure', age group, and stress comparison. Coach interviews at the Hangzhou A1 academy.
+        `45-player survey across light-vs-severe psychological pressure, age group, and stress comparison. Coach interviews at the Hangzhou A1 academy.
 
 Key insight from one coach: 'Esports athletes hit up to 400 movements on the keyboard and mouse per minute — four times the general population. The cortisol output is comparable to a race-car driver.' The same insight made the inverse possible: brainwave training has documented effects on rumination and cognitive recovery.`,
       strategy:
@@ -394,7 +394,7 @@ Key insight from one coach: 'Esports athletes hit up to 400 movements on the key
 - Design for the coach as much as the player. The neurofeedback loop only closes if the coach can read it during a match, not in a post-mortem PDF.
 - Modular, not monolithic. Bio-sensor band + detachable microphone + gaming earbuds + emotion-indicator LED ring — each component has a separate failure mode and a separate price point.`,
       implementation:
-        `Hardware: multichannel bio-sensor headset with 4-channel active EEG (TDCS anodes/cathodes), PPG, EDA, and an IR sensor. Modular gaming earbuds, detachable microphone, flexible PCB band, indicator LED ring for coach-facing emotion state. CMF in PC ABS with sandblasted finish. Three head-size variants (140mm / 154mm / 179–186mm).
+        `Hardware: multichannel bio-sensor headset with 4-channel active EEG (TDCS anodes and cathodes), PPG, EDA, and an IR sensor. Modular gaming earbuds, detachable microphone, flexible PCB band, indicator LED ring for coach-facing emotion state. CMF in PC ABS with sandblasted finish. Three head-size variants (140 mm, 154 mm, and 179–186 mm).
 
 Digital: training-review platform pairing EEG traces with match replays. Comparative metrics chart 'traditional training' (mechanical memory + repetition) against 'advanced training with EEG' (enhanced accuracy, faster skill execution, better mental performance, boosted visual working memory).
 
@@ -456,7 +456,7 @@ Selected for the 27th Sichuan Fine Arts Institute Graduation Showcase (2024).`,
       role: "Solo design lead · Sichuan Fine Arts BA · Innovation Product Design",
       timeline: "Spring–Summer 2023 (~12 weeks)",
       team:
-        "Solo project, faculty supervised. Comparative experiment ran in a simulated cab with an EAGOLAB sensor set (EEG / ECG / EDA / forward-facing CV camera). Stimulus generators tested across tactile, vibration, and olfactory modules.",
+        "Solo project, faculty supervised. Comparative experiment ran in a simulated cab with an EAGOLAB sensor set (EEG, ECG, EDA, plus a forward-facing CV camera). Stimulus generators tested across tactile, vibration, and olfactory modules.",
       impact:
         "A speculative L4 cockpit that re-frames driver fatigue as a design surface — not a signal to wake the driver up, but a sequence for handing power back and forth between human and vehicle as attention degrades. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
       challenge:
@@ -477,7 +477,7 @@ The literature converges on multimodality and on intervention curves keyed to fa
       implementation:
         `Physical: a tactile steering wheel with programmable fabric (a Mini-LED display layer + flexible pressure sensors + vibration modules + camera location) that folds into a docking position when the system fully takes over.
 
-Digital: DIM dashboard with anti-fatigue pitch settings (mid fatigue 45–120 dB · deep fatigue 10–60 Hz), AI assistance with stand-by / listening / response visual feedback, and a multimodal intervention flow.
+Digital: DIM dashboard with anti-fatigue pitch settings (mid fatigue 45–120 dB · deep fatigue 10–60 Hz), AI assistance with stand-by, listening, and response visual feedback, and a multimodal intervention flow.
 
 Tested in a simulated cab with one driver across six lab sessions. SAM (subjective) and KSS (physiological) measures collected at each stimulus.`,
       results:
@@ -534,7 +534,7 @@ Submitted to industrial design competitions in 2023; the design language was fra
     videoUrl: "https://vimeo.com/883701939",
     href: "/work/sprayscape",
     caseStudy: {
-      role: "Solo design lead · Sichuan Fine Arts BA · Service Design / Culture Study / UX",
+      role: "Solo design lead · Sichuan Fine Arts BA · Service design, culture study, UX",
       timeline: "2024 (~12 weeks)",
       team:
         "Solo project. Three case studies across Brooklyn (Graffiti Hall of Fame), Chongqing (UK), and Los Angeles. Site analysis across five style categories (taglines, murals, stickers, bombs, tags).",
@@ -627,7 +627,7 @@ Source data: global satellite wildfire records, 2017–2021 (FIRMS). The work us
 - Body-first input. Leap Motion plus Unreal Engine for gesture-driven interaction; the visitor's hand becomes the cursor onto the data.
 - Role reversal as game design. In the interactive puzzle layer, players switch between 'New Human' and 'Animal' to experience two perspectives — as a New Human, you solve wildfire-related puzzles and protect the flora and fauna; as an Animal, you escape the flames and find food.`,
       implementation:
-        `Hardware: a 3m × 2m geometric wall-mounted setup with responsive projections. Leap Motion sensor for gesture recognition. NVIDIA PhysX SDK + NVIDIA FLOW + a custom node-flow / dataflow pipeline.
+        `Hardware: a 3m × 2m geometric wall-mounted setup with responsive projections. Leap Motion sensor for gesture recognition. NVIDIA PhysX SDK + NVIDIA FLOW + a custom node-flow and dataflow pipeline.
 
 Software: real-time gesture-driven particle effects and parametric arrays of flowing, leaf-like shapes; the visitor's hand sets a sense of spatial physicality and energetic flow. Music visualisation as a secondary input.
 
@@ -708,7 +708,7 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
   {
     slug: "meta-station",
     title: "Meta Station",
-    description: "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction + 3D scene + day/night sensing.",
+    description: "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction, 3D scene, and day-and-night sensing.",
     researchQuestion: "Will the metaverse be the future of online network and remote work?",
     intro:
       "A HUAWEI HarmonyOS theme that treats the lock screen as a small social place rather than a utility surface — designed during the UX internship at HUAWEI Co., Ltd in Chengdu.",
@@ -723,7 +723,7 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
       role: "UX Intern · HUAWEI Co., Ltd · Chengdu, China",
       timeline: "2022 (internship)",
       team:
-        "UX intern under the HUAWEI Theme Design team. Designed the lockscreen interaction system, the day/night state mode, the 3D scene, and the multi-wallpaper variants for a single theme product.",
+        "UX intern under the HUAWEI Theme Design team. Designed the lockscreen interaction system, the day-and-night state mode, the 3D scene, and the multi-wallpaper variants for a single theme product.",
       impact:
         "A HUAWEI HarmonyOS theme that treats the lock screen as a small social place rather than a utility surface. Day–night sensing, anecdote-pressing, and a lowpoly meta-city create a phone front-door that feels inhabited — mid-pandemic, when remote work made the boundary between online and offline porous.",
       challenge:
@@ -739,16 +739,16 @@ Design philosophy borrowed from one internal note: 'Use the concept of meta-stat
 - Day and night sensing. The same scene shifts colour, light, and mood based on time. Day-time mode and night-time mode share characters and city, not just a hue swap.
 - Multiple wallpapers, single language. The wallpapers (city, desktop, weather widgets) sit inside the same lowpoly scene grammar so the theme feels like one place, not a folder of unrelated assets.`,
       implementation:
-        `3D scene authoring + UI theme design + lockscreen interaction logic. Outputs: the meta-station 3D city environment, multiple wallpaper variants, day/night transition, and a weather-icon family for the theme's UI surfaces.
+        `3D scene authoring + UI theme design + lockscreen interaction logic. Outputs: the meta-station 3D city environment, multiple wallpaper variants, day-and-night transition, and a weather-icon family for the theme's UI surfaces.
 
 Lockscreen interaction sequence: 01 — When the desktop is pressed, a floating panorama of the meta-station appears. 02 — When released, the view returns to the city centre. Anecdote-pressing reveals scene details; the user can swipe left or right to move the scene's POV and look for hidden eggs in the map.`,
       results:
-        `A complete HUAWEI Theme product — UI theme + lockscreen interaction + 3D scene + day/night mode + multi-wallpaper system + weather-icon family. Shipped through HUAWEI Themes (Meta-Station UI).`,
+        `A complete HUAWEI Theme product — UI theme + lockscreen interaction + 3D scene + day-and-night mode + multi-wallpaper system + weather-icon family. Shipped through HUAWEI Themes (Meta-Station UI).`,
       lessons:
         `Two carry-forwards:
 
 - A theme is a tiny game world, not a skin. Once the lockscreen has anecdotes, swipeable POV, and hidden details, it stops being decoration and starts being a place users return to.
-- Time as a design surface. Day/night isn't just a colour-palette switch — it's an opportunity to give the theme a life cycle that maps to the user's day.`,
+- Time as a design surface. Day and night isn't just a colour-palette switch — it's an opportunity to give the theme a life cycle that maps to the user's day.`,
       nextSteps:
         `Bring the same scene-as-place pattern into other small-screen surfaces — Apple Watch faces, in-flight entertainment lockscreens, smart-fridge ambient displays. Anywhere a screen sits in a person's life for hours but is treated as a static surface.`,
       media: [
@@ -760,7 +760,7 @@ Lockscreen interaction sequence: 01 — When the desktop is pressed, a floating 
         {
           section: "implementation",
           src: "/work/meta-station/portfolio/02-3d-scenes.jpg",
-          caption: "3D scene system, lockscreen interaction (anecdote-pressing + swipeable POV), day/night mode, multiple wallpaper variants, and the weather-icon family.",
+          caption: "3D scene system, lockscreen interaction (anecdote-pressing + swipeable POV), day-and-night mode, multiple wallpaper variants, and the weather-icon family.",
         },
       ],
     },

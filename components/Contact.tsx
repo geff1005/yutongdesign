@@ -4,10 +4,13 @@ import { useLayoutEffect, useRef } from "react";
 import { useHls, HLS_SRC } from "./useHls";
 import { SITE } from "@/lib/site";
 
+// Order matches CV contact-line convention: email → GitHub → LinkedIn (Jess's
+// recommendation — site → email → phone → LinkedIn; "site" is implicit since
+// you're on it, "phone" is private and not exposed in footer).
 const SOCIALS = [
-  { name: "LinkedIn", icon: "in", href: SITE.socials.linkedin },
-  { name: "GitHub", icon: "◉", href: SITE.socials.github },
   { name: "Email", icon: "@", href: SITE.socials.email },
+  { name: "GitHub", icon: "◉", href: SITE.socials.github },
+  { name: "LinkedIn", icon: "in", href: SITE.socials.linkedin },
 ];
 
 const MARQUEE = new Array(10).fill(SITE.marquee);

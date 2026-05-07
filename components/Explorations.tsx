@@ -1,29 +1,33 @@
 "use client";
 
-import { useLayoutEffect, useRef, useState } from "react";
-import { PlaceholderImg } from "./PlaceholderImg";
+import Link from "next/link";
+import { useLayoutEffect, useRef } from "react";
+import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
 
-type Card = { hue: number; label: string };
-
-const LEFT: Card[] = [
-  { hue: 220, label: "Study 01" },
-  { hue: 40, label: "Study 02" },
-  { hue: 320, label: "Study 03" },
-];
-const RIGHT: Card[] = [
-  { hue: 140, label: "Study 04" },
-  { hue: 20, label: "Study 05" },
-  { hue: 260, label: "Study 06" },
-];
+// Take up to 6 Play items as parallax preview cards. Skip items that have
+// no thumbnail / src yet (so adding empty placeholders to lib/play.ts
+// won't show up here).
+function previewItems(): PlayItem[] {
+  return PLAY_ITEMS.filter(
+    (p) => p.thumbnail || p.src || p.kind === "spline"
+  ).slice(0, 6);
+}
 
 export function Explorations() {
   const sectionRef = useRef<HTMLElement | null>(null);
   const contentRef = useRef<HTMLDivElement | null>(null);
   const leftColRef = useRef<HTMLDivElement | null>(null);
   const rightColRef = useRef<HTMLDivElement | null>(null);
-  const [lightbox, setLightbox] = useState<Card | null>(null);
+
+  const items = previewItems();
+  // If we have less than 2 items, skip the parallax — just CTA the section
+  const showParallax = items.length >= 2;
+  const half = Math.ceil(items.length / 2);
+  const leftItems = items.slice(0, half);
+  const rightItems = items.slice(half);
 
   useLayoutEffect(() => {
+    if (!showParallax) return;
     let cancelled = false;
     let cleanup: (() => void) | undefined;
 
@@ -45,7 +49,6 @@ export function Explorations() {
           pin: contentRef.current,
           pinSpacing: false,
         });
-
         gsap.to(leftColRef.current, {
           y: -200,
           ease: "none",
@@ -75,7 +78,7 @@ export function Explorations() {
       cancelled = true;
       cleanup?.();
     };
-  }, []);
+  }, [showParallax]);
 
   return (
     <section className="explorations" ref={sectionRef} id="explorations">
@@ -88,66 +91,57 @@ export function Explorations() {
             Visual <em>playground</em>
           </h2>
           <p className="section-sub" style={{ marginBottom: 28 }}>
-            Motion studies, type tests, and interface sketches — work that lives
-            outside client briefs.
+            Posters, motion studies, GIFs, 3D scenes — work that lives outside client briefs.
           </p>
-          <a
+          <Link
             className="view-all-btn"
             style={{ display: "inline-flex" }}
-            href="#"
+            href="/play"
           >
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
-              Dribbble <span aria-hidden>↗</span>
+              Visit playground <span aria-hidden>→</span>
             </span>
-          </a>
+          </Link>
         </div>
       </div>
 
-      <div className="parallax-gallery">
-        <div className="parallax-cols">
-          <div className="parallax-col left" ref={leftColRef}>
-            {LEFT.map((c) => (
-              <div
-                key={c.label}
-                className="parallax-card"
-                onClick={() => setLightbox(c)}
-              >
-                <PlaceholderImg label={c.label} hue={c.hue} className="" />
-              </div>
-            ))}
-          </div>
-          <div className="parallax-col right" ref={rightColRef}>
-            {RIGHT.map((c) => (
-              <div
-                key={c.label}
-                className="parallax-card"
-                onClick={() => setLightbox(c)}
-              >
-                <PlaceholderImg label={c.label} hue={c.hue} className="" />
-              </div>
-            ))}
+      {showParallax && (
+        <div className="parallax-gallery">
+          <div className="parallax-cols">
+            <div className="parallax-col left" ref={leftColRef}>
+              {leftItems.map((p) => (
+                <PreviewCard key={p.slug} item={p} />
+              ))}
+            </div>
+            <div className="parallax-col right" ref={rightColRef}>
+              {rightItems.map((p) => (
+                <PreviewCard key={p.slug} item={p} />
+              ))}
+            </div>
           </div>
         </div>
-      </div>
-
-      <div
-        className={"lightbox" + (lightbox ? " open" : "")}
-        onClick={() => setLightbox(null)}
-      >
-        {lightbox && (
-          <PlaceholderImg label={lightbox.label} hue={lightbox.hue} className="" />
-        )}
-        <button
-          className="lightbox-close"
-          onClick={(e) => {
-            e.stopPropagation();
-            setLightbox(null);
-          }}
-        >
-          ✕
-        </button>
-      </div>
+      )}
     </section>
+  );
+}
+
+function PreviewCard({ item }: { item: PlayItem }) {
+  const thumb = item.thumbnail ?? item.src ?? null;
+  const inner = thumb ? (
+    /* eslint-disable-next-line @next/next/no-img-element */
+    <img
+      src={thumb}
+      alt={item.name ?? ""}
+      className="parallax-card-img"
+      loading="lazy"
+    />
+  ) : (
+    <div className="parallax-card-fallback">{item.name?.charAt(0) ?? "•"}</div>
+  );
+  return (
+    <Link href="/play" className="parallax-card">
+      {inner}
+    </Link>
   );
 }
