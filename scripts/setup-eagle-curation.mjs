@@ -27,13 +27,15 @@ const TREE = {
       "B07-GreenMove",
       "B08-Massbot-Digital-Legacy",
       {
-        "B09-AIGC-Short-Film": [
+        "B09-Generative-AI-Direction": [
+          "00-Overview-and-Direction",
           "01-Runway-Raw-Clips",
           "02-Generated-Stills",
           "03-Image-to-Video-Clips",
-          "04-Edit-Selects",
-          "05-Hero-Candidates",
-          "06-References-and-Prompts",
+          "04-Process-and-Workflows",
+          "05-Edit-Selects",
+          "06-Hero-Candidates",
+          "07-References-and-Prompts",
         ],
       },
       "C01-Runway-ISEE",

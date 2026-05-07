@@ -87,13 +87,15 @@ Website Curation
 │   ├── A07-Wildfire-Whispers
 │   ├── A08-Meta-Station-Huawei
 │   ├── B06-Poetic-Form
-│   └── B09-AIGC-Short-Film
+│   └── B09-Generative-AI-Direction
+│       ├── 00-Overview-and-Direction
 │       ├── 01-Runway-Raw-Clips
 │       ├── 02-Generated-Stills
 │       ├── 03-Image-to-Video-Clips
-│       ├── 04-Edit-Selects
-│       ├── 05-Hero-Candidates
-│       └── 06-References-and-Prompts
+│       ├── 04-Process-and-Workflows
+│       ├── 05-Edit-Selects
+│       ├── 06-Hero-Candidates
+│       └── 07-References-and-Prompts
 ├── 02-Play Category Picks
 │   ├── *3D_3D Art
 │   ├── *Gr-Graphic_Brainding
@@ -109,7 +111,7 @@ Website Curation
 
 An item can stay in its original Mine folder and also be added to these curation folders inside Eagle. That is the point: Mine preserves history, curation folders express website intent.
 
-For thematic AIGC film projects, use `01-Case Study Picks/B09-AIGC-Short-Film` first. Keep raw Runway generations and long clips there until they are edited down; only move polished loops/stills into `02-Play Category Picks` or `03-Homepage Playground`.
+For thematic Generative AI projects, use `01-Case Study Picks/B09-Generative-AI-Direction` first. Keep raw Runway generations, image generations, prompts, and long clips there until they are edited down; only move polished loops/stills into `02-Play Category Picks` or `03-Homepage Playground`.
 
 ## Website Sync
 
