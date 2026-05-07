@@ -11,6 +11,7 @@
     "audit-eagle-mine": "node scripts/audit-eagle-mine.mjs",
     "map-eagle-cases": "node scripts/generate-eagle-case-mapping.mjs",
     "setup-eagle-curation": "node scripts/setup-eagle-curation.mjs",
+    "sync-eagle-case-assets": "node scripts/sync-eagle-case-assets.mjs",
     "sync-images": "node scripts/sync-images.mjs",
     "sync-eagle-play": "node scripts/sync-eagle-play.mjs",
     "sync-play": "node scripts/sync-play.mjs"

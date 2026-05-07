@@ -1,5 +1,103 @@
 {
+  "smataste": [
+    {
+      "section": "research",
+      "src": "/work/smataste/research/problem-statement-and-analysis.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/smataste/research/research-and-evaluation.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/business-presentation-strategy.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/design-strategies-and-models.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/implementation-plan.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/innovation-strategy.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/product-life-cycle.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/revenue-model-flow-chart.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/smataste/strategy/validation-process.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype-for-alessio.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype-b1.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype-b2.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype1.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype2.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/smataste/results/prototype-all.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
   "co-cerebral": [
+    {
+      "section": "research",
+      "src": "/work/co-cerebral/research/stakeholder-map-01.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
     {
       "section": "strategy",
       "src": "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
@@ -45,6 +143,1110 @@
     {
       "section": "results",
       "src": "/work/co-cerebral/results/03-cscw-poster.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/co-cerebral/results/preferebral-future-artifact-six-role-of-.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/co-cerebral/results/preferebral-future-artifact-six-role-of-.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "skgplus": [
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250512173658-24-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250512173709-22-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250512173709-23-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250512173713-21-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250514045315-15-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20250514045315-17-94.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20260306065544-78-3008.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20260306070032-81-3008.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20260306074435-104-3008.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/weixin-image-20260306105432-134-3008.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "research",
+      "src": "/work/skgplus/research/ref-schlosslichtspiele-karlsruhe-zkmk.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/skgplus/strategy/function-section-draft-planning.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "beatrol": [
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/a3-1--eagle-lepg7ielbttu2.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/a3-2--eagle-lepg7iek5t8kn.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/a3-3--eagle-lepg7iekfw2o0.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/a3-4--eagle-lepg7iejct11s.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-10-11-01-20-40--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-11-05-22-21-12--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-11-05-22-22-13--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-11-05-23-17-13--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-12-10-19-35-44--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-12-10-19-43-56--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/beatrol/results/clipboard---2023-12-10-19-45-37--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "syncoe": [
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/clipboard---2023-11-14-21-12-55--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/clipboard---2023-12-10-19-15-45--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/clipboard---2023-12-10-19-18-28--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/clipboard---2023-12-10-19-22-58--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/clipboard---2023-12-10-19-27-02--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---1---eagle-lloo6iyrouyux.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---2---eagle-lloo6iyrscpn9.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---2---eagle-lloo6iysoyc4h.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---3---eagle-lloo6iytszom4.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---4---eagle-lloo6iytksw8g.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---5---eagle-lloo6iytb4bw6.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---5---eagle-lloo6iyuqae11.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---6---eagle-llooesr6zlfcw.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---8---eagle-lloo6iyup6zmt.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/slide-16-9---88---eagle-lloo6iyp7rngj.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/syncoe/results/v31-upscayl-4x-ultramix-balanced---eagle.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "sprayscape": [
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/clipboard---2023-11-04-13-26-24--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/clipboard---2023-11-04-13-34-35--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/clipboard---2023-11-05-22-33-14--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/clipboard---2023-11-05-22-33-34--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/graffiti-spray-paint--eagle-lojm2akomnox.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/portfolio-yutong-zhu-02--eagle-mmbs9u7qc.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/portfolio-yutongzhu-03--eagle-mmbs86g6eq.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/portfolio-yutongzhu-04--eagle-mmbs86g7lr.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/portfolio-yutongzhu-05--eagle-mmbs86g71d.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-v5-7-10--eagle-mmbs4nkpketoe.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-z-1080p-60-09121727---16-03--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-z-1080p-60-09121727---42-08--.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-z-1080p-60-09121727---5-00--e.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/sprayscape-uiux---eagle-mmbssqw2i30uo.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/index---eagle-mmbschdgk4n4s.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/local-case-study--eagle-mmbs4nko99lw8.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/sprayscape/results/people-and-issues--eagle-mmbs4nkozbpdd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "wildfire-whispers": [
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/15--eagle-l7po69zl0aww3.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/16--eagle-l7po69zmtfn5u.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/17--eagle-l7po69zom0ytm.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/17-1--eagle-l7po69zmktg1x.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/17-2--eagle-l7po69zna2ull.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/17-3--eagle-l7po69zn9jppx.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/clipboard---2023-11-05-23-12-12--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/clipboard---2023-11-05-23-12-39--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/clipboard---2023-11-15-01-46-08--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/2-92--eagle-l3qu1voxnezn8.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/22-70--eagle-l3qu21su13rlx.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/27-30--eagle-l3qu2avdb0ug2.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/30-51--eagle-l3qu2mxyyitq7.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/30-58--eagle-l3ptvbgwffjrc.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/36-30--eagle-l3ptvivbyscey.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/38-93--eagle-l3ptvopdbzx1i.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/45-38--eagle-l3ptw0xs7xw57.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/48-76--eagle-l3qu2yxx9axxl.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/52-41--eagle-l3qu39so43cab.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/wildfire-whispers/results/53-29--eagle-l3qu3iyqd6fco.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "meta-station": [
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/denoised-beautyf--eagle-l2vlyhzbff0va.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/denoised-beautyg--eagle-l2vlyhzbpisg1.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/denoised-beautyh--eagle-l2vlyhzbtn0sh.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/desktop---1--eagle-l53m1bnuefjbz.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/desktop---26--eagle-l53m0azjc4u0x.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/desktop---6--eagle-l53m0azjhukma.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/daylight0074--eagle-l2vlzbmr0t9ci.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/daylight0116--eagle-l2vlzbmseoqsl.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-day-demain-0000--eagle-l2vlwfb94zun9.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0060--eagle-l2vlwfb9kh568.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0062--eagle-l2vlwfb9bygej.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0072--eagle-l2vlwfb9fymva.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0107--eagle-l2vlwfb9q5jln.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0119--eagle-l2vlwfb9ef9w9.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0123--eagle-l2vlwfb903ytd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/de-show-demain-0126--eagle-l2vlwfb99z5j7.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/night0066--eagle-l2vlzbmu3o9ht.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/eagle-l2vlwfb9a2azd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/20220615182214--eagle-l53m0azjpkv8v.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/20220615182220--eagle-l53m0azjltqz0.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/20220615182224--eagle-l53m0azj4x0t1.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/meta-station/results/20220615182230--eagle-l53m0azjzcotd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "poeticform": [
+    {
+      "section": "research",
+      "src": "/work/poeticform/research/artificial-intelligence-reference--eagle.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/processed-image--eagle-lvi349bc335vm.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/imagine-prompt-a-1---eagle-lvww7cg9a98m3.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/imagine-prompt-a--eagle-lvl0ay5mkrf85.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/imagine-prompt-a--eagle-lvww7cg9x1uzs.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/rhino-gh---eagle-lnwjhndsrjvj2.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/ai---eagle-lnxxtmxdv7erq.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/ai---eagle-lnxxtoeiek0yc.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/ai---eagle-lnxxtqeb8xb4y.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "strategy",
+      "src": "/work/poeticform/strategy/ai---eagle-lnxxtrwo0loec.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/00127-2780645044-taihu-no-humans-still-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/00150-3480943757--lora-taihu1-000010-0-6.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/00176-2058288373--lora-taihu1-000010-0-6.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/00184-409497475--lora-taihu1-000010-0-8-.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/1100--eagle-ltrhwmv1e2wh0.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/1200--eagle-ltrhwmv5ag91c.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/200--eagle-ltrh8dg6fwdpd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/3d-cgi-forest-green-houdini-nature-proce.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/500--eagle-ltrhwmudw05cj.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/800--eagle-ltrh8dgs4whi0.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/900--eagle-ltrh8dgwha7eg.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/mark-xx--eagle-lp73a47w5d3mp.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/a-minimalistic-3d-upscale-s--eagle-lvi36.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/a-minimalistic-3d-upscale-s--eagle-lvi36.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/a-minimalistic-3d-upscale-s--eagle-lvldl.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/a-minimalistic-3d-upscale-s--eagle-lvldq.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/a-minimalistic-3d-upscale-s--eagle-lvle5.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/my-images-11---eagle-lvlabrkep6nvm.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/my-images-24---eagle-lvlabrgcx6c6v.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/my-images-5-1-3---eagle-lvww2nutp1bwn.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/ac22d847c5138b342a33cc3182b545c--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/poeticform/results/13---eagle-lo3r8grlpgwla.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "botanictrum": [
+    {
+      "section": "strategy",
+      "src": "/work/botanictrum/strategy/eagle-lbu531iu23ntc.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/clipboard---2022-08-29-17-45-43--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/clipboard---2022-08-29-17-50-55--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/clipboard---2023-10-11-00-45-33--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/slide-16-9---1--eagle-lb8pvqkim5sqy.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----13-36--eagle-lniwmxvy0uqv.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----16-82--eagle-lniwn2azhkhf.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----22-43--eagle-lniwn6wyr79f.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----27-08--eagle-lniwnaweyrds.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----34-74--eagle-lniwngemoj9o.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----40-25--eagle-lkvbslilv316.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----5-57--eagle-lkvbrthx0sqt0.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----63-94--eagle-lkvbssoqtroa.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----64-69--eagle-lnjq0751sj3n.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----73-30--eagle-lniwo268uri6.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----85-34--eagle-lniwo6vgt70v.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----88-07--eagle-lniwoa4ejoqd.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----9-05--eagle-lniwmqpfolb9r.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/botanictrum----9-58--eagle-lkvbs307ggs1s.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/nas---eagle-l7elwi5odn5bq.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/20221203151041--eagle-lb87ttrswkaex.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/202212031510412--eagle-lb87ttrsc9nht.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/botanictrum/results/202212031510414--eagle-lb87ttrsum27k.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    }
+  ],
+  "lunacy": [
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/10--eagle-l7po69zke0fw4.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/11--eagle-l7po69zkcrh6s.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/12--eagle-l7po69zls81hy.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/14--eagle-l7po69zlg0gtm.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-52-51--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-53-42--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-54-02--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-54-49--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-55-12--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-55-57--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2022-06-22-00-56-53--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2023-11-05-23-31-43--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2023-11-05-23-32-49--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2023-11-05-23-33-02--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/clipboard---2023-11-22-16-53-07--eagle-l.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/group-55---eagle-l2voujffbe808.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/card01-group-52--eagle-l2vouuqdbtfvy.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/card02-group-53--eagle-l2vouuqddry5c.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/card03-group-54--eagle-l2vouuqdbm8m3.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/eagle-l2vouo99b87gv.jpg",
+      "caption": "",
+      "aspectRatio": "16/9"
+    },
+    {
+      "section": "results",
+      "src": "/work/lunacy/results/1---59-61--eagle-l3n3xo1suin97.jpg",
       "caption": "",
       "aspectRatio": "16/9"
     }

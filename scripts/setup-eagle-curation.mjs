@@ -26,18 +26,6 @@ const TREE = {
       "B06-Poetic-Form",
       "B07-GreenMove",
       "B08-Massbot-Digital-Legacy",
-      {
-        "B09-Generative-AI-Direction": [
-          "00-Overview-and-Direction",
-          "01-Runway-Raw-Clips",
-          "02-Generated-Stills",
-          "03-Image-to-Video-Clips",
-          "04-Process-and-Workflows",
-          "05-Edit-Selects",
-          "06-Hero-Candidates",
-          "07-References-and-Prompts",
-        ],
-      },
       "C01-Runway-ISEE",
       "C02-SP-AI-Collaboration",
       "C03-Mercury-Piano",
@@ -68,7 +56,15 @@ const TREE = {
 };
 
 async function api(path, options) {
-  const response = await fetch(`${API}${path}`, options);
+  let response;
+  try {
+    response = await fetch(`${API}${path}`, options);
+  } catch {
+    console.error(
+      `Could not connect to Eagle at ${API}. Open Eagle and try again.`
+    );
+    process.exit(1);
+  }
   if (!response.ok) throw new Error(`${path} failed: ${response.status}`);
   const body = await response.json();
   if (body.status !== "success") throw new Error(`${path} failed: ${JSON.stringify(body)}`);

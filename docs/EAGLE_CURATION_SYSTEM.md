@@ -86,16 +86,7 @@ Website Curation
 │   ├── A06-SprayScape
 │   ├── A07-Wildfire-Whispers
 │   ├── A08-Meta-Station-Huawei
-│   ├── B06-Poetic-Form
-│   └── B09-Generative-AI-Direction
-│       ├── 00-Overview-and-Direction
-│       ├── 01-Runway-Raw-Clips
-│       ├── 02-Generated-Stills
-│       ├── 03-Image-to-Video-Clips
-│       ├── 04-Process-and-Workflows
-│       ├── 05-Edit-Selects
-│       ├── 06-Hero-Candidates
-│       └── 07-References-and-Prompts
+│   └── B06-Poetic-Form
 ├── 02-Play Category Picks
 │   ├── *3D_3D Art
 │   ├── *Gr-Graphic_Brainding
@@ -111,7 +102,22 @@ Website Curation
 
 An item can stay in its original Mine folder and also be added to these curation folders inside Eagle. That is the point: Mine preserves history, curation folders express website intent.
 
-For thematic Generative AI projects, use `01-Case Study Picks/B09-Generative-AI-Direction` first. Keep raw Runway generations, image generations, prompts, and long clips there until they are edited down; only move polished loops/stills into `02-Play Category Picks` or `03-Homepage Playground`.
+Do not create a case study just because the material uses AIGC, Runway, Midjourney, ComfyUI, or another tool. Those are methods and evidence, not the story container. For product / UIUX case studies, sort assets by documentation role: problem context, research evidence, design process, final outcome, demo video, docs, and raw source files.
+
+Use the Design Hub project-folder convention as the real story structure:
+
+```text
+{Project}/
+├── 00-cover/      hero or thumbnail candidate
+├── 01-research/   problem context, market/user evidence, references
+├── 02-process/    prompts, workflow screenshots, iterations, decision diagrams
+├── 03-final/      polished screens, final stills, result frames, pitch images
+├── 04-video/      Runway clips, image-to-video output, demos, screen recordings
+├── 05-docs/       decks, briefs, PDFs, reports
+└── raw/           source files, long unedited clips, project files
+```
+
+For AIGC-heavy work, place raw generated batches and long unedited Runway output in `raw/` or `04-video/`; only promote selected frames and edited clips into `03-final/` when they support the result section.
 
 ## Website Sync
 
