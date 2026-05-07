@@ -26,6 +26,16 @@ const TREE = {
       "B06-Poetic-Form",
       "B07-GreenMove",
       "B08-Massbot-Digital-Legacy",
+      {
+        "B09-AIGC-Short-Film": [
+          "01-Runway-Raw-Clips",
+          "02-Generated-Stills",
+          "03-Image-to-Video-Clips",
+          "04-Edit-Selects",
+          "05-Hero-Candidates",
+          "06-References-and-Prompts",
+        ],
+      },
       "C01-Runway-ISEE",
       "C02-SP-AI-Collaboration",
       "C03-Mercury-Piano",
@@ -112,10 +122,28 @@ for (const [rootName, groups] of Object.entries(TREE)) {
 
     const refreshedRoot = findChild(roots, rootName);
     const group = findChild(refreshedRoot.children ?? [], groupName);
-    for (const childName of childNames) {
+    for (const childConfig of childNames) {
+      if (typeof childConfig === "string") {
+        const childResult = await ensureChild(group.children ?? [], childConfig, group.id);
+        if (childResult.created) created++;
+        else reused++;
+        continue;
+      }
+
+      const [[childName, grandChildNames]] = Object.entries(childConfig);
       const childResult = await ensureChild(group.children ?? [], childName, group.id);
       if (childResult.created) created++;
       else reused++;
+
+      roots = await listFolders();
+      const refreshedRoot = findChild(roots, rootName);
+      const refreshedGroup = findChild(refreshedRoot.children ?? [], groupName);
+      const child = findChild(refreshedGroup.children ?? [], childName);
+      for (const grandChildName of grandChildNames) {
+        const grandChildResult = await ensureChild(child.children ?? [], grandChildName, child.id);
+        if (grandChildResult.created) created++;
+        else reused++;
+      }
     }
     roots = await listFolders();
   }
