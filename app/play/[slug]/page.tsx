@@ -17,7 +17,7 @@ export async function generateMetadata({
   const item = findPlayItem(slug);
   if (!item) return {};
   return {
-    title: `${item.name} — Julian Zhu / Play`,
+    title: `${item.name} — Play · Julian Zhu`,
     description: item.description,
   };
 }
@@ -43,13 +43,15 @@ export default async function PlayDetailPage({
       <header className="play-detail-hero">
         <div className="eyebrow">Play · {item.year}</div>
         <h1 className="play-detail-title">{item.name}</h1>
-        <div className="play-tile-chips play-detail-chips">
-          {item.chips.map((c) => (
-            <span key={c} className="play-tile-chip">
-              {c}
-            </span>
-          ))}
-        </div>
+        {item.chips && item.chips.length > 0 && (
+          <div className="play-tile-chips play-detail-chips">
+            {item.chips.map((c) => (
+              <span key={c} className="play-tile-chip">
+                {c}
+              </span>
+            ))}
+          </div>
+        )}
         {item.description && (
           <p className="play-detail-desc">{item.description}</p>
         )}
