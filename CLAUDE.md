@@ -101,6 +101,16 @@ The `/play` page is auto-populated from the iCloud `0-Category ` folder. Source 
 2. Run `npm run sync-play` from the repo root.
 3. Commit + push.
 
+**Eagle curation workflow (preferred for higher-quality selection):**
+1. Run `npm run setup-eagle-curation` if the `Website Curation` folder tree is missing.
+2. Curate approved visuals into those Eagle folders.
+3. Run `npm run sync-eagle-play` to mirror matching Eagle folders into `0-Category `.
+4. Run `npm run sync-play` to compress the mirrored files and update `/play`.
+
+`scripts/setup-eagle-curation.mjs` talks to Eagle's local API and is idempotent. It creates/reuses `Website Curation/01-Case Study Picks`, `02-Play Category Picks`, and `03-Homepage Playground`; it never moves, tags, rates, or deletes images.
+
+The Eagle bridge (`scripts/sync-eagle-play.mjs`) reads Eagle library metadata from disk and copies files only when missing or changed. It never edits Eagle metadata and never deletes files. By default it reads `Design hub/eagle 图库/Designer Julian.library`; override with `EAGLE_LIBRARY=/path/to/name.library npm run sync-eagle-play`.
+
 The sync script (`scripts/sync-play.mjs`):
 - walks the 17 category subfolders
 - compresses each image to `public/play/seed/<slug>.jpg` (max 1600px wide, JPEG q80) via macOS `sips`

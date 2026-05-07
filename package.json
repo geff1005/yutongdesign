@@ -8,7 +8,11 @@
     "start": "next start",
     "lint": "eslint",
     "sync": "tsx scripts/sync-from-notion.ts",
+    "audit-eagle-mine": "node scripts/audit-eagle-mine.mjs",
+    "map-eagle-cases": "node scripts/generate-eagle-case-mapping.mjs",
+    "setup-eagle-curation": "node scripts/setup-eagle-curation.mjs",
     "sync-images": "node scripts/sync-images.mjs",
+    "sync-eagle-play": "node scripts/sync-eagle-play.mjs",
     "sync-play": "node scripts/sync-play.mjs"
   },
   "dependencies": {
