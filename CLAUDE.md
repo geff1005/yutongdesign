@@ -94,6 +94,33 @@ Folder convention: `{Tier}{NN}-{Slug-EN}` (no spaces, no parens, no hashtags). T
 
 # Editing Conventions
 
+## Hard rules — do not break
+
+These have been violated repeatedly. Treat them as build-time invariants when touching `lib/projects.ts`, `lib/site.ts`, or any user-facing copy:
+
+1. **No `/` slash anywhere in user-facing prose.** Project descriptions, intros, types, research questions, all caseStudy fields (challenge / research / strategy / implementation / results / lessons / nextSteps), media captions, footer text. The only OK forward slashes are: URL paths, npm package names like `@splinetool/react-spline`, code identifiers, and CSS values (`aspect-ratio: 16/9`). For lists use commas or ` · ` middle dots. For paired concepts use a hyphen, "and", or rewrite as a sentence. For ratios in prose write "16-by-9" or "21-by-9".
+2. **No chopped-up parenthetical chains.** A reader on a phone shouldn't see `As contract Web Designer (remote, Apr 2025–Apr 2026), I rebuilt skgplus.cn from a brittle Framer back-end into a CMS-driven showroom — and shipped a parallel competition platform amacontest.com under a 3-week emergency timeline that drew 400+ teams from across Asia.` That's one sentence with three asides. Break it into three sentences, drop the parentheticals.
+3. **researchQuestion target: ≤ 1 row on desktop hero.** Keep it under ~80 characters. If the question wraps to 3 rows on desktop, it's too long. Phone screens make this 5–6 rows.
+4. **Case study density target: 250–500 words across challenge+research+strategy+implementation+results+lessons+nextSteps combined.** Niklas.space pattern. Run `python3 docs/count-words.py` (when it exists) before merging, or do it by eye.
+5. **Email**: `julianyutongzhu@gmail.com` only. No `judeforlove13@gmail.com`, no `zhuyutong2001@outlook.com`, no `hello@…` placeholders.
+6. **Contact-line order on resume + footer**: site → email → phone → LinkedIn (Jess's recommendation). On the website, "site" is implicit and phone is private, so footer renders email → GitHub → LinkedIn.
+7. **No emoji in user-facing copy.** Emoji are fine in commit messages, internal docs, and shell output.
+
+When auditing, run this from the repo root:
+```bash
+python3 -c "
+import re
+s = open('lib/projects.ts').read()
+for f in ['description', 'intro', 'type', 'researchQuestion', 'role', 'timeline', 'team', 'impact', 'challenge', 'research', 'strategy', 'implementation', 'results', 'lessons', 'nextSteps']:
+    for m in re.finditer(rf'\b{f}:\s*([\`"\'])([\s\S]*?)\1\s*,', s):
+        t = m.group(2)
+        cleaned = re.sub(r'@[a-z][a-z0-9-]+/[a-z0-9-]+', '', t)
+        if '/' in cleaned: print(f, t[:120])
+"
+```
+
+## General
+
 - Don't introduce CMS / database without justification — current TS files are fine for the project size
 - Real data > placeholders, always. If something must be temporarily fake, mark it with `// TODO:` and explain
 - Image hosts to allow: framerusercontent.com (CDN, used for thumbnails) — no need for Next/Image because we use plain `<img>`
