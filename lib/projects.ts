@@ -158,6 +158,11 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
           caption: "Stakeholder map across Reflection, Assessment, and Administration layers — the AI Co-thinker shows up as a different role at each layer (peer for students, data partner for tutors, governance partner for ethics and policy).",
         },
         {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/08-six-agents.jpg",
+          caption: "Six co-thinker roles, one per Hat — Facts collects inputs and context, Empathy carries gut feeling and intuition, Innovate thinks past the boundary, Optimise highlights value and benefit, Critic raises judgement and cautions, and Conduct regulates the decision-making flow.",
+        },
+        {
           section: "results",
           src: "/work/co-cerebral/results/01-four-future-scenarios.jpg",
           caption: "Four plausible 2050 scenarios for AI in education — the futures grid that the embodied Six Hats build is responding to.",
