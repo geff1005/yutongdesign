@@ -1,6 +1,10 @@
 import Link from "next/link";
 import type { Metadata } from "next";
-import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
+import {
+  itemsByCategory,
+  CATEGORY_LABEL,
+  type PlayItem,
+} from "@/lib/play";
 
 export const metadata: Metadata = {
   title: "Play — Julian Zhu",
@@ -9,6 +13,8 @@ export const metadata: Metadata = {
 };
 
 export default function PlayIndexPage() {
+  const groups = itemsByCategory();
+
   return (
     <main className="play-index">
       <div className="play-index-nav">
@@ -26,13 +32,41 @@ export default function PlayIndexPage() {
         <p className="play-index-sub">
           Posters, motion studies, GIFs, 3D scenes, and live experiments. Lower polish, more fun — small things you can scan in a minute.
         </p>
+        {/* Category quick-jump */}
+        <nav className="play-cat-nav" aria-label="Categories">
+          {groups.map((g) => (
+            <a
+              key={g.category}
+              href={`#cat-${g.category}`}
+              className="play-cat-pill"
+            >
+              {CATEGORY_LABEL[g.category]} <span className="play-cat-pill-count">{g.items.length}</span>
+            </a>
+          ))}
+        </nav>
       </header>
 
-      <section className="play-mosaic">
-        {PLAY_ITEMS.map((p) => (
-          <PlayTile key={p.slug} item={p} />
-        ))}
-      </section>
+      {groups.map((g) => (
+        <section
+          key={g.category}
+          id={`cat-${g.category}`}
+          className="play-cat-section"
+        >
+          <header className="play-cat-header">
+            <div className="eyebrow play-cat-eyebrow">
+              {CATEGORY_LABEL[g.category]}
+            </div>
+            <div className="play-cat-count">
+              {g.items.length} {g.items.length === 1 ? "piece" : "pieces"}
+            </div>
+          </header>
+          <div className="play-mosaic">
+            {g.items.map((p) => (
+              <PlayTile key={p.slug} item={p} />
+            ))}
+          </div>
+        </section>
+      ))}
 
       <footer className="case-footer">
         <Link href="/" className="case-footer-home">
@@ -47,7 +81,6 @@ export default function PlayIndexPage() {
 }
 
 function PlayTile({ item }: { item: PlayItem }) {
-  // Pick rendered media — image / gif / video poster / spline thumbnail
   const aspect = item.aspectRatio ?? "1/1";
 
   const visual = (() => {
@@ -97,7 +130,6 @@ function PlayTile({ item }: { item: PlayItem }) {
         />
       );
     }
-    // Fallback — gradient placeholder for spline / external without thumb
     return (
       <div className="play-tile-placeholder" aria-hidden>
         <span>{(item.name ?? "•").charAt(0)}</span>
@@ -113,7 +145,7 @@ function PlayTile({ item }: { item: PlayItem }) {
       >
         {visual}
       </div>
-      {(item.name || item.year || item.chips?.length) && (
+      {(item.name || item.year || (item.chips && item.chips.length > 0)) && (
         <div className="play-tile-caption">
           <div className="play-tile-caption-row">
             <span className="play-tile-caption-name">{item.name ?? ""}</span>

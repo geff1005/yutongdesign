@@ -1954,3 +1954,61 @@ section { position: relative; }
 @media (max-width: 700px) {
   .play-detail-spline-wrap { min-height: 320px; aspect-ratio: 4 / 3; }
 }
+
+/* === /play category quick-jump nav + section headers === */
+.play-cat-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 32px;
+}
+.play-cat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+  padding: 6px 12px;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 999px;
+  color: hsl(var(--muted));
+  text-decoration: none;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.play-cat-pill:hover {
+  color: hsl(var(--text));
+  border-color: hsl(var(--text) / 0.4);
+}
+.play-cat-pill-count {
+  font-size: 10px;
+  color: hsl(var(--muted) / 0.7);
+  letter-spacing: 0.04em;
+}
+.play-cat-section {
+  padding: 56px 0 16px;
+  border-bottom: 1px solid hsl(var(--stroke) / 0.5);
+}
+.play-cat-section:last-of-type { border-bottom: none; }
+.play-cat-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  gap: 16px;
+}
+.play-cat-eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.18em;
+}
+.play-cat-count {
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: hsl(var(--muted));
+  text-transform: uppercase;
+}
+/* Reduce mosaic padding inside category section (header already provides space) */
+.play-cat-section .play-mosaic { padding: 0; }
+@media (max-width: 700px) {
+  .play-cat-section { padding: 40px 0 8px; }
+  .play-cat-section .play-mosaic { padding: 0; }
+}
