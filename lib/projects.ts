@@ -577,8 +577,13 @@ High-fidelity interface: hourly navigation, daily missions, creator profile, AR 
       media: [
         {
           section: "challenge",
-          src: "/work/sprayscape/portfolio/01-overview.jpg",
-          caption: "Project overview — three-city case study (Brooklyn, Chongqing, LA), site analysis, and the artist–buyer–community framing.",
+          src: "/work/sprayscape/results/clipboard---2023-11-04-13-34-35--eagle-l.jpg",
+          caption: "The cultural subject — a runner crosses a Chongqing graffiti wall mid-stride. Street art lives in the city, but its makers and viewers rarely meet.",
+        },
+        {
+          section: "research",
+          src: "/work/sprayscape/results/local-case-study--eagle-mmbs4nko99lw8.jpg",
+          caption: "Situated practice — a deep case study at Huangjueping Graffiti Art Street in Chongqing. Spatial analysis maps tagging, masterpieces, murals, and the mobility patterns that shape where work appears.",
         },
         {
           section: "strategy",
@@ -587,13 +592,23 @@ High-fidelity interface: hourly navigation, daily missions, creator profile, AR 
         },
         {
           section: "implementation",
-          src: "/work/sprayscape/portfolio/03-platform-spatial.jpg",
-          caption: "Platform architecture — system map, stakeholder map, mission frame, and the Confirm → Create → Check → Share concept flow.",
+          src: "/work/sprayscape/results/sprayscape-v5-7-10--eagle-mmbs4nkpketoe.jpg",
+          caption: "Full UX flow — historical navigation, community upload with metadata, requirement matching for commissions, and an artist-profile flow that confirms authorship via on-wall scan.",
+        },
+        {
+          section: "implementation",
+          src: "/work/sprayscape/results/sprayscape-uiux---eagle-mmbssqw2i30uo.jpg",
+          caption: "Brand and product identity — SprayScape positions itself as a street-art trading platform for urban beautification, with the role and contribution scope spelled out for stakeholders.",
         },
         {
           section: "results",
-          src: "/work/sprayscape/portfolio/04-mr-experience.jpg",
-          caption: "High-fidelity interface and spatial layers — AR canvas overlays for real walls, on-wall preview, and the commission-scout flow.",
+          src: "/work/sprayscape/results/sprayscape-z-1080p-60-09121727---5-00--e.jpg",
+          caption: "On-wall preview, in motion. The phone shows a sanctioned scout overlay; the right frame is a real spray pass on the wall. 留下痕迹 — leave a trace.",
+        },
+        {
+          section: "results",
+          src: "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+          caption: "Real-world context — the SprayScape mark over the Chongqing skyline. The platform is sized for cities where graffiti, business, and audience already share the same walls.",
         },
       ],
     },
