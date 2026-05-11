@@ -731,8 +731,8 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
     description: "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction, 3D scene, and day-and-night sensing.",
     researchQuestion: "Will the metaverse be the future of online network and remote work?",
     intro:
-      "As UX Designer intern at HUAWEI Co., Ltd in Chengdu (Sep–Dec 2022), I shipped two mobile + watch-face design systems on Huawei Theme Store, redesigned 68 first-party icons and adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship theme — a HarmonyOS surface that treats the lock screen as a small social place rather than a utility tile.",
-    type: "HUAWEI · UI · UX · 3D Scene",
+      "As UX Designer intern at HUAWEI in Chengdu (Sep–Dec 2022), I shipped two design systems for phone and watch faces on the Huawei Theme Store. Alongside that, I redesigned 68 first-party icons, adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship of the work — a HarmonyOS theme that treats the lock screen as a small social place rather than a utility tile.",
+    type: "HUAWEI HarmonyOS Theme",
     year: 2022,
     tags: ["HUAWEI", "UX", "UI", "3D", "Theme Design"],
     featured: true,
@@ -753,22 +753,15 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
 
 Design philosophy borrowed from one internal note: 'Use the concept of meta-station to allow users to predict scenarios while navigating, creating fun in entertainment.'`,
       strategy:
-        `Three design commitments:
-
-- The lock screen is the front door, not the doormat. Anecdote-pressing, swipe-left-or-right to look around, hidden eggs in the map.
-- Day and night sensing. The same scene shifts colour, light, and mood based on time. Day-time mode and night-time mode share characters and city, not just a hue swap.
-- Multiple wallpapers, single language. The wallpapers (city, desktop, weather widgets) sit inside the same lowpoly scene grammar so the theme feels like one place, not a folder of unrelated assets.`,
+        `Three commitments shaped the work. The first was treating the lock screen as a front door rather than a doormat — somewhere the user could press to reveal a small anecdote, swipe sideways to look around the scene, and discover hidden eggs in the map. The second was making the scene aware of time. The same city shifts colour, light, and mood between morning and night, while keeping its characters and architecture intact, so it reads as one place living through a day rather than two unrelated palettes. The third was speaking a single visual language across every surface. City, desktop, weather widgets, and icons all sit inside the same lowpoly grammar so the theme feels like one inhabited world rather than a folder of loosely related assets.`,
       implementation:
-        `3D scene authoring + UI theme design + lockscreen interaction logic. Outputs: the meta-station 3D city environment, multiple wallpaper variants, day-and-night transition, and a weather-icon family for the theme's UI surfaces.
+        `The work covered three connected pieces — authoring the 3D scene, designing the UI theme, and writing the lockscreen interaction logic. Out the other end came a meta-station city environment, multiple wallpaper variants, a day-and-night transition, and a weather-icon family that sits inside the same visual world as the rest of the theme.
 
-Lockscreen interaction sequence: 01 — When the desktop is pressed, a floating panorama of the meta-station appears. 02 — When released, the view returns to the city centre. Anecdote-pressing reveals scene details; the user can swipe left or right to move the scene's POV and look for hidden eggs in the map.`,
+The lockscreen interaction itself reads like a short sequence. When the desktop is pressed, a floating panorama of the meta-station appears. When released, the view returns to the city centre. Pressing reveals scene anecdotes, and the user can swipe left or right to move the camera and find hidden eggs in the map.`,
       results:
-        `A complete HUAWEI Theme product — UI theme + lockscreen interaction + 3D scene + day-and-night mode + multi-wallpaper system + weather-icon family. Shipped through HUAWEI Themes (Meta-Station UI).`,
+        `A complete HUAWEI Theme product that ships as a single coherent world. It bundles the UI theme, the lockscreen interaction, the 3D scene, day-and-night mode, multiple wallpaper variants, and a matching weather-icon family. Released on HUAWEI Themes as Meta-Station UI.`,
       lessons:
-        `Two carry-forwards:
-
-- A theme is a tiny game world, not a skin. Once the lockscreen has anecdotes, swipeable POV, and hidden details, it stops being decoration and starts being a place users return to.
-- Time as a design surface. Day and night isn't just a colour-palette switch — it's an opportunity to give the theme a life cycle that maps to the user's day.`,
+        `Two ideas carry forward from this project. The first is that a theme is a tiny game world rather than a skin. Once the lockscreen has anecdotes, a swipeable point of view, and hidden details, it stops being decoration and becomes a place users return to between tasks. The second is that time itself can be a design surface. Day and night is not only a palette switch but an opportunity to give the theme a life cycle that maps to the rhythm of the user's day.`,
       nextSteps:
         `Bring the same scene-as-place pattern into other small-screen surfaces — Apple Watch faces, in-flight entertainment lockscreens, smart-fridge ambient displays. Anywhere a screen sits in a person's life for hours but is treated as a static surface.`,
       media: [
