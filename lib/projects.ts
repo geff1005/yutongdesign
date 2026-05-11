@@ -731,7 +731,7 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
     description: "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction, 3D scene, and day-and-night sensing.",
     researchQuestion: "Will the metaverse be the future of online network and remote work?",
     intro:
-      "A HUAWEI HarmonyOS theme that treats the lock screen as a small social place rather than a utility surface — designed during the UX internship at HUAWEI Co., Ltd in Chengdu.",
+      "As UX Designer intern at HUAWEI Co., Ltd in Chengdu (Sep–Dec 2022), I shipped two mobile + watch-face design systems on Huawei Theme Store, redesigned 68 first-party icons and adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship theme — a HarmonyOS surface that treats the lock screen as a small social place rather than a utility tile.",
     type: "HUAWEI · UI · UX · 3D Scene",
     year: 2022,
     tags: ["HUAWEI", "UX", "UI", "3D", "Theme Design"],
@@ -795,6 +795,60 @@ Lockscreen interaction sequence: 01 — When the desktop is pressed, a floating 
     featured: true,
     thumbnail: "https://framerusercontent.com/images/9RxJa7zlJTN3uQ7PmhMOb3uYRAk.jpg",
     href: "/work/neon-nike",
+  },
+  {
+    slug: "bytedance",
+    title: "ByteDance · TikTok AR Effects",
+    description:
+      "Two TikTok / TikTok Lite filters that drew 10K+ views and were featured on TikTok's Best of the Week. Custom AR effects (beauty, atmosphere, interaction) informed by DAU trend analysis.",
+    researchQuestion:
+      "What makes an AR effect stick — beyond a face filter that fades by Tuesday?",
+    intro:
+      "Visual Designer at ByteDance (Chongqing). Led custom AR effects — beauty, atmosphere, interaction — designed around DAU trend analysis and shipped through TikTok and TikTok Lite.",
+    type: "Visual Design · AR · Motion",
+    year: 2023,
+    tags: ["AR", "TikTok", "Visual Design", "ByteDance", "Motion"],
+    featured: true,
+    thumbnail: "/thumbnails/bytedance.jpg",
+    href: "/work/bytedance",
+    caseStudy: {
+      role: "Visual Designer · ByteDance · Chongqing",
+      timeline: "Oct 2023 – Dec 2023 (TikTok commercial workshop, late 2022 + 2023)",
+      team:
+        "Solo designer inside the AR effects commercial-workshop pipeline. Three effects produced — 蘑菇眼 (Mushroom Eyes), 珠光宝气 (Pearl Glitter), and 世界杯AR-足球宝宝 (World Cup Soccer Baby).",
+      impact:
+        "Two TikTok / TikTok Lite filters shipped to a global audience with 10K+ combined views, featured on TikTok's Best of the Week. The work proved that AR effects can move from face-decoration to atmosphere — short interaction loops that change the emotional register of a short-form video, not just the face on it.",
+      challenge:
+        `On TikTok, an AR effect competes against thousands of new filters every week. Most fade in a few days. The brief, given through the ByteDance commercial-workshop pipeline, was to build effects that read instantly, scale across face / atmosphere / interaction modalities, and survive Tuesday.`,
+      research:
+        `Looked at the previous quarter of TikTok DAU trend data — which effects were trending, what they had in common, what they were missing. Three threads emerged:
+
+- Beauty effects had hit saturation; the marginal innovation was in atmosphere (light, particles, environmental change), not facial geometry.
+- The audience interaction lever (tap to change, blink to trigger) was under-used outside of the top 1% of effects.
+- The World Cup 2022 was about to dominate short-form video — a brand moment that would carry a themed effect far past Tuesday if the timing was right.`,
+      strategy:
+        `Three effects, one per modality:
+
+- **蘑菇眼 (Mushroom Eyes)** — a beauty-adjacent effect that augments the eye region with subtle mushroom motifs. Reads as cute, scales across selfie use cases, low-friction enter.
+- **珠光宝气 (Pearl Glitter)** — a pixel-art atmosphere overlay. Treats the whole frame as the canvas, not the face. Aimed at the under-served atmosphere lever.
+- **世界杯-足球宝宝 (World Cup Soccer Baby)** — an interaction-led AR effect timed to the 2022 World Cup. The official Al Rihla 3D ball model in-effect; the user becomes the soccer baby. Timed to the tournament's emotional peak.`,
+      implementation:
+        `Built in ByteDance's Effect House (.ecpj source project files). Each effect went through the standard ByteDance AR pipeline: prototype → internal review → DAU pilot → published filter on TikTok / TikTok Lite store. Texture work for the World Cup ball used the official Al Rihla colour, normal, roughness, and metallic maps.
+
+Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221124足球/2022世界杯足球模型1741.fbm). Workshop screen recording from the Oct 19 2022 commercial workshop captured the full creation flow.`,
+      results:
+        `- Two filters shipped to TikTok / TikTok Lite.
+- 10K+ combined views.
+- Featured on TikTok's Best of the Week.
+- Process used as teaching material in subsequent ByteDance commercial workshops.`,
+      lessons:
+        `Two carry-forwards:
+
+- The face is not the only canvas. Atmosphere effects (particle systems, ambient light, environmental treatment) had more headroom than facial-geometry effects in 2022–2023. The Pearl Glitter effect outperformed its complexity budget on that basis.
+- Time-locked effects pay off. The World Cup effect would have been a footnote in March. Timed to the tournament's emotional peak, it carried itself.`,
+      nextSteps:
+        `The ByteDance workshop pipeline informed how I now think about agentic UX more broadly: a viral short-form effect is, structurally, a one-shot agent — it takes a single input (a frame from your camera, a tap, a face) and ships back a transformed output in real time. The interaction-design lessons port directly to longer-running AI products.`,
+    },
   },
 ];
 
