@@ -802,7 +802,7 @@ The lockscreen interaction itself reads like a short sequence. When the desktop 
     year: 2023,
     tags: ["AR", "TikTok", "Visual Design", "ByteDance", "Motion"],
     featured: true,
-    thumbnail: "/thumbnails/bytedance.jpg",
+    thumbnail: "/work/bytedance/01-hero-football-baby.png",
     href: "/work/bytedance",
     caseStudy: {
       role: "Visual Designer · ByteDance · Chongqing",
@@ -841,6 +841,89 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
 - Time-locked effects pay off. The World Cup effect would have been a footnote in March. Timed to the tournament's emotional peak, it carried itself.`,
       nextSteps:
         `The ByteDance workshop pipeline informed how I now think about agentic UX more broadly: a viral short-form effect is, structurally, a one-shot agent — it takes a single input (a frame from your camera, a tap, a face) and ships back a transformed output in real time. The interaction-design lessons port directly to longer-running AI products.`,
+      media: [
+        {
+          section: "strategy",
+          src: "/work/bytedance/01-hero-football-baby.png",
+          caption: "World Cup Soccer Baby — the official Al Rihla 3D ball reskinned as a character. Beauty render from the in-effect 3D pipeline.",
+        },
+        {
+          section: "implementation",
+          src: "/work/bytedance/02-football-model.png",
+          caption: "3D model preview from the in-house pipeline. Al Rihla colour, normal, roughness, and metallic maps baked onto the Soccer Baby character rig.",
+        },
+        {
+          section: "research",
+          src: "/work/bytedance/03-basketball-render.jpg",
+          caption: "Companion render from the early concept stage — basketball-character study before the brief locked onto the World Cup ball.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "greenmove",
+    title: "Healmove · 绿途",
+    description:
+      "Speculative design fiction for sustainable health-and-mobility — L5 autonomous mobility, personal carbon accounts, and in-vehicle micro-fitness, set in the global obesity crisis of 2045.",
+    researchQuestion:
+      "By 2045, can the car become a third space for health rather than a fourth source of sedentary time?",
+    intro:
+      "Healmove is a design-fiction project from the 2023 Future Mobility course at Sichuan Fine Arts Institute (with industry sponsor 梧桐车联 Wutong Carlink). The brief: imagine an autonomous vehicle and service platform that fight the 2045 obesity crisis instead of accelerating it. The deliverable is a worldbuilding deck, two AI-filmed character narratives (Simon and Alice), and a video produced through a MidJourney → Runway Gen-2 → human-edit pipeline.",
+    type: "Speculative Design · Design Fiction · AI Film",
+    year: 2023,
+    tags: ["Speculative Design", "Design Fiction", "Future Mobility", "AI Film", "MidJourney", "Runway"],
+    featured: true,
+    thumbnail: "/work/greenmove/00-cover.png",
+    videoUrl: "",
+    href: "/work/greenmove",
+    caseStudy: {
+      role: "Designer · Sichuan Fine Arts Institute × 梧桐车联 (Wutong Carlink)",
+      timeline: "Sep–Dec 2023 (Future Mobility studio, taught by 曾真)",
+      team:
+        "Solo design fiction project produced inside a studio brief co-sponsored by Wutong Carlink, the connected-vehicle platform. Worldbuilding, scenario, persona, AI image generation, AI video generation, and final edit done end-to-end.",
+      impact:
+        "A self-contained design-fiction package — a future-city worldbuild, two AI-filmed character stories, and a service-platform proposal — that the studio used as a working artefact for discussing how mobility, health, and behavioural economics intersect in an L5 autonomous future.",
+      challenge:
+        `The studio brief was open-ended: design a future-mobility experience for 2040 and beyond. The constraint that mattered to me was the obesity backdrop. By 2045, the WHO projects over a billion adults affected, and the autonomous-vehicle industry is on a default trajectory of making travel even more sedentary than it already is. The challenge became: design an AV interior that solves a behavioural problem, not just a transport problem.`,
+      research:
+        `Three observations shaped the brief. First, mobility design after L5 is mostly interior-space design — the car becomes a third space, not a steering experience. Second, carbon and health systems already trade currencies in places like Singapore and Shenzhen, but the credits never sit inside a vehicle UX. Third, AI filmmaking is finally good enough that a single designer can stage a credible future-world narrative in a few weeks — which is the studio brief's real test.`,
+      strategy:
+        `The proposal collapses three normally separate things into a single in-vehicle service. Green Travel is reframed as EV plus micro-fitness — the commute itself becomes movement, with a deployable Mobile Fitness Space inside the cabin. A blockchain-backed Personal Carbon Account turns the daily commute into earned credits that fund health goals, gym access, or other low-carbon services. An Adaptive AI Guidance layer reads biometric and behavioural signals to surface the next nudge — a posture cue, a route swap, a partner workout — without becoming a wellness scold.`,
+      implementation:
+        `Worldbuilding was done first, in writing. I used ChatGPT for the obesity-tax policy scenario and for the two-persona structure, then wrote the storyboards by hand. Image generation moved into MidJourney for both characters (Simon, 35, software engineer with a beer belly; Alice, 28, fitness model) and for the city renderings — white, eco, simple, morning-tone keywords carried the look across hundreds of variants. Runway Gen-2 took selected stills into short motion clips. Final cut, voice-over, and editorial pacing were assembled in Premiere as a single linear film, then re-cut into the 30-second portfolio version.`,
+      results:
+        `A complete speculative-design package: an introduction reel positioning Healmove inside the 2045 obesity scenario, a two-persona narrative film told as parallel stories, a service-platform diagram covering the Personal Carbon Account flow, and a worldbuild deck used in the studio's final review. Adopted by the studio as a working artefact for subsequent discussions of L5 mobility, behavioural design, and AI-assisted production.`,
+      lessons:
+        `Two ideas carry forward. The first is that speculative design lives or dies on the strength of its characters. Simon and Alice — flawed, recognisable, on opposite ends of a health spectrum — anchor a future world more effectively than any policy diagram could. The second is that an AI film pipeline (MidJourney → Runway → human edit) is now a viable solo workflow for a designer pitching a scenario. It compresses the worldbuilding-to-stakeholders loop from months to weeks, which is exactly the kind of cycle a speculative-design course was designed to teach.`,
+      nextSteps:
+        `The same character-anchored, AI-filmed pipeline ports directly to product design fiction — sketching a near-future AI agent or interface and stress-testing it against two opposite personas before any UI is built. The Personal Carbon Account thread is a separate provocation worth its own service-design brief.`,
+      media: [
+        {
+          section: "challenge",
+          src: "/work/greenmove/01-introduction.jpg",
+          caption: "Title board — Healmove, A Journey to Sustainable Health and Mobility. Customized travel experience design built on L5 autonomous driving.",
+        },
+        {
+          section: "strategy",
+          src: "/work/greenmove/02-design-concept.jpg",
+          caption: "Main concept formula — Green Travel = EV + Micro-fitness. Six design pillars: social engagement, green impact, gamification, mobile fitness space, habit formation, and adaptive AI guidance.",
+        },
+        {
+          section: "research",
+          src: "/work/greenmove/03-scenario.jpg",
+          caption: "Central theme and strategy — 2045 obesity crisis as backdrop, blockchain-based personal carbon account as the foundational service infrastructure.",
+        },
+        {
+          section: "implementation",
+          src: "/work/greenmove/04-world-building.jpg",
+          caption: "World building — two personas (Simon, 35-year-old engineer; Alice, 28-year-old fitness model) carrying the parallel narrative through a storytelling table that links cause, process, and effect.",
+        },
+        {
+          section: "implementation",
+          src: "/work/greenmove/05-ai-filming.jpg",
+          caption: "AI filming workflow — MidJourney for image generation, Runway Gen-2 for video, and human editing to assemble the journey-from-home-to-workspace sequence.",
+        },
+      ],
     },
   },
 ];
