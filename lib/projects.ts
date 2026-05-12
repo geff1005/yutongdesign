@@ -803,6 +803,7 @@ The lockscreen interaction itself reads like a short sequence. When the desktop 
     tags: ["AR", "TikTok", "Visual Design", "ByteDance", "Motion"],
     featured: true,
     thumbnail: "/work/bytedance/01-hero-football-baby.png",
+    videoUrl: "https://vimeo.com/1191365683",
     href: "/work/bytedance",
     caseStudy: {
       role: "Visual Designer · ByteDance · Chongqing",
@@ -874,7 +875,7 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
     tags: ["Speculative Design", "Design Fiction", "Future Mobility", "AI Film", "MidJourney", "Runway"],
     featured: true,
     thumbnail: "/work/greenmove/00-cover.png",
-    videoUrl: "",
+    videoUrl: "https://vimeo.com/1191365682",
     href: "/work/greenmove",
     caseStudy: {
       role: "Designer · Sichuan Fine Arts Institute × 梧桐车联 (Wutong Carlink)",
