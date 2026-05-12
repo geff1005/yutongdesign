@@ -363,6 +363,28 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
         "Three things I'd carry forward:\n\n- Founder briefs are hypotheses, not specs. 'Fancy + color-matched' decoded into 'don't look generic.' Restating the brief in user-facing terms saved a week of revisions.\n- Pipelines compound. Building the Google Sheet ↔ Make.com sync early made the 3-week amacontest emergency feasible — the system already knew how to ship content.\n- The hardest design choice was about what NOT to add. Reducing visual fatigue on the home page was harder to defend than adding more — but it earned more trust from the team than any addition.",
       nextSteps:
         "The home page currently lives as 'showreel + logo' for maintainability. If I redesigned it tomorrow, I'd build a layout that adapts dynamically to the work library — surfacing recent or featured pieces without manual curation. The information architecture for that already exists in the pipeline; only the front-end rendering needs to catch up.\n\nNext brand evolution: the studio's visual language is shifting from local-traditional → international as it engages global competitions. Documenting that transition is the next deliverable.",
+      media: [
+        {
+          section: "impact",
+          src: "/work/skgplus/01-berlin-circle.jpg",
+          caption: "Berlin Festival of Lights — SKG+ CHINA mapping the Brandenburg Gate with the “CIRCLE” programme. One of the studio's most internationally visible deployments and a piece I helped surface through the rebuilt skgplus.cn archive.",
+        },
+        {
+          section: "impact",
+          src: "/work/skgplus/02-shenzhen-yantian.jpg",
+          caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled “欻与无影”. The kind of work the old Framer back-end struggled to publish; on the new pipeline it ships in under a minute.",
+        },
+        {
+          section: "results",
+          src: "/work/skgplus/03-qingdao-beer-festival.jpg",
+          caption: "Qingdao Beer Festival, 34th edition — a mapping show titled “哈酒来啦” produced by SKG+. Brand-forward show key visual, surfaced on the studio archive within hours of delivery.",
+        },
+        {
+          section: "results",
+          src: "/work/skgplus/04-scfai-museum-yuan-su-iv.jpg",
+          caption: "Sichuan Fine Arts Institute Museum Night, “元·素 IV” — annual graduation showcase. The mapped stage is the cover of one of the studio's most heavily visited pages on the new CMS.",
+        },
+      ],
     },
   },
   {
