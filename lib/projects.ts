@@ -365,14 +365,14 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
         "The home page currently lives as 'showreel + logo' for maintainability. If I redesigned it tomorrow, I'd build a layout that adapts dynamically to the work library — surfacing recent or featured pieces without manual curation. The information architecture for that already exists in the pipeline; only the front-end rendering needs to catch up.\n\nNext brand evolution: the studio's visual language is shifting from local-traditional → international as it engages global competitions. Documenting that transition is the next deliverable.",
       media: [
         {
-          section: "impact",
-          src: "/work/skgplus/01-berlin-circle.jpg",
-          caption: "Berlin Festival of Lights — SKG+ CHINA mapping the Brandenburg Gate with the “CIRCLE” programme. One of the studio's most internationally visible deployments and a piece I helped surface through the rebuilt skgplus.cn archive.",
-        },
-        {
-          section: "impact",
+          section: "implementation",
           src: "/work/skgplus/02-shenzhen-yantian.jpg",
           caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled “欻与无影”. The kind of work the old Framer back-end struggled to publish; on the new pipeline it ships in under a minute.",
+        },
+        {
+          section: "results",
+          src: "/work/skgplus/01-berlin-circle.jpg",
+          caption: "Berlin Festival of Lights — SKG+ CHINA mapping the Brandenburg Gate with the “CIRCLE” programme. One of the studio's most internationally visible deployments and a piece I helped surface through the rebuilt skgplus.cn archive.",
         },
         {
           section: "results",
