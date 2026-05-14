@@ -107,6 +107,11 @@ export default async function WorkDetailPage({
       {/* Hero */}
       <header className="case-hero">
         <div className="case-hero-inner">
+          {project.award && (
+            <div className="case-award-chip">
+              <span aria-hidden>★</span> {project.award}
+            </div>
+          )}
           <div className="eyebrow case-hero-eyebrow">{project.type ?? "Case Study"}</div>
           <h1 className="case-title">
             {project.title}
@@ -115,6 +120,16 @@ export default async function WorkDetailPage({
             )}
           </h1>
           {project.intro && <p className="case-intro">{project.intro}</p>}
+          {project.pdfUrl && (
+            <a
+              className="case-pdf-link"
+              href={project.pdfUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <span aria-hidden>↓</span> Download case PDF
+            </a>
+          )}
         </div>
         <div className="case-hero-image-wrap">
           {/* eslint-disable-next-line @next/next/no-img-element */}
