@@ -16,6 +16,13 @@ export type Project = {
   featured: boolean;
   thumbnail: string;
   videoUrl?: string;
+  /** Optional PDF deliverable — typeset case book, exhibition booklet, or
+   *  awarded artefact. Rendered as a "Download PDF" chip in the case-study
+   *  hero when present. */
+  pdfUrl?: string;
+  /** Optional honour or recognition — surfaced as a small "Award" eyebrow on
+   *  the case-study hero, above the type chip. */
+  award?: string;
   splineEmbeds?: { url: string; caption?: string; section?: 'research' | 'strategy' | 'implementation' | 'results'; emphasis?: 'live-demo' | 'panoramic' }[];
   /** Figma prototype embeds — clickable in-page demos. */
   figmaEmbeds?: { url: string; caption?: string; viewport: 'mobile' | 'desktop'; audience?: 'diner' | 'kitchen' | 'general' }[];
@@ -49,13 +56,13 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "co-cerebral",
-    title: "Co Cerebral · EduOS",
+    title: "Cerebral Learning · Co Cerebral",
     description:
-      "A voice-first agentic learning environment for higher education. Each of the Six Thinking Hats becomes its own embodied LLM agent — distinct voice, presence, and reasoning style — so a study group can dialogue with the framework instead of reading about it.",
+      "An AI tutor product orchestrating 6 specialised LLM agents in real-time conversation. Each Six Thinking Hats role becomes a distinct reasoning agent — voice, text affordance, persona, and turn-taking model — so a study group can dialogue with the framework instead of reading about it.",
     researchQuestion:
       "Reimagining AI as a co-thinker for higher education — what does collaborative learning beyond automation feel like?",
     intro:
-      "Co Cerebral is my RCA Design Futures thesis — Reimagining AI as Co-thinker: Shaping Cerebral Life in Higher Education by 2050. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct embodied agent. A thinking companion you dialogue with rather than prompt.",
+      "Cerebral Learning is the Co AI product emerging from my RCA Design Futures thesis — Reimagining AI as Co-thinker: Shaping Cerebral Life in Higher Education by 2050. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct agent. A thinking companion you dialogue with rather than prompt.",
     type: "Design Futures Thesis · Agentic UX · AI",
     year: 2026,
     tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
@@ -72,16 +79,16 @@ export const PROJECTS: Project[] = [
         section: "results",
         emphasis: "live-demo",
         url: "https://prod.spline.design/pOvUuyOOoI23lcJQ/scene.splinecode",
-        caption: "EduOS live demo — drag to inspect each agent's embodiment.",
+        caption: "Cerebral Learning embodied demo — drag to inspect each agent's presence while the product orchestrates specialised LLM agents through voice and text affordances.",
       },
     ],
     href: "/work/co-cerebral",
     caseStudy: {
-      role: "Sole designer and engineer · RCA Design Futures thesis",
+      role: "Co-Founder & Designer · Co AI / RCA Design Futures thesis",
       timeline: "Active build (2026, ongoing)",
-      team: "Sole researcher and designer · supervised at the Royal College of Art Design Futures programme. Co-speculation workshop run with interdisciplinary students and tutors; questionnaire study targeted at AI-supported group learning.",
+      team: "Co-Founder & Designer at Co AI. Thesis research supervised at the Royal College of Art Design Futures programme; co-speculation workshop run with interdisciplinary students and tutors; questionnaire study targeted at AI-supported group learning.",
       impact:
-        "A Design Futures thesis reimagining AI as a co-thinker for higher education by 2050. Through foresight, speculative design, and co-creation, the project proposes a preferable future where embodied AI agents scaffold critical reflection, collective decision-making, and richer learning outcomes for students and teachers — instead of accelerating cognitive offloading, automation bias, and motivational displacement.",
+        "An AI tutor product and Design Futures thesis reimagining AI as a co-thinker for higher education by 2050. Through foresight, speculative design, co-creation, and an end-to-end Next.js / Vercel AI SDK / Web Speech API build, the project proposes a preferable future where AI agents scaffold critical reflection, collective decision-making, and richer learning outcomes for students and teachers — instead of accelerating cognitive offloading, automation bias, and motivational displacement.",
       challenge:
         `Most AI-in-education tools today are static chat interfaces — text in, text out, no embodiment. They optimise for fluency, not for friction. The result, well-documented across the AI-in-education literature: cognitive offloading, motivational displacement, automation bias, and an erosion of the critical thinking and creativity that group learning is supposed to cultivate.
 
@@ -112,24 +119,23 @@ It is a learning interface designed around cognitive disagreement, not consensus
         `Tech stack:
 
 - Frontend: Next.js 15 with TypeScript and Tailwind
-- 3D: @splinetool/react-spline (the same library powering the embeds on this page)
-- Spline Variables for material control across hat states
+- Spatial interface prototype for the agent room and hat states
 - Voice in: Web Speech API (free, browser-native)
 - LLM: Vercel AI SDK v5 via AI Gateway
 - Voice out: Web Speech Synthesis
 - Deploy: Vercel Hobby
 
-The stack is intentionally lean — small enough that the artefact survives the academic year and remains accessible to readers, peers, and educators after the thesis defends.`,
+The stack is intentionally lean — small enough that the product can keep shipping while staying accessible to readers, peers, and educators after the thesis defends.`,
       results:
         `Three design outcomes carry the thesis:
 
 - A Co-Speculation toolkit — for cohorts and educators to imagine educational futures together. Used in the RCA workshop with interdisciplinary students and tutors.
-- The CoCereb AI Co-thinker artefact — the embodied demo above. Each hat's voice and presence is dialogue, not interface; the framework lives in the room with the learner.
+- The CoCereb AI Co-thinker artefact — the embodied demo above. Each hat's role and presence turns a thinking framework into something learners can inspect, discuss, and eventually dialogue with.
 - A Roadmap toward Co-Intelligence 2050 — the strategic frame that ties the artefact and toolkit to the larger shift in higher education.
 
 For students and teachers, the design intent is concrete: scaffold critical reflection, support better collective decision-making, and reduce the risks the literature documents — cognitive offloading, automation bias, motivational displacement.
 
-The live demo above is the working artefact. Drag the scene to inspect each hat's embodiment; speak to summon an agent.`,
+The demo above is the current embodied artefact. Drag the scene to inspect each hat's embodiment while the product direction continues toward real-time multi-agent tutoring.`,
       lessons:
         `Two design lessons carry forward:
 
@@ -174,13 +180,13 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
     slug: "smataste",
     title: "SmaTaste",
     description:
-      "An AI-driven workplace dining service for Sodexo. Two paired AI models — taste prediction for kitchens, personal health memory for diners — collaborate through one explainable interface. Won 3rd Place at the RCA × Sodexo Challenge; selected for 1–2 year pilot deployment.",
+      "An AI-driven workplace dining service for Sodexo. Two paired AI models — taste prediction for kitchens, personal health memory for diners — collaborate through one explainable interface. Won 3rd Prize at the RCA × Sodexo Challenge; pilot pathway under NDA.",
     researchQuestion:
       "Redefining the workplace dining experience.",
     intro:
       "SmaTaste is a workplace canteen service for Sodexo's hybrid Gen Z workforce. It pairs the Smart Taste Index — a personal health memory that adapts to mood, history, and explicit goals — with a taste-prediction model that feeds chefs parameterized raw-material data. As lead UX and AI on a 4-person interdisciplinary team, I owned the Smart Taste Index interface, the dual-model flow architecture, and the final pitch.",
     type: "Service Design · HCI Research · AI",
-    year: 2024,
+    year: 2025,
     tags: ["Service Design", "AI", "LLM", "HCI", "Real Client", "Pilot"],
     featured: true,
     thumbnail: "/thumbnails/smataste.jpg",
@@ -212,11 +218,11 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
       },
     ],
     caseStudy: {
-      role: "Lead UX and AI architecture · Research Assistant (RCA × Sodexo AiD Lab)",
-      timeline: "Spring 2024 · RCA × Sodexo Studio Project Challenge (~10 weeks)",
+      role: "Service Designer · UX and AI architecture (RCA × Sodexo AiD Lab)",
+      timeline: "Jan-Jul 2025 · RCA × Sodexo Studio Project Challenge",
       team: "4-person interdisciplinary team across IoT and HCI privacy, market analysis, mobile front-end, and UX with AI. I owned the AI flow architecture, the Smart Taste Index interface, scenario writing, and the final pitch.",
       impact:
-        "A workplace dining service where Gen Z workers feel seen by what they eat, not lectured at by what they should eat. By replacing nutrition prescriptions with a personal taste memory and pairing every meal recommendation with an explainable 'why', SmaTaste shifts the canteen experience from compliance to consent. Won 3rd Place at the RCA × Sodexo Studio Project Challenge; selected by Sodexo Europe for 1–2 year pilot deployment.",
+        "A workplace dining service where Gen Z workers feel seen by what they eat, not lectured at by what they should eat. By replacing nutrition prescriptions with a personal taste memory and pairing every meal recommendation with an explainable 'why', SmaTaste shifts the canteen experience from compliance to consent. Won 3rd Prize at the RCA × Sodexo Studio Project Challenge; selected for a pilot pathway under NDA.",
       challenge:
         `Sodexo asked us, across the RCA × Sodexo AiD Lab studio project, to design an interdisciplinary intervention for food-services digitalisation with implementation in mind for 2–5 years. The brief was wide — deliver a 'top-tier consumer experience' for hybrid-working Gen Z, while addressing social, societal, and environmental impacts.
 
@@ -266,9 +272,10 @@ My ownership across the 4-person team:
 
 Tools: Figma (UI + clickable prototype), structured AI prompting research, Microsoft Decision-Making expert consultations facilitated by our supervisor Dr. Elif Özden Yenigün.`,
       results:
-        `- 3rd Place at the RCA × Sodexo Studio Project Challenge
-- Pilot implementation signed under NDA — Sodexo's engineering team is now developing the system for 1–2 year deployment
+        `- 3rd Prize at the RCA × Sodexo Studio Project Challenge
+- Pilot pathway under NDA, following the RCA × Sodexo challenge
 - 15 user interviews + access to Sodexo's internal customer-habit research base
+- Full service journey mapped across kitchen, app and dining hall, translated into a Figma system covering 14+ touchpoints
 - 3 prototype iterations, each tested clickable with users
 - Sodexo Europe's response: 'You really understand Gen Z' — they specifically called out our framing of taste over health
 
@@ -288,7 +295,7 @@ Projected impact at scale (presented to Sodexo Europe in the final pitch, not ye
       nextSteps:
         `If I redesigned this tomorrow, I'd collapse the all-in-one menu. Right now it's structured to be compatible with Sodexo's existing system, which forces every workflow through a tab-style UI. The more intuitive future is to keep only an AI-dialog interface after first-time setup — let the agent understand each diner over time, surface controls only when needed. An AI-native dining companion, not an AI-augmented menu app.
 
-The pilot now lives with Sodexo's engineers; the design baton has been passed. If pilot data surfaces, that's the moment to revisit the agent-vs-menu question with real adoption metrics, not user-test guesses.`,
+If pilot data surfaces, that's the moment to revisit the agent-vs-menu question with real adoption metrics, not user-test guesses.`,
       media: [
         {
           section: 'challenge',
@@ -348,9 +355,9 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       timeline: "Apr 2025 – Apr 2026 (12 months, ongoing maintenance)",
       team: "Founder + internal content lead + principal creators. I owned design, IA, deployment, and the content pipeline.",
       impact:
-        "A studio's brittle CMS replaced with a self-growing live archive — 170+ works now publish themselves, freeing the team to make work instead of file it. A parallel competition platform built in 3 weeks that gave 400+ design teams across Asia a real venue to compete in, instead of yet another social-media submission form.",
+        "A studio's brittle CMS replaced with a self-growing live archive — 170+ works now publish themselves, freeing the team to make work instead of manually file it. A parallel competition platform built in 3 weeks gave 400+ design teams across Asia a real venue to compete in, instead of yet another social-media submission form.",
       challenge:
-        "The studio's existing Framer back-end was breaking under maintenance — 170+ works were unmanageable to update. The founder asked for a 'fancy, color-matched' hero. But the studio's source work was already saturated, vivid, dense — adding visual density on top would create fatigue. And mid-project, an emergency: a 3-week window to launch amacontest.com (Asia Mapping Art Contest) with no extension.",
+        "The studio's existing Framer back-end was breaking under maintenance — 170+ works were difficult to update safely. The founder asked for a 'fancy, color-matched' hero. But the studio's source work was already saturated, vivid, dense — adding visual density on top would create fatigue. And mid-project, an emergency: a 3-week window to launch amacontest.com (Asia Mapping Art Contest) with no extension.",
       research:
         "I sat directly with the CEO and the principal creators to map their content workflow. Two findings drove everything that followed:\n\n- The Framer back-end was the real bottleneck — content updates broke layouts every release.\n- The founder's 'fancy' brief was a hypothesis, not a spec. What he actually meant was 'don't look generic.' Restraint, not maximalism, was the right answer once we held up examples of peer immersive studios.",
       strategy:
@@ -358,7 +365,7 @@ The pilot now lives with Sodexo's engineers; the design baton has been passed. I
       implementation:
         "I owned: brand visual, IA, interaction logic, deployment, ongoing content maintenance.\n\nPipeline stack:\n\n- Content layer: Google Sheet (creators + content team can edit)\n- Automation: Make.com scenarios trigger on sheet edits\n- Video hosting: Gumlet (paid, optimized)\n- Site: Framer (front-end)\n- Sync: sheet → Make.com → Framer CMS API → live\n\nThis turned content updates from a designer-blocker into a 30-second self-serve action.",
       results:
-        "- 170+ works officially listed and managed via the automation pipeline\n- amacontest.com launched in 3 weeks (target was 4), drew 400+ teams from across Asia\n- Founder approved the visual restraint direction post-launch — the first time the studio shipped without a 'more color' note\n- Maintenance time per content drop dropped from ~10 minutes to ~30 seconds",
+        "- 170+ works structured and managed via the automation pipeline\n- amacontest.com launched in 3 weeks (target was 4), drew 400+ teams from across Asia\n- Founder approved the visual restraint direction post-launch — the first time the studio shipped without a 'more color' note\n- Maintenance time per content drop dropped from ~10 minutes to ~30 seconds",
       lessons:
         "Three things I'd carry forward:\n\n- Founder briefs are hypotheses, not specs. 'Fancy + color-matched' decoded into 'don't look generic.' Restating the brief in user-facing terms saved a week of revisions.\n- Pipelines compound. Building the Google Sheet ↔ Make.com sync early made the 3-week amacontest emergency feasible — the system already knew how to ship content.\n- The hardest design choice was about what NOT to add. Reducing visual fatigue on the home page was harder to defend than adding more — but it earned more trust from the team than any addition.",
       nextSteps:
@@ -887,64 +894,65 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
     slug: "greenmove",
     title: "Healmove · 绿途",
     description:
-      "Speculative design fiction for sustainable health-and-mobility — L5 autonomous mobility, personal carbon accounts, and in-vehicle micro-fitness, set in the global obesity crisis of 2045.",
+      "Best Sustainable Design Award. A 2023 future-mobility design fiction shot with Runway Gen-1 — an image-conditioned video model that pre-dated today's text-to-video tools. A pre-mainstream-AI content-creation experiment with a Tencent-owned connected-vehicle partner.",
     researchQuestion:
       "By 2045, can the car become a third space for health rather than a fourth source of sedentary time?",
     intro:
-      "Healmove is a design-fiction project from the 2023 Future Mobility course at Sichuan Fine Arts Institute (with industry sponsor 梧桐车联 Wutong Carlink). The brief: imagine an autonomous vehicle and service platform that fight the 2045 obesity crisis instead of accelerating it. The deliverable is a worldbuilding deck, two AI-filmed character narratives (Simon and Alice), and a video produced through a MidJourney → Runway Gen-2 → human-edit pipeline.",
-    type: "Speculative Design · Design Fiction · AI Film",
+      "GreenMove (绿途) is a future-mobility design fiction produced during the SCFAI × 梧桐车联 (Wutong Carlink) joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was shot with Runway Gen-1, an image-conditioned video-to-video model released before the modern text-to-video wave. That made the project an experiment in what one designer could ship with then-pre-mainstream generative video — months before tools like Sora, Veo, or Runway Gen-3 existed.",
+    type: "Content Creation · Runway Gen-1 Experiment · Future Mobility",
     year: 2023,
-    tags: ["Speculative Design", "Design Fiction", "Future Mobility", "AI Film", "MidJourney", "Runway"],
+    tags: ["Content Creation", "Runway Gen-1", "Future Mobility", "Sustainable Design", "MidJourney", "梧桐车联"],
     featured: true,
     thumbnail: "/work/greenmove/00-cover.png",
     videoUrl: "https://vimeo.com/1191365682",
+    pdfUrl: "/work/greenmove/Healmove-EN.pdf",
+    award: "Best Sustainable Design Award · SCFAI × 梧桐车联 · 2024",
     href: "/work/greenmove",
     caseStudy: {
-      role: "Designer · Sichuan Fine Arts Institute × 梧桐车联 (Wutong Carlink)",
-      timeline: "Sep–Dec 2023 (Future Mobility studio, taught by 曾真)",
+      role: "Solo designer — concept, AI content pipeline, storyboard, edit, typeset",
+      timeline: "Sep–Dec 2023 · SCFAI × 梧桐车联 (Wutong Carlink) future-mobility joint course",
       team:
-        "Solo design fiction project produced inside a studio brief co-sponsored by Wutong Carlink, the connected-vehicle platform. Worldbuilding, scenario, persona, AI image generation, AI video generation, and final edit done end-to-end.",
+        "Solo project inside a joint enterprise course between Sichuan Fine Arts Institute's Design Academy and 梧桐车联 (Wutong Carlink), Tencent's connected-vehicle platform. Industry leads at Wutong Carlink and SCFAI faculty co-evaluated the final submissions.",
       impact:
-        "A self-contained design-fiction package — a future-city worldbuild, two AI-filmed character stories, and a service-platform proposal — that the studio used as a working artefact for discussing how mobility, health, and behavioural economics intersect in an L5 autonomous future.",
+        "Best Sustainable Design Award winner — judged by industry leads at Wutong Carlink and the SCFAI design faculty. The project then anchored my 2024 Outstanding Graduate (优秀毕业生市级校级) and 单向宇海 Group Scholarship supporting portfolios.",
       challenge:
-        `The studio brief was open-ended: design a future-mobility experience for 2040 and beyond. The constraint that mattered to me was the obesity backdrop. By 2045, the WHO projects over a billion adults affected, and the autonomous-vehicle industry is on a default trajectory of making travel even more sedentary than it already is. The challenge became: design an AV interior that solves a behavioural problem, not just a transport problem.`,
-      research:
-        `Three observations shaped the brief. First, mobility design after L5 is mostly interior-space design — the car becomes a third space, not a steering experience. Second, carbon and health systems already trade currencies in places like Singapore and Shenzhen, but the credits never sit inside a vehicle UX. Third, AI filmmaking is finally good enough that a single designer can stage a credible future-world narrative in a few weeks — which is the studio brief's real test.`,
+        `An open brief from Wutong Carlink: design a 2040+ future-mobility experience. The constraint I chose was the WHO's obesity projection — over one billion adults affected by 2045 — and the default L5 trajectory of making travel even more sedentary than it already is. The design problem became how to re-architect the cabin as a third space for health.`,
       strategy:
-        `The proposal collapses three normally separate things into a single in-vehicle service. Green Travel is reframed as EV plus micro-fitness — the commute itself becomes movement, with a deployable Mobile Fitness Space inside the cabin. A blockchain-backed Personal Carbon Account turns the daily commute into earned credits that fund health goals, gym access, or other low-carbon services. An Adaptive AI Guidance layer reads biometric and behavioural signals to surface the next nudge — a posture cue, a route swap, a partner workout — without becoming a wellness scold.`,
+        `The proposal collapses three systems into one in-vehicle service. Green Travel becomes EV plus micro-fitness, with a deployable Mobile Fitness Space inside the cabin. A blockchain-backed Personal Carbon Account turns each commute into earned credits that fund health goals or low-carbon services. An Adaptive AI Guidance layer reads biometric and behavioural signals to surface one nudge at a time — without becoming a wellness scold.`,
       implementation:
-        `Worldbuilding was done first, in writing. I used ChatGPT for the obesity-tax policy scenario and for the two-persona structure, then wrote the storyboards by hand. Image generation moved into MidJourney for both characters (Simon, 35, software engineer with a beer belly; Alice, 28, fitness model) and for the city renderings — white, eco, simple, morning-tone keywords carried the look across hundreds of variants. Runway Gen-2 took selected stills into short motion clips. Final cut, voice-over, and editorial pacing were assembled in Premiere as a single linear film, then re-cut into the 30-second portfolio version.`,
+        `Three-week solo content-creation pipeline, run pre-mainstream-AI. ChatGPT drafted the obesity-tax policy scenario and the two persona arcs (Simon, 35, an engineer with a beer belly; Alice, 28, a fitness model). MidJourney generated the city, the characters, and roughly 80 percent of the shot list. Runway Gen-1 — image-conditioned video-to-video, the early-2023 model that pre-dated today's text-to-video wave — animated selected stills into short clips. Premiere assembled the final 1m20s reel.`,
       results:
-        `A complete speculative-design package: an introduction reel positioning Healmove inside the 2045 obesity scenario, a two-persona narrative film told as parallel stories, a service-platform diagram covering the Personal Carbon Account flow, and a worldbuild deck used in the studio's final review. Adopted by the studio as a working artefact for subsequent discussions of L5 mobility, behavioural design, and AI-assisted production.`,
-      lessons:
-        `Two ideas carry forward. The first is that speculative design lives or dies on the strength of its characters. Simon and Alice — flawed, recognisable, on opposite ends of a health spectrum — anchor a future world more effectively than any policy diagram could. The second is that an AI film pipeline (MidJourney → Runway → human edit) is now a viable solo workflow for a designer pitching a scenario. It compresses the worldbuilding-to-stakeholders loop from months to weeks, which is exactly the kind of cycle a speculative-design course was designed to teach.`,
-      nextSteps:
-        `The same character-anchored, AI-filmed pipeline ports directly to product design fiction — sketching a near-future AI agent or interface and stress-testing it against two opposite personas before any UI is built. The Personal Carbon Account thread is a separate provocation worth its own service-design brief.`,
+        `Best Sustainable Design Award. Deliverables: a five-page typeset English case book (linked above), a 1m20s AI-filmed reel built with Runway Gen-1, a worldbuild deck, and a service-platform diagram for the Personal Carbon Account flow. The project was subsequently featured in the supporting portfolios for two 2024 award applications — Outstanding Graduate (Municipal / School level) and 单向宇海 Group Scholarship.`,
       media: [
         {
           section: "challenge",
           src: "/work/greenmove/01-introduction.jpg",
-          caption: "Title board — Healmove, A Journey to Sustainable Health and Mobility. Customized travel experience design built on L5 autonomous driving.",
+          caption: "Cover board — Healmove, A Journey to Sustainable Health and Mobility. Customized travel experience design on top of L5 autonomous driving.",
         },
         {
           section: "strategy",
           src: "/work/greenmove/02-design-concept.jpg",
-          caption: "Main concept formula — Green Travel = EV + Micro-fitness. Six design pillars: social engagement, green impact, gamification, mobile fitness space, habit formation, and adaptive AI guidance.",
+          caption: "Main concept — Green Travel = EV + Micro-fitness. Six design pillars wrap three system levers: immersive fitness, a personal carbon tracker, and adaptive AI guidance.",
         },
         {
-          section: "research",
+          section: "strategy",
           src: "/work/greenmove/03-scenario.jpg",
-          caption: "Central theme and strategy — 2045 obesity crisis as backdrop, blockchain-based personal carbon account as the foundational service infrastructure.",
+          caption: "Central theme — 2045 obesity crisis as backdrop, blockchain-based Personal Carbon Account as the foundational service infrastructure.",
         },
         {
           section: "implementation",
           src: "/work/greenmove/04-world-building.jpg",
-          caption: "World building — two personas (Simon, 35-year-old engineer; Alice, 28-year-old fitness model) carrying the parallel narrative through a storytelling table that links cause, process, and effect.",
+          caption: "World building — two personas (Simon, the 35-year-old engineer; Alice, the 28-year-old fitness model) carrying a parallel storytelling structure.",
         },
         {
           section: "implementation",
           src: "/work/greenmove/05-ai-filming.jpg",
-          caption: "AI filming workflow — MidJourney for image generation, Runway Gen-2 for video, and human editing to assemble the journey-from-home-to-workspace sequence.",
+          caption: "Pre-mainstream-AI content pipeline — MidJourney for stills, Runway Gen-1 for image-conditioned motion, human edit on top.",
+        },
+        {
+          section: "results",
+          src: "/work/greenmove/06-award-certificate.jpg",
+          caption: "Best Sustainable Design Award certificate — 2024 SCFAI × 梧桐车联 future-mobility joint course.",
         },
       ],
     },
