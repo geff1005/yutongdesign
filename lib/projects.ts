@@ -894,14 +894,14 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
     slug: "greenmove",
     title: "Healmove · 绿途",
     description:
-      "Best Sustainable Design Award. A future-mobility design fiction for the 2045 obesity crisis — an L5 autonomous interior that turns the commute into movement, produced solo through a MidJourney → Runway Gen-2 → final-cut AI content pipeline.",
+      "Best Sustainable Design Award. A 2023 future-mobility design fiction shot with Runway Gen-1 — an image-conditioned video model that pre-dated today's text-to-video tools. A pre-mainstream-AI content-creation experiment with a Tencent-owned connected-vehicle partner.",
     researchQuestion:
       "By 2045, can the car become a third space for health rather than a fourth source of sedentary time?",
     intro:
-      "Healmove (绿途) is a future-mobility design fiction produced under the 2024 SCFAI × 梧桐车联 (Wutong Carlink) AIGC-Empowered Future Mobility Joint Course — and the project that won the course's Best Sustainable Design Award. The brief was open to any 2040+ scenario; I chose the obesity backdrop. The deliverable is a five-page typeset case book, a 1m20s AI-filmed reel, and a worldbuild deck — produced solo end-to-end through a MidJourney → Runway Gen-2 → editor pipeline I now treat as a transferable content-design capability.",
-    type: "Future Mobility · AI Film · AIGC Pipeline",
-    year: 2024,
-    tags: ["AIGC", "AI Film", "Future Mobility", "Sustainable Design", "MidJourney", "Runway", "梧桐车联"],
+      "GreenMove (绿途) is a future-mobility design fiction produced during the SCFAI × 梧桐车联 (Wutong Carlink) joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was shot with Runway Gen-1, an image-conditioned video-to-video model released before the modern text-to-video wave. That made the project an experiment in what one designer could ship with then-pre-mainstream generative video — months before tools like Sora, Veo, or Runway Gen-3 existed.",
+    type: "Content Creation · Runway Gen-1 Experiment · Future Mobility",
+    year: 2023,
+    tags: ["Content Creation", "Runway Gen-1", "Future Mobility", "Sustainable Design", "MidJourney", "梧桐车联"],
     featured: true,
     thumbnail: "/work/greenmove/00-cover.png",
     videoUrl: "https://vimeo.com/1191365682",
@@ -910,23 +910,19 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
     href: "/work/greenmove",
     caseStudy: {
       role: "Solo designer — concept, AI content pipeline, storyboard, edit, typeset",
-      timeline: "2024 SCFAI × 梧桐车联 (Wutong Carlink) AIGC-Empowered Future Mobility Joint Course",
+      timeline: "Sep–Dec 2023 · SCFAI × 梧桐车联 (Wutong Carlink) future-mobility joint course",
       team:
-        "Solo project inside a joint enterprise course between Sichuan Fine Arts Institute's Design Academy and 梧桐车联 (Wutong Carlink), Tencent's connected-vehicle platform. Industry judges from Wutong Carlink and academic judges from SCFAI co-evaluated the final submissions.",
+        "Solo project inside a joint enterprise course between Sichuan Fine Arts Institute's Design Academy and 梧桐车联 (Wutong Carlink), Tencent's connected-vehicle platform. Industry leads at Wutong Carlink and SCFAI faculty co-evaluated the final submissions.",
       impact:
-        "Won the Best Sustainable Design Award at the 2024 joint-course showcase — judged by industry leads at Wutong Carlink and the SCFAI design faculty. The project went on to anchor my Outstanding Graduate (优秀毕业生市级校级) and 单向宇海集体奖学金 supporting portfolios in 2024.",
+        "Best Sustainable Design Award winner — judged by industry leads at Wutong Carlink and the SCFAI design faculty. The project then anchored my 2024 Outstanding Graduate (优秀毕业生市级校级) and 单向宇海 Group Scholarship supporting portfolios.",
       challenge:
-        `An open brief: design a 2040+ future-mobility experience for Wutong Carlink. The constraint I chose was the WHO's obesity projection — over one billion adults affected by 2045. The L5 autonomous-vehicle industry is on a default trajectory of making travel even more sedentary than it already is. The design problem became how to re-architect the cabin as a third space for health rather than another seat for inactivity.`,
+        `An open brief from Wutong Carlink: design a 2040+ future-mobility experience. The constraint I chose was the WHO's obesity projection — over one billion adults affected by 2045 — and the default L5 trajectory of making travel even more sedentary than it already is. The design problem became how to re-architect the cabin as a third space for health.`,
       strategy:
-        `The proposal collapses three normally separate systems into one in-vehicle service. Green Travel is reframed as EV plus micro-fitness, with a deployable Mobile Fitness Space inside the cabin. A blockchain-backed Personal Carbon Account turns each commute into earned credits that fund health goals or low-carbon services. An Adaptive AI Guidance layer reads biometric and behavioural signals to surface one nudge at a time — a posture cue, a route swap, a partner workout — without becoming a wellness scold.`,
+        `The proposal collapses three systems into one in-vehicle service. Green Travel becomes EV plus micro-fitness, with a deployable Mobile Fitness Space inside the cabin. A blockchain-backed Personal Carbon Account turns each commute into earned credits that fund health goals or low-carbon services. An Adaptive AI Guidance layer reads biometric and behavioural signals to surface one nudge at a time — without becoming a wellness scold.`,
       implementation:
-        `Three-week solo AIGC pipeline. ChatGPT drafted the obesity-tax policy scenario and the two persona arcs (Simon, 35, software engineer with a beer belly; Alice, 28, fitness model). MidJourney generated the city, the characters, and roughly 80% of the shot list across hundreds of seeds. Runway Gen-2 animated selected stills into short clips. Premiere assembled the final film, voice-over, and editorial pacing. The same pipeline now ports cleanly to product design fiction at any AI or mobility company — sketch a future service, stress-test it against two opposite personas, ship a credible concept reel and a typeset case book in days, not months.`,
+        `Three-week solo content-creation pipeline, run pre-mainstream-AI. ChatGPT drafted the obesity-tax policy scenario and the two persona arcs (Simon, 35, an engineer with a beer belly; Alice, 28, a fitness model). MidJourney generated the city, the characters, and roughly 80 percent of the shot list. Runway Gen-1 — image-conditioned video-to-video, the early-2023 model that pre-dated today's text-to-video wave — animated selected stills into short clips. Premiere assembled the final 1m20s reel.`,
       results:
-        `Best Sustainable Design Award, judged by Wutong Carlink and SCFAI. Final deliverables: a five-page typeset English case book, a 1m20s AI-filmed reel, a worldbuild deck, and a service-platform diagram covering the Personal Carbon Account flow. Subsequently featured in the supporting portfolios for two 2024 award applications — Outstanding Graduate (Municipal / School level) and 单向宇海 Group Scholarship. The PDF is available above; the reel is below.`,
-      lessons:
-        `Two ideas carry forward. First, speculative design lives or dies on its characters. Simon and Alice — flawed, recognisable, on opposite ends of a health spectrum — anchor a future world more effectively than any policy diagram could. Second, a solo AI content pipeline (MidJourney → Runway → human edit) compresses the worldbuilding-to-stakeholder loop from months to weeks. That is the cycle an AI-era content design role actually runs on.`,
-      nextSteps:
-        `The same character-anchored, AI-filmed pipeline ports directly to product design fiction at AI and mobility companies — sketching a near-future agent or service, stress-testing it against two opposite personas before any UI is built. The Personal Carbon Account thread is its own service-design provocation worth a longer brief.`,
+        `Best Sustainable Design Award. Deliverables: a five-page typeset English case book (linked above), a 1m20s AI-filmed reel built with Runway Gen-1, a worldbuild deck, and a service-platform diagram for the Personal Carbon Account flow. The project was subsequently featured in the supporting portfolios for two 2024 award applications — Outstanding Graduate (Municipal / School level) and 单向宇海 Group Scholarship.`,
       media: [
         {
           section: "challenge",
@@ -936,27 +932,27 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
         {
           section: "strategy",
           src: "/work/greenmove/02-design-concept.jpg",
-          caption: "Main concept — Green Travel = EV + Micro-fitness. Six design pillars (social engagement, green impact, gamification, mobile fitness space, habit formation, adaptive AI guidance) wrap three system levers: immersive fitness, a personal carbon tracker, and adaptive AI.",
+          caption: "Main concept — Green Travel = EV + Micro-fitness. Six design pillars wrap three system levers: immersive fitness, a personal carbon tracker, and adaptive AI guidance.",
         },
         {
-          section: "research",
+          section: "strategy",
           src: "/work/greenmove/03-scenario.jpg",
-          caption: "Central theme and strategy — 2045 obesity crisis as backdrop, blockchain-based Personal Carbon Account as the foundational service infrastructure.",
+          caption: "Central theme — 2045 obesity crisis as backdrop, blockchain-based Personal Carbon Account as the foundational service infrastructure.",
         },
         {
           section: "implementation",
           src: "/work/greenmove/04-world-building.jpg",
-          caption: "World building — two personas (Simon, the 35-year-old engineer with a beer belly; Alice, the 28-year-old fitness model) carrying a parallel storytelling structure that links cause, process, and effect.",
+          caption: "World building — two personas (Simon, the 35-year-old engineer; Alice, the 28-year-old fitness model) carrying a parallel storytelling structure.",
         },
         {
           section: "implementation",
           src: "/work/greenmove/05-ai-filming.jpg",
-          caption: "AI filming workflow — MidJourney for image generation, Runway Gen-2 for motion, and human editing to assemble the journey-from-home-to-workspace sequence.",
+          caption: "Pre-mainstream-AI content pipeline — MidJourney for stills, Runway Gen-1 for image-conditioned motion, human edit on top.",
         },
         {
           section: "results",
           src: "/work/greenmove/06-award-certificate.jpg",
-          caption: "Best Sustainable Design Award certificate — 2024 SCFAI × 梧桐车联 AIGC-Empowered Future Mobility Joint Course.",
+          caption: "Best Sustainable Design Award certificate — 2024 SCFAI × 梧桐车联 future-mobility joint course.",
         },
       ],
     },
