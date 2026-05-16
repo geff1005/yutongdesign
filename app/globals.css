@@ -14,6 +14,15 @@
 
   --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
   --font-display: var(--font-instrument-serif), 'Instrument Serif', serif;
+
+  /* === Motion tokens — Apple-flavour easing + duration scale.
+   * Use these for any transition/animation across the site so the
+   * motion personality stays unified. */
+  --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out-soft: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --duration-fast: 200ms;
+  --duration-base: 400ms;
+  --duration-slow: 700ms;
 }
 
 * { box-sizing: border-box; }
