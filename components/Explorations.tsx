@@ -66,44 +66,47 @@ export function Explorations() {
             const opacity = 1 - Math.abs(offset) * 0.06;
             const thumb = item.thumbnail ?? item.src ?? "";
             return (
+              // Outer motion.div owns the entrance animation (opacity + y).
+              // We do NOT put the 3D transform here — Framer Motion writes its
+              // own `transform` and would clobber rotateY/translateZ. Instead
+              // an inner static <div> carries the 3D perspective transform,
+              // composed cleanly with the parent's translate.
               <motion.div
                 key={item.slug}
                 role="listitem"
-                className="explorations-arc-tile"
-                style={
-                  {
-                    "--arc-tilt": `${tilt}deg`,
-                    "--arc-depth": `${depth}px`,
-                    "--arc-opa": opacity,
-                  } as React.CSSProperties
-                }
+                className="explorations-arc-slot"
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: opacity, y: 0 }}
-                viewport={{ once: true, amount: 0.25 }}
+                whileInView={{ opacity, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{
                   duration: 0.7,
                   ease: EASE,
                   delay: Math.min(Math.abs(offset) * 0.07, 0.35),
                 }}
               >
-                <Link
-                  href="/play"
-                  className="explorations-arc-link"
-                  aria-label={item.name ?? `Play item ${i + 1}`}
+                <div
+                  className="explorations-arc-tile"
+                  style={{
+                    transform: `rotateY(${tilt}deg) translateZ(${depth}px)`,
+                  }}
                 >
-                  {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img
-                    src={thumb}
-                    alt={item.name ?? ""}
-                    className="explorations-arc-img"
-                    loading="lazy"
-                  />
-                  {item.name && (
-                    <div className="explorations-arc-label">
-                      {item.name}
-                    </div>
-                  )}
-                </Link>
+                  <Link
+                    href="/play"
+                    className="explorations-arc-link"
+                    aria-label={item.name ?? `Play item ${i + 1}`}
+                  >
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={thumb}
+                      alt={item.name ?? ""}
+                      className="explorations-arc-img"
+                      loading="lazy"
+                    />
+                    {item.name && (
+                      <div className="explorations-arc-label">{item.name}</div>
+                    )}
+                  </Link>
+                </div>
               </motion.div>
             );
           })}

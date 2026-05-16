@@ -2721,27 +2721,31 @@ section { position: relative; }
      margin-left on every-tile-after-first to overlap the cards instead. */
 }
 
-.explorations-arc-tile {
+/* .explorations-arc-slot — outer flex item owned by Framer Motion for the
+ * entrance animation. We don't put the 3D transform here because Framer
+ * Motion writes its own `transform` and would override us. */
+.explorations-arc-slot {
   flex: 0 0 auto;
   width: clamp(180px, 15vw, 240px);
-  /* Per-tile transform comes from inline CSS vars set in the component. */
-  transform: rotateY(var(--arc-tilt, 0deg))
-             translateZ(var(--arc-depth, 0px));
-  transform-style: preserve-3d;
-  transform-origin: center center;
-  transition: transform var(--duration-slow) var(--ease-apple),
-              opacity var(--duration-slow) var(--ease-apple);
   cursor: pointer;
 }
-.explorations-arc-tile + .explorations-arc-tile {
-  /* Overlap each tile slightly on top of the previous one, BS iconic-fan style.
-     The negative margin combines with the rotateY to make the row read as a
-     curved cylindrical surface rather than a flat strip. */
+.explorations-arc-slot + .explorations-arc-slot {
+  /* Overlap each tile slightly on top of the previous one, BS iconic-fan
+     style. Negative margin (gap won't accept negatives) creates the curved
+     cylindrical feel when paired with the rotateY transform below. */
   margin-left: clamp(-44px, -2.6vw, -24px);
 }
-.explorations-arc-tile:hover {
-  transform: rotateY(0deg) translateZ(110px) scale(1.06);
-  opacity: 1 !important;
+
+/* .explorations-arc-tile — inner static div that carries the 3D perspective
+ * transform via inline style from the component. Hover flattens + pulls
+ * forward. */
+.explorations-arc-tile {
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform var(--duration-slow) var(--ease-apple);
+}
+.explorations-arc-slot:hover .explorations-arc-tile {
+  transform: rotateY(0deg) translateZ(110px) scale(1.06) !important;
   z-index: 5;
 }
 
