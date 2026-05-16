@@ -2686,3 +2686,144 @@ section { position: relative; }
     transform: none;
   }
 }
+
+/* === Visual playground — BS iconic-products curved arc ===
+ * Cards sit in a horizontal row with CSS 3D perspective; per-tile rotateY
+ * + translateZ make the outer cards tilt inward and recede, so the row
+ * reads as a curved surface. Hover flattens + pulls forward. Mobile drops
+ * the 3D and uses native scroll-snap. */
+.explorations-arc-section {
+  background: hsl(var(--bg));
+  padding: clamp(96px, 12vw, 160px) 0;
+  overflow: hidden;
+}
+.explorations-arc-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 7vw, 96px);
+}
+.explorations-arc-header {
+  max-width: 640px;
+}
+
+/* The arc row itself */
+.explorations-arc-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1600px;
+  perspective-origin: 50% 60%;
+  /* Tighten gap to negative so adjacent tiles slightly overlap, mimicking
+     the BS iconic-products curved fan. */
+  gap: clamp(-32px, -2vw, -16px);
+  min-height: clamp(360px, 38vw, 520px);
+}
+
+.explorations-arc-tile {
+  flex: 0 0 auto;
+  width: clamp(170px, 14vw, 230px);
+  /* CSS var per-tile from the component */
+  transform: rotateY(var(--arc-tilt, 0deg))
+             translateZ(var(--arc-depth, 0px));
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  transition: transform var(--duration-slow) var(--ease-apple),
+              opacity var(--duration-slow) var(--ease-apple);
+  cursor: pointer;
+}
+.explorations-arc-tile:hover {
+  transform: rotateY(0deg) translateZ(80px) scale(1.04);
+  opacity: 1 !important;
+  z-index: 5;
+}
+
+.explorations-arc-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.explorations-arc-img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
+  border-radius: clamp(14px, 1.4vw, 18px);
+  background: hsl(var(--surface));
+  border: 1px solid hsl(var(--stroke));
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45),
+              0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.explorations-arc-label {
+  position: absolute;
+  bottom: -34px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 13px;
+  color: hsl(var(--muted));
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity var(--duration-base) var(--ease-apple),
+              color var(--duration-base) var(--ease-apple);
+}
+.explorations-arc-tile:hover .explorations-arc-label {
+  opacity: 1;
+  color: hsl(var(--text));
+}
+
+/* Mobile: drop the perspective and let cards scroll horizontally with snap.
+ * 3D-tilted cards on a 390px phone read as broken. */
+@media (max-width: 768px) {
+  .explorations-arc-row {
+    perspective: none;
+    perspective-origin: initial;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 14px;
+    padding: 12px clamp(20px, 4vw, 56px) 20px;
+    margin: 0 calc(-1 * clamp(20px, 4vw, 56px));
+    min-height: 0;
+  }
+  .explorations-arc-row::-webkit-scrollbar { display: none; }
+  .explorations-arc-row { scrollbar-width: none; }
+  .explorations-arc-tile {
+    transform: none !important;
+    opacity: 1 !important;
+    width: 62vw;
+    max-width: 280px;
+    scroll-snap-align: start;
+  }
+  .explorations-arc-tile:hover {
+    transform: none !important;
+  }
+  .explorations-arc-label {
+    position: static;
+    transform: none;
+    margin-top: 10px;
+    opacity: 1;
+    color: hsl(var(--muted));
+    text-align: left;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .explorations-arc-tile,
+  .explorations-arc-label {
+    transition: none;
+  }
+  .explorations-arc-tile:hover {
+    transform: rotateY(var(--arc-tilt, 0deg))
+               translateZ(var(--arc-depth, 0px));
+  }
+}
