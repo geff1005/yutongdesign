@@ -2313,3 +2313,168 @@ section { position: relative; }
     gap: 20px;
   }
 }
+
+/* === Press horizontal scroll (Bending-Spoons reference) ===
+ * Desktop: section is pinned to top of viewport while a GSAP ScrollTrigger
+ * translates the inner track to the left as the user scrolls vertically.
+ * Mobile: native scroll-snap, no pin, no jacking. */
+.press-h-section {
+  background: hsl(var(--bg));
+  padding: clamp(72px, 9vw, 128px) 0 clamp(72px, 9vw, 128px);
+  overflow: hidden;
+}
+.press-h-inner {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 56px);
+}
+.press-h-header {
+  margin-bottom: clamp(36px, 5vw, 64px);
+  max-width: 700px;
+}
+.press-h-track-wrap {
+  position: relative;
+}
+.press-h-track {
+  display: flex;
+  gap: clamp(16px, 2vw, 28px);
+  /* Desktop default: rely on GSAP to translate. Mobile overrides this with
+     native overflow scroll below. */
+  will-change: transform;
+}
+@media (max-width: 768px) {
+  .press-h-track {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 12px;
+    /* Allow the track to be wider than container on mobile. */
+    margin: 0 calc(-1 * clamp(20px, 4vw, 56px));
+    padding-left: clamp(20px, 4vw, 56px);
+    padding-right: clamp(20px, 4vw, 56px);
+  }
+  .press-h-track::-webkit-scrollbar { display: none; }
+  .press-h-track { scrollbar-width: none; }
+}
+
+/* === Press tile (the poster card) === */
+.press-tile {
+  flex: 0 0 clamp(280px, 26vw, 380px);
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-decoration: none;
+  color: inherit;
+  padding: 14px;
+  background: hsl(var(--surface) / 0.55);
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 20px;
+  transition: border-color var(--duration-base) var(--ease-apple),
+              transform var(--duration-base) var(--ease-apple),
+              background var(--duration-base) var(--ease-apple);
+}
+.press-tile:hover {
+  border-color: hsl(var(--text) / 0.45);
+  background: hsl(var(--surface));
+  transform: translateY(-3px);
+}
+.press-tile-pinned {
+  border-color: hsl(var(--text) / 0.35);
+  background: hsl(var(--surface) / 0.85);
+}
+.press-tile-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  background: hsl(var(--surface));
+  border-radius: 12px;
+  overflow: hidden;
+}
+.press-tile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform var(--duration-slow) var(--ease-out-soft);
+}
+.press-tile:hover .press-tile-img {
+  transform: scale(1.04);
+}
+.press-tile-img-wrap-fallback {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(160deg,
+    hsl(var(--surface)) 0%,
+    hsl(var(--bg)) 100%);
+}
+.press-tile-fallback-tag {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: hsl(var(--muted));
+}
+.press-tile-pin {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  font-size: 14px;
+  color: #fff;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.7);
+  z-index: 2;
+}
+.press-tile-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 2px 6px 6px;
+}
+.press-tile-meta-top {
+  font-size: 10px;
+  letter-spacing: 0.22em;
+  color: hsl(var(--muted));
+}
+.press-tile-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(18px, 1.4vw, 22px);
+  line-height: 1.25;
+  margin: 0;
+  font-weight: 400;
+  color: hsl(var(--text));
+  /* Clamp to 3 lines so tile height stays consistent. */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.press-tile-meta-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+  font-size: 12px;
+  color: hsl(var(--muted));
+}
+.press-tile-arrow {
+  font-size: 14px;
+  transition: transform var(--duration-fast) var(--ease-apple);
+}
+.press-tile:hover .press-tile-arrow {
+  transform: translate(2px, -2px);
+}
+
+/* Reduce motion: skip the scale + translate hover effects. */
+@media (prefers-reduced-motion: reduce) {
+  .press-tile,
+  .press-tile-img,
+  .press-tile-arrow {
+    transition: none;
+  }
+  .press-tile:hover {
+    transform: none;
+  }
+  .press-tile:hover .press-tile-img {
+    transform: none;
+  }
+}
