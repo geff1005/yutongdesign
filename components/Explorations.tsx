@@ -3,12 +3,12 @@
 import Link from "next/link";
 import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
 
-// Take a small, mixed preview set for the homepage. Skip items that have no
-// thumbnail / src yet so manual placeholders never leak into the visual teaser.
+// Take a small, mixed preview set for the homepage. Items must have a real
+// visual asset (thumbnail OR src image). Spline-only entries with no poster
+// image are excluded — they used to fall through to a giant-letter fallback
+// which read as visual noise rather than a teaser.
 function previewItems(): PlayItem[] {
-  return PLAY_ITEMS.filter(
-    (p) => p.thumbnail || p.src || p.kind === "spline"
-  ).slice(0, 8);
+  return PLAY_ITEMS.filter((p) => Boolean(p.thumbnail || p.src)).slice(0, 8);
 }
 
 export function Explorations() {
@@ -51,20 +51,18 @@ export function Explorations() {
 
 function PreviewCard({ item, index }: { item: PlayItem; index: number }) {
   const thumb = item.thumbnail ?? item.src ?? null;
-  const inner = thumb ? (
-    /* eslint-disable-next-line @next/next/no-img-element */
-    <img
-      src={thumb}
-      alt={item.name ?? ""}
-      className="playground-preview-img"
-      loading="lazy"
-    />
-  ) : (
-    <div className="playground-preview-fallback">{item.name?.charAt(0) ?? "•"}</div>
-  );
+  // Guard: if an item somehow slips through without a thumb, skip rendering
+  // entirely rather than fall back to a giant letter glyph.
+  if (!thumb) return null;
   return (
     <Link href="/play" className={`playground-preview-card card-${index + 1}`}>
-      {inner}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={thumb}
+        alt={item.name ?? ""}
+        className="playground-preview-img"
+        loading="lazy"
+      />
     </Link>
   );
 }
