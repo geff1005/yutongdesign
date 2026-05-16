@@ -1,8 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Inter, Instrument_Serif, Geist } from "next/font/google";
 import "./globals.css";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SiteFooter } from "@/components/SiteFooter";
+
+// Geist Sans — free Vercel typeface; closest free substitute to Adaption
+// Labs's stkBureauSans (Sharp Type, paid). Becomes the new default body
+// type for the light-theme refresh.
+const geist = Geist({
+  variable: "--font-geist",
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+});
 
 const inter = Inter({
   variable: "--font-inter",
@@ -41,7 +50,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${instrumentSerif.variable}`}
+      className={`${geist.variable} ${inter.variable} ${instrumentSerif.variable}`}
     >
       <body>
         <SmoothScroll />
