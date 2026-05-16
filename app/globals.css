@@ -2147,3 +2147,160 @@ section { position: relative; }
   .play-cat-section { padding: 40px 0 8px; }
   .play-cat-section .play-mosaic { padding: 0; }
 }
+
+/* =============================================================
+   Phase 1 — Bending-Spoons / Faculty motion personality
+   ============================================================= */
+
+/* Easing tokens. The "apple" curve is the BS/Faculty signature —
+   brief acceleration at the head, long glide at the tail. The
+   duration scale matches Linear / Vercel docs:
+   - --t-fast (200ms): hovers, button states, focus rings
+   - --t-base (400ms): card mounts, modal opens, tab switches
+   - --t-long (700ms): scroll reveals, hero entrances, page transitions */
+:root {
+  --ease-apple: cubic-bezier(0.32, 0.72, 0, 1);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --t-fast: 200ms;
+  --t-base: 400ms;
+  --t-long: 700ms;
+}
+
+/* =============================================================
+   Site footer — oversized serif wordmark (BS "Impossible. Maybe." pattern)
+   Sits at the bottom of every page, below all other content.
+   ============================================================= */
+.site-footer {
+  background: hsl(var(--bg));
+  border-top: 1px solid hsl(var(--stroke));
+  padding: clamp(64px, 8vw, 120px) 0 clamp(40px, 5vw, 64px);
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 64px);
+}
+
+.site-footer-wordmark {
+  font-family: var(--font-display);
+  font-size: clamp(64px, 14vw, 200px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: hsl(var(--text));
+  margin: 0;
+  /* The wordmark itself is the visual mark — make sure it can hug the
+     viewport edge if the screen is small. */
+}
+
+.site-footer-wordmark-primary {
+  font-style: normal;
+}
+
+.site-footer-wordmark-italic {
+  font-style: italic;
+  font-weight: 400;
+  /* Subtle warm accent — desaturated cream, not pure white, so the italic
+     half reads as a deliberate accent (BS uses sage-green for the same
+     job; we use a warm bone tone that ties to the site's existing dark
+     theme rather than introducing a new colour). */
+  color: hsl(38 30% 78%);
+}
+
+.site-footer-tagline {
+  margin-top: clamp(20px, 3vw, 32px);
+  font-size: clamp(15px, 1.4vw, 18px);
+  line-height: 1.5;
+  color: hsl(var(--muted));
+  max-width: 520px;
+}
+
+.site-footer-meta {
+  margin-top: clamp(48px, 7vw, 96px);
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  padding-top: 28px;
+  border-top: 1px solid hsl(var(--stroke));
+}
+
+.site-footer-meta-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-width: 0;
+}
+
+.site-footer-meta-col-right {
+  text-align: right;
+}
+
+.site-footer-meta-label {
+  /* Inherits .eyebrow from the existing token system */
+  font-size: 10px;
+}
+
+.site-footer-meta-value {
+  font-size: 13px;
+  color: hsl(var(--text));
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-footer-meta-col-right .site-footer-meta-value {
+  display: block;
+  color: hsl(var(--muted));
+}
+
+.site-footer-links {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.site-footer-links a {
+  color: hsl(var(--text));
+  text-decoration: none;
+  transition: opacity var(--t-fast) var(--ease-apple);
+}
+
+.site-footer-links a:hover {
+  opacity: 0.65;
+}
+
+.site-footer-links > span[aria-hidden] {
+  color: hsl(var(--muted));
+  opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+  .site-footer-meta {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 24px;
+  }
+  .site-footer-meta-col-right {
+    text-align: left;
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 540px) {
+  .site-footer {
+    padding: 56px 0 36px;
+  }
+  .site-footer-wordmark {
+    /* Narrower phones — bring the wordmark down so the italic word doesn't
+       wrap onto its own line awkwardly. */
+    font-size: clamp(54px, 18vw, 88px);
+  }
+  .site-footer-meta {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+}
