@@ -2314,94 +2314,88 @@ section { position: relative; }
   }
 }
 
-/* === Press horizontal scroll (Bending-Spoons reference) ===
- * Desktop: section is pinned to top of viewport while a GSAP ScrollTrigger
- * translates the inner track to the left as the user scrolls vertically.
- * Mobile: native scroll-snap, no pin, no jacking. */
-.press-h-section {
+/* === Press single-card carousel (Bending-Spoons reference) ===
+ * One large card centered, ← → buttons to navigate, drag-to-swipe enabled.
+ * Replaces the old pin-and-translate horizontal scroller. */
+.press-c-section {
   background: hsl(var(--bg));
-  padding: clamp(72px, 9vw, 128px) 0 clamp(72px, 9vw, 128px);
-  overflow: hidden;
+  padding: clamp(72px, 9vw, 128px) 0;
 }
-.press-h-inner {
-  max-width: 1240px;
+.press-c-inner {
+  max-width: 1100px;
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 56px);
 }
-.press-h-header {
-  margin-bottom: clamp(36px, 5vw, 64px);
+.press-c-header {
+  margin-bottom: clamp(40px, 6vw, 72px);
   max-width: 700px;
 }
-.press-h-track-wrap {
-  position: relative;
-}
-.press-h-track {
-  display: flex;
-  gap: clamp(16px, 2vw, 28px);
-  /* Desktop default: rely on GSAP to translate. Mobile overrides this with
-     native overflow scroll below. */
-  will-change: transform;
-}
-@media (max-width: 768px) {
-  .press-h-track {
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 12px;
-    /* Allow the track to be wider than container on mobile. */
-    margin: 0 calc(-1 * clamp(20px, 4vw, 56px));
-    padding-left: clamp(20px, 4vw, 56px);
-    padding-right: clamp(20px, 4vw, 56px);
-  }
-  .press-h-track::-webkit-scrollbar { display: none; }
-  .press-h-track { scrollbar-width: none; }
-}
-
-/* === Press tile (the poster card) === */
-.press-tile {
-  flex: 0 0 clamp(280px, 26vw, 380px);
-  scroll-snap-align: start;
-  display: flex;
-  flex-direction: column;
-  gap: 14px;
-  text-decoration: none;
-  color: inherit;
-  padding: 14px;
-  background: hsl(var(--surface) / 0.55);
-  border: 1px solid hsl(var(--stroke));
-  border-radius: 20px;
-  transition: border-color var(--duration-base) var(--ease-apple),
-              transform var(--duration-base) var(--ease-apple),
-              background var(--duration-base) var(--ease-apple);
-}
-.press-tile:hover {
-  border-color: hsl(var(--text) / 0.45);
-  background: hsl(var(--surface));
-  transform: translateY(-3px);
-}
-.press-tile-pinned {
-  border-color: hsl(var(--text) / 0.35);
-  background: hsl(var(--surface) / 0.85);
-}
-.press-tile-img-wrap {
+.press-c-stage {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3;
-  background: hsl(var(--surface));
-  border-radius: 12px;
+  /* Reserve consistent height so the card swap doesn't reflow surrounding
+     sections. Roughly matches the 4:3 image + body + padding. */
+  min-height: clamp(440px, 56vw, 620px);
   overflow: hidden;
+  cursor: grab;
 }
-.press-tile-img {
+.press-c-stage:active { cursor: grabbing; }
+
+.press-c-card {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(20px, 3vw, 48px);
+  text-decoration: none;
+  color: inherit;
+  padding: clamp(18px, 2.4vw, 28px);
+  background: hsl(var(--surface) / 0.55);
+  border: 1px solid hsl(var(--stroke));
+  border-radius: clamp(20px, 2.4vw, 28px);
+  transition: border-color var(--duration-base) var(--ease-apple);
+}
+.press-c-card:hover {
+  border-color: hsl(var(--text) / 0.45);
+}
+.press-c-card-pinned {
+  border-color: hsl(var(--text) / 0.3);
+}
+@media (max-width: 768px) {
+  .press-c-card {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+    gap: 18px;
+    padding: 16px;
+  }
+}
+
+.press-c-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: clamp(14px, 1.8vw, 20px);
+  overflow: hidden;
+  background: hsl(var(--surface));
+}
+@media (max-width: 768px) {
+  .press-c-image-wrap {
+    aspect-ratio: 16 / 9;
+    height: auto;
+  }
+}
+
+.press-c-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-  transition: transform var(--duration-slow) var(--ease-out-soft);
+  user-select: none;
+  -webkit-user-drag: none;
 }
-.press-tile:hover .press-tile-img {
-  transform: scale(1.04);
-}
-.press-tile-img-wrap-fallback {
+.press-c-image-fallback {
+  width: 100%;
+  height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -2409,72 +2403,129 @@ section { position: relative; }
     hsl(var(--surface)) 0%,
     hsl(var(--bg)) 100%);
 }
-.press-tile-fallback-tag {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  color: hsl(var(--muted));
-}
-.press-tile-pin {
+.press-c-pin {
   position: absolute;
-  top: 10px;
-  right: 12px;
-  font-size: 14px;
+  top: 14px;
+  left: 16px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
   color: #fff;
-  text-shadow: 0 1px 8px rgba(0,0,0,0.9), 0 0 2px rgba(0,0,0,0.7);
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(8px);
+  padding: 6px 12px;
+  border-radius: 999px;
   z-index: 2;
 }
-.press-tile-body {
+
+.press-c-body {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  padding: 2px 6px 6px;
+  justify-content: space-between;
+  padding: clamp(6px, 1vw, 14px);
+  gap: 18px;
 }
-.press-tile-meta-top {
-  font-size: 10px;
+.press-c-meta-top {
+  font-size: 11px;
   letter-spacing: 0.22em;
   color: hsl(var(--muted));
 }
-.press-tile-title {
+.press-c-title {
   font-family: var(--font-display);
   font-style: italic;
-  font-size: clamp(18px, 1.4vw, 22px);
-  line-height: 1.25;
+  font-size: clamp(26px, 3.2vw, 42px);
+  line-height: 1.15;
   margin: 0;
   font-weight: 400;
   color: hsl(var(--text));
-  /* Clamp to 3 lines so tile height stays consistent. */
+  /* Cap lines so very long titles don't push the card. */
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 5;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.press-tile-meta-bottom {
+.press-c-meta-bottom {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 4px;
-  font-size: 12px;
+  font-size: 13px;
   color: hsl(var(--muted));
+  padding-top: 12px;
+  border-top: 1px solid hsl(var(--stroke));
 }
-.press-tile-arrow {
-  font-size: 14px;
+.press-c-arrow {
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: hsl(var(--text));
   transition: transform var(--duration-fast) var(--ease-apple);
 }
-.press-tile:hover .press-tile-arrow {
-  transform: translate(2px, -2px);
+.press-c-card:hover .press-c-arrow {
+  transform: translateX(3px);
 }
 
-/* Reduce motion: skip the scale + translate hover effects. */
+/* === Carousel controls === */
+.press-c-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: clamp(24px, 3vw, 36px);
+}
+.press-c-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 999px;
+  border: 1px solid hsl(var(--stroke));
+  background: hsl(var(--surface) / 0.4);
+  color: hsl(var(--text));
+  font-size: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-apple),
+              border-color var(--duration-fast) var(--ease-apple),
+              transform var(--duration-fast) var(--ease-apple);
+}
+.press-c-btn:hover {
+  background: hsl(var(--surface));
+  border-color: hsl(var(--text) / 0.45);
+  transform: scale(1.06);
+}
+.press-c-btn:active {
+  transform: scale(0.96);
+}
+.press-c-dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0 8px;
+}
+.press-c-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  border: none;
+  background: hsl(var(--text) / 0.25);
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--duration-fast) var(--ease-apple),
+              transform var(--duration-fast) var(--ease-apple),
+              width var(--duration-fast) var(--ease-apple);
+}
+.press-c-dot:hover {
+  background: hsl(var(--text) / 0.5);
+}
+.press-c-dot-active {
+  background: hsl(var(--text));
+  width: 22px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .press-tile,
-  .press-tile-img,
-  .press-tile-arrow {
+  .press-c-card,
+  .press-c-btn,
+  .press-c-dot,
+  .press-c-arrow {
     transition: none;
-  }
-  .press-tile:hover {
-    transform: none;
-  }
-  .press-tile:hover .press-tile-img {
-    transform: none;
   }
 }
