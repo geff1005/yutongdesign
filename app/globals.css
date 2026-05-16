@@ -2714,18 +2714,17 @@ section { position: relative; }
   display: flex;
   justify-content: center;
   align-items: center;
-  perspective: 1600px;
-  perspective-origin: 50% 60%;
-  /* Tighten gap to negative so adjacent tiles slightly overlap, mimicking
-     the BS iconic-products curved fan. */
-  gap: clamp(-32px, -2vw, -16px);
-  min-height: clamp(360px, 38vw, 520px);
+  perspective: 1100px;
+  perspective-origin: 50% 50%;
+  min-height: clamp(420px, 40vw, 560px);
+  /* No `gap` here — CSS gap clamps to zero on negative values. Use negative
+     margin-left on every-tile-after-first to overlap the cards instead. */
 }
 
 .explorations-arc-tile {
   flex: 0 0 auto;
-  width: clamp(170px, 14vw, 230px);
-  /* CSS var per-tile from the component */
+  width: clamp(180px, 15vw, 240px);
+  /* Per-tile transform comes from inline CSS vars set in the component. */
   transform: rotateY(var(--arc-tilt, 0deg))
              translateZ(var(--arc-depth, 0px));
   transform-style: preserve-3d;
@@ -2734,8 +2733,14 @@ section { position: relative; }
               opacity var(--duration-slow) var(--ease-apple);
   cursor: pointer;
 }
+.explorations-arc-tile + .explorations-arc-tile {
+  /* Overlap each tile slightly on top of the previous one, BS iconic-fan style.
+     The negative margin combines with the rotateY to make the row read as a
+     curved cylindrical surface rather than a flat strip. */
+  margin-left: clamp(-44px, -2.6vw, -24px);
+}
 .explorations-arc-tile:hover {
-  transform: rotateY(0deg) translateZ(80px) scale(1.04);
+  transform: rotateY(0deg) translateZ(110px) scale(1.06);
   opacity: 1 !important;
   z-index: 5;
 }

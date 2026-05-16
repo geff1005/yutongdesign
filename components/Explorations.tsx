@@ -61,9 +61,9 @@ export function Explorations() {
         <div className="explorations-arc-row" role="list">
           {items.map((item, i) => {
             const offset = i - mid; // negative on the left, positive on the right
-            const tilt = offset * -14; // outer cards rotate inward
-            const depth = -Math.abs(offset) * 56; // outer cards pushed back
-            const opacity = 1 - Math.abs(offset) * 0.08;
+            const tilt = offset * -22; // outer cards rotate inward (stronger curve)
+            const depth = -Math.abs(offset) * 90; // outer cards pushed back
+            const opacity = 1 - Math.abs(offset) * 0.06;
             const thumb = item.thumbnail ?? item.src ?? "";
             return (
               <motion.div
