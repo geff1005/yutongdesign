@@ -1,5 +1,6 @@
 "use client";
 
+import { useEffect, useState, useRef } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
@@ -7,13 +8,14 @@ import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
 /**
  * Visual playground — Bending Spoons "iconic products" arc pattern.
  *
- * Cards sit in a horizontal arc with CSS 3D perspective: the outer cards tilt
- * inward (rotateY proportional to distance from center) and recede in Z so the
- * row reads as a curved surface, not a flat strip. Hover flattens a card and
- * pulls it forward. Mobile falls back to native horizontal scroll-snap.
+ * Cards sit in a horizontal arc with CSS 3D perspective. Each card's tilt
+ * + depth is recomputed every tick from a rolling `centerIdx` so the arc
+ * appears to slowly rotate around its center axis — the BS iconic-products
+ * cylinder feel. Hover pauses the rotation; the active center card can be
+ * clicked to navigate to /play.
  *
- * Items must have a real thumbnail or src — the earlier giant-S-letter
- * fallback is gone, and PLAY_ITEMS without an asset are filtered upstream.
+ * Items must have a real thumbnail or src; PLAY_ITEMS without an asset are
+ * filtered upstream so the earlier "giant S" letter fallback never returns.
  */
 
 function previewItems(): PlayItem[] {
@@ -21,10 +23,30 @@ function previewItems(): PlayItem[] {
 }
 
 const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
+/** Seconds between auto-advancing the arc one slot. */
+const ROTATE_INTERVAL_MS = 3200;
 
 export function Explorations() {
   const items = previewItems();
-  const mid = (items.length - 1) / 2;
+  const [centerIdx, setCenterIdx] = useState(Math.floor(items.length / 2));
+  const pausedRef = useRef(false);
+
+  // Auto-rotate: every ROTATE_INTERVAL_MS, advance one slot. Pause on hover
+  // (the user is reading / about to click), respect reduced motion.
+  useEffect(() => {
+    if (items.length <= 1) return;
+    if (
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+    const id = setInterval(() => {
+      if (pausedRef.current) return;
+      setCenterIdx((c) => (c + 1) % items.length);
+    }, ROTATE_INTERVAL_MS);
+    return () => clearInterval(id);
+  }, [items.length]);
 
   return (
     <section className="explorations-arc-section" id="explorations">
@@ -58,31 +80,45 @@ export function Explorations() {
           </Link>
         </motion.div>
 
-        <div className="explorations-arc-row" role="list">
+        <div
+          className="explorations-arc-row"
+          role="list"
+          onMouseEnter={() => {
+            pausedRef.current = true;
+          }}
+          onMouseLeave={() => {
+            pausedRef.current = false;
+          }}
+        >
           {items.map((item, i) => {
-            const offset = i - mid; // negative on the left, positive on the right
-            const tilt = offset * -22; // outer cards rotate inward (stronger curve)
+            // Compute offset relative to the currently-centered slot.
+            // Wrap so cards near the edges become "shortest distance" rather
+            // than always huge — mod arithmetic for circular arc behavior.
+            let raw = i - centerIdx;
+            const half = Math.floor(items.length / 2);
+            if (raw > half) raw -= items.length;
+            if (raw < -half) raw += items.length;
+            const offset = raw;
+            const tilt = offset * -22; // outer cards rotate inward
             const depth = -Math.abs(offset) * 90; // outer cards pushed back
-            const opacity = 1 - Math.abs(offset) * 0.06;
+            const opacity = 1 - Math.abs(offset) * 0.08;
             const thumb = item.thumbnail ?? item.src ?? "";
+            const isCenter = offset === 0;
             return (
-              // Outer motion.div owns the entrance animation (opacity + y).
-              // We do NOT put the 3D transform here — Framer Motion writes its
-              // own `transform` and would clobber rotateY/translateZ. Instead
-              // an inner static <div> carries the 3D perspective transform,
-              // composed cleanly with the parent's translate.
               <motion.div
                 key={item.slug}
                 role="listitem"
-                className="explorations-arc-slot"
+                className={
+                  "explorations-arc-slot" +
+                  (isCenter ? " explorations-arc-slot-center" : "")
+                }
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
+                animate={{ opacity, y: 0 }}
                 transition={{
-                  duration: 0.7,
+                  duration: 0.9,
                   ease: EASE,
-                  delay: Math.min(Math.abs(offset) * 0.07, 0.35),
                 }}
+                style={{ zIndex: 10 - Math.abs(offset) }}
               >
                 <div
                   className="explorations-arc-tile"

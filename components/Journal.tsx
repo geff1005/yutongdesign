@@ -65,7 +65,13 @@ function PressCard({
           />
         ) : (
           <div className="press-c-image-fallback">
-            <span className="eyebrow">{item.tag ?? "Press"}</span>
+            <div className="press-c-image-fallback-grain" aria-hidden />
+            <div className="press-c-image-fallback-content">
+              <div className="press-c-image-fallback-tag eyebrow">
+                {item.tag ?? "Press"}
+              </div>
+              <div className="press-c-image-fallback-outlet">{item.outlet}</div>
+            </div>
           </div>
         )}
         {item.pinned && isActive && (
