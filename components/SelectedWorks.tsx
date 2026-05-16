@@ -1,12 +1,29 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { SELECTED_FEATURED } from "@/lib/projects";
 
-// Bento layout pattern: 7-5 / 5-7 alternating
-const SPANS = [7, 5, 5, 7] as const;
+/**
+ * Selected Works — Bending Spoons "Products" card pattern.
+ *
+ * 2-column responsive grid of equal-height cards. Each card:
+ *   - project name + type chip (top-left)
+ *   - "View case ↗" link (top-right)
+ *   - short tagline / description
+ *   - large thumbnail / GIF / video (bottom)
+ *
+ * Replaces the old 4-up bento with mixed-size tiles. Uniform sizes scale
+ * the section gracefully when more projects are added (extend SELECTED_FEATURED
+ * in lib/projects.ts). Tomorrow the user will drop in AE-style GIFs which
+ * slot into the same `thumbnail` field — no layout change needed.
+ */
+
+const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
 export function SelectedWorks() {
   return (
-    <section className="section" id="work">
+    <section className="section sw-section" id="work">
       <div className="section-inner">
         <div className="section-header">
           <div>
@@ -17,7 +34,8 @@ export function SelectedWorks() {
               Featured <em>projects</em>
             </h2>
             <p className="section-sub">
-              A selection of projects spanning industrial design, interaction, and AI-driven systems.
+              A selection of projects spanning AI product design, real-client
+              web, industrial design, and speculative content.
             </p>
           </div>
           <Link href="/work" className="view-all-btn">
@@ -28,37 +46,51 @@ export function SelectedWorks() {
           </Link>
         </div>
 
-        <div className="bento">
-          {SELECTED_FEATURED.map((p, i) => {
-            const span = SPANS[i] ?? 5;
-            return (
-              <a
-                key={p.slug}
-                className={
-                  "work-card " +
-                  (span === 7 ? "col-span-7" : "col-span-5") +
-                  " aspect-4-3"
-                }
-                href={p.href}
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  className="work-img"
-                  src={p.thumbnail}
-                  alt={p.title}
-                  loading={i < 2 ? "eager" : "lazy"}
-                />
-                <div className="halftone" />
-                <div className="work-hover">
-                  <span className="view-pill">
-                    <span className="view-pill-inner">
-                      View — <em>{p.title}</em>
-                    </span>
+        <div className="sw-grid">
+          {SELECTED_FEATURED.map((p, i) => (
+            <motion.div
+              key={p.slug}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{
+                duration: 0.6,
+                ease: EASE,
+                delay: Math.min(i * 0.06, 0.3),
+              }}
+            >
+              <Link href={p.href} className="sw-card">
+                <div className="sw-card-head">
+                  <div className="sw-card-head-left">
+                    <div className="sw-card-name">{p.title}</div>
+                    {p.type && (
+                      <div className="sw-card-type eyebrow">{p.type}</div>
+                    )}
+                  </div>
+                  <span className="sw-card-cta">
+                    View case <span aria-hidden>↗</span>
                   </span>
                 </div>
-              </a>
-            );
-          })}
+
+                <p className="sw-card-tagline">{p.description}</p>
+
+                <div className="sw-card-media-wrap">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={p.thumbnail}
+                    alt={p.title}
+                    className="sw-card-media"
+                    loading={i < 2 ? "eager" : "lazy"}
+                  />
+                  {p.award && (
+                    <span className="sw-card-award-chip">
+                      <span aria-hidden>★</span> Awarded
+                    </span>
+                  )}
+                </div>
+              </Link>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
