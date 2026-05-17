@@ -2,6 +2,17 @@
 
 import { useEffect, useState } from "react";
 
+/**
+ * Inline backdrop-filter — Lightning CSS (Tailwind 4 / Next 16 build
+ * pipeline) was stripping `backdrop-filter` from globals.css at compile
+ * time, leaving the pill nav opaque-white instead of glassy. Setting it
+ * via the React style prop bypasses the optimizer.
+ */
+const GLASS_STYLE: React.CSSProperties = {
+  backdropFilter: "blur(24px) saturate(190%)",
+  WebkitBackdropFilter: "blur(24px) saturate(190%)",
+};
+
 type Link = { label: string; href: string; external?: boolean };
 const LINKS: Link[] = [
   { label: "Home", href: "#home" },
@@ -41,7 +52,10 @@ export function Navbar() {
     <>
       {/* Desktop pill nav — visible >= 768px */}
       <div className="nav-wrap nav-wrap-desktop">
-        <nav className={"nav-pill" + (scrolled ? " scrolled" : "")}>
+        <nav
+          className={"nav-pill" + (scrolled ? " scrolled" : "")}
+          style={GLASS_STYLE}
+        >
           <a className="nav-logo" href="#top" aria-label="Home">
             <span className="nav-logo-inner">JZ</span>
           </a>
