@@ -167,25 +167,31 @@ export function Journal() {
             <PressCard item={prevItem} isActive={false} onActivate={prev} />
           </div>
 
-          <AnimatePresence mode="wait" initial={false}>
-            <motion.div
-              key={activeItem.url}
-              className="press-c-card-slot press-c-card-slot-active"
-              initial={{ opacity: 0, x: 32 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -32 }}
-              transition={{ duration: 0.5, ease: EASE }}
-              drag="x"
-              dragConstraints={{ left: 0, right: 0 }}
-              dragElastic={0.18}
-              onDragEnd={(_, info) => {
-                if (info.offset.x < -80) next();
-                else if (info.offset.x > 80) prev();
-              }}
-            >
-              <PressCard item={activeItem} isActive />
-            </motion.div>
-          </AnimatePresence>
+          {/* Outer slot does the absolute positioning (CSS owns the
+              translate(-50%, -50%) for centering). Inner motion.div does
+              the entrance/exit animation — its transform would otherwise
+              clobber the centering translate. */}
+          <div className="press-c-card-slot press-c-card-slot-active">
+            <AnimatePresence mode="wait" initial={false}>
+              <motion.div
+                key={activeItem.url}
+                className="press-c-card-slot-active-inner"
+                initial={{ opacity: 0, x: 32 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -32 }}
+                transition={{ duration: 0.5, ease: EASE }}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                dragElastic={0.18}
+                onDragEnd={(_, info) => {
+                  if (info.offset.x < -80) next();
+                  else if (info.offset.x > 80) prev();
+                }}
+              >
+                <PressCard item={activeItem} isActive />
+              </motion.div>
+            </AnimatePresence>
+          </div>
 
           <div
             className="press-c-card-slot press-c-card-slot-next"

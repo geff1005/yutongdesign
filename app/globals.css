@@ -447,10 +447,15 @@ a { color: inherit; text-decoration: none; }
   width: auto; height: auto;
   object-fit: cover;
   transform: translate(-50%, -50%);
+  /* Light theme: hide the dark video so it doesn't grey out the section.
+     Easier than swapping in a light-themed video right now. */
+  display: none;
 }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: rgba(0,0,0,0.2);
+  /* Was rgba(0,0,0,0.2) — that 20% black wash dimmed everything on the
+     light theme since there's no video bg now. Transparent on light. */
+  background: transparent;
 }
 .hero-fade {
   position: absolute;
@@ -580,9 +585,27 @@ a { color: inherit; text-decoration: none; }
   animation: scroll-down 1.5s ease-in-out infinite;
 }
 
-/* GSAP entrance helpers */
-.name-reveal { opacity: 0; transform: translateY(50px); }
-.blur-in { opacity: 0; filter: blur(10px); transform: translateY(20px); }
+/* GSAP entrance helpers. Initial state hides them; GSAP fades them in
+ * after mount. Safety fallback: if GSAP fails to load (slow network,
+ * blocked CDN), elements stay invisible forever. The animation below
+ * acts as a fallback that mirrors GSAP's end state after 2.5s. */
+.name-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: hero-reveal-fallback 0.01s ease-out 2.5s forwards;
+}
+.blur-in {
+  opacity: 0;
+  filter: blur(10px);
+  transform: translateY(20px);
+  animation: hero-blur-in-fallback 0.01s ease-out 2.5s forwards;
+}
+@keyframes hero-reveal-fallback {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes hero-blur-in-fallback {
+  to { opacity: 1; filter: blur(0); transform: translateY(0); }
+}
 
 /* === Sections === */
 section { position: relative; }
@@ -2393,14 +2416,24 @@ section { position: relative; }
               opacity var(--duration-base) var(--ease-apple);
 }
 .press-c-card-slot-active {
-  /* Center, full size */
+  /* Center, full size. transform is unused here because Framer Motion
+     writes its own transform on the inner div, but the outer wrapper
+     itself uses transform: translate(-50%, -50%) so the card pinpoints
+     dead-center horizontally + vertically. */
   left: 50%;
+  transform: translate(-50%, -50%);
   width: min(720px, 70vw);
   transform: translate(-50%, -50%);
   z-index: 3;
   cursor: grab;
 }
 .press-c-card-slot-active:active { cursor: grabbing; }
+/* Inner motion.div — fills the active slot. Framer Motion writes its own
+   transform here; the outer slot does the centering translate. */
+.press-c-card-slot-active-inner {
+  width: 100%;
+  height: 100%;
+}
 
 .press-c-card-slot-prev,
 .press-c-card-slot-next {
@@ -2417,13 +2450,14 @@ section { position: relative; }
   opacity: 0.85;
 }
 .press-c-card-slot-prev {
-  /* Peek from the left */
-  right: calc(50% + min(380px, 36vw));
+  /* Peek from the left — anchor the card's right edge at (50% - 280px)
+     so it tucks behind the active card's left edge. */
+  left: calc(50% - min(580px, 56vw));
   transform: translate(0, -50%) scale(0.86);
 }
 .press-c-card-slot-next {
-  /* Peek from the right */
-  left: calc(50% + min(380px, 36vw));
+  /* Peek from the right — anchor the card's left edge at (50% + 280px). */
+  left: calc(50% + min(280px, 26vw));
   transform: translate(0, -50%) scale(0.86);
 }
 
