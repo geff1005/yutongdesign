@@ -136,7 +136,10 @@ export function Explorations() {
                       src={thumb}
                       alt={item.name ?? ""}
                       className="explorations-arc-img"
-                      loading="lazy"
+                      /* Eager — the arc is a marquee experience; lazy
+                         delays the cylindrical reveal which defeats the
+                         point. 7 small thumbs is cheap. */
+                      loading="eager"
                     />
                     {item.name && (
                       <div className="explorations-arc-label">{item.name}</div>
