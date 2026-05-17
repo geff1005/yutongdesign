@@ -2867,46 +2867,54 @@ section { position: relative; }
   max-width: 640px;
 }
 
-/* The arc row itself */
+/* The arc row itself — absolute positioning so the offset=0 (front) card
+ * is always anchored at horizontal center, regardless of which array index
+ * currently holds it. As centerIdx rotates, tiles slide left/right by their
+ * `offset * slotStep` translation; the arc rotates *around* the center
+ * rather than walking off to one side. */
 .explorations-arc-row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  perspective: 1000px;
+  position: relative;
+  width: 100%;
+  perspective: 1100px;
   perspective-origin: 50% 50%;
   min-height: clamp(440px, 44vw, 640px);
-  /* Let outer tiles bleed past the inner container's padding for the BS
-     cylindrical wrap-around feel. */
   overflow: visible;
-  /* No `gap` here — CSS gap clamps to zero on negative values. Use negative
-     margin-left on every-tile-after-first to overlap the cards instead. */
 }
 
-/* .explorations-arc-slot — outer flex item owned by Framer Motion for the
- * entrance animation. We don't put the 3D transform here because Framer
- * Motion writes its own `transform` and would override us. */
+/* .explorations-arc-slot — absolutely positioned at horizontal center;
+ * the component's inline transform on .explorations-arc-tile carries both
+ * the horizontal step and the 3D rotation. */
 .explorations-arc-slot {
-  flex: 0 0 auto;
-  width: clamp(260px, 22vw, 360px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: clamp(220px, 20vw, 320px);
   cursor: pointer;
+  margin-top: calc(-1 * clamp(220px, 20vw, 320px) * 0.667); /* half height = aspect 3/4 */
+  margin-left: calc(-1 * clamp(220px, 20vw, 320px) / 2);
+  transition: z-index 0s linear var(--duration-slow);
 }
-.explorations-arc-slot + .explorations-arc-slot {
-  /* Heavier overlap so the BS cylindrical wrap reads as one continuous
-     curved surface, not separate cards in a line. */
-  margin-left: clamp(-110px, -7vw, -60px);
+.explorations-arc-slot-center {
+  transition: z-index 0s linear 0s;
 }
 
 /* .explorations-arc-tile — inner static div that carries the 3D perspective
- * transform via inline style from the component. Hover flattens + pulls
- * forward. */
+ * transform via inline style from the component. The inline transform
+ * combines translateX (horizontal slot position) + rotateY (tilt) +
+ * translateZ (depth). Transition gives the cylinder its slow auto-rotate
+ * feel. */
 .explorations-arc-tile {
   transform-style: preserve-3d;
   transform-origin: center center;
-  transition: transform var(--duration-slow) var(--ease-apple);
+  transition: transform 900ms var(--ease-apple);
+  will-change: transform;
 }
 .explorations-arc-slot:hover .explorations-arc-tile {
-  transform: rotateY(0deg) translateZ(110px) scale(1.06) !important;
-  z-index: 5;
+  /* Hover only takes effect on the center card; peek cards stay locked
+     into their arc positions. */
+}
+.explorations-arc-slot-center:hover .explorations-arc-tile {
+  filter: brightness(1.04);
 }
 
 .explorations-arc-link {
@@ -2954,6 +2962,8 @@ section { position: relative; }
  * 3D-tilted cards on a 390px phone read as broken. */
 @media (max-width: 768px) {
   .explorations-arc-row {
+    position: static;
+    display: flex;
     perspective: none;
     perspective-origin: initial;
     justify-content: flex-start;
@@ -2967,11 +2977,18 @@ section { position: relative; }
   }
   .explorations-arc-row::-webkit-scrollbar { display: none; }
   .explorations-arc-row { scrollbar-width: none; }
+  .explorations-arc-slot {
+    position: static;
+    margin: 0;
+    width: 62vw;
+    max-width: 280px;
+    flex: 0 0 auto;
+    opacity: 1 !important;
+  }
   .explorations-arc-tile {
     transform: none !important;
     opacity: 1 !important;
-    width: 62vw;
-    max-width: 280px;
+    width: 100%;
     scroll-snap-align: start;
   }
   .explorations-arc-tile:hover {

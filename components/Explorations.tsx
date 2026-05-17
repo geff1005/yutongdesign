@@ -55,7 +55,7 @@ export function Explorations() {
           className="explorations-arc-header"
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0.05 }}
           transition={{ duration: 0.7, ease: EASE }}
         >
           <div className="section-header-eyebrow">
@@ -99,9 +99,14 @@ export function Explorations() {
             if (raw > half) raw -= items.length;
             if (raw < -half) raw += items.length;
             const offset = raw;
-            const tilt = offset * -22; // outer cards rotate inward
-            const depth = -Math.abs(offset) * 90; // outer cards pushed back
-            const opacity = 1 - Math.abs(offset) * 0.08;
+            // Each offset step shifts the tile horizontally by `step` px so
+            // that offset=0 (the front card) is always at horizontal 0
+            // (centered by the absolute-positioning CSS).
+            const step = 170;
+            const translateX = offset * step;
+            const tilt = offset * -24; // outer cards rotate inward
+            const depth = -Math.abs(offset) * 120; // outer cards pushed back
+            const opacity = Math.max(0.35, 1 - Math.abs(offset) * 0.18);
             const thumb = item.thumbnail ?? item.src ?? "";
             const isCenter = offset === 0;
             return (
@@ -112,8 +117,8 @@ export function Explorations() {
                   "explorations-arc-slot" +
                   (isCenter ? " explorations-arc-slot-center" : "")
                 }
-                initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity, y: 0 }}
+                initial={false}
+                animate={{ opacity }}
                 transition={{
                   duration: 0.9,
                   ease: EASE,
@@ -123,7 +128,7 @@ export function Explorations() {
                 <div
                   className="explorations-arc-tile"
                   style={{
-                    transform: `rotateY(${tilt}deg) translateZ(${depth}px)`,
+                    transform: `translateX(${translateX}px) rotateY(${tilt}deg) translateZ(${depth}px)`,
                   }}
                 >
                   <Link
