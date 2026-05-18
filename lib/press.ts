@@ -41,13 +41,6 @@ export const PRESS: PressItem[] = [
     thumbnail: "/press/ida.jpg",
   },
   {
-    date: "2023-09-12",
-    title: "Galleries — Spark Awards · International Design Competition",
-    outlet: "Spark Awards",
-    url: "https://galleries.sparkawards.com/index.cfm?year=2023&entry=45B9B4E1-C940-3692-19BA59B44CE46FDC",
-    tag: "Award",
-  },
-  {
     date: "2024-05-26",
     title: "Open June Special — Guojiao 1573 Museum Night opens at SCFAI",
     outlet: "Sichuan Fine Arts Institute",
@@ -61,5 +54,6 @@ export const PRESS: PressItem[] = [
     outlet: "Capacitor Magazine",
     url: "https://mp.weixin.qq.com/s/An2wXl44FVCy1TsqjspmXQ",
     tag: "Workshop",
+    thumbnail: "/press/capacitor-workshop.jpg",
   },
 ];
