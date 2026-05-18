@@ -1,8 +1,3 @@
-"use client";
-
-import { useState } from "react";
-import { LoadingScreen } from "./LoadingScreen";
-import { Navbar } from "./Navbar";
 import { Hero } from "./Hero";
 import { SelectedWorks } from "./SelectedWorks";
 import { Journal } from "./Journal";
@@ -19,12 +14,8 @@ import { Stats } from "./Stats";
  * closing frame for every page.
  */
 export function Portfolio() {
-  const [loaded, setLoaded] = useState(false);
-
   return (
     <>
-      {!loaded && <LoadingScreen onComplete={() => setLoaded(true)} />}
-      <Navbar />
       <Hero />
       <SelectedWorks />
       <Journal />

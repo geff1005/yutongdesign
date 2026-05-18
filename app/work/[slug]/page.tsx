@@ -94,16 +94,6 @@ export default async function WorkDetailPage({
 
   return (
     <main className="case-study">
-      {/* Top nav */}
-      <div className="case-nav">
-        <Link href="/" className="case-nav-back">
-          <span aria-hidden>←</span> Back
-        </Link>
-        <Link href="/" className="case-nav-home">
-          {project.title}
-        </Link>
-      </div>
-
       {/* Hero */}
       <header className="case-hero">
         <div className="case-hero-inner">
@@ -436,7 +426,7 @@ export default async function WorkDetailPage({
       )}
 
       <footer className="case-footer">
-        <Link href="/" className="case-footer-home">
+        <Link href="/work" className="case-footer-home">
           ← Back to all work
         </Link>
         <a className="case-footer-email" href="mailto:julianyutongzhu@gmail.com">

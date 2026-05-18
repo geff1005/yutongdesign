@@ -1,240 +1,207 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useCallback, useEffect, useRef, useState } from "react";
+import gsap from "gsap";
 import { PRESS } from "@/lib/press";
-
-/**
- * Press & recognition — GSAP-showcase 3-card layout.
- *
- * Layout: previous card peeks from the left (smaller, dimmed, clickable),
- * active card sits center (full size), next card peeks from the right
- * (smaller, dimmed, clickable). ← → buttons + dots below. Drag/swipe + arrow
- * keys also work.
- */
-
-function formatDate(iso: string): string {
-  const d = new Date(iso);
-  return d.toLocaleDateString("en-GB", {
-    year: "numeric",
-    month: "short",
-    day: "numeric",
-  });
-}
-
-const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
 
 type Press = (typeof PRESS)[number];
 
-function PressCard({
+function PlayIcon() {
+  return (
+    <svg
+      width="18"
+      height="18"
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden
+    >
+      <path d="M6 18.2V6.5c0-1.55 1.68-2.51 3.02-1.72l9.26 5.47c1.26.75 1.32 2.56.1 3.38l-9.26 6.26C7.79 20.79 6 19.84 6 18.2Z" />
+    </svg>
+  );
+}
+
+function PressInterviewCard({
   item,
-  isActive,
-  onActivate,
+  index,
+  displayIndex,
+  active,
+  setCardRef,
+  setTextRef,
 }: {
   item: Press;
-  isActive: boolean;
-  onActivate?: () => void;
+  index: number;
+  displayIndex: number;
+  active: boolean;
+  setCardRef: (index: number, node: HTMLAnchorElement | null) => void;
+  setTextRef: (index: number, node: HTMLDivElement | null) => void;
 }) {
   return (
     <a
-      href={isActive ? item.url : undefined}
-      target={isActive ? "_blank" : undefined}
-      rel={isActive ? "noopener noreferrer" : undefined}
-      onClick={(e) => {
-        if (!isActive) {
-          e.preventDefault();
-          onActivate?.();
-        }
-      }}
-      className={
-        "press-c-card" +
-        (item.pinned ? " press-c-card-pinned" : "") +
-        (isActive ? " press-c-card-active" : " press-c-card-peek")
-      }
-      aria-hidden={!isActive}
-      tabIndex={isActive ? 0 : -1}
+      ref={(node) => setCardRef(displayIndex, node)}
+      href={item.url}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={"press-interview-slide" + (active ? " is-active" : "")}
+      data-source-index={index}
+      aria-label={`${item.outlet}: ${item.title}`}
     >
-      <div className="press-c-image-wrap">
-        {item.thumbnail ? (
-          /* eslint-disable-next-line @next/next/no-img-element */
-          <img
-            src={item.thumbnail}
-            alt={item.title}
-            className="press-c-image"
-            draggable={false}
-          />
-        ) : (
-          <div className="press-c-image-fallback">
-            <div className="press-c-image-fallback-grain" aria-hidden />
-            <div className="press-c-image-fallback-content">
-              <div className="press-c-image-fallback-tag eyebrow">
-                {item.tag ?? "Press"}
-              </div>
-              <div className="press-c-image-fallback-outlet">{item.outlet}</div>
+      <div className="press-interview-scale">
+        <div className="press-interview-media">
+          {item.thumbnail ? (
+            /* eslint-disable-next-line @next/next/no-img-element */
+            <img
+              src={item.thumbnail}
+              alt=""
+              className="press-interview-image"
+              draggable={false}
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          ) : (
+            <div className="press-interview-fallback" aria-hidden>
+              <span>{item.outlet}</span>
             </div>
-          </div>
-        )}
-        {item.pinned && isActive && (
-          <span className="press-c-pin" aria-hidden>
-            ★ Featured
-          </span>
-        )}
-      </div>
-      {isActive && (
-        <div className="press-c-body">
-          <div className="press-c-meta-top eyebrow">
-            {item.tag ? `${item.tag} · ` : ""}
-            {item.outlet}
-          </div>
-          <h3 className="press-c-title">{item.title}</h3>
-          <div className="press-c-meta-bottom">
-            <span>{formatDate(item.date)}</span>
-            <span className="press-c-arrow" aria-hidden>
-              Read ↗
-            </span>
+          )}
+          <div
+            ref={(node) => setTextRef(displayIndex, node)}
+            className="press-interview-text"
+            data-source-index={index}
+          >
+            <h5>{item.outlet}</h5>
+            <p>{item.title}</p>
           </div>
         </div>
-      )}
+
+        <span className="press-interview-read" aria-hidden>
+          <span className="press-interview-glow" />
+          <span className="press-interview-read-inner">
+            <PlayIcon />
+            Read
+          </span>
+        </span>
+      </div>
     </a>
   );
 }
 
 export function Journal() {
-  const sorted = [
-    ...PRESS.slice().sort((a, b) => {
-      if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
-      return a.date < b.date ? 1 : -1;
-    }),
-  ];
-  const [index, setIndex] = useState(0);
-  const total = sorted.length;
+  const sorted = PRESS.slice().sort((a, b) => {
+    if (Boolean(a.pinned) !== Boolean(b.pinned)) return a.pinned ? -1 : 1;
+    return a.date < b.date ? 1 : -1;
+  });
+  const [activeIndex, setActiveIndex] = useState(0);
+  const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
+  const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const displayItems =
+    sorted.length > 1
+      ? [
+          { item: sorted[sorted.length - 1], sourceIndex: sorted.length - 1, clone: "head" },
+          ...sorted.map((item, sourceIndex) => ({ item, sourceIndex, clone: "none" })),
+          { item: sorted[0], sourceIndex: 0, clone: "tail" },
+        ]
+      : sorted.map((item, sourceIndex) => ({ item, sourceIndex, clone: "none" }));
 
-  const next = useCallback(() => setIndex((i) => (i + 1) % total), [total]);
-  const prev = useCallback(
-    () => setIndex((i) => (i - 1 + total) % total),
-    [total]
-  );
+  const setCardRef = useCallback((index: number, node: HTMLAnchorElement | null) => {
+    cardRefs.current[index] = node;
+  }, []);
+
+  const setTextRef = useCallback((index: number, node: HTMLDivElement | null) => {
+    textRefs.current[index] = node;
+  }, []);
+
+  const goTo = (index: number) => {
+    const next = (index + sorted.length) % sorted.length;
+    setActiveIndex(next);
+    cardRefs.current[next + (sorted.length > 1 ? 1 : 0)]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+      inline: "center",
+    });
+  };
 
   useEffect(() => {
-    const section = document.getElementById("journal");
-    if (!section) return;
-    let active = false;
-    const io = new IntersectionObserver(
-      ([entry]) => {
-        active = entry.isIntersecting;
-      },
-      { threshold: 0.35 }
-    );
-    io.observe(section);
-    function onKey(e: KeyboardEvent) {
-      if (!active) return;
-      if (e.key === "ArrowRight") next();
-      if (e.key === "ArrowLeft") prev();
-    }
-    window.addEventListener("keydown", onKey);
-    return () => {
-      io.disconnect();
-      window.removeEventListener("keydown", onKey);
-    };
-  }, [next, prev]);
+    const ctx = gsap.context(() => {
+      cardRefs.current.forEach((node) => {
+        if (!node) return;
+        const sourceIndex = Number(node.dataset.sourceIndex);
+        gsap.to(node.querySelector(".press-interview-scale"), {
+          scale: sourceIndex === activeIndex ? 1 : 0.72,
+          duration: 0.3,
+          ease: "power2.out",
+          overwrite: true,
+        });
+      });
 
-  const prevItem = sorted[(index - 1 + total) % total];
-  const activeItem = sorted[index];
-  const nextItem = sorted[(index + 1) % total];
+      textRefs.current.forEach((node) => {
+        if (!node) return;
+        const sourceIndex = Number(node.dataset.sourceIndex);
+        const children = node.querySelectorAll("h5, p");
+        gsap.to(children, {
+          autoAlpha: sourceIndex === activeIndex ? 1 : 0,
+          y: sourceIndex === activeIndex ? 0 : 20,
+          duration: sourceIndex === activeIndex ? 0.4 : 0.3,
+          ease: sourceIndex === activeIndex ? "power2.out" : "power2.in",
+          stagger: sourceIndex === activeIndex ? 0.04 : 0,
+          overwrite: true,
+        });
+      });
+    });
+
+    return () => ctx.revert();
+  }, [activeIndex]);
+
+  useEffect(() => {
+    const id = requestAnimationFrame(() => {
+      cardRefs.current[sorted.length > 1 ? 1 : 0]?.scrollIntoView({
+        behavior: "auto",
+        block: "nearest",
+        inline: "center",
+      });
+    });
+
+    return () => cancelAnimationFrame(id);
+  }, [sorted.length]);
 
   return (
-    <section className="press-c-section" id="journal">
-      <div className="press-c-inner">
-        <div className="press-c-header">
-          <div className="section-header-eyebrow">
-            <span className="eyebrow">Recent thinking</span>
-          </div>
-          <h2 className="section-heading">
-            Press <em>&amp; recognition</em>
-          </h2>
-          <p className="section-sub">
-            Coverage, awards, and exhibitions — newest first. {index + 1} /{" "}
-            {total}
-          </p>
+    <section
+      className="press-c-section press-interview-section"
+      id="journal"
+      data-nav-theme="dark"
+    >
+      <h2 className="press-interview-heading">Press</h2>
+
+      <div className="press-interview-viewport">
+        <div className="press-interview-track">
+          {displayItems.map(({ item, sourceIndex, clone }, displayIndex) => (
+            <PressInterviewCard
+              key={`${item.url}-${clone}`}
+              item={item}
+              index={sourceIndex}
+              displayIndex={displayIndex}
+              active={sourceIndex === activeIndex}
+              setCardRef={setCardRef}
+              setTextRef={setTextRef}
+            />
+          ))}
         </div>
+      </div>
 
-        <div className="press-c-stage">
-          <div
-            className="press-c-card-slot press-c-card-slot-prev"
-            onClick={prev}
-            aria-label="Previous"
-          >
-            <PressCard item={prevItem} isActive={false} onActivate={prev} />
-          </div>
-
-          {/* Outer slot does the absolute positioning (CSS owns the
-              translate(-50%, -50%) for centering). Inner motion.div does
-              the entrance/exit animation — its transform would otherwise
-              clobber the centering translate. */}
-          <div className="press-c-card-slot press-c-card-slot-active">
-            <AnimatePresence mode="wait" initial={false}>
-              <motion.div
-                key={activeItem.url}
-                className="press-c-card-slot-active-inner"
-                initial={{ opacity: 0, x: 32 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -32 }}
-                transition={{ duration: 0.5, ease: EASE }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.18}
-                onDragEnd={(_, info) => {
-                  if (info.offset.x < -80) next();
-                  else if (info.offset.x > 80) prev();
-                }}
-              >
-                <PressCard item={activeItem} isActive />
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          <div
-            className="press-c-card-slot press-c-card-slot-next"
-            onClick={next}
-            aria-label="Next"
-          >
-            <PressCard item={nextItem} isActive={false} onActivate={next} />
-          </div>
-        </div>
-
-        <div className="press-c-controls">
-          <button
-            type="button"
-            className="press-c-btn"
-            onClick={prev}
-            aria-label="Previous"
-          >
-            <span aria-hidden>←</span>
-          </button>
-          <div className="press-c-dots" role="tablist" aria-label="Press">
-            {sorted.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                role="tab"
-                aria-selected={i === index}
-                className={
-                  "press-c-dot" + (i === index ? " press-c-dot-active" : "")
-                }
-                onClick={() => setIndex(i)}
-                aria-label={`Go to item ${i + 1}`}
-              />
-            ))}
-          </div>
-          <button
-            type="button"
-            className="press-c-btn"
-            onClick={next}
-            aria-label="Next"
-          >
-            <span aria-hidden>→</span>
-          </button>
-        </div>
+      <div className="press-interview-controls" aria-label="Press navigation">
+        <button
+          type="button"
+          className="press-interview-button"
+          aria-label="Previous press item"
+          onClick={() => goTo(activeIndex - 1)}
+        >
+          <span aria-hidden>←</span>
+        </button>
+        <button
+          type="button"
+          className="press-interview-button"
+          aria-label="Next press item"
+          onClick={() => goTo(activeIndex + 1)}
+        >
+          <span aria-hidden>→</span>
+        </button>
       </div>
     </section>
   );

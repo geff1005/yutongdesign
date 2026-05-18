@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import { Inter, Instrument_Serif, Geist } from "next/font/google";
+import { Fragment_Mono, Geist, Geist_Mono, Inter } from "next/font/google";
 import "./globals.css";
+import { Navbar } from "@/components/Navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
 import { SiteFooter } from "@/components/SiteFooter";
 
@@ -10,7 +11,7 @@ import { SiteFooter } from "@/components/SiteFooter";
 const geist = Geist({
   variable: "--font-geist",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 const inter = Inter({
@@ -19,11 +20,16 @@ const inter = Inter({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-const instrumentSerif = Instrument_Serif({
-  variable: "--font-instrument-serif",
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const fragmentMono = Fragment_Mono({
+  variable: "--font-fragment-mono",
   subsets: ["latin"],
   weight: ["400"],
-  style: ["italic"],
 });
 
 export const metadata: Metadata = {
@@ -50,10 +56,11 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${inter.variable} ${instrumentSerif.variable}`}
+      className={`${geist.variable} ${inter.variable} ${geistMono.variable} ${fragmentMono.variable}`}
     >
       <body>
         <SmoothScroll />
+        <Navbar />
         {children}
         <SiteFooter />
       </body>

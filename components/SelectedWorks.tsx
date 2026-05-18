@@ -1,25 +1,25 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import type { CSSProperties } from "react";
 import { SELECTED_FEATURED } from "@/lib/projects";
 
 /**
  * Selected Works — Bending Spoons "Products" card pattern.
- *
- * 2-column responsive grid of equal-height cards. Each card:
- *   - project name + type chip (top-left)
- *   - "View case ↗" link (top-right)
- *   - short tagline / description
- *   - large thumbnail / GIF / video (bottom)
- *
- * Replaces the old 4-up bento with mixed-size tiles. Uniform sizes scale
- * the section gracefully when more projects are added (extend SELECTED_FEATURED
- * in lib/projects.ts). Tomorrow the user will drop in AE-style GIFs which
- * slot into the same `thumbnail` field — no layout change needed.
+ * The whole tile is the themed product surface; video is not nested inside
+ * another thumbnail frame.
  */
 
-const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
+const featuredCardThemes: Record<string, { bg: string; ink?: string; muted?: string }> = {
+  smataste: { bg: "#f7ddd2", ink: "#211c1a", muted: "rgba(33, 28, 26, 0.58)" },
+  "co-cerebral": { bg: "#e9ff45", ink: "#11120d", muted: "rgba(17, 18, 13, 0.58)" },
+  skgplus: { bg: "#0e1624", ink: "#f6f8ff", muted: "rgba(246, 248, 255, 0.64)" },
+  beatrol: { bg: "#9eb4c9", ink: "#101820", muted: "rgba(16, 24, 32, 0.58)" },
+  greenmove: { bg: "#cfe9bc", ink: "#10160f", muted: "rgba(16, 22, 15, 0.58)" },
+  syncoe: { bg: "#d8e8f8", ink: "#0b1724", muted: "rgba(11, 23, 36, 0.58)" },
+  "meta-station": { bg: "#d8d5ff", ink: "#15122a", muted: "rgba(21, 18, 42, 0.58)" },
+  bytedance: { bg: "#f6d6c7", ink: "#211815", muted: "rgba(33, 24, 21, 0.58)" },
+};
 
 export function SelectedWorks() {
   return (
@@ -28,59 +28,81 @@ export function SelectedWorks() {
         <div className="section-header">
           <div>
             <div className="section-header-eyebrow">
-              <span className="eyebrow">Selected Work</span>
+              <span className="eyebrow">SELECTED_SYSTEMS / 01</span>
             </div>
             <h2 className="section-heading">
-              Featured <em>projects</em>
+              Featured projects
             </h2>
             <p className="section-sub">
-              A selection of projects spanning AI product design, real-client
-              web, industrial design, and speculative content.
+              AI products, client systems, industrial design, and speculative
+              interface studies.
             </p>
           </div>
           <Link href="/work" className="view-all-btn">
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
-              View all work <span aria-hidden>→</span>
+              View index <span aria-hidden>→</span>
             </span>
           </Link>
         </div>
 
         <div className="sw-grid">
           {SELECTED_FEATURED.map((p, i) => (
-            <motion.div
-              key={p.slug}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.6,
-                ease: EASE,
-                delay: Math.min(i * 0.06, 0.3),
-              }}
-            >
-              <Link href={p.href} className="sw-card">
-                <div className="sw-card-head">
-                  <div className="sw-card-head-left">
-                    <div className="sw-card-name">{p.title}</div>
-                    {p.type && (
-                      <div className="sw-card-type eyebrow">{p.type}</div>
-                    )}
+            <div key={p.slug} className="sw-card-shell">
+              {(() => {
+                const generatedPoster = `/generated/featured/${p.slug}.jpg`;
+                const generatedVideo = `/generated/featured/${p.slug}.mp4`;
+                const theme = featuredCardThemes[p.slug] ?? {
+                  bg: "hsl(var(--surface))",
+                  ink: "hsl(var(--text))",
+                  muted: "hsl(var(--muted))",
+                };
+                const cardStyle = {
+                  "--sw-card-bg": theme.bg,
+                  "--sw-card-ink": theme.ink,
+                  "--sw-card-muted": theme.muted,
+                } as CSSProperties;
+
+                return (
+              <Link href={p.href} className="sw-card" style={cardStyle}>
+                <div className="sw-card-copy">
+                  <div className="sw-card-head">
+                    <div className="sw-card-head-left">
+                      <div className="sw-card-name">{p.title}</div>
+                      {p.type && (
+                        <div className="sw-card-type eyebrow">{p.type}</div>
+                      )}
+                    </div>
+                    <span className="sw-card-cta">
+                      Open case <span aria-hidden>↗</span>
+                    </span>
                   </div>
-                  <span className="sw-card-cta">
-                    View case <span aria-hidden>↗</span>
-                  </span>
+
+                  <p className="sw-card-tagline">{p.description}</p>
                 </div>
 
-                <p className="sw-card-tagline">{p.description}</p>
-
                 <div className="sw-card-media-wrap">
+                  <video
+                    className="sw-card-media sw-card-video"
+                    poster={generatedPoster}
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    preload={i < 2 ? "metadata" : "none"}
+                    aria-hidden
+                  >
+                    <source src={generatedVideo} type="video/mp4" />
+                  </video>
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src={p.thumbnail}
+                    src={generatedPoster}
                     alt={p.title}
-                    className="sw-card-media"
+                    className="sw-card-media sw-card-poster"
                     loading={i < 2 ? "eager" : "lazy"}
+                    onError={(event) => {
+                      event.currentTarget.src = p.thumbnail;
+                    }}
                   />
                   {p.award && (
                     <span className="sw-card-award-chip">
@@ -89,7 +111,9 @@ export function SelectedWorks() {
                   )}
                 </div>
               </Link>
-            </motion.div>
+                );
+              })()}
+            </div>
           ))}
         </div>
       </div>

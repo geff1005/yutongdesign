@@ -1,72 +1,230 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { PLAY_ITEMS, type PlayItem } from "@/lib/play";
+import gsap from "gsap";
+import { CATEGORY_LABEL, PLAY_ITEMS, type PlayItem } from "@/lib/play";
 
 /**
- * Visual playground — Bending Spoons "iconic products" arc pattern.
+ * Visual playground — Bending Spoons hero-style CTA.
  *
- * Cards sit in a horizontal arc with CSS 3D perspective. Each card's tilt
- * + depth is recomputed every tick from a rolling `centerIdx` so the arc
- * appears to slowly rotate around its center axis — the BS iconic-products
- * cylinder feel. Hover pauses the rotation; the active center card can be
- * clicked to navigate to /play.
- *
- * Items must have a real thumbnail or src; PLAY_ITEMS without an asset are
- * filtered upstream so the earlier "giant S" letter fallback never returns.
+ * Mirrors the public Bending Spoons hero pattern: DOM cards placed around a
+ * CSS 3D cylinder with GSAP. The cards themselves become trapezoids through
+ * perspective rather than through clip-path hacks.
  */
 
 function previewItems(): PlayItem[] {
-  return PLAY_ITEMS.filter((p) => Boolean(p.thumbnail || p.src)).slice(0, 7);
+  return PLAY_ITEMS.filter((p) => Boolean(p.thumbnail || p.videoSrc || p.src)).slice(0, 10);
 }
 
-const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1];
-/** Seconds between auto-advancing the arc one slot. */
-const ROTATE_INTERVAL_MS = 3200;
+function previewAsset(item: PlayItem) {
+  return item.thumbnail ?? item.videoSrc ?? item.src ?? "";
+}
 
 export function Explorations() {
   const items = previewItems();
-  const [centerIdx, setCenterIdx] = useState(Math.floor(items.length / 2));
-  const pausedRef = useRef(false);
+  const [layoutKey, setLayoutKey] = useState(0);
+  const headerRef = useRef<HTMLDivElement>(null);
+  const stageRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
 
-  // Auto-rotate: every ROTATE_INTERVAL_MS, advance one slot. Pause on hover
-  // (the user is reading / about to click), respect reduced motion.
   useEffect(() => {
-    if (items.length <= 1) return;
-    if (
-      typeof window !== "undefined" &&
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      return;
+    if (typeof window.addEventListener !== "function") return;
+
+    let timeout: ReturnType<typeof setTimeout>;
+    let resizeObserver: ResizeObserver | undefined;
+    const refreshLayout = () => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => setLayoutKey((key) => key + 1), 160);
+    };
+
+    window.addEventListener("resize", refreshLayout);
+    window.addEventListener("orientationchange", refreshLayout);
+    window.visualViewport?.addEventListener("resize", refreshLayout);
+    if ("ResizeObserver" in window) {
+      resizeObserver = new ResizeObserver(refreshLayout);
+      resizeObserver.observe(document.body);
     }
-    const id = setInterval(() => {
-      if (pausedRef.current) return;
-      setCenterIdx((c) => (c + 1) % items.length);
-    }, ROTATE_INTERVAL_MS);
-    return () => clearInterval(id);
-  }, [items.length]);
+
+    return () => {
+      clearTimeout(timeout);
+      window.removeEventListener("resize", refreshLayout);
+      window.removeEventListener("orientationchange", refreshLayout);
+      window.visualViewport?.removeEventListener("resize", refreshLayout);
+      resizeObserver?.disconnect();
+    };
+  }, []);
+
+  useEffect(() => {
+    const header = headerRef.current;
+    const stage = stageRef.current;
+    const ring = ringRef.current;
+    if (!header || !stage || !ring || items.length < 2) return;
+
+    const cards = gsap.utils.toArray<HTMLElement>(
+      ring.querySelectorAll(".playground-cylinder-card"),
+    );
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const setupCarousel = (radiusDivisor: number) => {
+      const radius = window.innerWidth / radiusDivisor;
+      gsap.set(cards, {
+        rotateY: (i) => i * (-360 / cards.length),
+        transformOrigin: `50% 50% ${radius}px`,
+        z: -radius,
+        backfaceVisibility: "hidden",
+      });
+
+      const canAnimate =
+        typeof window.requestAnimationFrame === "function" ||
+        typeof window.setTimeout === "function";
+
+      if (!canAnimate) {
+        gsap.set(header, { opacity: 1, y: 0 });
+        gsap.set(stage, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px) grayscale(0%)",
+        });
+        gsap.set(ring, { rotationY: 45 });
+        return () => undefined;
+      }
+
+      gsap.set(ring, { rotationY: 0 });
+
+      let tl: gsap.core.Timeline | undefined;
+      let hasPlayed = false;
+      const playOnce = () => {
+        if (hasPlayed) return;
+        hasPlayed = true;
+        tl = gsap
+          .timeline()
+          .fromTo(
+            header,
+            { opacity: 0.58, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+          )
+          .fromTo(
+            stage,
+            { opacity: 0.58, y: 150, filter: "blur(1.5px) grayscale(45%)" },
+            {
+              opacity: 1,
+              y: 0,
+              filter: "blur(0px) grayscale(0%)",
+              duration: 1,
+              ease: "power2.out",
+            },
+            "<50%",
+          )
+          .to(
+            ring,
+            {
+              rotationY: 45,
+              duration: reduceMotion ? 0 : 3,
+              ease: "circ.out",
+            },
+            "<",
+          )
+          .to(
+            ring,
+            {
+              rotationY: 360,
+              duration: reduceMotion ? 0 : 60,
+              ease: "none",
+              repeat: reduceMotion ? 0 : -1,
+            },
+            reduceMotion ? ">" : "<70%",
+          );
+      };
+
+      const isStageVisible = () => {
+        const rect = stage.getBoundingClientRect();
+        return rect.top < window.innerHeight * 0.76 && rect.bottom > window.innerHeight * 0.18;
+      };
+
+      if (isStageVisible()) {
+        playOnce();
+        return () => tl?.kill();
+      }
+
+      const checkVisibility = () => {
+        if (isStageVisible()) {
+          playOnce();
+        }
+      };
+
+      const canObserve = typeof IntersectionObserver === "function";
+      const canListen = typeof window.addEventListener === "function";
+      const raf =
+        typeof window.requestAnimationFrame === "function"
+          ? window.requestAnimationFrame(checkVisibility)
+          : undefined;
+      const delayedCheck =
+        typeof window.setTimeout === "function"
+          ? window.setTimeout(checkVisibility, 450)
+          : undefined;
+
+      if (!canObserve && !canListen) {
+        gsap.set(header, { opacity: 1, y: 0 });
+        gsap.set(stage, {
+          opacity: 1,
+          y: 0,
+          filter: "blur(0px) grayscale(0%)",
+        });
+        gsap.set(ring, { rotationY: 45 });
+        return () => tl?.kill();
+      }
+
+      let observer: IntersectionObserver | undefined;
+      if (canObserve) {
+        observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry?.isIntersecting) {
+              playOnce();
+              observer?.disconnect();
+            }
+          },
+          {
+            threshold: 0.28,
+            rootMargin: "0px 0px -12% 0px",
+          },
+        );
+      }
+
+      observer?.observe(stage);
+      window.addEventListener("scroll", checkVisibility, { passive: true });
+      window.addEventListener("resize", checkVisibility);
+      return () => {
+        if (typeof raf === "number") window.cancelAnimationFrame(raf);
+        if (typeof delayedCheck === "number") window.clearTimeout(delayedCheck);
+        window.removeEventListener("scroll", checkVisibility);
+        window.removeEventListener("resize", checkVisibility);
+        observer?.disconnect();
+        tl?.kill();
+      };
+    };
+
+    const mm = gsap.matchMedia();
+    mm.add("(min-width: 768px)", () => setupCarousel(2.5));
+    mm.add("(max-width: 767px)", () => setupCarousel(1.25));
+
+    return () => mm.revert();
+  }, [items.length, layoutKey]);
 
   return (
     <section className="explorations-arc-section" id="explorations">
       <div className="explorations-arc-inner">
-        <motion.div
+        <div
           className="explorations-arc-header"
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.05 }}
-          transition={{ duration: 0.7, ease: EASE }}
+          ref={headerRef}
         >
-          <div className="section-header-eyebrow">
-            <span className="eyebrow">Explorations</span>
-          </div>
+          <div className="eyebrow">MOTION_LAB / GENERATED_STUDIES</div>
           <h2 className="section-heading">
-            Visual <em>playground</em>
+            Motion playground
           </h2>
           <p className="section-sub">
-            Posters, motion studies, GIFs, 3D scenes, and visual tests that live
-            outside client briefs.
+            Generated artifacts, 3D tests, posters, and visual experiments
+            orbiting outside client briefs.
           </p>
           <Link
             className="view-all-btn"
@@ -75,85 +233,35 @@ export function Explorations() {
           >
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
-              Visit playground <span aria-hidden>→</span>
+              Run playground <span aria-hidden>→</span>
             </span>
           </Link>
-        </motion.div>
+        </div>
 
-        <div
-          className="explorations-arc-row"
-          role="list"
-          onMouseEnter={() => {
-            pausedRef.current = true;
-          }}
-          onMouseLeave={() => {
-            pausedRef.current = false;
-          }}
-        >
-          {items.map((item, i) => {
-            // Compute offset relative to the currently-centered slot.
-            // Wrap so cards near the edges become "shortest distance" rather
-            // than always huge — mod arithmetic for circular arc behavior.
-            let raw = i - centerIdx;
-            const half = Math.floor(items.length / 2);
-            if (raw > half) raw -= items.length;
-            if (raw < -half) raw += items.length;
-            const offset = raw;
-            // Each offset step shifts the tile horizontally by `step` px so
-            // that offset=0 (the front card) is always at horizontal 0
-            // (centered by the absolute-positioning CSS).
-            const step = 170;
-            const translateX = offset * step;
-            const tilt = offset * -24; // outer cards rotate inward
-            const depth = -Math.abs(offset) * 120; // outer cards pushed back
-            const opacity = Math.max(0.35, 1 - Math.abs(offset) * 0.18);
-            const thumb = item.thumbnail ?? item.src ?? "";
-            const isCenter = offset === 0;
+        <div className="playground-cylinder-shell" role="list" ref={stageRef}>
+          <div className="playground-cylinder-ring" key={layoutKey} ref={ringRef}>
+          {items.map((item) => {
+            const label = item.name ?? CATEGORY_LABEL[item.category];
+            const thumb = previewAsset(item);
             return (
-              <motion.div
+              <Link
                 key={item.slug}
                 role="listitem"
-                className={
-                  "explorations-arc-slot" +
-                  (isCenter ? " explorations-arc-slot-center" : "")
-                }
-                initial={false}
-                animate={{ opacity }}
-                transition={{
-                  duration: 0.9,
-                  ease: EASE,
-                }}
-                style={{ zIndex: 10 - Math.abs(offset) }}
+                href={`/play/${item.slug}`}
+                className="playground-cylinder-card"
+                aria-label={label}
               >
-                <div
-                  className="explorations-arc-tile"
-                  style={{
-                    transform: `translateX(${translateX}px) rotateY(${tilt}deg) translateZ(${depth}px)`,
-                  }}
-                >
-                  <Link
-                    href="/play"
-                    className="explorations-arc-link"
-                    aria-label={item.name ?? `Play item ${i + 1}`}
-                  >
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={thumb}
-                      alt={item.name ?? ""}
-                      className="explorations-arc-img"
-                      /* Eager — the arc is a marquee experience; lazy
-                         delays the cylindrical reveal which defeats the
-                         point. 7 small thumbs is cheap. */
-                      loading="eager"
-                    />
-                    {item.name && (
-                      <div className="explorations-arc-label">{item.name}</div>
-                    )}
-                  </Link>
-                </div>
-              </motion.div>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={thumb}
+                  alt=""
+                  className="playground-cylinder-img"
+                  loading="eager"
+                />
+              </Link>
             );
           })}
+          </div>
         </div>
       </div>
     </section>

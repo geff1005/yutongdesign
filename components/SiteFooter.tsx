@@ -5,11 +5,11 @@ import { useRef } from "react";
 import { SITE } from "@/lib/site";
 
 /**
- * Global site footer — an oversized serif wordmark at the bottom of every
- * page, in the Bending Spoons "Impossible. Maybe." pattern.
+ * Global site footer — an oversized modern wordmark at the bottom of every
+ * page, in the Bending Spoons "Impossible. Maybe." scale pattern.
  *
  * Visual contract:
- *  - Big display-serif statement, italic accent on the closing word
+ *  - Big display-sans statement, no italic in the footer wordmark
  *  - Small meta row below it (location, role-availability, copyright)
  *  - Slides up + fades in once the band scrolls into view
  *  - Sits *after* the home page's existing Contact CTA, so it doesn't
@@ -17,13 +17,12 @@ import { SITE } from "@/lib/site";
  *    last visual frame of every page
  *
  * Wordmark text is held here as constants. To change it, edit the constants.
- * Two options are pre-written; the active one is exported.
  */
 
-// Two candidate wordmarks — pick one. Italic accent renders the bold half.
 const WORDMARK = {
-  primary: "Yutong",
-  italic: "Zhu.",
+  first: "Julian",
+  inner: "Yutong",
+  last: "Zhu.",
 } as const;
 
 const TAGLINE = "Designer for AI. Creative technologist for storytelling.";
@@ -35,7 +34,7 @@ export function SiteFooter() {
   const inView = useInView(ref, { once: true, amount: 0.3 });
 
   return (
-    <footer ref={ref} className="site-footer" aria-label="Site footer">
+    <footer ref={ref} className="site-footer" id="contact" aria-label="Site footer">
       <div className="site-footer-inner">
         <motion.div
           className="site-footer-wordmark"
@@ -44,9 +43,18 @@ export function SiteFooter() {
           transition={{ duration: 0.9, ease: EASE }}
         >
           <span className="site-footer-wordmark-primary">
-            {WORDMARK.primary}
-          </span>{" "}
-          <em className="site-footer-wordmark-italic">{WORDMARK.italic}</em>
+            {WORDMARK.first}
+          </span>
+          <button
+            className="site-footer-yutong"
+            type="button"
+            aria-label="Yutong, Julian's Chinese given name"
+          >
+            <span className="site-footer-yutong-paren">(</span>
+            <span className="site-footer-yutong-text">{WORDMARK.inner}</span>
+            <span className="site-footer-yutong-paren">)</span>
+          </button>
+          <span className="site-footer-wordmark-italic">{WORDMARK.last}</span>
         </motion.div>
 
         <motion.div
