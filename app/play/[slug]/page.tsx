@@ -68,7 +68,7 @@ export default async function PlayDetailPage({
         <Link href="/play" className="case-footer-home">
           ← All play
         </Link>
-        <Link href="/" className="case-footer-email">
+        <Link href="/#home" className="case-footer-email">
           → Home
         </Link>
       </footer>

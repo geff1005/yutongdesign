@@ -6,16 +6,35 @@ import { PRESS } from "@/lib/press";
 
 type Press = (typeof PRESS)[number];
 
-function PlayIcon() {
+function ReadIcon() {
   return (
     <svg
       width="18"
       height="18"
       viewBox="0 0 24 24"
-      fill="currentColor"
+      fill="none"
       aria-hidden
     >
-      <path d="M6 18.2V6.5c0-1.55 1.68-2.51 3.02-1.72l9.26 5.47c1.26.75 1.32 2.56.1 3.38l-9.26 6.26C7.79 20.79 6 19.84 6 18.2Z" />
+      <path
+        d="M5.5 5.7c0-.94.76-1.7 1.7-1.7H18a1.5 1.5 0 0 1 1.5 1.5v13.4c0 .43-.48.68-.83.44L16 17.55l-2.67 1.8a.52.52 0 0 1-.83-.44V5.7"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M5.5 5.7c0 1.04.84 1.88 1.88 1.88H19.5"
+        stroke="currentColor"
+        strokeWidth="1.8"
+        strokeLinecap="round"
+      />
+      <path
+        d="M9 11.2h6M9 14.1h4.2"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        opacity="0.72"
+      />
     </svg>
   );
 }
@@ -74,7 +93,7 @@ function PressInterviewCard({
         <span className="press-interview-read" aria-hidden>
           <span className="press-interview-glow" />
           <span className="press-interview-read-inner">
-            <PlayIcon />
+            <ReadIcon />
             Read
           </span>
         </span>
@@ -199,9 +218,10 @@ export function Journal() {
   return (
     <section
       className="press-c-section press-interview-section"
-      id="journal"
+      id="press"
       data-nav-theme="dark"
     >
+      <span id="journal" className="press-anchor-compat" aria-hidden />
       <h2 className="press-interview-heading">Press</h2>
 
       <div className="press-interview-viewport">

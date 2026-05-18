@@ -41,7 +41,7 @@ export function SelectedWorks() {
           <Link href="/work" className="view-all-btn">
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
-              View index <span aria-hidden>→</span>
+              More work <span aria-hidden>→</span>
             </span>
           </Link>
         </div>

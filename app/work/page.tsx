@@ -46,7 +46,7 @@ export default function WorkIndexPage() {
       )}
 
       <footer className="case-footer">
-        <Link href="/" className="case-footer-home">
+        <Link href="/#home" className="case-footer-home">
           ← Back home
         </Link>
         <a className="case-footer-email" href="mailto:julianyutongzhu@gmail.com">

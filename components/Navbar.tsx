@@ -4,6 +4,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
+import { PROJECTS } from "@/lib/projects";
+import { findPlayItem } from "@/lib/play";
 
 /**
  * Inline backdrop-filter — Lightning CSS (Tailwind 4 / Next 16 build
@@ -21,16 +23,35 @@ const LINKS: NavLink[] = [
   { label: "Home", href: "/#home" },
   { label: "Work", href: "/#work" },
   { label: "Play", href: "/#explorations" },
-  { label: "Press", href: "/#journal" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
-function subpageBack(pathname: string) {
-  if (pathname === "/work") return { href: "/#work", label: "Work" };
-  if (pathname.startsWith("/work/")) return { href: "/work", label: "All work" };
-  if (pathname === "/play") return { href: "/#explorations", label: "Play" };
-  if (pathname.startsWith("/play/")) return { href: "/play", label: "Playground" };
-  return { href: "/#home", label: "Home" };
+function pageSlug(pathname: string) {
+  return decodeURIComponent(pathname.split("/")[2] ?? "");
+}
+
+function subpageContext(pathname: string) {
+  if (pathname === "/work") {
+    return { back: { href: "/#home", label: "Home" }, title: null };
+  }
+  if (pathname.startsWith("/work/")) {
+    const project = PROJECTS.find((p) => p.slug === pageSlug(pathname));
+    return {
+      back: { href: "/work", label: "All work" },
+      title: project?.title ?? "Work",
+    };
+  }
+  if (pathname === "/play") {
+    return { back: { href: "/#home", label: "Home" }, title: null };
+  }
+  if (pathname.startsWith("/play/")) {
+    const item = findPlayItem(pageSlug(pathname));
+    return {
+      back: { href: "/play", label: "Playground" },
+      title: item?.name ?? "Playground",
+    };
+  }
+  return { back: { href: "/#home", label: "Home" }, title: null };
 }
 
 export function Navbar() {
@@ -39,7 +60,9 @@ export function Navbar() {
   const [active, setActive] = useState("Home");
   const [open, setOpen] = useState(false);
   const isSubpage = pathname !== "/";
-  const back = subpageBack(pathname);
+  const context = subpageContext(pathname);
+  const back = context.back;
+  const detailTitle = context.title;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
@@ -57,8 +80,6 @@ export function Navbar() {
         setActive("Play");
       } else if (window.location.hash === "#work") {
         setActive("Work");
-      } else if (window.location.hash === "#journal") {
-        setActive("Press");
       } else {
         setActive("Home");
       }
@@ -105,23 +126,29 @@ export function Navbar() {
               <Link className="nav-sub-name" href="/#home" aria-label="Home">
                 {SITE.fullName}
               </Link>
-              <span className="nav-sub-actions">
-                <a
-                  href="/resume.pdf"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="nav-link"
-                >
-                  Resume
-                  <span aria-hidden> ↗</span>
-                </a>
-                <a className="say-hi" href={SITE.socials.email}>
-                  <span className="say-hi-bg" />
-                  <span className="say-hi-inner">
-                    Say hi <span aria-hidden>↗</span>
-                  </span>
-                </a>
-              </span>
+              {detailTitle ? (
+                <span className="nav-sub-context" title={detailTitle}>
+                  {detailTitle}
+                </span>
+              ) : (
+                <span className="nav-sub-actions">
+                  <a
+                    href="/resume.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link"
+                  >
+                    Resume
+                    <span aria-hidden> ↗</span>
+                  </a>
+                  <a className="say-hi" href={SITE.socials.email}>
+                    <span className="say-hi-bg" />
+                    <span className="say-hi-inner">
+                      Say hi <span aria-hidden>↗</span>
+                    </span>
+                  </a>
+                </span>
+              )}
             </>
           ) : (
             <>
@@ -178,9 +205,15 @@ export function Navbar() {
           </Link>
         )}
         {isSubpage && (
-          <Link className="nav-sub-name nav-sub-name-mobile" href="/#home" aria-label="Home">
-            {SITE.fullName}
-          </Link>
+          detailTitle ? (
+            <span className="nav-sub-name nav-sub-name-mobile" title={detailTitle}>
+              {detailTitle}
+            </span>
+          ) : (
+            <Link className="nav-sub-name nav-sub-name-mobile" href="/#home" aria-label="Home">
+              {SITE.fullName}
+            </Link>
+          )
         )}
         <button
           className="nav-hamburger"
@@ -250,7 +283,7 @@ export function Navbar() {
                   </Link>
                 )
               )}
-            {isSubpage && (
+            {isSubpage && !detailTitle && (
               <a
                 href="/resume.pdf"
                 target="_blank"
@@ -261,13 +294,15 @@ export function Navbar() {
                 Resume<span aria-hidden> ↗</span>
               </a>
             )}
-            <a
-              href={SITE.socials.email}
-              className="nav-overlay-link nav-overlay-link-cta"
-              onClick={() => setOpen(false)}
-            >
-              Say hi <span aria-hidden>↗</span>
-            </a>
+            {(!isSubpage || !detailTitle) && (
+              <a
+                href={SITE.socials.email}
+                className="nav-overlay-link nav-overlay-link-cta"
+                onClick={() => setOpen(false)}
+              >
+                Say hi <span aria-hidden>↗</span>
+              </a>
+            )}
           </nav>
         </div>
       </div>

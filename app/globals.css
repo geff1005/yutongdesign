@@ -327,7 +327,7 @@ a { color: inherit; text-decoration: none; }
 .nav-sub-name-mobile {
   flex: 1;
   justify-content: center;
-  max-width: none;
+  max-width: calc(100vw - 168px);
   font-size: 12px;
 }
 
@@ -375,7 +375,8 @@ a { color: inherit; text-decoration: none; }
 }
 .nav-sub-back,
 .nav-sub-name,
-.nav-sub-actions {
+.nav-sub-actions,
+.nav-sub-context {
   pointer-events: auto;
   min-width: 0;
   display: inline-flex;
@@ -412,6 +413,21 @@ a { color: inherit; text-decoration: none; }
 .nav-sub-actions {
   justify-self: end;
   gap: 4px;
+}
+.nav-sub-context {
+  justify-self: end;
+  max-width: min(34vw, 360px);
+  border-radius: 999px;
+  padding: 8px 14px;
+  color: hsl(var(--text));
+  background: rgba(255, 255, 255, 0.42);
+  box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .say-hi {
@@ -855,11 +871,17 @@ section { position: relative; }
   font-size: 13px;
   padding: 12px 22px;
   border-radius: 999px;
-  background: hsl(var(--bg));
-  border: 1px solid hsl(var(--stroke));
+  background: hsl(var(--text));
+  border: 1px solid hsl(var(--text));
+  color: hsl(var(--bg));
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.16);
   transition: all 0.3s ease;
 }
-.view-all-btn:hover { border-color: transparent; transform: scale(1.03); }
+.view-all-btn:hover {
+  border-color: hsl(var(--text));
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2);
+  transform: scale(1.03);
+}
 @media (max-width: 768px) { .view-all-btn { display: none; } }
 
 /* === Works bento grid === */
@@ -875,7 +897,7 @@ section { position: relative; }
 .work-card {
   position: relative;
   background: hsl(var(--surface));
-  border: 1px solid var(--artifact-border);
+  border: 0;
   border-radius: var(--artifact-radius);
   overflow: hidden;
   cursor: pointer;
@@ -892,7 +914,6 @@ section { position: relative; }
   transition: transform var(--duration-slow) var(--ease-out-soft);
 }
 .work-card:hover {
-  border-color: var(--artifact-border-hover);
   box-shadow: var(--artifact-card-shadow-hover);
   transform: translateY(-4px) scale(var(--artifact-card-hover-scale));
 }
@@ -1885,7 +1906,7 @@ section { position: relative; }
 }
 .case-more-card {
   display: block;
-  border: 1px solid var(--artifact-border);
+  border: 0;
   border-radius: var(--artifact-radius);
   overflow: hidden;
   background: hsl(var(--surface));
@@ -1897,7 +1918,6 @@ section { position: relative; }
 }
 .case-more-card:hover,
 .case-more-card:focus-visible {
-  border-color: var(--artifact-border-hover);
   box-shadow: var(--artifact-card-shadow-hover);
   transform: translateY(-4px) scale(var(--artifact-card-hover-scale));
   outline: none;
@@ -2041,7 +2061,7 @@ section { position: relative; }
   gap: 16px;
   text-decoration: none;
   color: inherit;
-  border: 1px solid var(--artifact-border);
+  border: 0;
   border-radius: var(--artifact-radius);
   overflow: hidden;
   background: hsl(var(--surface));
@@ -2053,7 +2073,6 @@ section { position: relative; }
 }
 .work-index-card:hover,
 .work-index-card:focus-visible {
-  border-color: var(--artifact-border-hover);
   box-shadow: var(--artifact-card-shadow-hover);
   transform: translateY(-4px) scale(var(--artifact-card-hover-scale));
   outline: none;
@@ -2271,16 +2290,17 @@ section { position: relative; }
   place-items: center;
   width: clamp(58px, 6vw, 76px);
   height: clamp(58px, 6vw, 76px);
-  border: 1px solid rgba(255, 255, 255, 0.58);
+  border: 1px solid rgba(255, 255, 255, 0.68);
   border-radius: 999px;
   background:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34)),
-    rgba(255, 255, 255, 0.46);
-  color: hsl(var(--text));
+    radial-gradient(circle at 28% 22%, rgba(255, 255, 255, 0.92), transparent 34%),
+    linear-gradient(135deg, rgba(32, 32, 30, 0.86), rgba(32, 32, 30, 0.62)),
+    rgba(18, 18, 16, 0.58);
+  color: #fff;
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.72),
-    inset 0 -18px 30px rgba(255, 255, 255, 0.2),
-    0 18px 54px rgba(0, 0, 0, 0.16);
+    inset 0 1px 0 rgba(255, 255, 255, 0.34),
+    inset 0 -18px 30px rgba(0, 0, 0, 0.18),
+    0 18px 54px rgba(0, 0, 0, 0.22);
   backdrop-filter: blur(22px) saturate(180%);
   -webkit-backdrop-filter: blur(22px) saturate(180%);
   cursor: pointer;
@@ -2303,9 +2323,9 @@ section { position: relative; }
 .play-index-fab:focus-visible {
   transform: translateY(-3px) scale(1.015);
   box-shadow:
-    inset 0 1px 0 rgba(255, 255, 255, 0.82),
-    inset 0 -18px 30px rgba(255, 255, 255, 0.22),
-    0 24px 72px rgba(0, 0, 0, 0.2);
+    inset 0 1px 0 rgba(255, 255, 255, 0.42),
+    inset 0 -18px 30px rgba(0, 0, 0, 0.2),
+    0 24px 72px rgba(0, 0, 0, 0.28);
   outline: none;
 }
 
@@ -2391,7 +2411,8 @@ section { position: relative; }
 .play-rail-toggle-art[data-mode="index"] > span {
   width: 6px;
   height: 6px;
-  opacity: 0.78;
+  opacity: 0.88;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.38);
 }
 .play-rail-toggle-art[data-mode="index"] > span:nth-child(1) { left: 31%; top: 31%; }
 .play-rail-toggle-art[data-mode="index"] > span:nth-child(2) { right: 31%; top: 31%; }
@@ -3178,11 +3199,20 @@ section { position: relative; }
 /* === Press — Bending Spoons interview carousel pattern === */
 .press-c-section,
 .press-interview-section {
+  position: relative;
   width: 100%;
   background: #000;
   color: #fff;
   padding: 7.5rem 0;
   overflow: hidden;
+}
+.press-anchor-compat {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
 }
 .press-interview-heading {
   font-family: var(--font-display);
@@ -3369,6 +3399,12 @@ section { position: relative; }
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
   transition: padding 150ms var(--ease-apple), background 150ms var(--ease-apple);
+}
+.press-interview-read-inner svg {
+  flex: 0 0 auto;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-0.5px);
 }
 .press-interview-slide:hover .press-interview-glow,
 .press-interview-slide:focus-visible .press-interview-glow {

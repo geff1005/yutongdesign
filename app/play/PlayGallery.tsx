@@ -266,7 +266,7 @@ export function PlayGallery({ groups }: Props) {
       </div>
 
       <footer className="case-footer">
-        <Link href="/" className="case-footer-home">
+        <Link href="/#home" className="case-footer-home">
           ← Back home
         </Link>
         <Link href="/work" className="case-footer-email">
