@@ -1,74 +1,57 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useHls, HLS_SRC } from "./useHls";
+import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
 
 const ROLES = SITE.roles;
 
 export function Hero() {
-  const videoRef = useRef<HTMLVideoElement | null>(null);
-  useHls(videoRef, HLS_SRC);
-
   const [roleIdx, setRoleIdx] = useState(0);
+  const [layoutKey, setLayoutKey] = useState(0);
 
   useEffect(() => {
     const id = setInterval(() => setRoleIdx((i) => (i + 1) % ROLES.length), 2000);
     return () => clearInterval(id);
   }, []);
 
-  useLayoutEffect(() => {
-    let cancelled = false;
-    (async () => {
-      const { gsap } = await import("gsap");
-      if (cancelled) return;
-      const tl = gsap.timeline({ defaults: { ease: "power3.out" } });
-      tl.to(".name-reveal", { opacity: 1, y: 0, duration: 1.2, delay: 0.1 });
-      tl.to(
-        ".blur-in",
-        { opacity: 1, filter: "blur(0px)", y: 0, duration: 1, stagger: 0.1 },
-        "-=0.8"
-      );
-    })();
+  useEffect(() => {
+    let timeout = 0;
+    const onResize = () => {
+      window.clearTimeout(timeout);
+      timeout = window.setTimeout(() => {
+        setLayoutKey((key) => key + 1);
+      }, 180);
+    };
+    window.addEventListener("resize", onResize);
     return () => {
-      cancelled = true;
+      window.clearTimeout(timeout);
+      window.removeEventListener("resize", onResize);
     };
   }, []);
 
   return (
     <section className="hero" id="home">
-      <div className="hero-video-wrap">
-        <video
-          ref={videoRef}
-          className="hero-video"
-          autoPlay
-          muted
-          loop
-          playsInline
-        />
-        <div className="hero-overlay" />
-        <div className="hero-fade" />
-      </div>
-
-      <div className="hero-content">
-        <div className="hero-eyebrow eyebrow blur-in">COLLECTION &rsquo;26</div>
-        <h1 className="hero-name name-reveal">{SITE.name}</h1>
-        <p className="hero-role blur-in">
+      <div className="hero-content" key={`copy-${layoutKey}`}>
+        <div className="hero-eyebrow eyebrow">AI DESIGN SYSTEM / 2026</div>
+        <h1 className="hero-name">
+          {SITE.name} builds AI imagination tools.
+        </h1>
+        <p className="hero-role">
           A&nbsp;
           <span key={roleIdx} className="hero-role-word animate-role-fade-in">
             {ROLES[roleIdx]}
           </span>
           &nbsp;based in {SITE.location}.
         </p>
-        <p className="hero-desc blur-in">{SITE.pitch}</p>
-        <div className="hero-ctas blur-in">
+        <p className="hero-desc">{SITE.pitch}</p>
+        <div className="hero-ctas">
           <a className="btn btn-solid" href="#work">
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
               See Works <span aria-hidden>→</span>
             </span>
           </a>
-          <a className="btn btn-outline" href="#contact">
+          <a className="btn btn-outline" href={SITE.socials.email}>
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
               Reach out <span aria-hidden>↗</span>

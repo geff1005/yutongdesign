@@ -959,15 +959,21 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
   },
 ];
 
-// Featured 4 for the home Selected Works bento grid.
-// PD-track positioning: SmaTaste leads (real client + AI), Co Cerebral
-// (live agentic build), SKG+ (deployed real-client + automation pipeline),
-// BEATROL (HMI/UX). Other PROJECTS still get their own /work/[slug] page.
+// Featured 8 for the home Selected Works (BS Products-style 2-col grid).
+// Each card slot maps to one project; uniform sizes; the SelectedWorks
+// component now renders these as 2-col cards with title + "View case ↗" +
+// tagline + thumbnail/GIF. Easy to expand to 10–12 later — just append.
+// PD-track ordering: real-client AI first, then agentic builds, then HMI/UX,
+// then speculative + spatial, then communication design.
 export const SELECTED_FEATURED = [
   PROJECTS.find((p) => p.slug === "smataste")!,
   PROJECTS.find((p) => p.slug === "co-cerebral")!,
   PROJECTS.find((p) => p.slug === "skgplus")!,
   PROJECTS.find((p) => p.slug === "beatrol")!,
+  PROJECTS.find((p) => p.slug === "greenmove")!,
+  PROJECTS.find((p) => p.slug === "syncoe")!,
+  PROJECTS.find((p) => p.slug === "meta-station")!,
+  PROJECTS.find((p) => p.slug === "bytedance")!,
 ];
 
 // Explorations (Tier B / lighter projects) — 6 cards for the parallax section

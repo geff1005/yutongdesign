@@ -33,13 +33,6 @@ export default async function PlayDetailPage({
 
   return (
     <main className="play-detail">
-      <div className="play-index-nav">
-        <Link href="/play" className="case-nav-back">
-          <span aria-hidden>←</span> Play
-        </Link>
-        <span className="case-nav-home">{item.name}</span>
-      </div>
-
       <header className="play-detail-hero">
         <div className="eyebrow">Play · {item.year}</div>
         <h1 className="play-detail-title">{item.name}</h1>

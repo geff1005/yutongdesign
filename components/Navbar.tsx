@@ -1,26 +1,73 @@
 "use client";
 
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SITE } from "@/lib/site";
 
-type Link = { label: string; href: string; external?: boolean };
-const LINKS: Link[] = [
-  { label: "Home", href: "#home" },
-  { label: "Work", href: "#work" },
-  { label: "Play", href: "/play" },
-  { label: "Press", href: "#journal" },
+/**
+ * Inline backdrop-filter — Lightning CSS (Tailwind 4 / Next 16 build
+ * pipeline) was stripping `backdrop-filter` from globals.css at compile
+ * time, leaving the pill nav opaque-white instead of glassy. Setting it
+ * via the React style prop bypasses the optimizer.
+ */
+const GLASS_STYLE: React.CSSProperties = {
+  backdropFilter: "blur(24px) saturate(190%)",
+  WebkitBackdropFilter: "blur(24px) saturate(190%)",
+};
+
+type NavLink = { label: string; href: string; external?: boolean };
+const LINKS: NavLink[] = [
+  { label: "Home", href: "/#home" },
+  { label: "Work", href: "/#work" },
+  { label: "Play", href: "/#explorations" },
+  { label: "Press", href: "/#journal" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
+function subpageBack(pathname: string) {
+  if (pathname === "/work") return { href: "/#work", label: "Work" };
+  if (pathname.startsWith("/work/")) return { href: "/work", label: "All work" };
+  if (pathname === "/play") return { href: "/#explorations", label: "Play" };
+  if (pathname.startsWith("/play/")) return { href: "/play", label: "Playground" };
+  return { href: "/#home", label: "Home" };
+}
+
 export function Navbar() {
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("Home");
   const [open, setOpen] = useState(false);
+  const isSubpage = pathname !== "/";
+  const back = subpageBack(pathname);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 100);
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  useEffect(() => {
+    const syncActive = () => {
+      if (pathname.startsWith("/play")) {
+        setActive("Play");
+      } else if (pathname.startsWith("/work")) {
+        setActive("Work");
+      } else if (window.location.hash === "#explorations") {
+        setActive("Play");
+      } else if (window.location.hash === "#work") {
+        setActive("Work");
+      } else if (window.location.hash === "#journal") {
+        setActive("Press");
+      } else {
+        setActive("Home");
+      }
+    };
+
+    syncActive();
+    window.addEventListener("hashchange", syncActive);
+    return () => window.removeEventListener("hashchange", syncActive);
+  }, [pathname]);
 
   // Lock body scroll when mobile menu is open + close on Escape
   useEffect(() => {
@@ -41,39 +88,100 @@ export function Navbar() {
     <>
       {/* Desktop pill nav — visible >= 768px */}
       <div className="nav-wrap nav-wrap-desktop">
-        <nav className={"nav-pill" + (scrolled ? " scrolled" : "")}>
-          <a className="nav-logo" href="#top" aria-label="Home">
-            <span className="nav-logo-inner">JZ</span>
-          </a>
-          <span className="nav-divider" />
-          {LINKS.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target={l.external ? "_blank" : undefined}
-              rel={l.external ? "noopener noreferrer" : undefined}
-              className={"nav-link" + (active === l.label ? " active" : "")}
-              onClick={() => setActive(l.label)}
-            >
-              {l.label}
-              {l.external && <span aria-hidden> ↗</span>}
-            </a>
-          ))}
-          <span className="nav-divider" />
-          <a className="say-hi" href="#contact">
-            <span className="say-hi-bg" />
-            <span className="say-hi-inner">
-              Say hi <span aria-hidden>↗</span>
-            </span>
-          </a>
+        <nav
+          className={
+            "nav-pill" +
+            (scrolled ? " scrolled" : "") +
+            (isSubpage ? " nav-pill-subpage" : "")
+          }
+          style={GLASS_STYLE}
+        >
+          {isSubpage ? (
+            <>
+              <Link className="nav-sub-back" href={back.href}>
+                <span aria-hidden>←</span>
+                <span>{back.label}</span>
+              </Link>
+              <Link className="nav-sub-name" href="/#home" aria-label="Home">
+                {SITE.fullName}
+              </Link>
+              <span className="nav-sub-actions">
+                <a
+                  href="/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="nav-link"
+                >
+                  Resume
+                  <span aria-hidden> ↗</span>
+                </a>
+                <a className="say-hi" href={SITE.socials.email}>
+                  <span className="say-hi-bg" />
+                  <span className="say-hi-inner">
+                    Say hi <span aria-hidden>↗</span>
+                  </span>
+                </a>
+              </span>
+            </>
+          ) : (
+            <>
+              <Link className="nav-logo" href="/#home" aria-label="Home">
+                <span className="nav-logo-inner">JZ</span>
+              </Link>
+              <span className="nav-divider" />
+              {LINKS.map((l) =>
+                l.external ? (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={"nav-link" + (active === l.label ? " active" : "")}
+                    onClick={() => setActive(l.label)}
+                  >
+                    {l.label}
+                    <span aria-hidden> ↗</span>
+                  </a>
+                ) : (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    className={"nav-link" + (active === l.label ? " active" : "")}
+                    onClick={() => setActive(l.label)}
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
+              <span className="nav-divider" />
+              <a className="say-hi" href={SITE.socials.email}>
+                <span className="say-hi-bg" />
+                <span className="say-hi-inner">
+                  Say hi <span aria-hidden>↗</span>
+                </span>
+              </a>
+            </>
+          )}
         </nav>
       </div>
 
       {/* Mobile bar — visible < 768px */}
-      <div className="nav-wrap nav-wrap-mobile">
-        <a className="nav-logo nav-logo-mobile" href="#top" aria-label="Home">
-          <span className="nav-logo-inner">JZ</span>
-        </a>
+      <div className={"nav-wrap nav-wrap-mobile" + (isSubpage ? " nav-wrap-mobile-subpage" : "")}>
+        {isSubpage ? (
+          <Link className="nav-sub-back nav-sub-back-mobile" href={back.href}>
+            <span aria-hidden>←</span>
+            <span>{back.label}</span>
+          </Link>
+        ) : (
+          <Link className="nav-logo nav-logo-mobile" href="/#home" aria-label="Home">
+            <span className="nav-logo-inner">JZ</span>
+          </Link>
+        )}
+        {isSubpage && (
+          <Link className="nav-sub-name nav-sub-name-mobile" href="/#home" aria-label="Home">
+            {SITE.fullName}
+          </Link>
+        )}
         <button
           className="nav-hamburger"
           aria-label={open ? "Close menu" : "Open menu"}
@@ -102,24 +210,59 @@ export function Navbar() {
       >
         <div className="nav-overlay-inner">
           <nav className="nav-overlay-list">
-            {LINKS.map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                target={l.external ? "_blank" : undefined}
-                rel={l.external ? "noopener noreferrer" : undefined}
+            {isSubpage && (
+              <Link
+                href={back.href}
                 className="nav-overlay-link"
-                onClick={() => {
-                  setActive(l.label);
-                  setOpen(false);
-                }}
+                onClick={() => setOpen(false)}
               >
-                {l.label}
-                {l.external && <span aria-hidden> ↗</span>}
+                ← {back.label}
+              </Link>
+            )}
+            {!isSubpage &&
+              LINKS.map((l) =>
+                l.external ? (
+                  <a
+                    key={l.label}
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-overlay-link"
+                    onClick={() => {
+                      setActive(l.label);
+                      setOpen(false);
+                    }}
+                  >
+                    {l.label}
+                    <span aria-hidden> ↗</span>
+                  </a>
+                ) : (
+                  <Link
+                    key={l.label}
+                    href={l.href}
+                    className="nav-overlay-link"
+                    onClick={() => {
+                      setActive(l.label);
+                      setOpen(false);
+                    }}
+                  >
+                    {l.label}
+                  </Link>
+                )
+              )}
+            {isSubpage && (
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="nav-overlay-link"
+                onClick={() => setOpen(false)}
+              >
+                Resume<span aria-hidden> ↗</span>
               </a>
-            ))}
+            )}
             <a
-              href="#contact"
+              href={SITE.socials.email}
               className="nav-overlay-link nav-overlay-link-cta"
               onClick={() => setOpen(false)}
             >

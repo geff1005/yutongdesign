@@ -15,13 +15,6 @@ export default function WorkIndexPage() {
 
   return (
     <main className="work-index">
-      <div className="work-index-nav">
-        <Link href="/" className="case-nav-back">
-          <span aria-hidden>←</span> Home
-        </Link>
-        <span className="case-nav-home">All work</span>
-      </div>
-
       <header className="work-index-hero">
         <div className="eyebrow">Index</div>
         <h1 className="work-index-title">
