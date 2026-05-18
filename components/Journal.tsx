@@ -91,6 +91,7 @@ export function Journal() {
   const [activeIndex, setActiveIndex] = useState(0);
   const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const resetTimerRef = useRef<number | null>(null);
   const displayItems =
     sorted.length > 1
       ? [
@@ -108,15 +109,49 @@ export function Journal() {
     textRefs.current[index] = node;
   }, []);
 
-  const goTo = (index: number) => {
-    const next = (index + sorted.length) % sorted.length;
-    setActiveIndex(next);
-    cardRefs.current[next + (sorted.length > 1 ? 1 : 0)]?.scrollIntoView({
-      behavior: "smooth",
+  const scrollToDisplay = (displayIndex: number, behavior: ScrollBehavior) => {
+    cardRefs.current[displayIndex]?.scrollIntoView({
+      behavior,
       block: "nearest",
       inline: "center",
     });
   };
+
+  const goTo = (index: number) => {
+    if (sorted.length === 0) return;
+    if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+
+    if (sorted.length === 1) {
+      setActiveIndex(0);
+      scrollToDisplay(0, "smooth");
+      return;
+    }
+
+    const isForwardWrap = index >= sorted.length;
+    const isBackwardWrap = index < 0;
+    const next = (index + sorted.length) % sorted.length;
+    const displayIndex = isForwardWrap
+      ? sorted.length + 1
+      : isBackwardWrap
+        ? 0
+        : next + 1;
+
+    setActiveIndex(next);
+    scrollToDisplay(displayIndex, "smooth");
+
+    if (isForwardWrap || isBackwardWrap) {
+      resetTimerRef.current = window.setTimeout(() => {
+        scrollToDisplay(next + 1, "auto");
+        resetTimerRef.current = null;
+      }, 620);
+    }
+  };
+
+  useEffect(() => {
+    return () => {
+      if (resetTimerRef.current) window.clearTimeout(resetTimerRef.current);
+    };
+  }, []);
 
   useEffect(() => {
     const ctx = gsap.context(() => {
