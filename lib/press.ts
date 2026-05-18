@@ -24,15 +24,6 @@ export const PRESS: PressItem[] = [
     pinned: true,
   },
   {
-    date: "2024-07-15",
-    title:
-      "RCA and Sodexo announce winners of innovative Eats and Algorithms project",
-    outlet: "Royal College of Art",
-    url: "https://www.rca.ac.uk/news-and-events/news/rca-and-sodexo-announce-winners-of-innovative-eats-and-algorithms-project-to-design-sustainable-solutions-for-digitising-food/",
-    tag: "News",
-    thumbnail: "/press/rca-sodexo-news.jpg",
-  },
-  {
     date: "2024-06-20",
     title:
       "'Eats and Algorithms': RCA and Sodexo collaborate on sustainable food solutions project",
@@ -62,13 +53,7 @@ export const PRESS: PressItem[] = [
     outlet: "Sichuan Fine Arts Institute",
     url: "https://mp.weixin.qq.com/s/sI6mg_dyA-7F8qRjyoOJEg",
     tag: "Exhibition",
-  },
-  {
-    date: "2024-06-01",
-    title: "SCFAI hosts opening of 2024 Open June — Art Tour at Sichuan Fine Arts Institute",
-    outlet: "Sichuan Fine Arts Institute",
-    url: "https://mp.weixin.qq.com/s/Sro5Oj3x1Z867VYB533yng",
-    tag: "Exhibition",
+    thumbnail: "/press/scfai-museum-night.webp",
   },
   {
     date: "2023-08-10",
