@@ -108,6 +108,7 @@ export function Journal() {
     return a.date < b.date ? 1 : -1;
   });
   const [activeIndex, setActiveIndex] = useState(0);
+  const viewportRef = useRef<HTMLDivElement | null>(null);
   const cardRefs = useRef<(HTMLAnchorElement | null)[]>([]);
   const textRefs = useRef<(HTMLDivElement | null)[]>([]);
   const resetTimerRef = useRef<number | null>(null);
@@ -129,11 +130,11 @@ export function Journal() {
   }, []);
 
   const scrollToDisplay = (displayIndex: number, behavior: ScrollBehavior) => {
-    cardRefs.current[displayIndex]?.scrollIntoView({
-      behavior,
-      block: "nearest",
-      inline: "center",
-    });
+    const viewport = viewportRef.current;
+    const card = cardRefs.current[displayIndex];
+    if (!viewport || !card) return;
+    const left = card.offsetLeft - (viewport.clientWidth - card.clientWidth) / 2;
+    viewport.scrollTo({ left, behavior });
   };
 
   const goTo = (index: number) => {
@@ -205,11 +206,7 @@ export function Journal() {
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
-      cardRefs.current[sorted.length > 1 ? 1 : 0]?.scrollIntoView({
-        behavior: "auto",
-        block: "nearest",
-        inline: "center",
-      });
+      scrollToDisplay(sorted.length > 1 ? 1 : 0, "auto");
     });
 
     return () => cancelAnimationFrame(id);
@@ -224,7 +221,7 @@ export function Journal() {
       <span id="journal" className="press-anchor-compat" aria-hidden />
       <h2 className="press-interview-heading">Press</h2>
 
-      <div className="press-interview-viewport">
+      <div className="press-interview-viewport" ref={viewportRef}>
         <div className="press-interview-track">
           {displayItems.map(({ item, sourceIndex, clone }, displayIndex) => (
             <PressInterviewCard

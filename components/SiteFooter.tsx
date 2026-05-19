@@ -25,7 +25,8 @@ const WORDMARK = {
   last: "Zhu.",
 } as const;
 
-const TAGLINE = "Designer for AI. Creative technologist for storytelling.";
+const TAGLINE =
+  "Designing interaction, interface and systems for human creativity and productivity through emerging technology.";
 
 const EASE: [number, number, number, number] = [0.32, 0.72, 0, 1]; // Apple-flavour
 

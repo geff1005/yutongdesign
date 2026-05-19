@@ -576,16 +576,17 @@ a { color: inherit; text-decoration: none; }
 /* === Hero === */
 .hero {
   position: relative;
-  min-height: 86svh;
+  min-height: 100svh;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: clamp(18px, 3vw, 36px);
-  padding: clamp(108px, 10vw, 150px) clamp(20px, 6vw, 88px) clamp(72px, 8vw, 112px);
+  padding: clamp(112px, 10vw, 154px) clamp(20px, 6vw, 88px) clamp(104px, 10vw, 142px);
   background:
-    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.08), transparent 34%),
+    radial-gradient(ellipse 74% 42% at 50% 45%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.055) 34%, rgba(255, 255, 255, 0.018) 52%, transparent 72%),
+    radial-gradient(ellipse 118% 54% at 50% 100%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.025) 36%, transparent 68%),
     linear-gradient(180deg, #030303 0%, #070706 82%, hsl(var(--bg)) 100%);
   color: #fff;
 }
@@ -780,16 +781,23 @@ a { color: inherit; text-decoration: none; }
   .hero {
     gap: 34px;
     padding-top: 116px;
+    padding-bottom: 96px;
   }
   .hero-name {
     font-size: clamp(3.25rem, 14vw, 6.5rem);
   }
 }
 
+@media (max-width: 760px) {
+  .scroll-indicator {
+    display: none;
+  }
+}
+
 @media (max-width: 420px) {
   .hero {
-    min-height: auto;
-    padding-bottom: 0;
+    min-height: 100svh;
+    padding-bottom: 72px;
   }
   .hero-ctas {
     display: flex;
