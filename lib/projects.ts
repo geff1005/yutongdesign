@@ -191,32 +191,6 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
     featured: true,
     thumbnail: "/thumbnails/smataste.jpg",
     href: "/work/smataste",
-    figmaEmbeds: [
-      {
-        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=883%3A1940&node-id=1014-1918&viewport=-6203%2C1291%2C0.43&scaling=scale-down&content-scaling=fixed&starting-point-node-id=1014%3A1918&embed-host=share",
-        viewport: "mobile",
-        audience: "diner",
-        caption: "Diner — Smart Taste Index onboarding. Spicy tolerance, cuisine, and label preferences seed the AI Memory.",
-      },
-      {
-        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=796%3A295&node-id=796-301&viewport=18%2C450%2C0.25&scaling=scale-down&content-scaling=fixed&starting-point-node-id=796%3A301&embed-host=share",
-        viewport: "mobile",
-        audience: "diner",
-        caption: "Diner — Talk to AI and order in seconds. Conversational ordering with health recommendation and AI Feedback before the lunch line.",
-      },
-      {
-        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=1276%3A5226&node-id=1276-5233&p=f&viewport=90%2C251%2C0.18&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1276%3A5233&embed-host=share",
-        viewport: "desktop",
-        audience: "kitchen",
-        caption: "Kitchen — Forecast ingredient consumption. AI Ingredients Forecast turns the canteen's history and dietary trend into a ranked stock list.",
-      },
-      {
-        url: "https://embed.figma.com/proto/Dqf1crEdIMI1GXnFXv7eG4/Sodexo-Eats-%26-Algorithms?page-id=883%3A1219&node-id=1276-2925&p=f&viewport=403%2C85%2C0.12&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=1276%3A2925&embed-host=share",
-        viewport: "desktop",
-        audience: "kitchen",
-        caption: "Kitchen — Let chef know customer's flavour. Flavor Dietary Trend Report plus AI Recipes Generation for next week's menu.",
-      },
-    ],
     caseStudy: {
       role: "Service Designer · UX and AI architecture (RCA × Sodexo AiD Lab)",
       timeline: "Jan-Jul 2025 · RCA × Sodexo Studio Project Challenge",
