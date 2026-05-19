@@ -43,7 +43,6 @@ export function Hero() {
           </span>
           &nbsp;based in {SITE.location}.
         </p>
-        <p className="hero-desc">{SITE.pitch}</p>
         <div className="hero-ctas">
           <a className="btn btn-solid" href="#work">
             <span className="btn-gradient-ring" />
