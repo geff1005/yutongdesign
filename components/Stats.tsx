@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 type LogoItem = {
   name: string;
   src: string;
@@ -47,8 +51,39 @@ function LogoRow({
 }
 
 export function Stats() {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const [kicked, setKicked] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    let timeout = 0;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setKicked(true);
+        window.clearTimeout(timeout);
+        timeout = window.setTimeout(() => setKicked(false), 1450);
+        observer.disconnect();
+      },
+      { rootMargin: "0px 0px -18% 0px", threshold: 0.35 }
+    );
+
+    observer.observe(section);
+    return () => {
+      window.clearTimeout(timeout);
+      observer.disconnect();
+    };
+  }, []);
+
   return (
-    <section className="collab-strip" id="collaborators" aria-label="Collaborators and contexts">
+    <section
+      ref={sectionRef}
+      className={`collab-strip ${kicked ? "is-kicked" : ""}`}
+      id="collaborators"
+      aria-label="Collaborators and contexts"
+    >
       <div className="collab-strip-head">
         <h2>Worked with</h2>
       </div>

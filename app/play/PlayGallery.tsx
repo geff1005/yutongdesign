@@ -75,7 +75,11 @@ export function PlayGallery({ groups }: Props) {
     if (!grid) return;
 
     const updateColumns = (width: number) => {
-      setColumnCount(width < 768 ? 2 : 3);
+      if (width < 640) {
+        setColumnCount(1);
+        return;
+      }
+      setColumnCount(width < 1024 ? 2 : 3);
     };
     updateColumns(grid.getBoundingClientRect().width);
 
@@ -229,7 +233,9 @@ export function PlayGallery({ groups }: Props) {
                   }`}
                   onClick={() => scrollToCategory(group.category)}
                 >
-                  {CATEGORY_LABEL[group.category]}
+                  <span className="play-cat-pill-label">
+                    {CATEGORY_LABEL[group.category]}
+                  </span>
                   <span className="play-cat-pill-count">
                     {group.items.length}
                   </span>
@@ -309,7 +315,9 @@ function PlayArtifactTile({
 }) {
   const aspect = getAspectNumber(item);
   const entryX =
-    columnCount === 2
+    columnCount === 1
+      ? 0
+      : columnCount === 2
       ? columnIndex === 0
         ? -350
         : 350
