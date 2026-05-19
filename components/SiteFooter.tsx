@@ -80,8 +80,8 @@ export function SiteFooter() {
           <div className="site-footer-meta-col">
             <div className="site-footer-meta-label eyebrow">Status</div>
             <div className="site-footer-meta-value">
-              <span className="dot-green animate-pulse-dot" /> Open to AI
-              Product Designer roles
+              <span className="dot-green animate-pulse-dot" /> Open to Product
+              Designer roles
             </div>
           </div>
           <div className="site-footer-meta-col">

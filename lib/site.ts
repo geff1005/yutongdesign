@@ -9,10 +9,9 @@ export const SITE = {
   pitch:
     "Designing AI-enabled creative workflows where emerging tech and human craft meet.",
   roles: [
-    "Creative Technologist",
     "Designer",
+    "Engineer",
     "Researcher",
-    "Builder",
   ] as const,
   // Marquee text in Contact section (single phrase repeated; keep ALL CAPS).
   marquee: "DESIGN. BUILD. SHIP.",
