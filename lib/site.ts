@@ -12,6 +12,8 @@ export const SITE = {
     "Designer",
     "Engineer",
     "Researcher",
+    "Builder",
+    "Futurist",
   ] as const,
   // Marquee text in Contact section (single phrase repeated; keep ALL CAPS).
   marquee: "DESIGN. BUILD. SHIP.",
