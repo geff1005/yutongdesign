@@ -80,23 +80,24 @@ function PressInterviewCard({
               <span>{item.outlet}</span>
             </div>
           )}
-          <div
-            ref={(node) => setTextRef(displayIndex, node)}
-            className="press-interview-text"
-            data-source-index={index}
-          >
-            <h5>{item.outlet}</h5>
-            <p>{item.title}</p>
-          </div>
+
+          <span className="press-interview-read" aria-hidden>
+            <span className="press-interview-glow" />
+            <span className="press-interview-read-inner">
+              <ReadIcon />
+              Read
+            </span>
+          </span>
         </div>
 
-        <span className="press-interview-read" aria-hidden>
-          <span className="press-interview-glow" />
-          <span className="press-interview-read-inner">
-            <ReadIcon />
-            Read
-          </span>
-        </span>
+        <div
+          ref={(node) => setTextRef(displayIndex, node)}
+          className="press-interview-text"
+          data-source-index={index}
+        >
+          <h5>{item.outlet}</h5>
+          <p>{item.title}</p>
+        </div>
       </div>
     </a>
   );
