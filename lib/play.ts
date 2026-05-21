@@ -109,6 +109,8 @@ const MANUAL: PlayItem[] = [
     chips: ["3D", "Material", "Remotion"],
     description: "A fast-cut Remotion reel from fur material renders.",
     videoSrc: "/play/highlights/fuzzy-hair-reel.mp4",
+    previewVideoSrc: "/play/previews/fuzzy-hair-reel-16x9.mp4",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/fuzzy-hair-reel.jpg",
   },
   {
@@ -121,6 +123,8 @@ const MANUAL: PlayItem[] = [
     chips: ["3D", "Motion", "Light"],
     description: "A luminous abstract wave study prepared as a looping artifact card.",
     videoSrc: "/play/highlights/iridescent-wave.mp4",
+    previewVideoSrc: "/play/previews/iridescent-wave-original.mp4",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/iridescent-wave.jpg",
   },
   {
@@ -133,6 +137,8 @@ const MANUAL: PlayItem[] = [
     chips: ["Graphic", "Motion", "Type"],
     description: "A geometric black-and-white motion study for the playground wall.",
     videoSrc: "/play/highlights/name-motion.mp4",
+    previewVideoSrc: "/play/previews/name-motion-original.mp4",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/name-motion.jpg",
   },
   {
@@ -145,6 +151,8 @@ const MANUAL: PlayItem[] = [
     chips: ["Seasonal", "Motion", "Visual"],
     description: "A cropped visual loop from the Beginning of Winter motion study.",
     videoSrc: "/play/highlights/beginning-of-winter.mp4",
+    previewVideoSrc: "/play/previews/beginning-of-winter-original.mp4",
+    previewAspectRatio: "4/3",
     thumbnail: "/play/highlights/beginning-of-winter.jpg",
   },
   {
@@ -157,6 +165,8 @@ const MANUAL: PlayItem[] = [
     chips: ["3D", "Environment", "Day Night"],
     description: "A day-to-night loop from the DeMain city environment.",
     videoSrc: "/play/highlights/demain-day-night.mp4",
+    previewVideoSrc: "/play/previews/demain-day-night-original.mp4",
+    previewAspectRatio: "1080/2340",
     thumbnail: "/play/highlights/demain-day-night.jpg",
   },
   {
@@ -169,6 +179,8 @@ const MANUAL: PlayItem[] = [
     chips: ["AI Film", "Motion", "Prompt Cinema"],
     description: "A short AI film study cut into a looping artifact card.",
     videoSrc: "/play/highlights/isee.mp4",
+    previewEmbedUrl: "https://www.youtube.com/embed/yp9JvKkmid8?rel=0&modestbranding=1",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/isee.jpg",
   },
   {
@@ -181,6 +193,8 @@ const MANUAL: PlayItem[] = [
     chips: ["Interface", "Archive", "Speculative UI"],
     description: "A speculative archive interface edited into a product-card loop.",
     videoSrc: "/play/highlights/archive-interface.mp4",
+    previewEmbedUrl: "https://player.vimeo.com/video/883707048?title=0&byline=0&portrait=0&badge=0&autopause=0",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/archive-interface.jpg",
   },
   {
@@ -193,6 +207,8 @@ const MANUAL: PlayItem[] = [
     chips: ["Motion", "3D", "Identity"],
     description: "A cropped 3D identity motion study prepared for looping cards.",
     videoSrc: "/play/highlights/motion-study-10.mp4",
+    previewVideoSrc: "/play/previews/motion-study-10-original.mp4",
+    previewAspectRatio: "16/9",
     thumbnail: "/play/highlights/motion-study-10.jpg",
   },
   {

@@ -531,6 +531,24 @@ function PlayTileVisual({
       ? item.previewEmbedUrl
       : item.embedUrl;
 
+  if (mode === "preview" && embedUrl) {
+    return (
+      <iframe
+        src={embedUrl}
+        className="play-tile-visual play-tile-iframe"
+        style={
+          {
+            "--preview-aspect": item.previewAspectRatio ?? item.aspectRatio ?? "16/9",
+          } as CSSProperties
+        }
+        loading="lazy"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
+        allowFullScreen
+      />
+    );
+  }
+
   if ((item.kind === "image" || item.kind === "gif") && imageSrc) {
     return (
       /* eslint-disable-next-line @next/next/no-img-element */
@@ -572,7 +590,8 @@ function PlayTileVisual({
           } as CSSProperties
         }
         loading="lazy"
-        allow="autoplay; fullscreen"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        referrerPolicy="strict-origin-when-cross-origin"
         allowFullScreen
       />
     );
