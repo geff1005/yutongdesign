@@ -372,7 +372,9 @@ function RailToggleArt({ mode }: { mode: "index" | "close" }) {
 
 function getAspectNumber(item: PlayItem) {
   if (item.kind === "spline") return 16 / 10;
-  if (item.kind === "video" || item.kind === "embed") return 16 / 9;
+  if ((item.kind === "video" || item.kind === "embed") && !item.aspectRatio) {
+    return 16 / 9;
+  }
 
   const [width, height] = (item.aspectRatio ?? "1/1")
     .split("/")
@@ -534,13 +536,15 @@ function PlayTileVisual({
   }
 
   if (item.kind === "video" && item.videoSrc) {
+    const isHighlight = item.videoSrc.startsWith("/play/highlights/");
+
     return (
       <video
         src={item.videoSrc}
         poster={item.thumbnail}
         className="play-tile-visual"
         muted
-        autoPlay={mode === "preview"}
+        autoPlay={mode === "preview" || isHighlight}
         loop
         playsInline
         controls={mode === "preview"}

@@ -18,6 +18,13 @@ import {
   featuredProjectVideoHeight,
   featuredProjectVideoWidth,
 } from "./FeaturedProjectProductCard";
+import {
+  HairArtifactReel,
+  hairArtifactDuration,
+  hairArtifactFps,
+  hairArtifactHeight,
+  hairArtifactWidth,
+} from "./HairArtifactReel";
 
 type FeaturedCardLoopProps = {
   projectSlug: string;
@@ -218,6 +225,14 @@ export function RemotionRoot() {
           fps={30}
           width={1920}
           height={1080}
+        />
+        <Composition
+          id="HairArtifactReel"
+          component={HairArtifactReel}
+          durationInFrames={hairArtifactDuration}
+          fps={hairArtifactFps}
+          width={hairArtifactWidth}
+          height={hairArtifactHeight}
         />
       </Folder>
     </>

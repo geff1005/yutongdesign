@@ -20,7 +20,7 @@ export const PRESS: PressItem[] = [
     outlet: "The Guardian",
     url: "https://www.theguardian.com/everything-you-never-imagined/2026/mar/05/how-art-school-creators-are-adapting-to-the-age-of-ai",
     tag: "Feature",
-    thumbnail: "/press/guardian.jpg",
+    thumbnail: "/press/guardian-enhanced.webp",
     pinned: true,
   },
   {
@@ -42,7 +42,7 @@ export const PRESS: PressItem[] = [
   },
   {
     date: "2024-05-26",
-    title: "Open June Special — Guojiao 1573 Museum Night opens at SCFAI",
+    title: "Valedictorian address at SCFAI Museum Night",
     outlet: "Sichuan Fine Arts Institute",
     url: "https://mp.weixin.qq.com/s/sI6mg_dyA-7F8qRjyoOJEg",
     tag: "Exhibition",

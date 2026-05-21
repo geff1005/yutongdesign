@@ -348,7 +348,7 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
         {
           section: "implementation",
           src: "/work/skgplus/02-shenzhen-yantian.jpg",
-          caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled “欻与无影”. The kind of work the old Framer back-end struggled to publish; on the new pipeline it ships in under a minute.",
+          caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled Flash and Shadowless. The kind of work the old Framer back-end struggled to publish; on the new pipeline it ships in under a minute.",
         },
         {
           section: "results",
@@ -358,12 +358,12 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
         {
           section: "results",
           src: "/work/skgplus/03-qingdao-beer-festival.jpg",
-          caption: "Qingdao Beer Festival, 34th edition — a mapping show titled “哈酒来啦” produced by SKG+. Brand-forward show key visual, surfaced on the studio archive within hours of delivery.",
+          caption: "Qingdao Beer Festival, 34th edition — a mapping show titled Cheers Arrive produced by SKG+. Brand-forward show key visual, surfaced on the studio archive within hours of delivery.",
         },
         {
           section: "results",
           src: "/work/skgplus/04-scfai-museum-yuan-su-iv.jpg",
-          caption: "Sichuan Fine Arts Institute Museum Night, “元·素 IV” — annual graduation showcase. The mapped stage is the cover of one of the studio's most heavily visited pages on the new CMS.",
+          caption: "Sichuan Fine Arts Institute Museum Night, Elements IV — annual graduation showcase. The mapped stage is the cover of one of the studio's most heavily visited pages on the new CMS.",
         },
       ],
     },
@@ -606,7 +606,7 @@ High-fidelity interface: hourly navigation, daily missions, creator profile, AR 
         {
           section: "results",
           src: "/work/sprayscape/results/sprayscape-z-1080p-60-09121727---5-00--e.jpg",
-          caption: "On-wall preview, in motion. The phone shows a sanctioned scout overlay; the right frame is a real spray pass on the wall. 留下痕迹 — leave a trace.",
+          caption: "On-wall preview, in motion. The phone shows a sanctioned scout overlay; the right frame is a real spray pass on the wall. Leave a trace.",
         },
         {
           section: "results",
@@ -812,7 +812,7 @@ The lockscreen interaction itself reads like a short sequence. When the desktop 
       role: "Visual Designer · ByteDance · Chongqing",
       timeline: "Oct 2023 – Dec 2023 (TikTok commercial workshop, late 2022 + 2023)",
       team:
-        "Solo designer inside the AR effects commercial-workshop pipeline. Three effects produced — 蘑菇眼 (Mushroom Eyes), 珠光宝气 (Pearl Glitter), and 世界杯AR-足球宝宝 (World Cup Soccer Baby).",
+        "Solo designer inside the AR effects commercial-workshop pipeline. Three effects produced — Mushroom Eyes, Pearl Glitter, and World Cup Soccer Baby.",
       impact:
         "Two TikTok / TikTok Lite filters shipped to a global audience with 10K+ combined views, featured on TikTok's Best of the Week. The work proved that AR effects can move from face-decoration to atmosphere — short interaction loops that change the emotional register of a short-form video, not just the face on it.",
       challenge:
@@ -826,13 +826,13 @@ The lockscreen interaction itself reads like a short sequence. When the desktop 
       strategy:
         `Three effects, one per modality:
 
-- **蘑菇眼 (Mushroom Eyes)** — a beauty-adjacent effect that augments the eye region with subtle mushroom motifs. Reads as cute, scales across selfie use cases, low-friction enter.
-- **珠光宝气 (Pearl Glitter)** — a pixel-art atmosphere overlay. Treats the whole frame as the canvas, not the face. Aimed at the under-served atmosphere lever.
-- **世界杯-足球宝宝 (World Cup Soccer Baby)** — an interaction-led AR effect timed to the 2022 World Cup. The official Al Rihla 3D ball model in-effect; the user becomes the soccer baby. Timed to the tournament's emotional peak.`,
+- **Mushroom Eyes** — a beauty-adjacent effect that augments the eye region with subtle mushroom motifs. Reads as cute, scales across selfie use cases, low-friction enter.
+- **Pearl Glitter** — a pixel-art atmosphere overlay. Treats the whole frame as the canvas, not the face. Aimed at the under-served atmosphere lever.
+- **World Cup Soccer Baby** — an interaction-led AR effect timed to the 2022 World Cup. The official Al Rihla 3D ball model in-effect; the user becomes the soccer baby. Timed to the tournament's emotional peak.`,
       implementation:
         `Built in ByteDance's Effect House (.ecpj source project files). Each effect went through the standard ByteDance AR pipeline: prototype → internal review → DAU pilot → published filter on TikTok / TikTok Lite store. Texture work for the World Cup ball used the official Al Rihla colour, normal, roughness, and metallic maps.
 
-Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221124足球/2022世界杯足球模型1741.fbm). Workshop screen recording from the Oct 19 2022 commercial workshop captured the full creation flow.`,
+Source files preserved from the commercial workshop project files, including the World Cup model bundle. Workshop screen recording from the Oct 19 2022 commercial workshop captured the full creation flow.`,
       results:
         `- Two filters shipped to TikTok / TikTok Lite.
 - 10K+ combined views.
@@ -866,29 +866,29 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
   },
   {
     slug: "greenmove",
-    title: "Healmove · 绿途",
+    title: "Healmove",
     description:
       "Best Sustainable Design Award. A 2023 future-mobility design fiction shot with Runway Gen-1 — an image-conditioned video model that pre-dated today's text-to-video tools. A pre-mainstream-AI content-creation experiment with a Tencent-owned connected-vehicle partner.",
     researchQuestion:
       "By 2045, can the car become a third space for health rather than a fourth source of sedentary time?",
     intro:
-      "GreenMove (绿途) is a future-mobility design fiction produced during the SCFAI × 梧桐车联 (Wutong Carlink) joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was shot with Runway Gen-1, an image-conditioned video-to-video model released before the modern text-to-video wave. That made the project an experiment in what one designer could ship with then-pre-mainstream generative video — months before tools like Sora, Veo, or Runway Gen-3 existed.",
+      "GreenMove is a future-mobility design fiction produced during the SCFAI × Wutong Carlink joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was shot with Runway Gen-1, an image-conditioned video-to-video model released before the modern text-to-video wave. That made the project an experiment in what one designer could ship with then-pre-mainstream generative video — months before tools like Sora, Veo, or Runway Gen-3 existed.",
     type: "Content Creation · Runway Gen-1 Experiment · Future Mobility",
     year: 2023,
-    tags: ["Content Creation", "Runway Gen-1", "Future Mobility", "Sustainable Design", "MidJourney", "梧桐车联"],
+    tags: ["Content Creation", "Runway Gen-1", "Future Mobility", "Sustainable Design", "MidJourney", "Wutong Carlink"],
     featured: true,
     thumbnail: "/work/greenmove/00-cover.png",
     videoUrl: "https://vimeo.com/1191365682",
     pdfUrl: "/work/greenmove/Healmove-EN.pdf",
-    award: "Best Sustainable Design Award · SCFAI × 梧桐车联 · 2024",
+    award: "Best Sustainable Design Award · SCFAI × Wutong Carlink · 2024",
     href: "/work/greenmove",
     caseStudy: {
       role: "Solo designer — concept, AI content pipeline, storyboard, edit, typeset",
-      timeline: "Sep–Dec 2023 · SCFAI × 梧桐车联 (Wutong Carlink) future-mobility joint course",
+      timeline: "Sep–Dec 2023 · SCFAI × Wutong Carlink future-mobility joint course",
       team:
-        "Solo project inside a joint enterprise course between Sichuan Fine Arts Institute's Design Academy and 梧桐车联 (Wutong Carlink), Tencent's connected-vehicle platform. Industry leads at Wutong Carlink and SCFAI faculty co-evaluated the final submissions.",
+        "Solo project inside a joint enterprise course between Sichuan Fine Arts Institute's Design Academy and Wutong Carlink, Tencent's connected-vehicle platform. Industry leads at Wutong Carlink and SCFAI faculty co-evaluated the final submissions.",
       impact:
-        "Best Sustainable Design Award winner — judged by industry leads at Wutong Carlink and the SCFAI design faculty. The project then anchored my 2024 Outstanding Graduate (优秀毕业生市级校级) and 单向宇海 Group Scholarship supporting portfolios.",
+        "Best Sustainable Design Award winner — judged by industry leads at Wutong Carlink and the SCFAI design faculty. The project then anchored my 2024 Outstanding Graduate and UniSea Group Scholarship supporting portfolios.",
       challenge:
         `An open brief from Wutong Carlink: design a 2040+ future-mobility experience. The constraint I chose was the WHO's obesity projection — over one billion adults affected by 2045 — and the default L5 trajectory of making travel even more sedentary than it already is. The design problem became how to re-architect the cabin as a third space for health.`,
       strategy:
@@ -896,7 +896,7 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
       implementation:
         `Three-week solo content-creation pipeline, run pre-mainstream-AI. ChatGPT drafted the obesity-tax policy scenario and the two persona arcs (Simon, 35, an engineer with a beer belly; Alice, 28, a fitness model). MidJourney generated the city, the characters, and roughly 80 percent of the shot list. Runway Gen-1 — image-conditioned video-to-video, the early-2023 model that pre-dated today's text-to-video wave — animated selected stills into short clips. Premiere assembled the final 1m20s reel.`,
       results:
-        `Best Sustainable Design Award. Deliverables: a five-page typeset English case book (linked above), a 1m20s AI-filmed reel built with Runway Gen-1, a worldbuild deck, and a service-platform diagram for the Personal Carbon Account flow. The project was subsequently featured in the supporting portfolios for two 2024 award applications — Outstanding Graduate (Municipal / School level) and 单向宇海 Group Scholarship.`,
+        `Best Sustainable Design Award. Deliverables: a five-page typeset English case book (linked above), a 1m20s AI-filmed reel built with Runway Gen-1, a worldbuild deck, and a service-platform diagram for the Personal Carbon Account flow. The project was subsequently featured in the supporting portfolios for two 2024 award applications — Outstanding Graduate (Municipal / School level) and UniSea Group Scholarship.`,
       media: [
         {
           section: "challenge",
@@ -926,7 +926,7 @@ Source files preserved (蘑菇眼.ecpj plus the World Cup model bundle in /20221
         {
           section: "results",
           src: "/work/greenmove/06-award-certificate.jpg",
-          caption: "Best Sustainable Design Award certificate — 2024 SCFAI × 梧桐车联 future-mobility joint course.",
+          caption: "Best Sustainable Design Award certificate — 2024 SCFAI × Wutong Carlink future-mobility joint course.",
         },
       ],
     },

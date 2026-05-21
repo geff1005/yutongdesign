@@ -31,7 +31,7 @@ export const SITE = {
     { num: "20+", label: "Projects" },
     { num: "3", label: "Design Awards" },
   ] as const,
-  // Awards (sourced from Resume + Notion 06-荣誉奖项)
+  // Awards (sourced from Resume + Notion awards)
   awards: [
     { name: "Red Dot Design Concept (Shortlist)", year: 2023 },
     { name: "International Design Award — Silver & Bronze", year: 2023 },

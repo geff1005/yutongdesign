@@ -13,12 +13,32 @@ import { CATEGORY_LABEL, PLAY_ITEMS, type PlayItem } from "@/lib/play";
  * perspective rather than through clip-path hacks.
  */
 
+const PLAYGROUND_PREVIEW_SLUGS = [
+  "3d-crystals",
+  "3d-fuzzy-magenta",
+  "3d-organic-worm",
+  "demain-day-night",
+  "photo-blue-spotlight",
+  "beginning-of-winter",
+  "craft-paper-collage",
+  "3d-iridescent-wave",
+  "graphic-book-pixel",
+  "graphic-bauhaus-letters",
+];
+
 function previewItems(): PlayItem[] {
-  return PLAY_ITEMS.filter((p) => Boolean(p.thumbnail || p.videoSrc || p.src)).slice(0, 10);
+  const bySlug = new Map(PLAY_ITEMS.map((item) => [item.slug, item]));
+  return PLAYGROUND_PREVIEW_SLUGS.map((slug) => bySlug.get(slug)).filter(
+    (item): item is PlayItem => Boolean(item?.thumbnail || item?.videoSrc || item?.src),
+  );
 }
 
 function previewAsset(item: PlayItem) {
-  return item.thumbnail ?? item.videoSrc ?? item.src ?? "";
+  return item.thumbnail ?? item.src ?? "";
+}
+
+function previewHref(item: PlayItem) {
+  return item.hasDetail ? `/play/${item.slug}` : "/play";
 }
 
 export function Explorations() {
@@ -129,7 +149,7 @@ export function Explorations() {
             ring,
             {
               rotationY: 360,
-              duration: reduceMotion ? 0 : 60,
+              duration: reduceMotion ? 0 : 48,
               ease: "none",
               repeat: reduceMotion ? 0 : -1,
             },
@@ -243,21 +263,37 @@ export function Explorations() {
           {items.map((item) => {
             const label = item.name ?? CATEGORY_LABEL[item.category];
             const thumb = previewAsset(item);
+            const href = previewHref(item);
             return (
               <Link
                 key={item.slug}
                 role="listitem"
-                href={`/play/${item.slug}`}
+                href={href}
                 className="playground-cylinder-card"
                 aria-label={label}
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={thumb}
-                  alt=""
-                  className="playground-cylinder-img"
-                  loading="eager"
-                />
+                {item.kind === "video" && item.videoSrc ? (
+                  <video
+                    src={item.videoSrc}
+                    poster={thumb}
+                    className="playground-cylinder-img playground-cylinder-video"
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    preload="metadata"
+                    disablePictureInPicture
+                    aria-hidden="true"
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img
+                    src={thumb}
+                    alt=""
+                    className="playground-cylinder-img"
+                    loading="eager"
+                  />
+                )}
               </Link>
             );
           })}
