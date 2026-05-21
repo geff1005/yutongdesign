@@ -47,6 +47,8 @@ export type Project = {
     media?: {
       section: 'challenge' | 'research' | 'strategy' | 'implementation' | 'results' | 'lessons' | 'nextSteps';
       src: string;
+      kind?: 'image' | 'video';
+      poster?: string;
       caption?: string;
       aspectRatio?: '16/9' | '4/3' | '3/4' | '1/1' | '21/9';
     }[];
@@ -567,16 +569,20 @@ Touchpoints across the loop: an AR platform to build a graffiti space, social-co
 
 Concept flow: Confirm → Creation Process → Outcome Check → Post & sharing.
 
-High-fidelity interface: hourly navigation, daily missions, creator profile, AR commission scout, reward levels, on-wall preview. Spatial layers: AR canvas overlays for real walls, viewable on phone or MR headset.`,
+High-fidelity interface: hourly navigation, daily missions, creator profile, AR commission scout, reward levels, on-wall preview. Spatial layers: AR canvas overlays for real walls, viewable on phone or MR headset.
+
+Later MR extension: the platform logic evolved from commissioning and previewing street art into a mixed-reality archive. The follow-up prototype combines 3D Gaussian Splatting, semantic artwork extraction, spatial anchors, and onsite/offsite MR modes so citizens can capture, revisit, and remix street art in its original urban context.`,
       results:
-        `A complete service-design platform proposal — UI prototypes, system map, stakeholder map, and mission concept. Featured in Sichuan Fine Arts annual showcase.`,
+        `A complete service-design platform proposal — UI prototypes, system map, stakeholder map, and mission concept. Featured in Sichuan Fine Arts annual showcase.
+
+The MR follow-up reframes SprayScape as civic digital heritage infrastructure: onsite visitors can archive a wall and replay earlier layers in place; offsite visitors can move from a city-scale discovery map into immersive street-art scenes and remix extracted works as spatial assets.`,
       lessons:
         `Two carry-forwards:
 
 - The right question wasn't 'how do we control graffiti?' but 'how do we negotiate it?'. Designing the platform to give all three stakeholders something to defend turned a moral argument into a coordination problem.
-- Spatial computing as preview, not as product. Letting buyers see a piece on the wall before commissioning closes the trust gap that legal channels alone cannot.`,
+- Spatial computing as context, not spectacle. The MR extension works because it preserves scale, texture, authorship, and location together — not because it simply places graphics on top of the street.`,
       nextSteps:
-        `The negotiation pattern generalises to other forms of contested public expression — busking, pop-up performance, political postering. Any domain where the artist, the audience, and the property owner are usually in a three-way standoff, and a digital previewing layer could let them rehearse the agreement first.`,
+        `The negotiation pattern generalises to other forms of contested public expression — busking, pop-up performance, political postering. The MR archiving pattern opens a second track: ephemeral urban culture can become a participatory archive when capture, provenance, and spatial replay are simple enough for citizens to use.`,
       media: [
         {
           section: "challenge",
@@ -602,6 +608,14 @@ High-fidelity interface: hourly navigation, daily missions, creator profile, AR 
           section: "implementation",
           src: "/work/sprayscape/results/sprayscape-uiux---eagle-mmbssqw2i30uo.jpg",
           caption: "Brand and product identity — SprayScape positions itself as a street-art trading platform for urban beautification, with the role and contribution scope spelled out for stakeholders.",
+        },
+        {
+          section: "results",
+          kind: "video",
+          src: "/play/previews/sprayscape-mr-original.mp4",
+          poster: "/play/highlights/sprayscape-mr.jpg",
+          aspectRatio: "16/9",
+          caption: "SprayScape MR — later mixed-reality extension for onsite co-archiving, in-situ time travel, offsite exploration, and remixing of street-art heritage.",
         },
         {
           section: "results",

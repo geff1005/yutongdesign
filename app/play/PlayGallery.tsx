@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import type { CSSProperties } from "react";
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   CATEGORY_LABEL,
   type PlayCategory,
@@ -37,6 +37,9 @@ type PackedColumnItem = FlatPlayItem & {
 
 export function PlayGallery({ groups }: Props) {
   const gridRef = useRef<HTMLDivElement | null>(null);
+  const seenSlugsRef = useRef<Set<string>>(new Set());
+  const revealTimersRef = useRef<number[]>([]);
+  const activeCategoryLockRef = useRef<number | null>(null);
   const [activeItem, setActiveItem] = useState<PlayItem | null>(null);
   const [activeCategory, setActiveCategory] = useState<PlayCategory>(
     groups[0]?.category ?? "3d-art"
@@ -44,6 +47,9 @@ export function PlayGallery({ groups }: Props) {
   const [railCollapsed, setRailCollapsed] = useState(true);
   const [columnCount, setColumnCount] = useState(3);
   const [revealedDelays, setRevealedDelays] = useState<Record<string, number>>(
+    {}
+  );
+  const [revealingSlugs, setRevealingSlugs] = useState<Record<string, boolean>>(
     {}
   );
   const [cursor, setCursor] = useState<CursorPoint>({ x: -80, y: -80 });
@@ -70,16 +76,75 @@ export function PlayGallery({ groups }: Props) {
     [flatItems, columnCount]
   );
 
+  const scheduleRevealCleanup = useCallback(
+    (reveals: Array<{ slug: string; delay: number; duration: number }>) => {
+      if (reveals.length === 0) return;
+
+      setRevealingSlugs((current) => {
+        const next = { ...current };
+        reveals.forEach(({ slug }) => {
+          next[slug] = true;
+        });
+        return next;
+      });
+
+      reveals.forEach(({ slug, delay, duration }) => {
+        const timer = window.setTimeout(() => {
+          setRevealingSlugs((current) => {
+            if (!current[slug]) return current;
+            const next = { ...current };
+            delete next[slug];
+            return next;
+          });
+        }, delay + duration + 180);
+        revealTimersRef.current.push(timer);
+      });
+    },
+    []
+  );
+
+  const revealSlugs = useCallback(
+    (slugs: string[], baseDelay = 0) => {
+      const reveals: Array<{ slug: string; delay: number; duration: number }> =
+        [];
+
+      slugs.forEach((slug, index) => {
+        if (seenSlugsRef.current.has(slug)) return;
+        const delay = baseDelay + index * 22;
+        const duration = 1200 + (index % 4) * 120;
+        seenSlugsRef.current.add(slug);
+        reveals.push({ slug, delay, duration });
+      });
+
+      if (reveals.length === 0) return;
+
+      setRevealedDelays((current) => {
+        const next = { ...current };
+        reveals.forEach(({ slug, delay }) => {
+          next[slug] = delay;
+        });
+        return next;
+      });
+
+      scheduleRevealCleanup(reveals);
+    },
+    [scheduleRevealCleanup]
+  );
+
+  useEffect(() => {
+    const initialSlugs = flatItems
+      .slice(0, Math.min(12, flatItems.length))
+      .map(({ item }) => item.slug);
+    revealSlugs(initialSlugs, 0);
+  }, [flatItems, revealSlugs]);
+
   useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return;
 
     const updateColumns = (width: number) => {
-      if (width < 640) {
-        setColumnCount(1);
-        return;
-      }
-      setColumnCount(width < 1024 ? 2 : 3);
+      const next = width < 640 ? 1 : width < 1024 ? 2 : 3;
+      setColumnCount((current) => (current === next ? current : next));
     };
     updateColumns(grid.getBoundingClientRect().width);
 
@@ -91,44 +156,52 @@ export function PlayGallery({ groups }: Props) {
   }, []);
 
   useEffect(() => {
+    const revealTimers = revealTimersRef.current;
+    return () => {
+      revealTimers.forEach((timer) => window.clearTimeout(timer));
+      if (activeCategoryLockRef.current !== null) {
+        window.clearTimeout(activeCategoryLockRef.current);
+      }
+    };
+  }, []);
+
+  useEffect(() => {
     const grid = gridRef.current;
     if (!grid) return;
 
     const cards = Array.from(
-      grid.querySelectorAll<HTMLButtonElement>(
-        ".play-tile-link:not(.is-revealed)"
-      )
-    );
+      grid.querySelectorAll<HTMLButtonElement>(".play-tile-link")
+    ).filter((card) => {
+      const slug = card.dataset.slug;
+      return slug ? !seenSlugsRef.current.has(slug) : false;
+    });
     if (cards.length === 0) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
-        const entering = entries
+        const enteringCards = entries
           .filter((entry) => entry.isIntersecting)
           .map((entry) => entry.target as HTMLButtonElement)
           .sort(
             (a, b) =>
               a.getBoundingClientRect().top - b.getBoundingClientRect().top
           );
+        const enteringSlugs = enteringCards
+          .map((card) => card.dataset.slug)
+          .filter((slug): slug is string =>
+            Boolean(slug && !seenSlugsRef.current.has(slug))
+          );
 
-        if (entering.length === 0) return;
-
-        setRevealedDelays((current) => {
-          const next = { ...current };
-          entering.forEach((card, index) => {
-            const slug = card.dataset.slug;
-            if (slug && next[slug] === undefined) next[slug] = index * 45;
-          });
-          return next;
-        });
-        entering.forEach((card) => observer.unobserve(card));
+        if (enteringSlugs.length === 0) return;
+        revealSlugs(enteringSlugs, 0);
+        enteringCards.forEach((card) => observer.unobserve(card));
       },
-      { rootMargin: "0px 0px 65% 0px", threshold: 0.01 }
+      { rootMargin: "0px 0px 140% 0px", threshold: 0.01 }
     );
 
     cards.forEach((card) => observer.observe(card));
     return () => observer.disconnect();
-  }, [playColumns, revealedDelays]);
+  }, [playColumns, revealSlugs]);
 
   useEffect(() => {
     const sections = groups
@@ -143,6 +216,7 @@ export function PlayGallery({ groups }: Props) {
         const id = visible?.target.id.replace("cat-", "") as
           | PlayCategory
           | undefined;
+        if (activeCategoryLockRef.current !== null) return;
         if (id) setActiveCategory(id);
       },
       { rootMargin: "-28% 0px -58% 0px", threshold: [0.08, 0.2, 0.4] }
@@ -170,6 +244,13 @@ export function PlayGallery({ groups }: Props) {
   }, [activeItem]);
 
   const scrollToCategory = (category: PlayCategory) => {
+    setActiveCategory(category);
+    if (activeCategoryLockRef.current !== null) {
+      window.clearTimeout(activeCategoryLockRef.current);
+    }
+    activeCategoryLockRef.current = window.setTimeout(() => {
+      activeCategoryLockRef.current = null;
+    }, 900);
     document
       .getElementById(`cat-${category}`)
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -261,6 +342,7 @@ export function PlayGallery({ groups }: Props) {
                       rowIndex={rowIndex}
                       anchorId={categoryStart ? `cat-${category}` : undefined}
                       revealDelay={revealedDelays[item.slug]}
+                      isRevealing={Boolean(revealingSlugs[item.slug])}
                       onOpen={() => setActiveItem(item)}
                     />
                   ))}
@@ -303,6 +385,7 @@ function PlayArtifactTile({
   rowIndex,
   anchorId,
   revealDelay,
+  isRevealing,
   onOpen,
 }: {
   item: PlayItem;
@@ -311,6 +394,7 @@ function PlayArtifactTile({
   rowIndex: number;
   anchorId?: string;
   revealDelay?: number;
+  isRevealing?: boolean;
   onOpen: () => void;
 }) {
   const aspect = getAspectNumber(item);
@@ -328,7 +412,7 @@ function PlayArtifactTile({
           : 350;
   const entryY = 300 + rowIndex * 100;
   const entryScale = 1.5;
-  const entryDuration = 1500 + ((columnIndex + rowIndex) % 4) * 200;
+  const entryDuration = 1200 + ((columnIndex + rowIndex) % 4) * 120;
 
   return (
     <button
@@ -336,6 +420,7 @@ function PlayArtifactTile({
       type="button"
       className={`play-tile-link play-tile-artifact ${
         revealDelay !== undefined ? "is-revealed" : ""
+      } ${isRevealing ? "is-revealing" : ""
       }`}
       data-slug={item.slug}
       aria-label={`Preview ${item.name ?? "play artifact"}`}
@@ -344,7 +429,7 @@ function PlayArtifactTile({
           "--entry-x": `${entryX}px`,
           "--entry-y": `${entryY}px`,
           "--entry-scale": entryScale,
-          "--entry-delay": `${columnIndex * 60 + rowIndex * 45}ms`,
+          "--entry-delay": `${columnIndex * 32 + rowIndex * 16}ms`,
           "--entry-duration": `${entryDuration}ms`,
           "--reveal-delay": `${revealDelay ?? 0}ms`,
           "--play-card-aspect": aspect,

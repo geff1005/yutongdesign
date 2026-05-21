@@ -310,13 +310,24 @@ export default async function WorkDetailPage({
                 <div className="case-media-stack">
                   {sectionMedia.map((m, i) => (
                     <figure key={i} className="case-media-figure">
-                      {/* eslint-disable-next-line @next/next/no-img-element */}
-                      <img
-                        src={m.src}
-                        alt={m.caption ?? ""}
-                        className="case-media-image"
-                        loading="lazy"
-                      />
+                      {m.kind === "video" ? (
+                        <video
+                          src={m.src}
+                          poster={m.poster}
+                          className="case-media-image case-media-video"
+                          controls
+                          playsInline
+                          preload="metadata"
+                        />
+                      ) : (
+                        /* eslint-disable-next-line @next/next/no-img-element */
+                        <img
+                          src={m.src}
+                          alt={m.caption ?? ""}
+                          className="case-media-image"
+                          loading="lazy"
+                        />
+                      )}
                       {m.caption && (
                         <figcaption className="case-media-caption">
                           {m.caption}
