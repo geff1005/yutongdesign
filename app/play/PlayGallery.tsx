@@ -522,6 +522,14 @@ function PlayTileVisual({
   mode: "tile" | "preview";
 }) {
   const imageSrc = item.src ?? item.thumbnail;
+  const videoSrc =
+    mode === "preview" && item.previewVideoSrc
+      ? item.previewVideoSrc
+      : item.videoSrc;
+  const embedUrl =
+    mode === "preview" && item.previewEmbedUrl
+      ? item.previewEmbedUrl
+      : item.embedUrl;
 
   if ((item.kind === "image" || item.kind === "gif") && imageSrc) {
     return (
@@ -535,12 +543,12 @@ function PlayTileVisual({
     );
   }
 
-  if (item.kind === "video" && item.videoSrc) {
-    const isHighlight = item.videoSrc.startsWith("/play/highlights/");
+  if (item.kind === "video" && videoSrc) {
+    const isHighlight = item.videoSrc?.startsWith("/play/highlights/");
 
     return (
       <video
-        src={item.videoSrc}
+        src={videoSrc}
         poster={item.thumbnail}
         className="play-tile-visual"
         muted
@@ -553,11 +561,16 @@ function PlayTileVisual({
     );
   }
 
-  if (item.kind === "embed" && item.embedUrl) {
+  if (item.kind === "embed" && embedUrl) {
     return (
       <iframe
-        src={item.embedUrl}
+        src={embedUrl}
         className="play-tile-visual play-tile-iframe"
+        style={
+          {
+            "--preview-aspect": item.previewAspectRatio ?? item.aspectRatio ?? "16/9",
+          } as CSSProperties
+        }
         loading="lazy"
         allow="autoplay; fullscreen"
         allowFullScreen

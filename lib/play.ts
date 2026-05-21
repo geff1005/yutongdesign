@@ -87,7 +87,10 @@ export type PlayItem = {
   description?: string;
   src?: string;
   videoSrc?: string;
+  previewVideoSrc?: string;
   embedUrl?: string;
+  previewEmbedUrl?: string;
+  previewAspectRatio?: string;
   externalUrl?: string;
   splineScene?: string;
   thumbnail?: string;

@@ -2718,8 +2718,9 @@ section { position: relative; }
 }
 .play-preview-media .play-tile-iframe {
   width: min(1120px, calc(100vw - 32px));
-  height: min(70vh, 720px);
-  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: min(70vh, 720px);
+  aspect-ratio: var(--preview-aspect, 16 / 9);
 }
 .play-preview-meta {
   display: flex;
