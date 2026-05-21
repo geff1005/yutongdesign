@@ -340,6 +340,7 @@ export function PlayGallery({ groups }: Props) {
                       columnIndex={columnIndex}
                       columnCount={columnCount}
                       rowIndex={rowIndex}
+                      isRailOpen={!railCollapsed}
                       anchorId={categoryStart ? `cat-${category}` : undefined}
                       revealDelay={revealedDelays[item.slug]}
                       isRevealing={Boolean(revealingSlugs[item.slug])}
@@ -383,6 +384,7 @@ function PlayArtifactTile({
   columnIndex,
   columnCount,
   rowIndex,
+  isRailOpen,
   anchorId,
   revealDelay,
   isRevealing,
@@ -392,27 +394,31 @@ function PlayArtifactTile({
   columnIndex: number;
   columnCount: number;
   rowIndex: number;
+  isRailOpen: boolean;
   anchorId?: string;
   revealDelay?: number;
   isRevealing?: boolean;
   onOpen: () => void;
 }) {
   const aspect = getAspectNumber(item);
-  const entryX =
-    columnCount === 1
+  const entryX = isRailOpen
+    ? 0
+    : columnCount === 1
       ? 0
       : columnCount === 2
-      ? columnIndex === 0
-        ? -350
-        : 350
-      : columnIndex === 0
-        ? -350
-        : columnIndex === 1
-          ? 0
-          : 350;
-  const entryY = 300 + rowIndex * 100;
-  const entryScale = 1.5;
-  const entryDuration = 1200 + ((columnIndex + rowIndex) % 4) * 120;
+        ? columnIndex === 0
+          ? -350
+          : 350
+        : columnIndex === 0
+          ? -350
+          : columnIndex === 1
+            ? 0
+            : 350;
+  const entryY = isRailOpen ? 120 + rowIndex * 28 : 300 + rowIndex * 100;
+  const entryScale = isRailOpen ? 1.08 : 1.5;
+  const entryDuration = isRailOpen
+    ? 760 + ((columnIndex + rowIndex) % 3) * 90
+    : 1200 + ((columnIndex + rowIndex) % 4) * 120;
 
   return (
     <button
