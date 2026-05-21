@@ -2406,8 +2406,7 @@ section { position: relative; }
   align-items: start;
   max-width: var(--play-dashboard-max);
   margin: 0 auto;
-  transition: max-width 520ms var(--ease-apple),
-              grid-template-columns 520ms var(--ease-apple);
+  transition: max-width 320ms var(--ease-apple);
 }
 .play-dashboard-shell.is-rail-collapsed {
   grid-template-columns: 0 minmax(0, 1fr);
