@@ -43,8 +43,23 @@ export const metadata: Metadata = {
       "Creative Technologist based in London. Featured in The Guardian (2026). Awards: Red Dot, IDA, EUPD.",
     url: "https://yutongdesign.art",
     siteName: "yutongdesign",
+    images: [
+      {
+        url: "/thumbnails/co-cerebral.jpg",
+        width: 1600,
+        height: 1600,
+        alt: "Co-Cerebral project thumbnail by Julian Yutong Zhu",
+      },
+    ],
     locale: "en_GB",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Julian Zhu — Portfolio",
+    description:
+      "Creative Technologist based in London. Featured in The Guardian (2026). Awards: Red Dot, IDA, EUPD.",
+    images: ["/thumbnails/co-cerebral.jpg"],
   },
 };
 
