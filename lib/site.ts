@@ -10,7 +10,7 @@ export const SITE = {
     "Designing AI-enabled creative workflows where emerging tech and human craft meet.",
   roles: [
     "Designer",
-    "Engineer",
+    "Design Engineer",
     "Researcher",
     "Builder",
     "Futurist",

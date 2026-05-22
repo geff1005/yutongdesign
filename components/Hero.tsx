@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
 
 const ROLES = SITE.roles;
+const articleForRole = (role: string) => (/^[aeiou]/i.test(role) ? "An" : "A");
 
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
@@ -37,7 +38,7 @@ export function Hero() {
           {SITE.name} builds AI imagination tools.
         </h1>
         <p className="hero-role">
-          A&nbsp;
+          {articleForRole(ROLES[roleIdx])}&nbsp;
           <span key={roleIdx} className="hero-role-word animate-role-fade-in">
             {ROLES[roleIdx]}
           </span>

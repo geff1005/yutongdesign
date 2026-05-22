@@ -247,13 +247,12 @@ export function Explorations() {
             orbiting outside client briefs.
           </p>
           <Link
-            className="view-all-btn"
-            style={{ display: "inline-flex", marginTop: 24 }}
+            className="view-all-btn explorations-cta"
             href="/play"
           >
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
-              Run playground <span aria-hidden>→</span>
+              Enter playground <span aria-hidden>→</span>
             </span>
           </Link>
         </div>
