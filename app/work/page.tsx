@@ -5,7 +5,7 @@ import { PROJECTS, SELECTED_FEATURED } from "@/lib/projects";
 export const metadata: Metadata = {
   title: "Work — Julian Zhu",
   description:
-    "All projects — service design, AI agentic UX, web, industrial design, and exploration work by Julian Zhu.",
+    "Product, service, and system design for AI-enabled futures by Julian Zhu.",
 };
 
 export default function WorkIndexPage() {
@@ -21,7 +21,7 @@ export default function WorkIndexPage() {
           All <em>work</em>
         </h1>
         <p className="work-index-sub">
-          Service design, agentic UX, web, industrial design, and exploration work — newest and most relevant first.
+          Product, service, and system design for AI-enabled futures.
         </p>
       </header>
 

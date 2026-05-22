@@ -297,11 +297,11 @@ export function PlayGallery({ groups }: Props) {
 
         <div className="play-dashboard-main">
           <header className="play-index-hero">
-            <div className="eyebrow">Artifact index / {totalCount}</div>
-            <h1 className="play-index-title">Play</h1>
+            <div className="eyebrow">Playground index / {totalCount}</div>
+            <h1 className="play-index-title">Playground</h1>
             <p className="play-index-sub">
-              Posters, motion studies, GIFs, 3D scenes, and live experiments.
-              Small things to scan, open, and inspect.
+              Motion tests, visual systems, and small prototypes for emerging
+              interfaces.
             </p>
 
             <nav className="play-cat-nav" aria-label="Categories">

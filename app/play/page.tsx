@@ -3,9 +3,9 @@ import { itemsByCategory } from "@/lib/play";
 import { PlayGallery } from "./PlayGallery";
 
 export const metadata: Metadata = {
-  title: "Play — Julian Zhu",
+  title: "Playground — Julian Zhu",
   description:
-    "Posters, motion studies, GIFs, 3D scenes, and live experiments — work that lives outside client briefs.",
+    "Motion tests, visual systems, and small prototypes for emerging interfaces by Julian Zhu.",
 };
 
 export default function PlayIndexPage() {

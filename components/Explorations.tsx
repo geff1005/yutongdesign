@@ -243,8 +243,7 @@ export function Explorations() {
             Motion playground
           </h2>
           <p className="section-sub">
-            Generated artifacts, 3D tests, posters, and visual experiments
-            orbiting outside client briefs.
+            Fast studies in motion, interface, and AI-native visual systems.
           </p>
           <Link
             className="view-all-btn explorations-cta"
