@@ -2072,6 +2072,91 @@ section { position: relative; }
   .case-impact-hero { padding-top: 32px; padding-bottom: 16px; }
 }
 
+/* === Case storytelling layer — design questions and decisions === */
+.case-decision-section {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 2.6vw, 30px);
+}
+.case-decision-eyebrow {
+  margin-bottom: 12px;
+}
+.case-question-list,
+.case-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(14px, 1.8vw, 22px);
+}
+.case-question-card,
+.case-decision-card {
+  border: 0;
+  border-radius: var(--artifact-card-radius, 28px);
+  background: hsl(var(--surface));
+  box-shadow: var(--artifact-card-shadow-rest);
+}
+.case-question-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+  padding: clamp(18px, 2vw, 24px);
+}
+.case-question-index {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  color: hsl(var(--muted));
+  line-height: 1.5;
+}
+.case-question-card p {
+  margin: 0;
+  font-size: clamp(17px, 1.6vw, 21px);
+  line-height: 1.45;
+  color: hsl(var(--text));
+}
+.case-decision-card {
+  padding: clamp(22px, 2.5vw, 30px);
+}
+.case-decision-card-eyebrow {
+  margin-bottom: 18px;
+}
+.case-decision-card h3 {
+  font-family: var(--font-display);
+  font-size: clamp(24px, 2.2vw, 32px);
+  line-height: 1.08;
+  letter-spacing: 0;
+  margin: 0 0 24px;
+  color: hsl(var(--text));
+}
+.case-decision-card dl {
+  display: grid;
+  gap: 16px;
+  margin: 0;
+}
+.case-decision-card dt {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: hsl(var(--muted));
+}
+.case-decision-card dd {
+  margin: 6px 0 0;
+  font-size: 14px;
+  line-height: 1.65;
+  color: hsl(var(--muted-foreground));
+}
+@media (max-width: 760px) {
+  .case-question-list,
+  .case-decision-grid {
+    grid-template-columns: 1fr;
+  }
+  .case-question-card {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
 /* 3-column overview grid (Impact promoted out of the strip) */
 .case-overview-grid-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 700px) {

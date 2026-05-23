@@ -42,6 +42,14 @@ export type Project = {
     results?: string;
     lessons?: string;
     nextSteps?: string;
+    designQuestions?: string[];
+    keyDecisions?: {
+      title: string;
+      problem: string;
+      decision: string;
+      why: string;
+      outcome?: string;
+    }[];
     /** Images interspersed in the case-study flow.
      *  Each renders below the section it's keyed to. */
     media?: {
@@ -700,15 +708,17 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
   {
     slug: "poeticform",
     title: "Poetic-Form",
-    description: "Digital sculpture creation based on Human-AI co-creation",
-    researchQuestion: "How does AI portray the shape of the poem?",
+    description:
+      "A ComfyUI-driven Human-AI workflow for translating Song poetry into digital sculptures.",
+    researchQuestion:
+      "How can ancient poetry become a generative 3D artifact through a human-AI collaboration workflow?",
     intro:
-      "Generation of customized Taihu stone digital sculptures based on Eastern aesthetics through sound or semantic information.",
-    type: "AIGC Interaction Installation",
-    year: 2023,
-    tags: ["AI", "Digital Art", "GenAI"],
+      "My undergraduate graduation design: an AI creative technology system that turns poetic language into Taihu-stone-inspired artifacts through poem analysis, prompt engineering, ComfyUI generation, 3D reconstruction, and exhibition interaction.",
+    type: "AI Creative Technology · Human-AI Workflow",
+    year: 2024,
+    tags: ["AI Creative Technology", "ComfyUI", "Human-AI Workflow", "AIGC", "Digital Sculpture"],
     featured: true,
-    thumbnail: "https://framerusercontent.com/images/JKkVLtCfp0YK7xRsEp9DDLTBE.jpg",
+    thumbnail: "/thumbnails/poeticform.jpg",
     videoUrl: "https://vimeo.com/1079210038",
     href: "/work/poeticform",
   },
@@ -810,12 +820,12 @@ The lockscreen interaction itself reads like a short sequence. When the desktop 
     slug: "bytedance",
     title: "ByteDance · TikTok AR Effects",
     description:
-      "Two TikTok / TikTok Lite filters that drew 10K+ views and were featured on TikTok's Best of the Week. Custom AR effects (beauty, atmosphere, interaction) informed by DAU trend analysis.",
+      "Production-ready AR effect loops for TikTok and TikTok Lite — short-form camera assets shaped by trend analysis, visual craft, and platform constraints. Two filters drew 10K+ views and were featured on TikTok's Best of the Week.",
     researchQuestion:
       "What makes an AR effect stick — beyond a face filter that fades by Tuesday?",
     intro:
-      "Visual Designer at ByteDance (Chongqing). Led custom AR effects — beauty, atmosphere, interaction — designed around DAU trend analysis and shipped through TikTok and TikTok Lite.",
-    type: "Visual Design · AR · Motion",
+      "Visual Designer at ByteDance (Chongqing). Led custom AR effects — beauty, atmosphere, interaction — designed around DAU trend analysis and shipped through TikTok and TikTok Lite as lightweight creative production assets.",
+    type: "AR Creative Production · Effect House · Motion",
     year: 2023,
     tags: ["AR", "TikTok", "Visual Design", "ByteDance", "Motion"],
     featured: true,
@@ -868,12 +878,94 @@ Source files preserved from the commercial workshop project files, including the
         {
           section: "implementation",
           src: "/work/bytedance/02-football-model.png",
-          caption: "3D model preview from the in-house pipeline. Al Rihla colour, normal, roughness, and metallic maps baked onto the Soccer Baby character rig.",
+          caption: "Clean portfolio rebuild of the AR effect loop: character, camera preview, and lightweight status UI without third-party stock-watermark sources.",
         },
         {
           section: "research",
           src: "/work/bytedance/03-basketball-render.jpg",
-          caption: "Companion render from the early concept stage — basketball-character study before the brief locked onto the World Cup ball.",
+          caption: "Original replacement for the early basketball concept, showing how object motion and camera framing could extend the effect beyond face filters.",
+        },
+      ],
+    },
+  },
+  {
+    slug: "lantern-festival",
+    title: "Guizhou Lantern Festival GenAI Promo",
+    description:
+      "An early-state GenAI commercial video workflow for a large-scale lantern-festival campaign, using festival references, Runway Gen-2, Luma-style image-to-video thinking, upscaling, and editorial curation to build a cinematic promotional shot bank.",
+    researchQuestion:
+      "How can static festival references become cinematic commercial motion while preserving cultural specificity?",
+    intro:
+      "A commercial GenAI video experiment for a Guizhou lantern-festival campaign. I curated real lantern-festival references, generated and animated shot variations with early image-to-video tools, cleaned selected outputs, and edited a short promotional reel from unstable 3-4 second clips.",
+    type: "GenAI Commercial Video · Runway · AI Art Direction",
+    year: 2024,
+    tags: ["GenAI Video", "Runway", "Commercial", "Art Direction", "AI Workflow"],
+    featured: false,
+    thumbnail: "/thumbnails/lantern-festival.jpg",
+    href: "/work/lantern-festival",
+    caseStudy: {
+      role: "GenAI Creative Technologist · AI motion designer",
+      timeline: "Apr 2024 · Commercial lantern-festival promo experiment",
+      team:
+        "Solo AI workflow and edit direction using client/reference lantern-festival material, Runway Gen-2 style image-to-video generation, Luma-style motion exploration, image upscaling, and human editorial curation.",
+      impact:
+        "Built an early-state AI video production workflow for a commercial lantern-festival campaign, turning static festival references into a curated bank of cinematic motion shots. The work is intentionally documented as an early GenAI video project: useful for speed, mood, and shot exploration, but still dependent on human selection to manage temporal instability, cultural specificity, and visual consistency.",
+      challenge:
+        "The brief was not to make a generic fantasy lantern video. Guizhou's lantern-festival context required spectacle, local atmosphere, night-time density, and cultural specificity. Traditional production would require hard-to-stage drone shots, crowd control, lighting access, and repeatable night scenes. The design challenge was to use early image-to-video tools to expand static references into promotional motion without losing the visual anchor of the real festival.",
+      research:
+        "I started by curating the source world: large-scale lantern installations, illuminated gates, dragon forms, stage moments, visitors, and festival corridors. The reference set made the project less prompt-driven and more art-directed. The important discovery was that early GenAI video tools were strongest when treated as a shot-exploration engine, not a final-film generator. Some clips produced strong mood and camera motion; others failed through warped figures, unstable text, or inconsistent spatial logic.",
+      strategy:
+        "The strategy was to build a controlled shot bank. Instead of asking the model to generate a full commercial film, I broke the campaign into repeatable motion types: fly-through, lantern close-up, dragon reveal, crowd atmosphere, gate approach, and character movement. Each shot could be generated, upscaled, compared, and either accepted or discarded. This gave the workflow a commercial logic: many short attempts, strict curation, and a final edit that only uses the shots that hold together.",
+      implementation:
+        "The pipeline combined source curation, prompt direction, image-to-video generation, upscaling, and editorial selection. Runway handled much of the image-conditioned motion testing; Luma-style generation logic informed camera-movement experiments; upscaling tools improved selected frames and clips for presentation. I then cut the usable 3-4 second outputs into a short web reel, keeping the work transparent as an early-state video-generation project rather than pretending the model produced a finished advertisement in one pass.",
+      results:
+        "The outcome is a compact commercial GenAI reel and a reusable method: reference-led generation, motion-type batching, visual QA, upscaling, and human edit direction. For a hiring manager, the value is the workflow: I can translate creative intent into controllable GenAI production steps, make judgement calls under tool instability, and turn experimental outputs into a client-facing visual direction.",
+      lessons:
+        "The strongest lesson was that early video generation rewards editorial discipline. The designer's job is not only prompting; it is deciding what the model should never be asked to solve, which references must stay visible, and when an uncanny artifact breaks the commercial promise.",
+      designQuestions: [
+        "How might AI expand static lantern-festival references into cinematic commercial shots without becoming generic fantasy imagery?",
+        "How can a designer turn unstable 3-4 second GenAI clips into a coherent promotional direction?",
+      ],
+      keyDecisions: [
+        {
+          title: "Use real festival material as the visual anchor",
+          problem:
+            "Pure text-to-video outputs drifted toward generic fantasy scenes and lost the specificity of the lantern-festival context.",
+          decision:
+            "I curated real installation, stage, corridor, dragon, and night-market references before generating motion variations.",
+          why:
+            "The references constrained the model and gave the final reel a clearer relationship to a real commercial brief.",
+          outcome:
+            "The project reads as a campaign workflow rather than an isolated AI experiment.",
+        },
+        {
+          title: "Treat AI video as a shot bank, not a final editor",
+          problem:
+            "Early image-to-video tools were unstable in character continuity, text rendering, and spatial logic.",
+          decision:
+            "I generated many short clips by motion type, then selected, upscaled, and cut only the usable outputs.",
+          why:
+            "This preserves speed and exploration while keeping human judgement responsible for quality and coherence.",
+          outcome:
+            "The workflow produced a compact promotional reel and a repeatable commercial GenAI production method.",
+        },
+      ],
+      media: [
+        {
+          section: "implementation",
+          src: "/work/lantern-festival/preview.mp4",
+          kind: "video",
+          poster: "/work/lantern-festival/hero.jpg",
+          caption:
+            "Edited web reel from selected Runway / image-to-video lantern-festival clips. The reel uses generated shots as a curated commercial shot bank, not as an unfiltered model output.",
+          aspectRatio: "16/9",
+        },
+        {
+          section: "results",
+          src: "/work/lantern-festival/hero.jpg",
+          caption:
+            "Selected frame from the generated promotional shot bank, balancing spectacle, lantern architecture, and campaign readability.",
+          aspectRatio: "4/3",
         },
       ],
     },
@@ -882,12 +974,12 @@ Source files preserved from the commercial workshop project files, including the
     slug: "greenmove",
     title: "Healmove",
     description:
-      "Best Sustainable Design Award. A 2023 future-mobility design fiction shot with Runway Gen-1 — an image-conditioned video model that pre-dated today's text-to-video tools. A pre-mainstream-AI content-creation experiment with a Tencent-owned connected-vehicle partner.",
+      "Best Sustainable Design Award. A 2023 future-mobility design fiction built through an early GenAI content pipeline: ChatGPT for scenario logic, MidJourney for shot generation, Runway Gen-1 for image-conditioned motion, and Premiere for final craft.",
     researchQuestion:
       "By 2045, can the car become a third space for health rather than a fourth source of sedentary time?",
     intro:
-      "GreenMove is a future-mobility design fiction produced during the SCFAI × Wutong Carlink joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was shot with Runway Gen-1, an image-conditioned video-to-video model released before the modern text-to-video wave. That made the project an experiment in what one designer could ship with then-pre-mainstream generative video — months before tools like Sora, Veo, or Runway Gen-3 existed.",
-    type: "Content Creation · Runway Gen-1 Experiment · Future Mobility",
+      "GreenMove is a future-mobility design fiction produced during the SCFAI × Wutong Carlink joint course in Sep–Dec 2023 — and the work that won the course's Best Sustainable Design Award. The film was made with a controlled GenAI production workflow before the modern text-to-video wave: strategy and script, AI shot generation, Runway Gen-1 motion, and human edit/art direction.",
+    type: "GenAI Content Production · Runway Gen-1 · Future Mobility",
     year: 2023,
     tags: ["Content Creation", "Runway Gen-1", "Future Mobility", "Sustainable Design", "MidJourney", "Wutong Carlink"],
     featured: true,
@@ -957,7 +1049,7 @@ export const SELECTED_FEATURED = [
   PROJECTS.find((p) => p.slug === "smataste")!,
   PROJECTS.find((p) => p.slug === "co-cerebral")!,
   PROJECTS.find((p) => p.slug === "skgplus")!,
-  PROJECTS.find((p) => p.slug === "beatrol")!,
+  PROJECTS.find((p) => p.slug === "poeticform")!,
   PROJECTS.find((p) => p.slug === "greenmove")!,
   PROJECTS.find((p) => p.slug === "syncoe")!,
   PROJECTS.find((p) => p.slug === "meta-station")!,
@@ -966,7 +1058,7 @@ export const SELECTED_FEATURED = [
 
 // Explorations (Tier B / lighter projects) — 6 cards for the parallax section
 export const EXPLORATIONS = [
-  PROJECTS.find((p) => p.slug === "poeticform")!,
+  PROJECTS.find((p) => p.slug === "beatrol")!,
   PROJECTS.find((p) => p.slug === "botanictrum")!,
   PROJECTS.find((p) => p.slug === "lunacy")!,
   PROJECTS.find((p) => p.slug === "meta-station")!,
