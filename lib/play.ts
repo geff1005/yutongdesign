@@ -49,22 +49,22 @@ export const CATEGORY_LABEL: Record<PlayCategory, string> = {
 };
 
 export const CATEGORY_ORDER: PlayCategory[] = [
+  "motion-and-film",
+  "interaction-design",
+  "animation-and-video",
   "3d-art",
+  "ui-ux",
+  "product-design",
   "graphic-design",
   "illustration",
+  "logo-design",
+  "web-design",
+  "game-design",
+  "advertising",
   "photography",
   "fine-art-and-crafts",
-  "interaction-design",
-  "logo-design",
-  "motion-and-film",
-  "animation-and-video",
-  "ui-ux",
-  "web-design",
-  "product-design",
-  "game-design",
   "architecture",
   "fashion",
-  "advertising",
   "sound",
 ];
 
@@ -189,7 +189,7 @@ const MANUAL: PlayItem[] = [
     name: "Lantern Festival GenAI Promo",
     year: 2024,
     kind: "video",
-    category: "advertising",
+    category: "motion-and-film",
     aspectRatio: "4/5",
     chips: ["Commercial", "Runway", "GenAI Video"],
     description:
