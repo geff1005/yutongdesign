@@ -226,106 +226,131 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
     ],
   },
   poeticform: {
-    role: "AI Creative Technologist · Graduation design",
+    role: "AI Creative Technologist · Interaction Designer",
     timeline: "2024 · Undergraduate graduation project",
-    team: "Solo project · Sichuan Fine Arts Institute",
+    team: "Solo capstone · Sichuan Fine Arts Institute",
     impact:
-      "Built a Human-AI co-creation system that translates Song poetry into digital Taihu-stone sculptures, combining poem analysis, prompt engineering, ComfyUI generation, 3D reconstruction, TouchDesigner exhibition interaction, and physical display.",
+      "Built an end-to-end Human-AI co-creation system that translates Song poetry into digital poem sculptures. The project connects a Song Ci language dataset, NLP-style poem analysis, prompt engineering, LoRA/ComfyUI generation, view inference, 3D reconstruction, a digital garden interface, and a physical graduation exhibition.",
     challenge:
-      "Ancient-poetry AIGC projects often stop at illustration: a line of text becomes a themed image. For my undergraduate graduation design, the design problem was more technical and cultural: how can poetry become a form-generating system, where rhythm, imagery, and classical aesthetics drive the shape of a digital artifact?",
+      "The old pattern for AI and poetry is too thin: a poem becomes a pretty illustration, and the cultural structure of the poem disappears. For my graduation design, the real problem was how to make poetic rhythm, imagery, emotion, and Song-dynasty aesthetics operational - something a system could read, transform, and exhibit as spatial form.\n\nThe design question became: how do we portray the shape of a poem without reducing it to a single generated image?",
     research:
-      "The case study maps the poem as a structured input rather than a decorative caption. I compared visual-poem precedents, Taihu-stone aesthetics, Song-dynasty object language, and AI translation models. The critical finding was that the designer needed to stay inside the loop: AI could generate variations, but human selection, prompt framing, dataset curation, and 3D reconstruction rules were what kept the output culturally coherent.",
+      "I treated classical poetry as structured material rather than decoration. The research began with the Quan Song Ci corpus: about 1,330 poets, 21,000 poems, and a curated vocabulary of common imagery, emotional tones, word styles, and cultural references. I mapped how a poem could move through semantic analysis, imagery extraction, style judgement, prompt construction, and visual generation.\n\nThis revealed a key constraint: AI could produce volume and variation, but it could not decide what counted as poetic fidelity. The designer had to stay inside the loop - choosing the dataset, defining the schema, tuning prompts, curating outputs, and deciding which forms deserved reconstruction.",
     strategy:
-      "I framed the project as an AI collaboration tool and a Human-AI Collaboration Workflow: poem input, semantic and imagery extraction, prompt construction, fine-tuned visual generation, 3D reconstruction, and artifact/exhibition output. This let the work show AI capability without pretending the machine is the author. The system demonstrates how a designer can orchestrate models, datasets, interaction flows, and exhibition contexts.",
+      "I structured Poetic Form around three linked outputs: Tool, Space, and Artifact.\n\n- Tool: a poem-to-form co-creation workflow where language becomes structured prompt material.\n- Space: a digital garden interface that lets visitors experience poems as navigable scenes.\n- Artifact: a series of poem sculptures inspired by Taihu stone, translating imagery into tactile form.\n\nThis made the project more than an AI image demo. It became a system for authorship: the human defines meaning and judgement; the AI expands possible forms; the exhibition makes that collaboration visible.",
     implementation:
-      "I used ComfyUI as the visual-generation backend, testing node-based workflows for prompt conditioning, image/video generation, latent diffusion, and AnimateDiff. The broader pipeline combined language interpretation, prompt engineering, fine-tuned model logic for Taihu-stone aesthetics, Rhino/Grasshopper-style form thinking, 3D reconstruction, and TouchDesigner/ComfyTD for exhibition interaction. The final case book explains the system as data processing, text analysis, model generation, and artifact display.",
+      "The pipeline was designed as a repeatable creative-technology workflow. First, poem text is processed into language features: subject, action, object, culture, emotion, mood, lighting, setting, perspective, style, texture, and medium. Those variables become prompt components for model generation. I used ComfyUI as the node-based production environment, with LoRA/model-control logic to keep outputs closer to Song visual language and Taihu-stone materiality.\n\nThe generated imagery then moved into view inference and 3D reconstruction. Instead of stopping at a screen result, I rebuilt selected forms as spatial artifacts, refined them as sculptural objects, and connected them back to a web/digital garden interface for the exhibition.",
     results:
-      "The outcome was a graduation exhibition system: a set of AI-assisted digital sculptures, a visual workflow wall, an interactive digital exhibition interface, and physical display artifacts. It positions Poetic-Form less as a static art piece and more as a working creative-technology pipeline for translating cultural text into spatial form.",
+      "The final capstone combined four deliverables: a workflow wall explaining the AI system, a digital garden interface, a set of poem-inspired 3D printed sculptures, and an exhibition installation. Visitors could see both the final artifacts and the production logic behind them, which helped the project read as AI creative technology rather than decorative AIGC.\n\nThe strongest outcome is the method: Poetic Form shows how a designer can orchestrate language models, prompt systems, generation workflows, 3D reconstruction, and spatial display into one cultural interface.",
     lessons:
-      "The valuable part of AI was not one beautiful output. It was the repeatable workflow: how to decide what the model reads, what the human edits, what gets reconstructed, and what remains intentionally ambiguous.",
+      "The project taught me that AI craft is not just output quality. The most important design work sits before and after generation: defining the input schema, choosing what the model should preserve, deciding what humans must judge, and making the workflow visible enough for others to trust.",
     nextSteps:
-      "The next upgrade is to document the ComfyUI backend in the case itself: node screenshots, prompt chains, model checkpoints, LoRA or fine-tune notes, and failure states. That will make the project read even more clearly as AI Creative Technologist work.",
+      "The next version should expose more of the backend: ComfyUI node screenshots, prompt chains, model checkpoints, LoRA notes, reconstruction failures, and before/after selection logic. That documentation would make the case even sharper for AI Creative Technologist roles because it proves the system thinking behind the aesthetics.",
     designQuestions: [
-      "How can ancient poetry become a generative system for 3D form, instead of a prompt that produces decorative illustration?",
-      "What does the human designer control when AI participates in cultural translation: dataset, prompt, model, reconstruction, or final curation?",
+      "How can ancient poetry become a generative system for spatial form, not just a prompt for illustration?",
+      "What should the human designer control when AI participates in cultural translation: dataset, prompt schema, model behaviour, reconstruction, or final curation?",
+      "How can an AI workflow become an exhibition experience that visitors can understand without reading a technical paper?",
     ],
     keyDecisions: [
       {
-        title: "Treat the poem as structured input",
+        title: "Treat poems as structured design material",
         problem:
-          "A poem-to-image workflow would be easy to demonstrate but too shallow for a graduation design.",
+          "A direct poem-to-image workflow produced attractive visuals, but it could not explain why a form belonged to a poem.",
         decision:
-          "I broke the poem into semantic imagery, rhythm, object references, and mood before translating it into prompts and visual rules.",
+          "I broke each poem into imagery, emotion, word style, cultural objects, and sensory cues before any model generation.",
         why:
-          "This turns language into an operational material. AI becomes part of a design system, not just a renderer.",
+          "This made language operational. The model was no longer guessing from a poetic sentence; it was responding to a designed interpretation layer.",
         outcome:
-          "The project can explain why each artifact looks the way it does instead of relying on taste alone.",
+          "Each artifact could be defended through a chain of meaning, prompt logic, and visual judgement.",
       },
       {
-        title: "Build a ComfyUI-centered generation workflow",
+        title: "Make the AI backend legible",
         problem:
-          "Generic image generation made the outputs inconsistent and hard to defend as design research.",
+          "If the backend stayed invisible, the project would look like a final image collection rather than a design system.",
         decision:
-          "I used node-based ComfyUI workflows for prompt conditioning, latent generation, AnimateDiff/video tests, and model control.",
+          "I framed the workflow through data collection, NLP-style analysis, prompt engineering, model generation, LoRA/model control, and ComfyUI production.",
         why:
-          "ComfyUI makes the backend legible. It shows how checkpoints, context length, denoising, prompt encoding, and video combining shape the output.",
+          "Showing the pipeline made the design labour visible: dataset curation, prompt structure, model control, and selection all become part of the case.",
         outcome:
-          "The case demonstrates AI production literacy rather than only final visual taste.",
+          "The project demonstrates AI production literacy instead of only final visual taste.",
       },
       {
-        title: "Move from image to artifact",
+        title: "Move from image to spatial artifact",
         problem:
-          "A flat image cannot carry the spatial quality of Taihu stone or the experience of an exhibition.",
+          "Flat images could not carry the tactile quality of Taihu stone or the public experience of a graduation exhibition.",
         decision:
-          "I connected generated imagery to 3D reconstruction and physical/digital display: object series, interface, wall diagram, and exhibition space.",
+          "I used view inference and 3D reconstruction to turn selected generated results into digital sculptures, printed objects, and exhibition displays.",
         why:
-          "The project needed to prove that AIGC can enter spatial design and public display, not stay inside a screen.",
+          "The cultural idea needed a body. Spatial artifacts let visitors compare poem, image, model, and object in the same room.",
         outcome:
-          "The final exhibition made the workflow visible as a designed system: model, interface, object, and audience.",
+          "The final show presented a complete creative system: language dataset, AI workflow, interface, sculpture, and audience.",
       },
     ],
     media: [
       {
         section: "challenge",
-        src: "/work/poeticform/process/pdf-concept-map.jpg",
+        src: "/work/poeticform/case/concept-description.jpg",
         caption:
-          "Graduation case-study board: the central question was not whether AI can illustrate poetry, but how poetic language can generate form.",
+          "Concept board from the graduation book: the project starts with a sharper question - how do we portray the shape of a poem?",
       },
       {
         section: "research",
-        src: "/work/poeticform/process/pdf-human-ai-workflow.jpg",
+        src: "/work/poeticform/case/nlp-analysis.jpg",
         caption:
-          "Human-AI collaboration workflow from the case book: poem analysis, human curation, model translation, and artifact output are treated as one system.",
+          "Language analysis layer: the Song Ci corpus is translated into imagery, emotion, word style, and frequency signals before visual generation.",
       },
       {
         section: "strategy",
-        src: "/work/poeticform/process/comfyui-animatediff-workflow.jpg",
+        src: "/work/poeticform/case/human-ai-relationship.jpg",
         caption:
-          "ComfyUI backend evidence: a node-based AnimateDiff workflow with checkpoint, VAE, context options, prompt encoders, KSampler, VAE decode, and video combine.",
+          "Human-AI relationship diagram: designer, visitor, and AI are given different responsibilities in the creative loop.",
       },
       {
         section: "strategy",
-        src: "/work/poeticform/process/pdf-language-to-prompt.jpg",
+        src: "/work/poeticform/case/workflow-overview.jpg",
         caption:
-          "Language-to-prompt layer: the case book frames poem interpretation as a transformation pipeline rather than a single prompt.",
+          "Full workflow overview: data processing, language analysis, prompt engineering, LoRA/model generation, view inference, and 3D reconstruction.",
       },
       {
         section: "implementation",
-        src: "/work/poeticform/process/pdf-3d-reconstruction.jpg",
+        src: "/work/poeticform/case/prompt-engineering.jpg",
         caption:
-          "3D reconstruction logic: generated images become spatial artifacts through reconstruction, refinement, and exhibition translation.",
+          "Prompt engineering schema: poetic language is split into subject, action, object, culture, emotion, mood, lighting, setting, perspective, style, texture, and medium.",
       },
       {
         section: "implementation",
-        src: "/work/poeticform/results/00127-2780645044-taihu-no-humans-still-l.jpg",
+        src: "/work/poeticform/case/model-training.jpg",
         caption:
-          "Generated Taihu-stone artifact study: one of the sculpture outputs used to test materiality, voids, and classical stone aesthetics.",
+          "Model-control layer: dataset construction and LoRA-style training logic were used to keep outputs closer to the project's visual language.",
+      },
+      {
+        section: "implementation",
+        src: "/work/poeticform/case/view-3d-reconstruction.jpg",
+        caption:
+          "View inference and 3D reconstruction: selected generated forms move from image outputs into spatial artifacts.",
       },
       {
         section: "results",
-        src: "/work/poeticform/process/exhibition-installation.jpg",
+        src: "/work/poeticform/case/final-artifact-system.jpg",
         caption:
-          "Graduation exhibition installation: workflow wall, digital interface, sculptural artifacts, and spatial display presented as one AI creative system.",
+          "Final artifact system: poem sculptures, semantic labels, and display plinths translate language into physical presence.",
+      },
+      {
+        section: "results",
+        src: "/work/poeticform/case/final-poem-sculptures.jpg",
+        caption:
+          "Detail view of the final poem sculpture series, using translucent blue-white material language to echo Song-dynasty restraint and Taihu-stone voids.",
+      },
+      {
+        section: "results",
+        src: "/work/poeticform/case/exhibition-showcase-plan.jpg",
+        caption:
+          "Exhibition design: the final system combined a digital garden, printed workflow wall, sculpture display, and interactive screen.",
+      },
+      {
+        section: "results",
+        src: "/work/poeticform/case/exhibition-installation-room.jpg",
+        caption:
+          "Graduation exhibition installation with workflow wall, sculpture plinths, and desktop interface presented as one AI creative system.",
       },
     ],
   },

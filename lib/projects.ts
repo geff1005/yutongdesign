@@ -707,11 +707,11 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
   },
   {
     slug: "poeticform",
-    title: "Poetic-Form",
+    title: "Poetic Form",
     description:
-      "A ComfyUI-driven Human-AI workflow for translating Song poetry into digital sculptures.",
+      "A Human-AI co-creation system translating Song poetry into ComfyUI-generated 3D poem sculptures.",
     researchQuestion:
-      "How can ancient poetry become a generative 3D artifact through a human-AI collaboration workflow?",
+      "How can ancient poetry become a generative system for spatial form, not just an illustrated prompt?",
     intro:
       "My undergraduate graduation design: an AI creative technology system that turns poetic language into Taihu-stone-inspired artifacts through poem analysis, prompt engineering, ComfyUI generation, 3D reconstruction, and exhibition interaction.",
     type: "AI Creative Technology · Human-AI Workflow",
