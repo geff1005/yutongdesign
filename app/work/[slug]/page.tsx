@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import type { Metadata } from "next";
 import Spline from "@splinetool/react-spline/next";
+import { ModelViewer } from "@/components/ModelViewer";
 import { CASE_STORYTELLING } from "@/lib/case-storytelling";
 import { PROJECTS } from "@/lib/projects";
 
@@ -300,6 +301,31 @@ export default async function WorkDetailPage({
               title={`${project.title} video`}
             />
           </div>
+        </section>
+      )}
+
+      {cs?.modelProbe && (
+        <section className="case-section case-model-section">
+          <div className="case-prose">
+            <h2 className="case-h2">
+              Image-to-3D <em>Probe</em>
+            </h2>
+            <p className="case-paragraph case-paragraph-muted">
+              {cs.modelProbe.caption}
+            </p>
+          </div>
+          <figure className="case-model-figure">
+            <div className="case-model-frame">
+              <ModelViewer
+                src={cs.modelProbe.src}
+                poster={cs.modelProbe.poster}
+                title={cs.modelProbe.title}
+              />
+            </div>
+            <figcaption className="case-media-caption">
+              Drag to orbit. Scroll to zoom.
+            </figcaption>
+          </figure>
         </section>
       )}
 

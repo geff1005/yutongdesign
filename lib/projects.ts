@@ -42,6 +42,12 @@ export type Project = {
     results?: string;
     lessons?: string;
     nextSteps?: string;
+    modelProbe?: {
+      title: string;
+      src: string;
+      poster?: string;
+      caption: string;
+    };
     designQuestions?: string[];
     keyDecisions?: {
       title: string;
@@ -719,12 +725,12 @@ Final exhibition at H.U.B Cherrytree Gallery, Chongqing.`,
     slug: "poeticform",
     title: "Poetic Form",
     description:
-      "A Human-AI co-creation system translating Song poetry into ComfyUI-generated 3D poem sculptures.",
+      "A Human-AI workflow translating Song poetry into ComfyUI-generated, image-to-3D poem sculptures.",
     researchQuestion:
-      "How can ancient poetry become a generative system for spatial form, not just an illustrated prompt?",
+      "How can a poem's mood become a navigable spatial form?",
     intro:
-      "My undergraduate graduation design: an AI creative technology system that turns poetic language into Taihu-stone-inspired artifacts through poem analysis, prompt engineering, ComfyUI generation, 3D reconstruction, and exhibition interaction.",
-    type: "AI Creative Technology · Human-AI Workflow",
+      "AI Creative Technologist · Human-AI Workflow. A compact case on structured prompting, ComfyUI production, image-to-3D reconstruction, and exhibition validation.",
+    type: "AI Creative Technologist · Human-AI Workflow",
     year: 2024,
     tags: ["AI Creative Technology", "ComfyUI", "Human-AI Workflow", "AIGC", "Digital Sculpture"],
     featured: true,

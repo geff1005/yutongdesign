@@ -598,6 +598,11 @@ function PlayPreviewOverlay({
                 Open source ↗
               </a>
             )}
+            {item.projectHref && (
+              <Link href={item.projectHref} className="play-preview-action">
+                View case ↗
+              </Link>
+            )}
           </div>
         </div>
       </article>

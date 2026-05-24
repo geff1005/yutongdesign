@@ -92,6 +92,7 @@ export type PlayItem = {
   previewEmbedUrl?: string;
   previewAspectRatio?: string;
   externalUrl?: string;
+  projectHref?: string;
   splineScene?: string;
   thumbnail?: string;
   hasDetail?: boolean;
@@ -99,6 +100,38 @@ export type PlayItem = {
 
 // ===== Manual overrides — live demos with config that the auto-sync can't infer =====
 const MANUAL: PlayItem[] = [
+  {
+    slug: "poeticform-aigc-reel",
+    name: "Poetic Form AIGC Reel",
+    year: 2024,
+    kind: "video",
+    category: "3d-art",
+    aspectRatio: "4/5",
+    previewAspectRatio: "1080/1400",
+    chips: ["ComfyUI", "AIGC", "3D Motion"],
+    description:
+      "A short reel from the Poetic Form generation loop: generated poem-sculpture states prepared as a motion artifact.",
+    videoSrc: "/play/highlights/poeticform-aigc-reel.mp4",
+    previewVideoSrc: "/play/previews/poeticform-aigc-reel-original.mp4",
+    thumbnail: "/play/highlights/poeticform-aigc-reel.jpg",
+    projectHref: "/work/poeticform",
+  },
+  {
+    slug: "poeticform-image-to-3d-probe",
+    name: "Image-to-3D Probe",
+    year: 2024,
+    kind: "video",
+    category: "3d-art",
+    aspectRatio: "3/2",
+    previewAspectRatio: "3/2",
+    chips: ["Image-to-3D", "VoxCraft", "GLB"],
+    description:
+      "An early Poetic Form probe using VoxCraft-style image-to-3D tests and a converted GLB object while texture and mesh tools were emerging.",
+    videoSrc: "/play/highlights/poeticform-image-to-3d-probe.mp4",
+    previewVideoSrc: "/play/previews/poeticform-image-to-3d-probe-original.mp4",
+    thumbnail: "/play/highlights/poeticform-image-to-3d-probe.jpg",
+    projectHref: "/work/poeticform",
+  },
   {
     slug: "3d-fuzzy-magenta",
     name: "Fuzzy Material Reel",

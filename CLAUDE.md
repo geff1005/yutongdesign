@@ -1,5 +1,15 @@
 @AGENTS.md
 
+# Agent context loading
+
+For substantive website changes, load `AGENTS.md`, this `CLAUDE.md`, `../AGENTS.md`, `../_wiki/index.md`, `../_wiki/website-repo.md`, and any relevant project wiki page under `../_wiki/projects/` before editing files or changing public claims.
+
+This is context loading, not a blocking ceremony. For tiny direct answers, quick status checks, or urgent narrow fixes, use the nearest relevant guide and continue. Follow the host Agent's normal planning/execution flow. Use Design Hub `_wiki/` as persistent memory, inspect raw project/CV/source files before changing claims, do not move/rename/delete original Design Hub assets, and append to `../_wiki/log.md` after any website alignment or significant maintenance edit. Do not log trivial read-only answers unless they create reusable knowledge.
+
+Resume-first rule: portfolio copy should support the current canonical resume. Cross-check `../../JobAppl* /CLAUDE.md` and the current resume before changing role titles, project metrics, ordering, or job-search-facing claims.
+
+Sync safety rule: `npm run sync` is paused behind `ALLOW_NOTION_PROJECTS_OVERWRITE=1` because it can overwrite hand-written rich case studies in `lib/projects.ts`. Do not run it with the overwrite flag unless the user explicitly approves.
+
 # About Julian (Yutong) Zhu — Site Owner
 
 Source-of-truth identity facts (CV verified, do not invent). When the site needs personal info, read these — don't guess.

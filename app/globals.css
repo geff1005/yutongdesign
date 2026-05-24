@@ -1792,6 +1792,41 @@ section { position: relative; }
   border: 0;
 }
 
+.case-model-section {
+  display: grid;
+  gap: 28px;
+}
+.case-model-figure {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid hsl(var(--stroke));
+  border-radius: 12px;
+  background: hsl(var(--surface));
+}
+.case-model-frame {
+  position: relative;
+  width: 100%;
+  min-height: clamp(360px, 56vw, 620px);
+  background:
+    radial-gradient(circle at 50% 42%, rgba(117, 145, 255, 0.14), transparent 42%),
+    linear-gradient(180deg, #f7f9ff 0%, #edf2ff 100%);
+}
+.case-model-viewer {
+  width: 100%;
+  height: clamp(360px, 56vw, 620px);
+  display: block;
+  --poster-color: transparent;
+  --progress-bar-color: hsl(var(--text));
+  --progress-mask: transparent;
+}
+@media (max-width: 700px) {
+  .case-model-frame,
+  .case-model-viewer {
+    min-height: 340px;
+    height: 340px;
+  }
+}
+
 /* Spline 3D scene embeds */
 .case-spline-section { padding-top: 24px; }
 .case-spline-grid {
