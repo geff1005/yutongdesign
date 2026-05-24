@@ -65,43 +65,43 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
   },
   skgplus: {
     designQuestions: [
-      "How might a studio archive turn 170+ heterogeneous works into a browsable system instead of a folder of project pages?",
-      "How can an immersive-visual studio feel distinctive online without adding another layer of visual noise?",
-      "What category and icon language helps visitors scan 3D mapping, immersive space, cultural heritage, LED installation, and art-direction work quickly?",
+      "How might a service-led Chinese studio homepage become an international-facing immersive-studio portfolio?",
+      "How can SKG+ show mapping, exhibitions, cultural heritage, LED installations, and show systems without forcing visitors through generic service labels?",
+      "What category, icon, and motion language can make the archive feel cinematic while still being easy to scan?",
     ],
     keyDecisions: [
       {
-        title: "Frame the redesign as a publishing-system problem",
+        title: "Translate service tiles into portfolio entry points",
         problem:
-          "The legacy site was not only visually dated; the deeper problem was that project updates depended on fragile, manual layout work.",
+          "The legacy homepage organized SKG+ through broad service doors such as About, Works, Class, Exhibition, Honor, and Find. It showed company scope, but visitors still had to decode what kind of creative work the studio actually made.",
         decision:
-          "I audited the old-state flow as an operations problem first: repeated content fields, media constraints, project categories, and the moments where the team lost time.",
+          "I reframed the navigation around client-facing project categories: Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, LED Installations, and Exhibition Systems.",
         why:
-          "This made the redesign closer to a usability case than a homepage facelift. Before changing the surface, I needed to define what was blocking the studio from keeping the archive alive.",
+          "A taxonomy lets viewers enter by experience type instead of company department. It turns the archive from a service board into a portfolio that can be scanned by discipline, scale, and atmosphere.",
         outcome:
-          "The brief shifted from 'make it fancier' to 'make the archive publishable, searchable, and maintainable'.",
+          "170+ heterogeneous works became easier to browse without flattening everything into one generic project grid.",
       },
       {
-        title: "Replace decorative navigation with a project taxonomy",
+        title: "Internationalize through restraint",
         problem:
-          "SKG+'s work spans mapping, public-space installations, cultural heritage, brand activations, and show systems. A generic grid would hide those differences.",
+          "The old site relied on a heavy dark texture and service JPGs. It felt atmospheric, but the visual system risked reading as local and dated rather than global and studio-grade.",
         decision:
-          "I structured the archive around scan-friendly categories and compact filter states: Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, and LED Installations.",
+          "I moved the interface toward a restrained black stage, sharp typography, compact icons, and media-led sections.",
         why:
-          "Clients can enter through the type of experience they need, while the studio avoids creating separate bespoke navigation for every discipline.",
+          "SKG+'s project imagery is already spectacular. A quieter frame makes mapping, LED, cultural heritage, and exhibition visuals feel more premium instead of adding another decorative layer.",
         outcome:
-          "The works page became a usable index rather than a visual dump of spectacular but hard-to-compare projects.",
+          "The new direction feels closer to an international immersive-studio portfolio while still preserving the dramatic tone of the original brand.",
       },
       {
-        title: "Build the archive as an editable CMS pipeline",
+        title: "Make motion part of the category logic",
         problem:
-          "The studio needed to publish varied project formats quickly, but a static site would keep every update dependent on custom layout work.",
+          "Static JPG explanations could show what each service contained, but they could not express the temporal quality of projection mapping, festival-scale LED work, or exhibition motion.",
         decision:
-          "I structured the site around reusable project fields, media modules, and a Google Sheet to Make.com to Gumlet to Framer CMS pipeline.",
+          "I planned reveal states, hover behaviors, showreel-like transitions, and category icon motion so the archive itself behaves more like an immersive-media system.",
         why:
-          "A maintainable archive lets creators update project data without waiting for a designer to rebuild a page.",
+          "For this studio, motion is not decoration. It is a way to communicate scale, atmosphere, and the relationship between project categories.",
         outcome:
-          "170+ works can now be maintained as a live archive, and the same system logic helped ship a competition platform in three weeks.",
+          "The portfolio became easier to scan while also feeling more aligned with SKG+'s live visual practice.",
       },
     ],
   },

@@ -313,42 +313,42 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
     slug: "skgplus",
     title: "SKG+",
     description:
-      "Rebuilt skgplus.cn as a CMS-driven live archive. Shipped amacontest.com in three weeks; 400+ Asian teams competed.",
+      "Redesigned SKG+ as an international-facing immersive-studio portfolio, turning service tiles into a categorized, motion-led archive.",
     researchQuestion:
-      "How does a studio's brittle backend become a presence that publishes itself?",
+      "How can a local service-led studio site become an international immersive portfolio?",
     intro:
-      "SKG+ is an immersive entertainment studio in mainland China. I joined as remote contract Web Designer for a year and rebuilt skgplus.cn into a CMS-driven live archive. Then a three-week emergency: amacontest.com, a competition platform that drew 400+ teams across Asia.",
-    type: "Web Design · CMS Automation · Brand",
+      "SKG+ is an immersive entertainment studio in mainland China. I joined as remote contract Web Designer and reshaped skgplus.cn from a service-led company site into a clearer portfolio system for mapping, exhibitions, cultural heritage, LED installations, and public show work.",
+    type: "Web Design · Information Architecture · Motion System",
     year: 2025,
-    tags: ["Web Design", "CMS", "Brand", "Real Client", "Automation"],
+    tags: ["Web Design", "IA", "Visual System", "Real Client", "Motion"],
     featured: true,
     thumbnail: "/thumbnails/skgplus.jpg",
     href: "/work/skgplus",
     caseStudy: {
       role: "Lead Web Designer · contract · remote",
       timeline: "Apr 2025 – Apr 2026 (12 months, ongoing maintenance)",
-      team: "Founder + internal content lead + principal creators. I owned design, IA, deployment, and the content pipeline.",
+      team: "Founder + internal content lead + principal creators. I owned visual direction, information architecture, category logic, and interaction planning.",
       impact:
-        "Reframed SKG+ from a brittle showcase into a live publishing system: 170+ immersive-visual works can be maintained through a CMS/automation pipeline, while the public archive now makes the studio's disciplines visible through clear category filters. The same system logic helped ship amacontest.com in 3 weeks for 400+ Asian design teams.",
+        "Reframed SKG+ from a service-led company homepage into an international-facing immersive-studio portfolio. The redesign translated service tiles and JPG explanations into a clearer project taxonomy, a restrained black visual system, and motion-led portfolio entry points for 170+ works across mapping, exhibitions, cultural heritage, LED installations, and show systems.",
       challenge:
-        "The old site had two problems: the public story was hard to scan, and the back-end was hard to maintain. A 2018 archive of skgmedia.cn showed a static company profile, four top-level links, and long descriptive copy; by 2025, the studio had grown into SKG+ with mapping shows, LED installations, cultural heritage projects, and festival-scale public work. The founder initially asked for a 'fancy, color-matched' site, but the source material was already visually loud. The design challenge was to make the studio feel sharper without competing with the work, and to make updates possible without rebuilding layouts every time.",
+        "The legacy homepage introduced SKG+ through broad service doors — About, Works, Class, Exhibition, Honor, and Find — each sitting inside a heavy dark interface. It communicated company scope, but not project hierarchy: visitors still had to infer what SKG+ actually did, which work matched their needs, and why the studio's visual practice belonged in an international creative-technology context.\n\nThe design challenge was not to 'fix a broken website'. It was to translate a local service catalogue into a sharper portfolio system where the work, categories, and motion language could carry the studio's identity.",
       research:
-        "I treated the redesign like a usability and publishing audit, not a cosmetic refresh. I sat with the CEO and principal creators to map what actually happens when a new project needs to go live: which fields repeat, which media formats break pages, which disciplines clients search for first, and where the content team loses time.\n\nTwo findings drove the direction:\n\n- The Framer back-end was the real bottleneck — content updates broke layouts every release.\n- The 'fancy' brief was a hypothesis, not a spec. What the founder meant was 'don't look generic.' Once we compared the work library against peer immersive studios, restraint became the better brand move.",
+        "I audited the old homepage, service JPGs, project archive, and peer immersive studios to understand what needed to be preserved and what needed to change.\n\nThree findings shaped the redesign:\n\n- The old navigation was company-facing, not client-facing. Service words described SKG+'s internal structure more than the experiences clients might search for.\n- The project media was already visually intense. Adding more color or decoration would compete with mapping, LED, exhibition, and cultural-heritage imagery.\n- The strongest portfolio story came from taxonomy and motion, not long descriptions. The site needed to let visitors scan discipline, scale, and atmosphere quickly.",
       strategy:
-        "The case followed a clear upgrade logic:\n\n- Old state: a static company site and fragile project updates.\n- Insight: SKG+'s work is already the spectacle, so the interface should behave like a quiet archive frame.\n- Taxonomy: convert heterogeneous work into browsable filters — Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, LED Installations.\n- System: build one publishing pipeline that could power both skgplus.cn and future campaign microsites.\n\nThe design language therefore became black, restrained, and type-led. Icons and filters were used as navigation aids, not decoration.",
+        "The upgrade logic became:\n\n- Internationalize the visual treatment: move from local service-board energy to a quieter, media-led stage.\n- Categorize the archive: turn heterogeneous works into browsable entry points such as Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, LED Installations, and Exhibition Systems.\n- Define a motion language: use reveal states, hover motion, category icons, and showreel-like transitions to express an immersive studio without overexplaining it.\n\nThe design language became black, restrained, and type-led so SKG+'s work could remain the spectacle.",
       implementation:
-        "I owned the brand visual system, IA, interaction logic, deployment, and ongoing content maintenance.\n\nPipeline stack:\n\n- Content layer: Google Sheet (creators + content team can edit)\n- Automation: Make.com scenarios trigger on sheet edits\n- Video hosting: Gumlet (paid, optimized)\n- Site: Framer (front-end)\n- Sync: sheet → Make.com → Framer CMS API → live\n\nOn the front end, I reduced the interface to a black archive surface, high-contrast type, category filters, icon/list/grid view states, and large media modules. On the back end, content updates became a 30-second self-serve action instead of a designer-blocking layout task.",
+        "I owned the brand visual system, information architecture, category logic, interaction direction, and ongoing content structure.\n\nThe redesign translated old service modules into portfolio behaviors: service JPGs became section visuals, broad labels became scan-friendly categories, and static project pages became a more modular archive. The interface uses a black stage, high-contrast type, compact category filters, icon/list/grid view states, and large media modules to make the work feel cinematic but still searchable.\n\nA lightweight CMS automation pipeline supports the design system in the background, but the front-end story is intentionally about visual hierarchy, category clarity, and motion rhythm.",
       results:
-        "- 170+ works structured and managed via the automation pipeline\n- amacontest.com launched in 3 weeks (target was 4), drew 400+ teams from across Asia\n- Founder approved the visual restraint direction post-launch — the first time the studio shipped without a 'more color' note\n- Maintenance time per content drop dropped from ~10 minutes to ~30 seconds",
+        "- 170+ works reorganized into a clearer portfolio taxonomy\n- Service-led navigation reframed into client-facing project categories\n- Visual system shifted SKG+ toward a more international immersive-studio language\n- Motion and category logic made mapping, exhibition, cultural heritage, LED installation, and show-system work easier to scan\n- The same structure later supported rapid publishing for campaign and competition microsites",
       lessons:
-        "Three things I'd carry forward:\n\n- Founder briefs are hypotheses, not specs. 'Fancy + color-matched' decoded into 'don't look generic.' Restating the brief in user-facing terms saved a week of revisions.\n- Pipelines compound. Building the Google Sheet ↔ Make.com sync early made the 3-week amacontest emergency feasible — the system already knew how to ship content.\n- The hardest design choice was about what NOT to add. Reducing visual fatigue on the home page was harder to defend than adding more — but it earned more trust from the team than any addition.",
+        "Three things I'd carry forward:\n\n- Founder briefs are hypotheses, not specs. 'Fancy + color-matched' decoded into 'don't look generic.' Restating the brief in design terms saved a week of revisions.\n- Taxonomy is a visual decision. The moment the categories became clear, the portfolio stopped feeling like a folder and started feeling like a studio system.\n- The hardest design choice was about what not to add. Reducing visual fatigue was harder to defend than adding more, but it made the work feel more premium.",
       nextSteps:
-        "The home page currently lives as 'showreel + logo' for maintainability. If I redesigned it tomorrow, I'd build a layout that adapts dynamically to the work library — surfacing recent or featured pieces without manual curation. The information architecture for that already exists in the pipeline; only the front-end rendering needs to catch up.\n\nNext brand evolution: the studio's visual language is shifting from local-traditional → international as it engages global competitions. Documenting that transition is the next deliverable.",
+        "The next design pass would make the homepage more adaptive: recent works, category motion, and featured show systems could rotate as a living editorial surface rather than a fixed showreel. The larger brand evolution is still local-traditional to international-facing, and the site should keep documenting that transition through visual language rather than extra explanation.",
       media: [
         {
           section: "challenge",
-          src: "/work/skgplus/research/skgmedia-legacy-2018.jpg",
-          caption: "Archived 2018 skgmedia.cn homepage reference: a static company profile with four navigation entries and long descriptive copy. Useful as a before-state for the information architecture problem.",
+          src: "/work/skgplus/research/skgplus-legacy-service-home.png",
+          caption: "Legacy SKG+ homepage before the redesign: a dark service-led entrance where About, Works, Class, Exhibition, Honor, and Find carried the site's main logic. This became the before-state for reframing the studio as an international-facing portfolio.",
         },
         {
           section: "research",
@@ -358,17 +358,17 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
         {
           section: "strategy",
           src: "/work/skgplus/research/skgplus-works-2026.jpg",
-          caption: "Works archive on the live site: category filters turn heterogeneous public-space projects into a browsable system for clients, collaborators, and the internal content team.",
+          caption: "Works archive on the live site: category filters turn heterogeneous public-space projects into a browsable system for clients and collaborators.",
         },
         {
           section: "strategy",
           src: "/work/skgplus/strategy/function-section-draft-planning.jpg",
-          caption: "Early function-section planning for a maintainable archive: reusable sections and content fields before one-off project pages.",
+          caption: "Early section planning: translating old service modules into reusable portfolio sections, category entry points, and media-led project views.",
         },
         {
           section: "implementation",
           src: "/work/skgplus/02-shenzhen-yantian.jpg",
-          caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled Flash and Shadowless. The kind of work the old Framer back-end struggled to publish; on the new pipeline it ships in under a minute.",
+          caption: "Shenzhen Yantian — a 200-million-pixel LED immersive space titled Flash and Shadowless. This kind of work shaped the new visual logic: large media first, interface second.",
         },
         {
           section: "results",
