@@ -65,31 +65,43 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
   },
   skgplus: {
     designQuestions: [
-      "How might a studio website make a large project archive feel current without requiring a redesign every time new work is added?",
-      "What visual frame can support events, interiors, research, and press without competing with the work itself?",
+      "How might a studio archive turn 170+ heterogeneous works into a browsable system instead of a folder of project pages?",
+      "How can an immersive-visual studio feel distinctive online without adding another layer of visual noise?",
+      "What category and icon language helps visitors scan 3D mapping, immersive space, cultural heritage, LED installation, and art-direction work quickly?",
     ],
     keyDecisions: [
       {
-        title: "Build the archive as an editable CMS pipeline",
+        title: "Frame the redesign as a publishing-system problem",
         problem:
-          "The studio needed to publish varied project formats quickly, but a static site would make every update dependent on custom layout work.",
+          "The legacy site was not only visually dated; the deeper problem was that project updates depended on fragile, manual layout work.",
         decision:
-          "I structured the site around reusable project fields, media modules, and CMS-ready content types.",
+          "I audited the old-state flow as an operations problem first: repeated content fields, media constraints, project categories, and the moments where the team lost time.",
         why:
-          "A maintainable archive lets the studio keep momentum after launch and reduces the cost of adding future exhibitions, interiors, and collaborations.",
+          "This made the redesign closer to a usability case than a homepage facelift. Before changing the surface, I needed to define what was blocking the studio from keeping the archive alive.",
         outcome:
-          "The website became a scalable publishing system rather than a one-off visual portfolio.",
+          "The brief shifted from 'make it fancier' to 'make the archive publishable, searchable, and maintainable'.",
       },
       {
-        title: "Use restraint as the brand system",
+        title: "Replace decorative navigation with a project taxonomy",
         problem:
-          "The archive already contained rich imagery; a heavy interface would compete with the studio's spatial work.",
+          "SKG+'s work spans mapping, public-space installations, cultural heritage, brand activations, and show systems. A generic grid would hide those differences.",
         decision:
-          "I kept the frame quiet: strong type, generous rhythm, and modular image surfaces instead of decorative UI.",
+          "I structured the archive around scan-friendly categories and compact filter states: Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, and LED Installations.",
         why:
-          "The system lets each project carry its own atmosphere while the site still feels coherent.",
+          "Clients can enter through the type of experience they need, while the studio avoids creating separate bespoke navigation for every discipline.",
         outcome:
-          "The redesign improved legibility and gave SKG+ a digital presence that can expand with the practice.",
+          "The works page became a usable index rather than a visual dump of spectacular but hard-to-compare projects.",
+      },
+      {
+        title: "Build the archive as an editable CMS pipeline",
+        problem:
+          "The studio needed to publish varied project formats quickly, but a static site would keep every update dependent on custom layout work.",
+        decision:
+          "I structured the site around reusable project fields, media modules, and a Google Sheet to Make.com to Gumlet to Framer CMS pipeline.",
+        why:
+          "A maintainable archive lets creators update project data without waiting for a designer to rebuild a page.",
+        outcome:
+          "170+ works can now be maintained as a live archive, and the same system logic helped ship a competition platform in three weeks.",
       },
     ],
   },

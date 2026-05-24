@@ -339,15 +339,15 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
       timeline: "Apr 2025 – Apr 2026 (12 months, ongoing maintenance)",
       team: "Founder + internal content lead + principal creators. I owned design, IA, deployment, and the content pipeline.",
       impact:
-        "A studio's brittle CMS replaced with a self-growing live archive — 170+ works now publish themselves, freeing the team to make work instead of manually file it. A parallel competition platform built in 3 weeks gave 400+ design teams across Asia a real venue to compete in, instead of yet another social-media submission form.",
+        "Reframed SKG+ from a brittle showcase into a live publishing system: 170+ immersive-visual works can be maintained through a CMS/automation pipeline, while the public archive now makes the studio's disciplines visible through clear category filters. The same system logic helped ship amacontest.com in 3 weeks for 400+ Asian design teams.",
       challenge:
-        "The studio's existing Framer back-end was breaking under maintenance — 170+ works were difficult to update safely. The founder asked for a 'fancy, color-matched' hero. But the studio's source work was already saturated, vivid, dense — adding visual density on top would create fatigue. And mid-project, an emergency: a 3-week window to launch amacontest.com (Asia Mapping Art Contest) with no extension.",
+        "The old site had two problems: the public story was hard to scan, and the back-end was hard to maintain. A 2018 archive of skgmedia.cn showed a static company profile, four top-level links, and long descriptive copy; by 2025, the studio had grown into SKG+ with mapping shows, LED installations, cultural heritage projects, and festival-scale public work. The founder initially asked for a 'fancy, color-matched' site, but the source material was already visually loud. The design challenge was to make the studio feel sharper without competing with the work, and to make updates possible without rebuilding layouts every time.",
       research:
-        "I sat directly with the CEO and the principal creators to map their content workflow. Two findings drove everything that followed:\n\n- The Framer back-end was the real bottleneck — content updates broke layouts every release.\n- The founder's 'fancy' brief was a hypothesis, not a spec. What he actually meant was 'don't look generic.' Restraint, not maximalism, was the right answer once we held up examples of peer immersive studios.",
+        "I treated the redesign like a usability and publishing audit, not a cosmetic refresh. I sat with the CEO and principal creators to map what actually happens when a new project needs to go live: which fields repeat, which media formats break pages, which disciplines clients search for first, and where the content team loses time.\n\nTwo findings drove the direction:\n\n- The Framer back-end was the real bottleneck — content updates broke layouts every release.\n- The 'fancy' brief was a hypothesis, not a spec. What the founder meant was 'don't look generic.' Once we compared the work library against peer immersive studios, restraint became the better brand move.",
       strategy:
-        "Three decisions shaped the build:\n\n- Restraint as service. The studio's work IS the color; the web should be the frame. After comparing color-saturated mockups side-by-side against a near-monochrome scaffold, the team agreed.\n- Pipeline before pages. Instead of manually uploading 170+ works to Framer, I built a Google Sheet → Make.com → Gumlet → Framer sync. Update one row in a sheet, the website refreshes.\n- Reusable design system. Components and tokens were structured so the amacontest.com 3-week emergency could lift the entire visual language and ship a new site without re-designing primitives.",
+        "The case followed a clear upgrade logic:\n\n- Old state: a static company site and fragile project updates.\n- Insight: SKG+'s work is already the spectacle, so the interface should behave like a quiet archive frame.\n- Taxonomy: convert heterogeneous work into browsable filters — Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, LED Installations.\n- System: build one publishing pipeline that could power both skgplus.cn and future campaign microsites.\n\nThe design language therefore became black, restrained, and type-led. Icons and filters were used as navigation aids, not decoration.",
       implementation:
-        "I owned: brand visual, IA, interaction logic, deployment, ongoing content maintenance.\n\nPipeline stack:\n\n- Content layer: Google Sheet (creators + content team can edit)\n- Automation: Make.com scenarios trigger on sheet edits\n- Video hosting: Gumlet (paid, optimized)\n- Site: Framer (front-end)\n- Sync: sheet → Make.com → Framer CMS API → live\n\nThis turned content updates from a designer-blocker into a 30-second self-serve action.",
+        "I owned the brand visual system, IA, interaction logic, deployment, and ongoing content maintenance.\n\nPipeline stack:\n\n- Content layer: Google Sheet (creators + content team can edit)\n- Automation: Make.com scenarios trigger on sheet edits\n- Video hosting: Gumlet (paid, optimized)\n- Site: Framer (front-end)\n- Sync: sheet → Make.com → Framer CMS API → live\n\nOn the front end, I reduced the interface to a black archive surface, high-contrast type, category filters, icon/list/grid view states, and large media modules. On the back end, content updates became a 30-second self-serve action instead of a designer-blocking layout task.",
       results:
         "- 170+ works structured and managed via the automation pipeline\n- amacontest.com launched in 3 weeks (target was 4), drew 400+ teams from across Asia\n- Founder approved the visual restraint direction post-launch — the first time the studio shipped without a 'more color' note\n- Maintenance time per content drop dropped from ~10 minutes to ~30 seconds",
       lessons:
@@ -355,6 +355,26 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
       nextSteps:
         "The home page currently lives as 'showreel + logo' for maintainability. If I redesigned it tomorrow, I'd build a layout that adapts dynamically to the work library — surfacing recent or featured pieces without manual curation. The information architecture for that already exists in the pipeline; only the front-end rendering needs to catch up.\n\nNext brand evolution: the studio's visual language is shifting from local-traditional → international as it engages global competitions. Documenting that transition is the next deliverable.",
       media: [
+        {
+          section: "challenge",
+          src: "/work/skgplus/research/skgmedia-legacy-2018.jpg",
+          caption: "Archived 2018 skgmedia.cn homepage reference: a static company profile with four navigation entries and long descriptive copy. Useful as a before-state for the information architecture problem.",
+        },
+        {
+          section: "research",
+          src: "/work/skgplus/research/skgplus-home-2026.jpg",
+          caption: "Live skgplus.cn homepage captured in 2026: the final direction keeps the brand stark and quiet so the studio's show imagery can carry the spectacle.",
+        },
+        {
+          section: "strategy",
+          src: "/work/skgplus/research/skgplus-works-2026.jpg",
+          caption: "Works archive on the live site: category filters turn heterogeneous public-space projects into a browsable system for clients, collaborators, and the internal content team.",
+        },
+        {
+          section: "strategy",
+          src: "/work/skgplus/strategy/function-section-draft-planning.jpg",
+          caption: "Early function-section planning for a maintainable archive: reusable sections and content fields before one-off project pages.",
+        },
         {
           section: "implementation",
           src: "/work/skgplus/02-shenzhen-yantian.jpg",
