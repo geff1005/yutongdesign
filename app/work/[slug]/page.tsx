@@ -213,64 +213,6 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* Design questions and key decisions — the hiring-manager layer */}
-      {cs &&
-        ((cs.designQuestions?.length ?? 0) > 0 ||
-          (cs.keyDecisions?.length ?? 0) > 0) && (
-          <section className="case-section case-decision-section">
-            <div className="case-prose">
-              <div className="eyebrow case-decision-eyebrow">Design logic</div>
-              <h2 className="case-h2">
-                Questions &amp; <em>key decisions</em>
-              </h2>
-            </div>
-            {cs.designQuestions && cs.designQuestions.length > 0 && (
-              <div className="case-question-list">
-                {cs.designQuestions.map((question, i) => (
-                  <article key={question} className="case-question-card">
-                    <span className="case-question-index">
-                      {String(i + 1).padStart(2, "0")}
-                    </span>
-                    <p>{question}</p>
-                  </article>
-                ))}
-              </div>
-            )}
-            {cs.keyDecisions && cs.keyDecisions.length > 0 && (
-              <div className="case-decision-grid">
-                {cs.keyDecisions.map((decision) => (
-                  <article key={decision.title} className="case-decision-card">
-                    <div className="eyebrow case-decision-card-eyebrow">
-                      Key decision
-                    </div>
-                    <h3>{decision.title}</h3>
-                    <dl>
-                      <div>
-                        <dt>Problem</dt>
-                        <dd>{decision.problem}</dd>
-                      </div>
-                      <div>
-                        <dt>Decision</dt>
-                        <dd>{decision.decision}</dd>
-                      </div>
-                      <div>
-                        <dt>Why it worked</dt>
-                        <dd>{decision.why}</dd>
-                      </div>
-                      {decision.outcome && (
-                        <div>
-                          <dt>Outcome</dt>
-                          <dd>{decision.outcome}</dd>
-                        </div>
-                      )}
-                    </dl>
-                  </article>
-                ))}
-              </div>
-            )}
-          </section>
-        )}
-
       {/* Overview metadata block — Role / Timeline / Team (Impact is above) */}
       <section className="case-section case-overview">
         <div className="case-overview-grid case-overview-grid-3">
@@ -380,14 +322,20 @@ export default async function WorkDetailPage({
         </section>
       )}
 
-      {/* Rich case-study sections (when present) */}
+      {/* Rich case-study sections (when present).
+          Special case: after the "challenge" section we render the design
+          question + key decisions block, so the question sits right next to
+          the problem it answers. */}
       {cs &&
-        SECTION_META.map(({ key, title, emphasis }) => {
+        SECTION_META.flatMap(({ key, title, emphasis }) => {
           const text = cs[key];
-          if (!text || typeof text !== "string") return null;
+          if (!text || typeof text !== "string") return [];
           const sectionMedia =
             cs.media?.filter((m) => m.section === key) ?? [];
-          return (
+          const hasDecisionContent =
+            (cs.designQuestions?.length ?? 0) > 0 ||
+            (cs.keyDecisions?.length ?? 0) > 0;
+          const mainSection = (
             <section key={key} className="case-section">
               <div className="case-prose">
                 <h2 className="case-h2">
@@ -486,6 +434,66 @@ export default async function WorkDetailPage({
               })()}
             </section>
           );
+
+          if (key === "challenge" && hasDecisionContent) {
+            return [
+              mainSection,
+              <section
+                key={`${key}-decisions`}
+                className="case-section case-decision-section"
+              >
+                <div className="case-prose">
+                  <div className="eyebrow case-decision-eyebrow">Design logic</div>
+                  <h2 className="case-h2">
+                    Question &amp; <em>key decisions</em>
+                  </h2>
+                </div>
+                {cs.designQuestions && cs.designQuestions.length > 0 && (
+                  <div className="case-question-list">
+                    <article className="case-question-card">
+                      <p>{cs.designQuestions[0]}</p>
+                    </article>
+                  </div>
+                )}
+                {cs.keyDecisions && cs.keyDecisions.length > 0 && (
+                  <div className="case-decision-grid">
+                    {cs.keyDecisions.map((decision) => (
+                      <article
+                        key={decision.title}
+                        className="case-decision-card"
+                      >
+                        <div className="eyebrow case-decision-card-eyebrow">
+                          Key decision
+                        </div>
+                        <h3>{decision.title}</h3>
+                        <dl>
+                          <div>
+                            <dt>Problem</dt>
+                            <dd>{decision.problem}</dd>
+                          </div>
+                          <div>
+                            <dt>Decision</dt>
+                            <dd>{decision.decision}</dd>
+                          </div>
+                          <div>
+                            <dt>Why it worked</dt>
+                            <dd>{decision.why}</dd>
+                          </div>
+                          {decision.outcome && (
+                            <div>
+                              <dt>Outcome</dt>
+                              <dd>{decision.outcome}</dd>
+                            </div>
+                          )}
+                        </dl>
+                      </article>
+                    ))}
+                  </div>
+                )}
+              </section>,
+            ];
+          }
+          return [mainSection];
         })}
 
       {/* Placeholder for projects without caseStudy yet */}
