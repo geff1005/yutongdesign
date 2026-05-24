@@ -72,9 +72,9 @@ export type Project = {
 export const PROJECTS: Project[] = [
   {
     slug: "co-cerebral",
-    title: "Cerebral Learning · Co Cerebral",
+    title: "Co Cerebral",
     description:
-      "An AI tutor product orchestrating 6 specialised LLM agents in real-time conversation. Each Six Thinking Hats role becomes a distinct reasoning agent — voice, text affordance, persona, and turn-taking model — so a study group can dialogue with the framework instead of reading about it.",
+      "An agent-centric educational system improving learning outcomes for students and teachers — across school orchestration, admissions, and AI literacy infrastructure.",
     researchQuestion:
       "Reimagining AI as a co-thinker for higher education — what does collaborative learning beyond automation feel like?",
     intro:
