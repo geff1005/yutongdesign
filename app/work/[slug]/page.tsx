@@ -445,14 +445,19 @@ export default async function WorkDetailPage({
                 <div className="case-prose">
                   <div className="eyebrow case-decision-eyebrow">Design logic</div>
                   <h2 className="case-h2">
-                    Question &amp; <em>key decisions</em>
+                    Questions &amp; <em>key decisions</em>
                   </h2>
                 </div>
                 {cs.designQuestions && cs.designQuestions.length > 0 && (
                   <div className="case-question-list">
-                    <article className="case-question-card">
-                      <p>{cs.designQuestions[0]}</p>
-                    </article>
+                    {cs.designQuestions.map((question, i) => (
+                      <article key={question} className="case-question-card">
+                        <span className="case-question-index">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <p>{question}</p>
+                      </article>
+                    ))}
                   </div>
                 )}
                 {cs.keyDecisions && cs.keyDecisions.length > 0 && (
