@@ -6,6 +6,7 @@ const slugs = [
   "co-cerebral",
   "skgplus",
   "beatrol",
+  "poeticform",
   "greenmove",
   "syncoe",
   "meta-station",

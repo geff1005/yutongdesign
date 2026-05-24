@@ -23,7 +23,8 @@ type Variant =
   | "film-system"
   | "device-explode"
   | "city-shift"
-  | "ar-camera";
+  | "ar-camera"
+  | "poem-sculpture";
 
 type FeaturedMotionProject = {
   slug: string;
@@ -43,14 +44,14 @@ export const featuredMotionProjects: FeaturedMotionProject[] = [
     slug: "smataste",
     title: "SmaTaste",
     label: "Taste memory",
-    themeColor: "#f5d8cd",
-    accentColor: "#f04f3d",
-    inkColor: "#201615",
-    secondaryColor: "#fff8ef",
+    themeColor: "#D6E68A",
+    accentColor: "#4F3422",
+    inkColor: "#4F3422",
+    secondaryColor: "#F7F4F2",
     variant: "mobile-food",
     sourceAssets: [
       "/thumbnails/smataste.jpg",
-      "/work/smataste/results/prototype-b1.jpg",
+      "/work/smataste/app-home-screen.png",
       "/work/smataste/strategy/innovation-strategy.jpg",
     ],
     motionCopy: "AI dining signal",
@@ -118,6 +119,22 @@ export const featuredMotionProjects: FeaturedMotionProject[] = [
       "/work/greenmove/05-ai-filming.jpg",
     ],
     motionCopy: "carbon health loop",
+  },
+  {
+    slug: "poeticform",
+    title: "Poetic Form",
+    label: "Song Ci to sculpture",
+    themeColor: "#f6f8ff",
+    accentColor: "#1239d8",
+    inkColor: "#091433",
+    secondaryColor: "#edf3ff",
+    variant: "poem-sculpture",
+    sourceAssets: [
+      "/work/poeticform/case/final-poem-sculptures.jpg",
+      "/work/poeticform/case/workflow-overview.jpg",
+      "/work/poeticform/case/exhibition-installation-room.jpg",
+    ],
+    motionCopy: "poem to spatial form",
   },
   {
     slug: "syncoe",
@@ -291,6 +308,158 @@ function BrowserChrome({ project }: { project: FeaturedMotionProject }) {
   );
 }
 
+function SmaTasteChip({
+  children,
+  tone = "light",
+}: {
+  children: ReactNode;
+  tone?: "light" | "dark" | "matcha";
+}) {
+  const styles = {
+    light: { background: "#fffaf4", color: "#4f3422" },
+    dark: { background: "#4f3422", color: "#fffaf4" },
+    matcha: { background: "#e7f3aa", color: "#4f3422" },
+  };
+
+  return (
+    <div
+      style={{
+        ...styles[tone],
+        height: 52,
+        padding: "0 26px",
+        borderRadius: 999,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        fontSize: 24,
+        fontWeight: 850,
+        letterSpacing: 0,
+        whiteSpace: "nowrap",
+        boxShadow: "0 14px 30px rgba(79,52,34,.09)",
+      }}
+    >
+      {children}
+    </div>
+  );
+}
+
+function SmaTastePhone({
+  children,
+  dark = false,
+  style,
+}: {
+  children: ReactNode;
+  dark?: boolean;
+  style: CSSProperties;
+}) {
+  return (
+    <div
+      style={{
+        position: "absolute",
+        width: 438,
+        height: 830,
+        borderRadius: 72,
+        background: dark ? "#4f3422" : "#fffdf9",
+        border: "14px solid #17110d",
+        boxShadow: "0 54px 90px rgba(79,52,34,.32)",
+        overflow: "hidden",
+        color: dark ? "#fffaf4" : "#4f3422",
+        ...style,
+      }}
+    >
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          top: 18,
+          width: 132,
+          height: 34,
+          borderRadius: 999,
+          transform: "translateX(-50%)",
+          background: "#17110d",
+          opacity: dark ? 0.12 : 1,
+          zIndex: 2,
+        }}
+      />
+      {children}
+    </div>
+  );
+}
+
+function SmaTasteIndexScreen() {
+  return (
+    <div style={{ position: "absolute", inset: 0, padding: "104px 46px 40px" }}>
+      <div style={{ fontSize: 22, letterSpacing: "0.1em", textTransform: "uppercase", color: "#777080", fontWeight: 750 }}>
+        Smart Taste Index
+      </div>
+      <div style={{ marginTop: 24, display: "flex", alignItems: "flex-end", gap: 10 }}>
+        <div style={{ fontSize: 146, lineHeight: 0.82, fontWeight: 900, letterSpacing: -8 }}>82</div>
+        <div style={{ fontSize: 28, fontWeight: 850, opacity: 0.58, marginBottom: 14 }}>/ 100</div>
+      </div>
+      <div
+        style={{
+          marginTop: 48,
+          background: "#d8eb83",
+          borderRadius: 30,
+          padding: "28px 30px",
+          transform: "rotate(-4deg)",
+          boxShadow: "0 28px 48px rgba(79,52,34,.12)",
+        }}
+      >
+        <div style={{ fontSize: 28, fontWeight: 900, letterSpacing: -0.4 }}>Roasted pumpkin grain bowl</div>
+        <div style={{ marginTop: 10, fontSize: 20, lineHeight: 1.2, opacity: 0.76 }}>
+          Because you ate lighter at lunch.
+        </div>
+      </div>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 12, marginTop: 42 }}>
+        {[
+          ["energy", "light"],
+          ["fibre", "+4 g"],
+          ["stock", "pumpkin"],
+          ["time", "25 min"],
+        ].map(([label, value]) => (
+          <div key={label} style={{ borderRadius: 20, background: "#f4efe9", padding: "16px 18px" }}>
+            <div style={{ fontSize: 14, fontWeight: 850, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.46 }}>
+              {label}
+            </div>
+            <div style={{ marginTop: 8, fontSize: 22, fontWeight: 900, letterSpacing: -0.2 }}>{value}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function SmaTasteWhyScreen() {
+  return (
+    <div style={{ position: "absolute", inset: 0, padding: "118px 56px 48px" }}>
+      <div style={{ color: "#d6e68a", fontSize: 21, fontWeight: 900, letterSpacing: "0.08em", textTransform: "uppercase" }}>
+        Why this
+      </div>
+      <div style={{ marginTop: 28, fontSize: 44, lineHeight: 0.94, fontWeight: 950, letterSpacing: -1.4 }}>
+        Roasted pumpkin
+        <br />
+        grain bowl
+      </div>
+      <div style={{ marginTop: 32, fontSize: 23, lineHeight: 1.28, opacity: 0.84, maxWidth: 332 }}>
+        Lunch was low on fibre, your mood note says tired, and the kitchen has roasted pumpkin and farro in stock today.
+      </div>
+      <div style={{ marginTop: 34, display: "grid", gap: 14 }}>
+        {["personal taste memory", "canteen stock signal", "health goal match"].map((item) => (
+          <div key={item} style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <span style={{ width: 11, height: 11, borderRadius: 999, background: "#d6e68a" }} />
+            <span style={{ fontSize: 21, fontWeight: 800, opacity: 0.92 }}>{item}</span>
+          </div>
+        ))}
+      </div>
+      <div style={{ display: "flex", gap: 14, marginTop: 36 }}>
+        <SmaTasteChip tone="matcha">580 kcal</SmaTasteChip>
+        <SmaTasteChip tone="dark">12 g fibre</SmaTasteChip>
+      </div>
+    </div>
+  );
+}
+
 function VariantLayers({
   project,
   frame,
@@ -310,27 +479,150 @@ function VariantLayers({
   const imageThree = project.sourceAssets[2] ?? project.sourceAssets[0];
 
   if (project.variant === "mobile-food") {
+    const phoneShift = clamp(frame, [0, 220], [52, 0]);
+    const indexLoad = clamp(frame, [40, 180], [18, 82]);
+
     return (
       <>
+        <SmaTastePhone
+          style={{
+            left: 90 + phoneShift * 0.15,
+            top: 108 + floatA * 9,
+            transform: `rotate(-5.6deg) scale(${0.66 + intro * 0.06})`,
+            zIndex: 5,
+          }}
+        >
+          <SmaTasteIndexScreen />
+        </SmaTastePhone>
+        <SmaTastePhone
+          dark
+          style={{
+            left: 306 - phoneShift * 0.1,
+            top: 330 + floatB * 8,
+            transform: `rotate(4.2deg) scale(${0.65 + intro * 0.06})`,
+            zIndex: 6,
+          }}
+        >
+          <SmaTasteWhyScreen />
+        </SmaTastePhone>
         <CardImage
           src={imageOne}
           style={{
-            left: 760,
-            top: 305 + floatA * 16,
-            width: 720,
-            height: 480,
-            transform: `rotate(${clamp(frame, [0, 120], [4, -2])}deg) scale(${0.96 + intro * 0.04})`,
+            right: 110,
+            top: 130 + floatA * 8,
+            width: 850,
+            height: 500,
+            borderRadius: 42,
+            objectPosition: "center",
+            transform: `rotate(${clamp(frame, [0, 150], [2.5, -1])}deg) scale(${0.96 + intro * 0.04})`,
+            zIndex: 1,
           }}
         />
-        <GlassPanel style={{ left: 395, top: 210, width: 430, height: 780, padding: 26 }}>
-          <div style={{ width: "100%", height: "100%", borderRadius: 42, background: "#171717", overflow: "hidden", position: "relative" }}>
-            <Img src={asset(imageTwo)} style={{ width: "100%", height: "100%", objectFit: "cover", opacity: 0.88 }} />
-            <div style={{ position: "absolute", left: 34, right: 34, bottom: 42, height: 150, borderRadius: 32, background: "rgba(255,255,255,.82)" }} />
+        <div
+          style={{
+            position: "absolute",
+            right: 126,
+            top: 360 + floatB * 9,
+            width: 330,
+            height: 715,
+            borderRadius: 62,
+            background: "#f7f4f2",
+            border: "13px solid #17110d",
+            boxShadow: "0 54px 90px rgba(79,52,34,.28)",
+            overflow: "hidden",
+            transform: `rotate(4.5deg) scale(${0.94 + intro * 0.06})`,
+            zIndex: 7,
+          }}
+        >
+          <Img src={asset(imageTwo)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            left: 720,
+            top: 690,
+            width: 540,
+            padding: "30px 32px 32px",
+            borderRadius: 34,
+            background: "rgba(255,255,255,.58)",
+            border: "1px solid rgba(255,255,255,.68)",
+            boxShadow: "0 26px 64px rgba(79,52,34,.12)",
+            backdropFilter: "blur(22px) saturate(140%)",
+            color: "#4f3422",
+            zIndex: 4,
+          }}
+        >
+          <div style={{ display: "flex", alignItems: "flex-end", justifyContent: "space-between", gap: 24 }}>
+            <div>
+              <div style={{ fontSize: 22, fontWeight: 900, letterSpacing: "0.12em", textTransform: "uppercase", opacity: 0.56 }}>
+                Smart Taste Index
+              </div>
+              <div style={{ marginTop: 12, display: "flex", alignItems: "flex-end", gap: 8 }}>
+                <span style={{ fontSize: 86, lineHeight: 0.82, fontWeight: 950, letterSpacing: -4 }}>82</span>
+                <span style={{ fontSize: 25, fontWeight: 850, opacity: 0.52, marginBottom: 6 }}>/ 100</span>
+              </div>
+            </div>
+            <div
+              style={{
+                height: 52,
+                padding: "0 20px",
+                borderRadius: 999,
+                background: "#4f3422",
+                color: "#fffaf4",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: 18,
+                fontWeight: 900,
+                whiteSpace: "nowrap",
+              }}
+            >
+              why ready
+            </div>
           </div>
-        </GlassPanel>
-        <GlassPanel style={{ right: 240, bottom: 210, width: 430, padding: "28px 32px" }}>
-          <MetricRows color={project.accentColor} copy="Taste index / 92" />
-        </GlassPanel>
+          <div style={{ marginTop: 24, height: 22, borderRadius: 999, background: "rgba(79,52,34,.12)", overflow: "hidden" }}>
+            <div
+              style={{
+                width: `${indexLoad}%`,
+                height: "100%",
+                borderRadius: 999,
+                background: "linear-gradient(90deg, #4f3422, #d6e68a)",
+                boxShadow: "0 0 28px rgba(214,230,138,.75)",
+              }}
+            />
+          </div>
+          <div style={{ display: "grid", gap: 14, marginTop: 24 }}>
+            {[
+              ["Taste memory", 92],
+              ["Health goal", 76],
+              ["Kitchen stock", 88],
+            ].map(([label, value], index) => (
+              <div
+                key={label}
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "142px 1fr 42px",
+                  alignItems: "center",
+                  gap: 14,
+                }}
+              >
+                <span style={{ fontSize: 18, fontWeight: 850, opacity: 0.78 }}>{label}</span>
+                <span style={{ height: 13, borderRadius: 999, background: "rgba(79,52,34,.11)", overflow: "hidden" }}>
+                  <span
+                    style={{
+                      display: "block",
+                      width: `${clamp(frame, [50 + index * 18, 180 + index * 18], [18, value as number])}%`,
+                      height: "100%",
+                      borderRadius: 999,
+                      background: index === 1 ? "#d6e68a" : "#4f3422",
+                    }}
+                  />
+                </span>
+                <span style={{ fontSize: 17, fontWeight: 900, opacity: 0.68 }}>{value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
       </>
     );
   }
@@ -470,6 +762,109 @@ function VariantLayers({
     );
   }
 
+  if (project.variant === "poem-sculpture") {
+    const scan = clamp(frame, [70, 430], [0, 1]);
+    const poemLines = [
+      "imagery",
+      "emotion",
+      "prompt schema",
+      "ComfyUI",
+      "3D reconstruction",
+    ];
+
+    return (
+      <>
+        <CardImage
+          src={imageTwo}
+          style={{
+            left: 230,
+            top: 215 + floatA * 12,
+            width: 640,
+            height: 430,
+            borderRadius: 32,
+            objectPosition: "center",
+            transform: `rotate(${clamp(frame, [0, 160], [-3, 1])}deg) scale(${0.96 + intro * 0.04})`,
+          }}
+        />
+        <CardImage
+          src={imageOne}
+          style={{
+            right: 245,
+            top: 230 + floatB * 14,
+            width: 760,
+            height: 520,
+            borderRadius: 36,
+            objectPosition: "center",
+            transform: `rotate(${clamp(frame, [0, 180], [4, -1.5])}deg) scale(${0.97 + intro * 0.03})`,
+          }}
+        />
+        <CardImage
+          src={imageThree}
+          style={{
+            left: 515,
+            bottom: 175,
+            width: 650,
+            height: 360,
+            borderRadius: 34,
+            objectPosition: "center",
+            opacity: 0.9,
+            transform: `translateX(${drift * 0.42}px) rotate(-2deg)`,
+          }}
+        />
+        <div
+          style={{
+            position: "absolute",
+            left: 1010,
+            top: 250,
+            width: 3,
+            height: 590,
+            background: `linear-gradient(180deg, transparent, ${project.accentColor}, transparent)`,
+            transform: `translateX(${scan * 360 - 170}px)`,
+            boxShadow: `0 0 34px ${project.accentColor}`,
+            opacity: 0.82,
+          }}
+        />
+        {[0, 1, 2, 3].map((item) => {
+          const angle = progress * Math.PI * 2 + item * 1.45;
+          return (
+            <div
+              key={item}
+              style={{
+                position: "absolute",
+                left: 1025 + Math.cos(angle) * (210 + item * 12),
+                top: 675 + Math.sin(angle) * (78 + item * 8),
+                width: 92 + item * 18,
+                height: 92 + item * 18,
+                borderRadius: item % 2 ? "52% 48% 58% 42%" : "42% 58% 45% 55%",
+                background: `radial-gradient(circle at 32% 22%, rgba(255,255,255,.95), ${project.secondaryColor} 42%, ${project.accentColor}55)`,
+                border: "1px solid rgba(255,255,255,.78)",
+                boxShadow: `0 22px 66px ${project.accentColor}36`,
+                transform: "translate(-50%, -50%)",
+                opacity: 0.76,
+              }}
+            />
+          );
+        })}
+        <GlassPanel style={{ left: 255, bottom: 210, width: 470, padding: 32 }}>
+          <MetricRows color={project.accentColor} copy="human AI workflow" />
+        </GlassPanel>
+        <GlassPanel style={{ right: 310, bottom: 185, width: 440, padding: "30px 34px" }}>
+          <div style={{ fontFamily: "Inter, Arial, sans-serif", color: project.inkColor }}>
+            <div style={{ fontSize: 20, letterSpacing: "0.16em", textTransform: "uppercase", opacity: 0.56, marginBottom: 18 }}>
+              translation layer
+            </div>
+            {poemLines.map((line, index) => (
+              <div key={line} style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 10 }}>
+                <div style={{ width: 10, height: 10, borderRadius: 999, background: index === 3 ? project.accentColor : "rgba(9,20,51,.24)" }} />
+                <div style={{ fontSize: 22, fontWeight: 700 }}>{line}</div>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+      </>
+    );
+  }
+
   return (
     <>
       <GlassPanel style={{ left: 380, top: 190, width: 520, height: 850, padding: 24 }}>
@@ -576,7 +971,7 @@ export function FeaturedProjectProductCard({ projectSlug }: Props) {
           boxShadow: "0 90px 180px rgba(0,0,0,.18)",
         }}
       >
-        <BrowserChrome project={project} />
+        {project.variant !== "mobile-food" && <BrowserChrome project={project} />}
         <VariantLayers project={project} frame={frame} progress={progress} intro={intro} />
         <div
           style={{
@@ -607,22 +1002,24 @@ export function FeaturedProjectProductCard({ projectSlug }: Props) {
           <span style={{ width: 14, height: 14, borderRadius: 999, background: project.accentColor }} />
           <span style={{ fontSize: 24, fontWeight: 700 }}>{project.label}</span>
         </div>
-        <div
-          style={{
-            position: "absolute",
-            right: 62,
-            top: 84,
-            textAlign: "right",
-            color: project.inkColor,
-          }}
-        >
-          <div style={{ fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.56 }}>
-            {project.motionCopy}
+        {project.variant !== "mobile-food" && (
+          <div
+            style={{
+              position: "absolute",
+              right: 62,
+              top: 84,
+              textAlign: "right",
+              color: project.inkColor,
+            }}
+          >
+            <div style={{ fontSize: 22, letterSpacing: "0.18em", textTransform: "uppercase", opacity: 0.56 }}>
+              {project.motionCopy}
+            </div>
+            <div style={{ marginTop: 12, fontSize: 72, lineHeight: 0.95, fontWeight: 850, letterSpacing: "-0.055em" }}>
+              {project.title}
+            </div>
           </div>
-          <div style={{ marginTop: 12, fontSize: 72, lineHeight: 0.95, fontWeight: 850, letterSpacing: "-0.055em" }}>
-            {project.title}
-          </div>
-        </div>
+        )}
       </div>
     </AbsoluteFill>
   );

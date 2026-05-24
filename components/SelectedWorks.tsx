@@ -11,10 +11,11 @@ import { SELECTED_FEATURED } from "@/lib/projects";
  */
 
 const featuredCardThemes: Record<string, { bg: string; ink?: string; muted?: string }> = {
-  smataste: { bg: "#f7ddd2", ink: "#211c1a", muted: "rgba(33, 28, 26, 0.58)" },
+  smataste: { bg: "#D6E68A", ink: "#4F3422", muted: "rgba(79, 52, 34, 0.58)" },
   "co-cerebral": { bg: "#e9ff45", ink: "#11120d", muted: "rgba(17, 18, 13, 0.58)" },
   skgplus: { bg: "#0e1624", ink: "#f6f8ff", muted: "rgba(246, 248, 255, 0.64)" },
   beatrol: { bg: "#9eb4c9", ink: "#101820", muted: "rgba(16, 24, 32, 0.58)" },
+  poeticform: { bg: "#eef4ff", ink: "#091433", muted: "rgba(9, 20, 51, 0.58)" },
   greenmove: { bg: "#cfe9bc", ink: "#10160f", muted: "rgba(16, 22, 15, 0.58)" },
   syncoe: { bg: "#d8e8f8", ink: "#0b1724", muted: "rgba(11, 23, 36, 0.58)" },
   "meta-station": { bg: "#d8d5ff", ink: "#15122a", muted: "rgba(21, 18, 42, 0.58)" },
