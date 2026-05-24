@@ -190,11 +190,11 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
     slug: "smataste",
     title: "SmaTaste",
     description:
-      "An AI-driven workplace dining service for Sodexo. Two paired AI models — taste prediction for kitchens, personal health memory for diners — collaborate through one explainable interface. Won 3rd Prize at the RCA × Sodexo Challenge; pilot pathway under NDA.",
+      "An AI-enabled workplace dining service that connects personal taste memory with kitchen demand forecasting through one explainable service loop.",
     researchQuestion:
-      "Redefining the workplace dining experience.",
+      "Designing a taste-first canteen service.",
     intro:
-      "SmaTaste is a workplace canteen service for Sodexo's hybrid Gen Z workforce. It pairs the Smart Taste Index — a personal health memory that adapts to mood, history, and explicit goals — with a taste-prediction model that feeds chefs parameterized raw-material data. As lead UX and AI on a 4-person interdisciplinary team, I owned the Smart Taste Index interface, the dual-model flow architecture, and the final pitch.",
+      "SmaTaste reframes the workplace canteen as a two-sided service: diners tune a personal Smart Taste Index, while kitchens receive aggregated demand signals for planning, recipes, and procurement.",
     type: "Service Design · HCI Research · AI",
     year: 2025,
     tags: ["Service Design", "AI", "LLM", "HCI", "Real Client", "Pilot"],
@@ -204,13 +204,13 @@ Longer view: take the methodology — embodied, dissent-based, voice-mediated co
     caseStudy: {
       role: "Service Designer · UX and AI architecture (RCA × Sodexo AiD Lab)",
       timeline: "Jan-Jul 2025 · RCA × Sodexo Studio Project Challenge",
-      team: "4-person interdisciplinary team across IoT and HCI privacy, market analysis, mobile front-end, and UX with AI. I owned the AI flow architecture, the Smart Taste Index interface, scenario writing, and the final pitch.",
+      team: "Interdisciplinary studio collaboration across UX, AI flow, market research, and prototyping. I owned the service logic, Smart Taste Index interface, and AI workflow architecture.",
       impact:
-        "A workplace dining service where Gen Z workers feel seen by what they eat, not lectured at by what they should eat. By replacing nutrition prescriptions with a personal taste memory and pairing every meal recommendation with an explainable 'why', SmaTaste shifts the canteen experience from compliance to consent. Won 3rd Prize at the RCA × Sodexo Studio Project Challenge; selected for a pilot pathway under NDA.",
+        "An explainable dining loop that turns personal taste signals into kitchen planning tools. Diners can understand and adjust why a meal is recommended; chefs see aggregated flavor demand before menus and procurement decisions are made.",
       challenge:
         `Sodexo asked us, across the RCA × Sodexo AiD Lab studio project, to design an interdisciplinary intervention for food-services digitalisation with implementation in mind for 2–5 years. The brief was wide — deliver a 'top-tier consumer experience' for hybrid-working Gen Z, while addressing social, societal, and environmental impacts.
 
-A 4-person team across engineering, user research, digital visual, and fashion. We began with conflicting hypotheses about what 'top-tier' even meant — and one academic quarter to converge.`,
+The useful design question was narrower: how can a canteen remember taste without becoming intrusive, and how can kitchens use that signal without adding more manual work?`,
       research:
         `Two rounds of research, layered:
 
@@ -223,8 +223,8 @@ That insight redirected the project. We had been building toward generic meal-pr
       strategy:
         `The build is one platform, two audiences, one feedback loop:
 
-- B-side (kitchens): Forecast, Generate, Insight. AI Forecast turns historical demand and dietary-trend data into ingredient-consumption forecasts; AI Generation turns flavour signals into recipe drafts the chef can audit and ship.
-- C-side (diners): Recommend, HealthCare, Taste. AI Memory remembers what each diner likes; AI Recommend serves the next meal; AI Suggestion nudges health goals; AI Feedback closes the loop back to the kitchen.
+- Kitchen side: Forecast, Generate, Insight. AI Forecast turns historical demand and dietary-trend data into ingredient-consumption forecasts; AI Generation turns flavour signals into recipe drafts the chef can audit and ship.
+- Diner side: Recommend, HealthCare, Taste. AI Memory remembers what each diner likes; AI Recommend serves the next meal; AI Suggestion nudges health goals; AI Feedback closes the loop back to the kitchen.
 - Smataste AI in the middle. Both sides share the same Smart Taste Index, the same explainability contract, and the same data substrate — so the kitchen sees what the diner felt, and the diner trusts what the kitchen prepared.
 
 Three commitments shaped the build:
@@ -242,34 +242,24 @@ Four C-side feature surfaces:
 - Tasty — Dietary trend, mood calendar, health insights. The agent remembers what the diner liked and dynamically supports the health goal.
 - Community — Share, rate and growth. Diner reviews flow back to the kitchen as ranked signal.
 
-Two B-side dashboards:
+Two kitchen-side dashboards:
 
 - Let chef know customer's flavour. Flavor Dietary Trend Report plus AI Recipes Generation: the kitchen sees what the next week's diners want before procurement closes.
 - Forecast ingredient consumption. AI Ingredients Forecast: ranked stock list with predicted consumption against last week's mood and weather.
 
-My ownership across the 4-person team:
+My design ownership:
 
 - Smart Taste Index UI — most of the consumer-facing interface, including the 'why' explanation surface and the dietary health calendar.
 - AI flow architecture — defined how the two models talk to each other and to the kitchen. Worked closely with Fangzhou Wu, who owned the information modules and UI implementation.
 - Final visual language — converged the team after 3 rounds of clickable-prototype testing with users.
-- Pitch leadership — owned the final in-person pitch deck and the data-acquisition meetings with Sodexo Europe.
 
 Tools: Figma (UI + clickable prototype), structured AI prompting research, Microsoft Decision-Making expert consultations facilitated by our supervisor Dr. Elif Özden Yenigün.`,
       results:
-        `- 3rd Prize at the RCA × Sodexo Studio Project Challenge
-- Pilot pathway under NDA, following the RCA × Sodexo challenge
-- 15 user interviews + access to Sodexo's internal customer-habit research base
+        `- 15 user interviews + access to Sodexo's internal customer-habit research base
 - Full service journey mapped across kitchen, app and dining hall, translated into a Figma system covering 14+ touchpoints
 - 3 prototype iterations, each tested clickable with users
-- Sodexo Europe's response: 'You really understand Gen Z' — they specifically called out our framing of taste over health
-
-Projected impact at scale (presented to Sodexo Europe in the final pitch, not yet measured live):
-
-- Decrease 25% of the time spent on R&D management
-- Increase user satisfaction to 90%
-- AI Forecasting projected to shave 30% prep time and 15% in ingredients cost
-- Zero-waste packaging across the modular pack
-- Tasting the Future — the team's framing for what AI-driven workplace dining looks like in 2 to 5 years.`,
+- Explainability pattern designed for meal recommendations, taste correction, and kitchen planning
+- Kitchen-side dashboard logic translated taste preference into forecast, recipe, and procurement signals`,
       lessons:
         `Three carry-forwards:
 
@@ -284,7 +274,7 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
         {
           section: 'challenge',
           src: '/work/smataste/r3/r3-01.jpg',
-          caption: 'Smataste — Redefining Workplace Food Experiences. RCA × Sodexo team: Zixiang Feng, Fangzhou Wu, Yutong Zhu, Wenjinhan Chen.',
+          caption: 'Smataste concept board — a workplace dining service built around taste memory, recommendation, and kitchen-side planning.',
         },
         {
           section: 'research',
@@ -299,7 +289,7 @@ If pilot data surfaces, that's the moment to revisit the agent-vs-menu question 
         {
           section: 'strategy',
           src: '/work/smataste/r3/r3-09.jpg',
-          caption: 'Operations — the dual-loop architecture. To B: Forecast, Generate, Insight. To C: Recommend, HealthCare, Taste. Smataste AI sits in the middle, binding the food service circle to the soft-facilities management circle through a shared dataflow and feedback loop.',
+          caption: 'Operations — the dual-loop architecture. Kitchen: Forecast, Generate, Insight. Diner: Recommend, HealthCare, Taste. Smataste AI binds both sides through a shared dataflow and feedback loop.',
         },
         {
           section: 'implementation',

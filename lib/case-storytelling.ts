@@ -48,7 +48,7 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
         why:
           "The split respects two different users. Diners need agency and relevance; kitchens need planning confidence, not individual surveillance.",
         outcome:
-          "The final pitch framed SmaTaste as an operational service system rather than a food app mockup.",
+          "The prototype framed SmaTaste as an operational service system rather than a food app mockup.",
       },
       {
         title: "Expose the Taste Index as a trust surface",
