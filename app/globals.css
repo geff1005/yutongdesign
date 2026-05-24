@@ -662,27 +662,8 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
   flex-wrap: wrap;
 }
-.hero .btn-solid {
-  --cta-bg: #fff;
-  --cta-color: #10100f;
-  --cta-border: rgba(255, 255, 255, 0.92);
-  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 18px 48px -30px rgba(255, 255, 255, 0.76);
-  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.26), 0 26px 70px -34px rgba(255, 255, 255, 0.92);
-}
-.hero .btn-outline {
-  --cta-bg: rgba(255, 255, 255, 0.07);
-  --cta-color: #fff;
-  --cta-border: rgba(255, 255, 255, 0.24);
-  --cta-shadow: none;
-  --cta-shadow-hover: 0 12px 34px -28px rgba(255, 255, 255, 0.7);
-}
-.hero .btn-solid:hover {
-  background: var(--cta-bg);
-  color: var(--cta-color);
-}
-.hero .btn-outline:hover {
-  --cta-bg: rgba(255, 255, 255, 0.12);
-}
+/* Hero-section CTA tuning is handled by the shared glass-pill base below
+   (.btn / .view-all-btn) — no extra overrides needed here. */
 
 @keyframes hero-kicker-in {
   from { opacity: 0; transform: translateY(10px); filter: blur(8px); }
@@ -700,13 +681,14 @@ a { color: inherit; text-decoration: none; }
     filter: blur(0);
   }
 }
+/* === Shared CTA: translucent glass pill with breathing glow on hover ===
+   Mirrors the Press "Read" capsule. Applied to:
+   - Hero "See Works" / "Reach out"          (.btn .btn-solid / .btn .btn-outline)
+   - SelectedWorks "More work"               (.view-all-btn)
+   - Explorations "Enter playground"         (.view-all-btn.explorations-cta)
+*/
 .btn,
 .view-all-btn {
-  --cta-bg: hsl(var(--text));
-  --cta-color: hsl(var(--bg));
-  --cta-border: hsl(var(--text));
-  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 14px 34px -22px rgba(0, 0, 0, 0.46);
-  --cta-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 22px 54px -30px rgba(0, 0, 0, 0.56);
   position: relative;
   isolation: isolate;
   display: inline-flex;
@@ -719,60 +701,73 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
-  background: var(--cta-bg);
-  color: var(--cta-color);
-  border: 1px solid var(--cta-border);
-  box-shadow: var(--cta-shadow);
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
   transition:
     transform 240ms var(--ease-apple),
     box-shadow 240ms var(--ease-apple),
-    background 240ms var(--ease-apple),
-    color 240ms var(--ease-apple),
-    border-color 240ms var(--ease-apple);
+    padding 240ms var(--ease-apple),
+    background 240ms var(--ease-apple);
 }
 .btn:hover,
 .view-all-btn:hover,
 .btn:focus-visible,
 .view-all-btn:focus-visible {
   transform: translateY(-2px) scale(1.025);
-  box-shadow: var(--cta-shadow-hover);
+  padding: 0 32px;
+  background: rgba(0, 0, 0, 0.42);
+  box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.4);
   outline: none;
 }
 
+/* Primary feel (slightly more opaque) */
 .btn-solid {
-  --cta-bg: hsl(var(--text));
-  --cta-color: hsl(var(--bg));
-  --cta-border: hsl(var(--text));
+  background: rgba(0, 0, 0, 0.38);
 }
-.btn-solid:hover {
-  background: var(--cta-bg);
-  color: var(--cta-color);
-}
-.btn-outline {
-  --cta-bg: transparent;
-  --cta-color: hsl(var(--text));
-  --cta-border: hsl(var(--stroke));
-  --cta-shadow: none;
-  --cta-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.08), 0 12px 28px -24px rgba(0, 0, 0, 0.5);
-}
-.btn-outline:hover {
-  --cta-border: hsl(var(--text) / 0.24);
+.btn-solid:hover,
+.btn-solid:focus-visible {
+  background: rgba(0, 0, 0, 0.5);
 }
 
+/* Secondary feel (lighter glass, hairline border) */
+.btn-outline {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.btn-outline:hover,
+.btn-outline:focus-visible {
+  background: rgba(0, 0, 0, 0.32);
+}
+
+/* Breathing glow ring — fades in on hover, pulses like the Press Read icon */
 .btn-gradient-ring {
   position: absolute;
-  inset: -2px;
+  inset: -1px;
+  display: block;
+  overflow: hidden;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--accent-a) 0%, var(--accent-b) 50%, var(--accent-a) 100%);
-  background-size: 200% 200%;
   opacity: 0;
-  transition: opacity 0.3s ease;
   z-index: -1;
+  transition: opacity 700ms var(--ease-apple);
+}
+.btn-gradient-ring::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 75%, #90a1b9, #020618);
+  filter: blur(2px);
+  animation: pulse 2s cubic-bezier(.4, 0, .6, 1) infinite;
 }
 .btn:hover .btn-gradient-ring,
-.view-all-btn:hover .btn-gradient-ring {
+.view-all-btn:hover .btn-gradient-ring,
+.btn:focus-visible .btn-gradient-ring,
+.view-all-btn:focus-visible .btn-gradient-ring {
   opacity: 1;
-  animation: gradient-shift 6s ease infinite;
 }
 .btn-inner {
   position: relative;
@@ -4126,11 +4121,6 @@ section { position: relative; }
   color: #c9ff9f;
 }
 .explorations-arc-section .view-all-btn {
-  --cta-bg: #fff;
-  --cta-color: #10100f;
-  --cta-border: rgba(255, 255, 255, 0.92);
-  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 18px 52px -30px rgba(255, 255, 255, 0.8);
-  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.28), 0 28px 78px -34px rgba(255, 255, 255, 0.94);
   position: relative;
   z-index: 8;
   margin-top: 24px;
