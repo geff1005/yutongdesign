@@ -76,12 +76,12 @@ export const PROJECTS: Project[] = [
     description:
       "An agent-centric educational system improving learning outcomes for students and teachers — across school orchestration, admissions, and AI literacy infrastructure.",
     researchQuestion:
-      "Reimagining AI as a co-thinker for higher education — what does collaborative learning beyond automation feel like?",
+      "Designing an agent-centric educational system that scaffolds learning — not automates it — across students, teachers, and schools.",
     intro:
-      "Cerebral Learning is the Co AI product emerging from my RCA Design Futures thesis — Reimagining AI as Co-thinker: Shaping Cerebral Life in Higher Education by 2050. It pairs Edward de Bono's Six Thinking Hats methodology with multi-agent LLM architecture — White, Red, Black, Yellow, Green, and Blue, each as a distinct agent. A thinking companion you dialogue with rather than prompt.",
-    type: "Design Futures Thesis · Agentic UX · AI",
+      "Co Cerebral is the agent-centric educational system Co AI is building — one multi-agent architecture serving students, teachers, and schools across classroom orchestration, admissions, and AI literacy infrastructure. The first shipped surface, grounded in an 18-month RCA Design Futures thesis on the Six Thinking Hats, is an embodied multi-agent thinker that turns structured reasoning into something a study group dialogues with.",
+    type: "Product · Agentic UX · Educational Infrastructure",
     year: 2026,
-    tags: ["AI", "GenAI", "Agent", "Education", "Voice"],
+    tags: ["AI", "Agent", "Education", "Orchestration", "Infrastructure", "Voice"],
     featured: true,
     thumbnail: "/thumbnails/co-cerebral.jpg",
     splineEmbeds: [
@@ -100,69 +100,79 @@ export const PROJECTS: Project[] = [
     ],
     href: "/work/co-cerebral",
     caseStudy: {
-      role: "Co-Founder & Designer · Co AI / RCA Design Futures thesis",
-      timeline: "Active build (2026, ongoing)",
-      team: "Co-Founder & Designer at Co AI. Thesis research supervised at the Royal College of Art Design Futures programme; co-speculation workshop run with interdisciplinary students and tutors; questionnaire study targeted at AI-supported group learning.",
+      role: "Co-Founder & Designer · Co AI",
+      timeline: "2025 – present · active build",
+      team: "Co AI is the agent-centric education company I co-founded after an 18-month RCA Design Futures thesis. The team builds across product, applied AI, and research — I lead design and the agent UX surface. Foundational research with interdisciplinary student and tutor cohorts at the RCA; ongoing pilot conversations with educators and institutions.",
       impact:
-        "An AI tutor product and Design Futures thesis reimagining AI as a co-thinker for higher education by 2050. Through foresight, speculative design, co-creation, and an end-to-end Next.js / Vercel AI SDK / Web Speech API build, the project proposes a preferable future where AI agents scaffold critical reflection, collective decision-making, and richer learning outcomes for students and teachers — instead of accelerating cognitive offloading, automation bias, and motivational displacement.",
+        "Co Cerebral is the agent-centric educational system Co AI is building — three product surfaces (classroom orchestration, admissions, AI literacy infrastructure) bound by a shared multi-agent reasoning core. The first shipped artefact is an embodied Six-Hats thinker that turns structured reasoning into something students and teachers dialogue with, not read about. The architecture extends from there into school-wide orchestration and admissions workflows.",
       challenge:
-        `Most AI-in-education tools today are static chat interfaces — text in, text out, no embodiment. They optimise for fluency, not for friction. The result, well-documented across the AI-in-education literature: cognitive offloading, motivational displacement, automation bias, and an erosion of the critical thinking and creativity that group learning is supposed to cultivate.
+        `AI in schools today shows up as bolted-on chatbots — fluent at answering, weak at anything else. Three layers stay broken: students get cognitive offloading instead of critical thinking; teachers carry orchestration work that AI could share; schools lack the literacy infrastructure to govern what gets deployed in classrooms.
 
-This thesis asks a different question, framed in the Design Futures tradition: what if each cognitive mode in a structured thinking framework had its own embodied agent — voice, visual presence, distinct reasoning style — and a study group dialogued with the framework rather than reading about it?
-
-The framing draws on Edward de Bono's Six Thinking Hats — White (facts), Red (emotion), Black (critical), Yellow (optimistic), Green (creative), Blue (process) — where structured cognitive disagreement is treated as the design surface, not a bug to smooth over.`,
+Co Cerebral was started to design across all three at once — one agent architecture serving learner, educator, and institution, with a research foundation deep enough that the design holds up after the novelty fades.`,
       research:
-        `The research flow embedded above maps how a learner moves through the system: from a single question, through the rotation of perspectives, into synthesis — voice-mediated throughout.
+        `The product sits on top of an 18-month thesis at the RCA Design Futures programme — Reimagining AI as Co-thinker: Shaping Cerebral Life in Higher Education by 2050. Three findings carried into the product:
 
-The thesis sits on three claims about AI in education:
+- Over-reliance on AI undermines human agency, reduces critical thinking, and depresses creativity. The product must scaffold disagreement, not consensus.
+- AI is already reshaping teaching roles, ready or not. Teachers need orchestration tools, not more output to grade.
+- A personalised, decentralised, privacy-first ecosystem is what closes the digital divide. Cloud-deployable, learner-owned data is a product requirement, not a feature.
 
-- Over-reliance on AI undermines human agency, reduces critical thinking, and depresses creativity.
-- AI is already transforming traditional teaching roles and learning experiences, whether the field is ready or not.
-- A personalised, decentralised, privacy-first AI learning ecosystem is what closes the digital divide and advances learning equity.
-
-The preferable future I am designing toward is Co-Intelligence Learning 2050. By 2050, every campus hosts AI-literacy classrooms where collective learning unfolds between human learners, teachers, and AI Co-thinkers. In these mixed-reality hybrid arenas, AI agents take on six dynamic roles — Analyst, Empath, Critic, Optimist, Innovator, and Conductor — to surface biases, offer insights and emotions, and co-create inclusive agendas.
-
-Inside this collective intelligence ecosystem, learning is project-based, collaborative, and deeply personalised. Students co-learn with AI through tailored sessions that scaffold critical thinking and creativity. Teachers co-coach with AI to ensure privacy, inclusivity, and learner agency. Cloud deployments keep data in learners' hands.
-
-It is a learning interface designed around cognitive disagreement, not consensus. The hat structure is a constraint, and the constraint is the feature.`,
+Methodology came from Edward de Bono's Six Thinking Hats — White (facts), Red (emotion), Black (critical), Yellow (optimistic), Green (creative), Blue (process) — restructured as a multi-agent system where structured cognitive disagreement becomes the design surface, not a bug to smooth over. The research flow embedded above maps how a learner moves through the rotation — voice-mediated throughout.`,
       strategy:
-        `Three design commitments anchor the build:
+        `Co Cerebral is one agent architecture serving three audiences:
 
-- Voice-first, not chat-first. Web Speech API for input and synthesis — the agent speaks back, you don't read.
+- Students — embodied Six-Hats agents that scaffold critical thinking. Voice-first, structured-not-free-form. Each hat is its own agent with voice, presence, and reasoning style. A study group dialogues with the framework instead of reading about it.
+- Teachers — classroom orchestration. The same agents that talk to students surface metacognition signals back to teachers: where a discussion stalled, which hat was missing, which student didn't speak. Less grading, more facilitation.
+- Schools — admissions and AI literacy infrastructure. The agent architecture extends into admissions interviews, AI competency assessment, and the literacy onboarding that schools need before any AI tool can be deployed responsibly.
+
+Three product commitments hold across all three surfaces:
+
+- Voice-first, not chat-first. Web Speech API in, synthesis out — the agent speaks back, you don't read.
 - Embodied, not disembodied. Each hat has a Spline 3D presence; agents are inhabited, not summoned.
-- Structured, not free-form. Six Hats is a constraint that produces better thinking than open-ended chat — the structure IS the feature, not a limitation.`,
+- Structured, not free-form. Six Hats is a constraint that produces better thinking than open-ended chat — the structure IS the feature.`,
       implementation:
-        `Tech stack:
+        `Shipping today:
+
+- Embodied multi-agent Six-Hats thinker for student cohorts — six distinct agents, voice in and out, Spline 3D presence. The artefact you can drag above.
+- Co-Speculation toolkit — for cohorts and educators to co-design how AI shows up in their classroom. Run at the RCA with interdisciplinary students and tutors.
+
+In design / pilot:
+
+- Teacher orchestration dashboard — surfaces metacognition signals from student sessions back to educators.
+- Admissions agent pilot — structured interview using the Six-Hats rotation.
+- AI literacy curriculum — institutional onboarding for schools deploying AI tools responsibly.
+
+Tech stack:
 
 - Frontend: Next.js 15 with TypeScript and Tailwind
 - Spatial interface prototype for the agent room and hat states
 - Voice in: Web Speech API (free, browser-native)
 - LLM: Vercel AI SDK v5 via AI Gateway
 - Voice out: Web Speech Synthesis
-- Deploy: Vercel Hobby
+- Deploy: Vercel
 
-The stack is intentionally lean — small enough that the product can keep shipping while staying accessible to readers, peers, and educators after the thesis defends.`,
+The stack stays intentionally lean — small enough that the product keeps shipping while educators, peers, and partners can clone and run it.`,
       results:
-        `Three design outcomes carry the thesis:
+        `What is live:
 
-- A Co-Speculation toolkit — for cohorts and educators to imagine educational futures together. Used in the RCA workshop with interdisciplinary students and tutors.
-- The CoCereb AI Co-thinker artefact — the embodied demo above. Each hat's role and presence turns a thinking framework into something learners can inspect, discuss, and eventually dialogue with.
-- A Roadmap toward Co-Intelligence 2050 — the strategic frame that ties the artefact and toolkit to the larger shift in higher education.
+- The embodied Six-Hats agent system above — students can dialogue with each hat as a distinct voice and presence.
+- Co-Speculation toolkit, run at the RCA with interdisciplinary students and tutors.
+- A Roadmap toward Co-Intelligence 2050 — the strategic frame that ties the artefact, orchestration, and infrastructure layers together.
 
-For students and teachers, the design intent is concrete: scaffold critical reflection, support better collective decision-making, and reduce the risks the literature documents — cognitive offloading, automation bias, motivational displacement.
+For students and teachers, the design intent is concrete: scaffold critical reflection, support collective decision-making, and reduce the documented risks of AI in classrooms — cognitive offloading, automation bias, motivational displacement.
 
-The demo above is the current embodied artefact. Drag the scene to inspect each hat's embodiment while the product direction continues toward real-time multi-agent tutoring.`,
+The product direction continues toward real-time multi-agent tutoring, the teacher orchestration surface, and the school-level literacy infrastructure that anchors the larger Co AI build.`,
       lessons:
-        `Two design lessons carry forward:
+        `Three carry-forwards:
 
-- Constraints over features. Adding voice was difficult, but it changed the interaction quality more than any feature could. The hardest design decision wasn't what to add; it was choosing modality.
-- Embodiment is the contribution, not the LLM. Giving each hat a voice and a body shifted how participants spoke to the system — closer to a panel of distinct minds than a chat with a chatbot. The design intervention sits in that shift, not in the underlying model.`,
+- Constraints over features. Voice was hard to add but changed the interaction quality more than any feature could. The hardest design decision wasn't what to add — it was choosing modality.
+- Embodiment is the contribution, not the LLM. Giving each hat a voice and a body shifted how participants spoke to the system — closer to a panel of distinct minds than a chat with a chatbot. The design intervention sits in that shift, not in the underlying model.
+- One architecture, three audiences. The strongest product decision was refusing to ship a 'student tool' and a separate 'teacher tool'. The same agents serve both, with different visibility — that's what turns a study app into infrastructure.`,
       nextSteps:
-        `Immediate: open the embodied demo to cohort testing — gather metacognition signals from interdisciplinary student groups using the Six Hats rotation in real coursework.
+        `Immediate: cohort testing of the embodied artefact with interdisciplinary student groups using the Six Hats rotation in real coursework. Metacognition signals from the sessions feed the teacher dashboard prototype.
 
-Then: extend the AI literacy framework with co-teaching strategies for educators and a competency framework for educational AI agents — both named in the thesis as research outputs and still in development.
+Then: admissions agent pilot with one institution; AI literacy curriculum co-designed with a small school partner; the teacher orchestration dashboard moves from spec to shipped surface.
 
-Longer view: take the methodology — embodied, dissent-based, voice-mediated cognitive scaffolds — into other domains where collective reasoning under AI is fragile, not just higher education.`,
+Longer view: take the agent architecture — embodied, dissent-based, voice-mediated — into other domains where collective reasoning under AI is fragile. Education is the first vertical; the methodology generalises.`,
       media: [
         {
           section: "strategy",
