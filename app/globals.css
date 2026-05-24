@@ -662,8 +662,27 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
   flex-wrap: wrap;
 }
-/* Hero-section CTA tuning is handled by the shared glass-pill base below
-   (.btn / .view-all-btn) — no extra overrides needed here. */
+.hero .btn-solid {
+  --cta-bg: #fff;
+  --cta-color: #10100f;
+  --cta-border: rgba(255, 255, 255, 0.92);
+  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 18px 48px -30px rgba(255, 255, 255, 0.76);
+  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.26), 0 26px 70px -34px rgba(255, 255, 255, 0.92);
+}
+.hero .btn-outline {
+  --cta-bg: rgba(255, 255, 255, 0.07);
+  --cta-color: #fff;
+  --cta-border: rgba(255, 255, 255, 0.24);
+  --cta-shadow: none;
+  --cta-shadow-hover: 0 12px 34px -28px rgba(255, 255, 255, 0.7);
+}
+.hero .btn-solid:hover {
+  background: var(--cta-bg);
+  color: var(--cta-color);
+}
+.hero .btn-outline:hover {
+  --cta-bg: rgba(255, 255, 255, 0.12);
+}
 
 @keyframes hero-kicker-in {
   from { opacity: 0; transform: translateY(10px); filter: blur(8px); }
@@ -681,14 +700,16 @@ a { color: inherit; text-decoration: none; }
     filter: blur(0);
   }
 }
-/* === Shared CTA: translucent glass pill with breathing glow on hover ===
-   Mirrors the Press "Read" capsule. Applied to:
-   - Hero "See Works" / "Reach out"          (.btn .btn-solid / .btn .btn-outline)
-   - SelectedWorks "More work"               (.view-all-btn)
-   - Explorations "Enter playground"         (.view-all-btn.explorations-cta)
-*/
+/* === Shared CTA base ===
+   Static state = original solid/themed pill (prominent).
+   Hover = scale-up + breathing radial glow (Press Read style, no blue). */
 .btn,
 .view-all-btn {
+  --cta-bg: hsl(var(--text));
+  --cta-color: hsl(var(--bg));
+  --cta-border: hsl(var(--text));
+  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.08), 0 14px 34px -22px rgba(0, 0, 0, 0.46);
+  --cta-shadow-hover: 0 4px 12px rgba(0, 0, 0, 0.1), 0 22px 54px -30px rgba(0, 0, 0, 0.56);
   position: relative;
   isolation: isolate;
   display: inline-flex;
@@ -701,49 +722,48 @@ a { color: inherit; text-decoration: none; }
   font-size: 13px;
   font-weight: 500;
   text-decoration: none;
-  color: #fff;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
+  background: var(--cta-bg);
+  color: var(--cta-color);
+  border: 1px solid var(--cta-border);
+  box-shadow: var(--cta-shadow);
   transition:
     transform 240ms var(--ease-apple),
     box-shadow 240ms var(--ease-apple),
-    padding 240ms var(--ease-apple),
-    background 240ms var(--ease-apple);
+    background 240ms var(--ease-apple),
+    color 240ms var(--ease-apple),
+    border-color 240ms var(--ease-apple);
 }
 .btn:hover,
 .view-all-btn:hover,
 .btn:focus-visible,
 .view-all-btn:focus-visible {
   transform: translateY(-2px) scale(1.025);
-  padding: 0 32px;
-  background: rgba(0, 0, 0, 0.42);
-  box-shadow: 0 8px 22px -10px rgba(0, 0, 0, 0.4);
+  box-shadow: var(--cta-shadow-hover);
   outline: none;
 }
 
-/* Primary feel (slightly more opaque) */
 .btn-solid {
-  background: rgba(0, 0, 0, 0.38);
+  --cta-bg: hsl(var(--text));
+  --cta-color: hsl(var(--bg));
+  --cta-border: hsl(var(--text));
 }
-.btn-solid:hover,
-.btn-solid:focus-visible {
-  background: rgba(0, 0, 0, 0.5);
+.btn-solid:hover {
+  background: var(--cta-bg);
+  color: var(--cta-color);
 }
-
-/* Secondary feel (lighter glass, hairline border) */
 .btn-outline {
-  background: rgba(0, 0, 0, 0.2);
-  border-color: rgba(255, 255, 255, 0.18);
+  --cta-bg: transparent;
+  --cta-color: hsl(var(--text));
+  --cta-border: hsl(var(--stroke));
+  --cta-shadow: none;
+  --cta-shadow-hover: 0 1px 2px rgba(0, 0, 0, 0.08), 0 12px 28px -24px rgba(0, 0, 0, 0.5);
 }
-.btn-outline:hover,
-.btn-outline:focus-visible {
-  background: rgba(0, 0, 0, 0.32);
+.btn-outline:hover {
+  --cta-border: hsl(var(--text) / 0.24);
 }
 
-/* Breathing glow ring — fades in on hover, pulses like the Press Read icon */
+/* Breathing glow ring — replaces the old blue gradient.
+   Fades in on hover, pulses like the Press Read icon. */
 .btn-gradient-ring {
   position: absolute;
   inset: -1px;
@@ -4121,6 +4141,11 @@ section { position: relative; }
   color: #c9ff9f;
 }
 .explorations-arc-section .view-all-btn {
+  --cta-bg: #fff;
+  --cta-color: #10100f;
+  --cta-border: rgba(255, 255, 255, 0.92);
+  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 18px 52px -30px rgba(255, 255, 255, 0.8);
+  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.28), 0 28px 78px -34px rgba(255, 255, 255, 0.94);
   position: relative;
   z-index: 8;
   margin-top: 24px;
