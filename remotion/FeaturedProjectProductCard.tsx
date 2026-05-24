@@ -508,9 +508,9 @@ function VariantLayers({
         <CardImage
           src={imageOne}
           style={{
-            right: 110,
+            right: 130,
             top: 130 + floatA * 8,
-            width: 850,
+            width: 880,
             height: 500,
             borderRadius: 42,
             objectPosition: "center",
@@ -521,27 +521,9 @@ function VariantLayers({
         <div
           style={{
             position: "absolute",
-            right: 126,
-            top: 360 + floatB * 9,
-            width: 330,
-            height: 715,
-            borderRadius: 62,
-            background: "#f7f4f2",
-            border: "13px solid #17110d",
-            boxShadow: "0 54px 90px rgba(79,52,34,.28)",
-            overflow: "hidden",
-            transform: `rotate(4.5deg) scale(${0.94 + intro * 0.06})`,
-            zIndex: 7,
-          }}
-        >
-          <Img src={asset(imageTwo)} style={{ width: "100%", height: "100%", objectFit: "cover" }} />
-        </div>
-        <div
-          style={{
-            position: "absolute",
-            left: 720,
+            left: 845,
             top: 690,
-            width: 540,
+            width: 600,
             padding: "30px 32px 32px",
             borderRadius: 34,
             background: "rgba(255,255,255,.58)",
