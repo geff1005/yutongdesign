@@ -44,10 +44,10 @@ export const featuredMotionProjects: FeaturedMotionProject[] = [
     slug: "smataste",
     title: "SmaTaste",
     label: "Taste memory",
-    themeColor: "#D6E68A",
+    themeColor: "#f5d8cd",
     accentColor: "#4F3422",
     inkColor: "#4F3422",
-    secondaryColor: "#F7F4F2",
+    secondaryColor: "#fff8ef",
     variant: "mobile-food",
     sourceAssets: [
       "/thumbnails/smataste.jpg",

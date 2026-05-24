@@ -11,7 +11,7 @@ import { SELECTED_FEATURED } from "@/lib/projects";
  */
 
 const featuredCardThemes: Record<string, { bg: string; ink?: string; muted?: string }> = {
-  smataste: { bg: "#D6E68A", ink: "#4F3422", muted: "rgba(79, 52, 34, 0.58)" },
+  smataste: { bg: "#f7ddd2", ink: "#211c1a", muted: "rgba(33, 28, 26, 0.58)" },
   "co-cerebral": { bg: "#e9ff45", ink: "#11120d", muted: "rgba(17, 18, 13, 0.58)" },
   skgplus: { bg: "#0e1624", ink: "#f6f8ff", muted: "rgba(246, 248, 255, 0.64)" },
   beatrol: { bg: "#9eb4c9", ink: "#101820", muted: "rgba(16, 24, 32, 0.58)" },
