@@ -175,29 +175,29 @@ Then: admissions agent pilot with one institution; AI literacy curriculum co-des
 Longer view: take the agent architecture, embodied, dissent-based, voice-mediated, into other domains where collective reasoning under AI is fragile. Education is the first vertical; the methodology generalises.`,
       media: [
         {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
-          caption: "Co-Cerebral Learning Transformation Roadmap, the design framework that maps how learning rituals shift as agentic AI is woven into education.",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/05-agents-comparison.jpg",
-          caption: "Current vs Future AI agents, a key-dimension comparison: from prompt-and-respond chat tools to agents with memory, role, and embodied presence.",
-        },
-        {
-          section: "strategy",
-          src: "/work/co-cerebral/strategy/07-stakeholder-map.jpg",
-          caption: "Stakeholder map across Reflection, Assessment, and Administration layers. The AI Co-thinker shows up as a different role at each layer (peer for students, data partner for tutors, governance partner for ethics and policy).",
+          section: "research",
+          src: "/work/co-cerebral/results/01-four-future-scenarios.jpg",
+          caption: "Four plausible 2050 scenarios for AI in education, a focused futures grid that turns the research flow into concrete learning contexts.",
         },
         {
           section: "strategy",
           src: "/work/co-cerebral/strategy/08-six-agents.jpg",
-          caption: "Six co-thinker roles, one per Hat. Facts collects inputs and context, Empathy carries gut feeling and intuition, Innovate thinks past the boundary, Optimise highlights value and benefit, Critic raises judgement and cautions, and Conduct regulates the decision-making flow.",
+          caption: "Six co-thinker roles, one per Hat. The role system is the product core: each agent owns a distinct reasoning behavior inside the collaborative learning loop.",
         },
         {
-          section: "results",
-          src: "/work/co-cerebral/results/01-four-future-scenarios.jpg",
-          caption: "Four plausible 2050 scenarios for AI in education, the futures grid that the embodied Six Hats build is responding to.",
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/07-stakeholder-map.jpg",
+          caption: "Stakeholder map across Reflection, Assessment, and Administration layers, showing where the product enters the education system and how each group uses it differently.",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/05-agents-comparison.jpg",
+          caption: "Current vs future AI agents, a dimension comparison that defines what changes when agents gain memory, role, and embodied presence.",
+        },
+        {
+          section: "strategy",
+          src: "/work/co-cerebral/strategy/01-learning-transformation-roadmap.jpg",
+          caption: "Learning transformation roadmap, placed after the role and stakeholder logic to show how the concept scales from a learning ritual into a transition path.",
         },
       ],
     },
