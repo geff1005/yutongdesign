@@ -10,13 +10,15 @@ Resume-first rule: portfolio copy should support the current canonical resume. C
 
 Sync safety rule: `npm run sync` is paused behind `ALLOW_NOTION_PROJECTS_OVERWRITE=1` because it can overwrite hand-written rich case studies in `lib/projects.ts`. Do not run it with the overwrite flag unless the user explicitly approves.
 
-# Copy rules: banned punctuation in display text
+# Copy rules: banned punctuation in display copy
 
-The following characters are forbidden anywhere copy renders to a reader (project titles, eyebrows, descriptions, intros, body paragraphs, captions, navigation labels, footer text, alt text, error messages).
+This rule governs **copy that reads as prose**: descriptions, intros, impacts, challenge / research / strategy / implementation / results / lessons / nextSteps body, role, timeline, team, media captions, alt text, error messages, button microcopy. The whole job of this section is to keep prose from leaking dash-clause or slash-clause habits onto the site.
 
-Banned:
+This rule does **not** govern eyebrow-style typographic decoration: the small uppercase mono labels above titles (Hero "AI DESIGN SYSTEM / 2026", SelectedWorks "SELECTED_SYSTEMS / 01", Explorations "MOTION_LAB / GENERATED_STUDIES"), the `type` field on case data (rendered as the case eyebrow chip), and the footer's decorative `·` between items. Those are visual marks, not sentences. Leave them.
 
-1. Slash `/` as a separator or "slash clause". Bad example: "Designer / Engineer / Researcher".
+Banned in prose copy:
+
+1. Slash `/` as a separator or "slash clause". Bad: "Designer / Engineer / Researcher".
 2. Slash-style dividers `·` (middle dot) and `|` (pipe). Same prohibition, same intent.
 3. Em-dash `—` and en-dash `–` of any kind, including range markers ("2025 – present"), parenthetical injections ("Co AI is shipping — the team is small — across three surfaces"), and stylistic emphasis. Periods and commas replace them.
 4. Any sentence that depends on a dash to add a clause. The dash-clause pattern is a copy smell on this site.
@@ -25,16 +27,18 @@ Allowed:
 
 1. Periods, commas, colons, semicolons.
 2. Hyphens inside single compound words (Co-Founder, agent-centric, AI-enabled, multi-agent, image-to-3D). A hyphen inside one word is not a dash.
-3. Code and path uses of `/`, `–`, `—` in file paths, URLs, CSS values, regex, and source comments. The rule only governs copy that renders to a reader.
+3. Code and path uses of `/`, `–`, `—` in file paths, URLs, CSS values, regex, TypeScript union types, and source comments. The rule only governs copy that renders to a reader.
+4. Eyebrow / decorative typographic marks listed in the carve-out above.
 
-When rewriting:
+When rewriting prose copy:
 
 1. Split a dash clause into two complete sentences. Bad: "Six Hats is the constraint — that is the feature." Good: "Six Hats is the constraint. That constraint is the feature."
 2. Replace a slash with a comma, the word "and", or remove it if the second term is redundant.
-3. Replace a middle dot in a tag chip with a single phrase or a comma list.
-4. Replace a date range dash with the word "to" or with the word "present", or rephrase to a single anchor date.
+3. Replace a middle dot with a comma.
+4. Replace a date range dash with the word "to", or rephrase to a single anchor date.
+5. Do not rewrite the wording while you are at it. Mechanical replacement only, unless the user explicitly asks for a copy rewrite.
 
-Audit before shipping any copy change. A new dash or slash in display text is a regression.
+Audit before shipping any copy change. A new dash or slash in prose copy is a regression.
 
 # About Julian (Yutong) Zhu — Site Owner
 

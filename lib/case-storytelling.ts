@@ -65,43 +65,30 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
   },
   skgplus: {
     designQuestions: [
-      "How might a service-led Chinese studio homepage become an international-facing immersive-studio portfolio?",
-      "How can SKG+ show mapping, exhibitions, cultural heritage, LED installations, and show systems without forcing visitors through generic service labels?",
-      "What category, icon, and motion language can make the archive feel cinematic while still being easy to scan?",
+      "How can a service-led studio site become an international-facing portfolio that is cinematic, categorized, and easy to scan?",
     ],
     keyDecisions: [
       {
-        title: "Translate service tiles into portfolio entry points",
+        title: "Service tiles to portfolio taxonomy",
         problem:
-          "The legacy homepage organized SKG+ through broad service doors such as About, Works, Class, Exhibition, Honor, and Find. It showed company scope, but visitors still had to decode what kind of creative work the studio actually made.",
+          "The old site explained SKG+ through broad service doors, but visitors still had to decode what kind of creative work the studio actually made.",
         decision:
-          "I reframed the navigation around client-facing project categories: Art Direction, 3D Mapping, Immersive Space, Cultural Heritage, LED Installations, and Exhibition Systems.",
+          "I rebuilt the archive around project categories such as mapping, exhibitions, cultural heritage, LED installations, and immersive spaces.",
         why:
-          "A taxonomy lets viewers enter by experience type instead of company department. It turns the archive from a service board into a portfolio that can be scanned by discipline, scale, and atmosphere.",
+          "Category-first browsing lets international clients scan by experience type, scale, and atmosphere.",
         outcome:
-          "170+ heterogeneous works became easier to browse without flattening everything into one generic project grid.",
+          "The site shifts from a service board into a studio-grade project archive.",
       },
       {
-        title: "Internationalize through restraint",
+        title: "Motion as category language",
         problem:
-          "The old site relied on a heavy dark texture and service JPGs. It felt atmospheric, but the visual system risked reading as local and dated rather than global and studio-grade.",
+          "Static JPG explanations could not express the timing and scale of projection mapping, LED work, or exhibition systems.",
         decision:
-          "I moved the interface toward a restrained black stage, sharp typography, compact icons, and media-led sections.",
+          "I paired a restrained international frame with compact icons, hover states, and showreel-like motion cues.",
         why:
-          "SKG+'s project imagery is already spectacular. A quieter frame makes mapping, LED, cultural heritage, and exhibition visuals feel more premium instead of adding another decorative layer.",
+          "The quiet frame lets the media carry the spectacle while motion explains the temporal nature of the work.",
         outcome:
-          "The new direction feels closer to an international immersive-studio portfolio while still preserving the dramatic tone of the original brand.",
-      },
-      {
-        title: "Make motion part of the category logic",
-        problem:
-          "Static JPG explanations could show what each service contained, but they could not express the temporal quality of projection mapping, festival-scale LED work, or exhibition motion.",
-        decision:
-          "I planned reveal states, hover behaviors, showreel-like transitions, and category icon motion so the archive itself behaves more like an immersive-media system.",
-        why:
-          "For this studio, motion is not decoration. It is a way to communicate scale, atmosphere, and the relationship between project categories.",
-        outcome:
-          "The portfolio became easier to scan while also feeling more aligned with SKG+'s live visual practice.",
+          "The portfolio feels cinematic without sacrificing scanability.",
       },
     ],
   },
@@ -263,37 +250,26 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
     ],
     keyDecisions: [
       {
-        title: "Structured prompt system",
+        title: "Prompt schema over one-shot prompting",
         problem:
-          "A direct poem-to-image prompt produced attractive visuals, but it could not explain why a form belonged to a poem.",
+          "A direct poem-to-image prompt produced decorative images without a traceable relation to the poem.",
         decision:
-          "I broke each poem into mood, imagery, cultural objects, sensory cues, material direction, and camera language before generation.",
+          "I translated each poem into variables for mood, imagery, cultural object, material, perspective, and medium.",
         why:
-          "The schema made language operational. The model was responding to a designed interpretation layer, not guessing from a poetic sentence.",
+          "The schema kept the model responsive to a designed interpretation layer rather than a loose sentence.",
         outcome:
-          "Each artifact could be defended through a chain of meaning, prompt logic, and visual judgement.",
+          "Each sculpture could be reviewed through meaning, prompt logic, and visual judgement.",
       },
       {
-        title: "ComfyUI co-creation pipeline",
+        title: "Visible workflow from ComfyUI to spatial form",
         problem:
-          "If the backend stayed invisible, the project would look like a final image collection rather than a design system.",
+          "Final renders alone made the project look like image taste, not AI system design.",
         decision:
-          "I used ComfyUI as a node-based production environment so generation choices could be inspected, tuned, and reused.",
+          "I exposed the ComfyUI graph and tested image-to-3D tools to move selected outputs into spatial artifacts.",
         why:
-          "A graph-based workflow makes the designer's labour visible: schema, model control, iteration, and curation become part of the work.",
+          "Showing the pipeline made iteration, model control, and human curation part of the design evidence.",
         outcome:
-          "The case demonstrates AI production literacy instead of only final visual taste.",
-      },
-      {
-        title: "Image-to-3D exhibition object",
-        problem:
-          "Flat images could not carry the tactile quality of Taihu stone or the public experience of a graduation exhibition.",
-        decision:
-          "I tested image-to-3D reconstruction to turn selected generated results into digital sculptures, printed objects, and exhibition displays.",
-        why:
-          "The cultural idea needed a body. Spatial artifacts let visitors compare poem, image, model, and object in one exhibition loop.",
-        outcome:
-          "The final show presented a complete creative system: language, AI workflow, interface, sculpture, and audience.",
+          "The exhibition connected poem, workflow, generated image, reconstructed form, and visitor experience.",
       },
     ],
     modelProbe: {
@@ -633,42 +609,30 @@ export const CASE_STORYTELLING: Record<string, Partial<CaseStudyStory>> = {
     nextSteps:
       "A next iteration could prototype the service touchpoints around booking, in-vehicle feedback, and post-trip reflection with real users.",
     designQuestions: [
-      "How might a future mobility concept make low-carbon behaviour feel desirable instead of punitive?",
-      "How can speculative video and interface design make an emerging mobility system feel believable?",
+      "How can a future mobility concept make low-carbon behaviour feel desirable instead of punitive?",
     ],
     keyDecisions: [
       {
-        title: "Use fiction to make behaviour tangible",
+        title: "Make carbon behaviour tangible",
         problem:
-          "A sustainability concept can become abstract if it only explains carbon metrics.",
-        decision:
-          "I built a future-mobility fiction through Runway-generated video frames and interface moments.",
-        why:
-          "Fiction lets viewers see how the service would feel in use, not only what it claims to solve.",
-        outcome:
-          "The project earned Best Sustainable Design Award recognition and communicated a clearer mobility scenario.",
-      },
-      {
-        title: "Turn Runway into a controlled shot pipeline",
-        problem:
-          "Early generative video could create atmosphere, but without a process it produced disconnected clips that did not tell a coherent product story.",
-        decision:
-          "I treated GenAI production like a film pipeline: define the story beat, generate key stills, animate only selected frames, then edit with human pacing and art direction.",
-        why:
-          "This makes the AI output accountable to a storyboard and service concept, not just to visual novelty.",
-        outcome:
-          "The final reel reads as a designed future-mobility narrative rather than a collection of AI experiments.",
-      },
-      {
-        title: "Connect carbon to user experience",
-        problem:
-          "Carbon accounting alone does not explain why a person would change mobility behaviour.",
+          "Carbon metrics alone do not explain why someone would change a daily mobility habit.",
         decision:
           "I linked carbon feedback to trip rituals, cabin moments, and service touchpoints.",
         why:
           "Sustainable choices become more persuasive when they are embedded in the experience itself.",
         outcome:
           "The concept reads as a product-service system rather than a single campaign visual.",
+      },
+      {
+        title: "Controlled GenAI shot pipeline",
+        problem:
+          "Early generative video produced atmosphere, but the clips became disconnected without a story process.",
+        decision:
+          "I used a film pipeline: define story beats, generate key stills, animate selected frames, then edit with human pacing.",
+        why:
+          "This makes the AI output accountable to a storyboard and service concept, not just to visual novelty.",
+        outcome:
+          "The reel communicates a believable future-mobility scenario.",
       },
     ],
   },
