@@ -15,7 +15,6 @@
     "motion:still:featured:all": "node scripts/render-featured-videos.mjs still",
     "motion:render:design-hub": "remotion render remotion/index.ts DesignHubBrandReel public/generated/design-hub-brand-reel.mp4",
     "motion:still:design-hub": "remotion still remotion/index.ts DesignHubBrandReel public/generated/design-hub-brand-reel-frame.png --frame=180",
-    "sync": "tsx scripts/sync-from-notion.ts",
     "audit-eagle-mine": "node scripts/audit-eagle-mine.mjs",
     "map-eagle-cases": "node scripts/generate-eagle-case-mapping.mjs",
     "setup-eagle-curation": "node scripts/setup-eagle-curation.mjs",

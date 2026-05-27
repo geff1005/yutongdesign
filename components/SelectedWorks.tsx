@@ -16,10 +16,24 @@ const featuredCardThemes: Record<string, { bg: string; ink?: string; muted?: str
   skgplus: { bg: "#0e1624", ink: "#f6f8ff", muted: "rgba(246, 248, 255, 0.64)" },
   beatrol: { bg: "#9eb4c9", ink: "#101820", muted: "rgba(16, 24, 32, 0.58)" },
   poeticform: { bg: "#eef4ff", ink: "#091433", muted: "rgba(9, 20, 51, 0.58)" },
+  "lantern-festival": { bg: "#fff0c7", ink: "#20180a", muted: "rgba(32, 24, 10, 0.58)" },
   greenmove: { bg: "#cfe9bc", ink: "#10160f", muted: "rgba(16, 22, 15, 0.58)" },
+  sprayscape: { bg: "#f2d4d9", ink: "#221315", muted: "rgba(34, 19, 21, 0.58)" },
   syncoe: { bg: "#d8e8f8", ink: "#0b1724", muted: "rgba(11, 23, 36, 0.58)" },
   "meta-station": { bg: "#d8d5ff", ink: "#15122a", muted: "rgba(21, 18, 42, 0.58)" },
   bytedance: { bg: "#f6d6c7", ink: "#211815", muted: "rgba(33, 24, 21, 0.58)" },
+};
+
+const featuredCardTitles: Record<string, string> = {
+  "lantern-festival": "Lantern Promo",
+  bytedance: "TikTok AR Effects",
+};
+
+const featuredMediaOverrides: Record<string, { poster: string; video: string }> = {
+  sprayscape: {
+    poster: "/play/highlights/sprayscape-mr.jpg",
+    video: "/play/highlights/sprayscape-mr-card.mp4",
+  },
 };
 
 export function SelectedWorks() {
@@ -28,31 +42,22 @@ export function SelectedWorks() {
       <div className="section-inner">
         <div className="section-header">
           <div>
-            <div className="section-header-eyebrow">
-              <span className="eyebrow">SELECTED_SYSTEMS / 01</span>
-            </div>
             <h2 className="section-heading">
-              Featured projects
+              Projects
             </h2>
-            <p className="section-sub">
-              AI products, client systems, industrial design, and speculative
-              interface studies.
-            </p>
           </div>
-          <Link href="/work" className="view-all-btn">
-            <span className="btn-gradient-ring" />
-            <span className="btn-inner">
-              More work <span aria-hidden>→</span>
-            </span>
-          </Link>
         </div>
 
         <div className="sw-grid">
           {SELECTED_FEATURED.map((p, i) => (
             <div key={p.slug} className="sw-card-shell">
               {(() => {
-                const generatedPoster = `/generated/featured/${p.slug}.jpg`;
-                const generatedVideo = `/generated/featured/${p.slug}.mp4`;
+                const mediaOverride = featuredMediaOverrides[p.slug];
+                const generatedPoster =
+                  mediaOverride?.poster ?? `/generated/featured/${p.slug}.jpg`;
+                const generatedVideo =
+                  mediaOverride?.video ?? `/generated/featured/${p.slug}.mp4`;
+                const displayTitle = featuredCardTitles[p.slug] ?? p.title;
                 const theme = featuredCardThemes[p.slug] ?? {
                   bg: "hsl(var(--surface))",
                   ink: "hsl(var(--text))",
@@ -69,17 +74,17 @@ export function SelectedWorks() {
                 <div className="sw-card-copy">
                   <div className="sw-card-head">
                     <div className="sw-card-head-left">
-                      <div className="sw-card-name">{p.title}</div>
-                      {p.type && (
-                        <div className="sw-card-type eyebrow">{p.type}</div>
+                      <div className="sw-card-name">
+                        {displayTitle}
+                      </div>
+                      {p.cardHeadline && (
+                        <div className="sw-card-hook">{p.cardHeadline}</div>
                       )}
                     </div>
                     <span className="sw-card-cta">
                       Open case <span aria-hidden>↗</span>
                     </span>
                   </div>
-
-                  <p className="sw-card-tagline">{p.description}</p>
                 </div>
 
                 <div className="sw-card-media-wrap">
@@ -116,6 +121,15 @@ export function SelectedWorks() {
               })()}
             </div>
           ))}
+        </div>
+
+        <div className="sw-section-cta">
+          <Link href="/work" className="view-all-btn">
+            <span className="btn-gradient-ring" />
+            <span className="btn-inner">
+              More work <span aria-hidden>→</span>
+            </span>
+          </Link>
         </div>
       </div>
     </section>

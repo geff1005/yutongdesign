@@ -20,6 +20,7 @@ type Variant =
   | "agent-orbit"
   | "cms-pipeline"
   | "cockpit"
+  | "festival-reel"
   | "film-system"
   | "device-explode"
   | "city-shift"
@@ -183,6 +184,38 @@ export const featuredMotionProjects: FeaturedMotionProject[] = [
       "/work/bytedance/03-basketball-render.jpg",
     ],
     motionCopy: "camera effect loop",
+  },
+  {
+    slug: "lantern-festival",
+    title: "AI Motion Shot Bank",
+    label: "Festival promo",
+    themeColor: "#fff0c7",
+    accentColor: "#f08a1a",
+    inkColor: "#20180a",
+    secondaryColor: "#fff7dc",
+    variant: "festival-reel",
+    sourceAssets: [
+      "/work/lantern-festival/featured-lantern-water.jpg",
+      "/work/lantern-festival/featured-dragon-square.jpg",
+      "/work/lantern-festival/featured-horse-light.jpg",
+    ],
+    motionCopy: "reference to reel",
+  },
+  {
+    slug: "sprayscape",
+    title: "MR Street Art Archive",
+    label: "Spatial record",
+    themeColor: "#f2d4d9",
+    accentColor: "#ff415e",
+    inkColor: "#221315",
+    secondaryColor: "#fff1f4",
+    variant: "cms-pipeline",
+    sourceAssets: [
+      "/work/sprayscape/portfolio/04-mr-experience.jpg",
+      "/work/sprayscape/results/sprayscape-uiux---eagle-mmbssqw2i30uo.jpg",
+      "/work/sprayscape/results/sprayscape-yutongzhu-1080p-60-09121756--.jpg",
+    ],
+    motionCopy: "wall to archive",
   },
 ];
 
@@ -679,6 +712,67 @@ function VariantLayers({
     );
   }
 
+  if (project.variant === "festival-reel") {
+    return (
+      <>
+        <CardImage
+          src={imageTwo}
+          style={{
+            left: 540,
+            top: 205 + floatA * 10,
+            width: 820,
+            height: 520,
+            borderRadius: 42,
+            transform: `rotate(${clamp(frame, [0, 180], [-1.8, 1.4])}deg) scale(${0.96 + intro * 0.04})`,
+            zIndex: 4,
+          }}
+        />
+        <CardImage
+          src={imageOne}
+          style={{
+            left: 250 + drift * 0.35,
+            top: 420 + floatB * 12,
+            width: 520,
+            height: 335,
+            borderRadius: 36,
+            transform: "rotate(-7deg)",
+            zIndex: 3,
+          }}
+        />
+        <CardImage
+          src={imageThree}
+          style={{
+            right: 235 - drift * 0.28,
+            bottom: 250 + floatA * 10,
+            width: 570,
+            height: 360,
+            borderRadius: 36,
+            transform: "rotate(6deg)",
+            zIndex: 5,
+          }}
+        />
+        <GlassPanel style={{ left: 265, bottom: 175, width: 500, padding: 32 }}>
+          <MetricRows color={project.accentColor} copy={project.motionCopy} />
+        </GlassPanel>
+        <div
+          style={{
+            position: "absolute",
+            right: 360,
+            top: 240,
+            width: 180,
+            height: 180,
+            borderRadius: 999,
+            background: `radial-gradient(circle at 34% 32%, #fff8 0 18%, transparent 19%), ${project.accentColor}`,
+            opacity: 0.9,
+            mixBlendMode: "multiply",
+            transform: `translateY(${floatB * 16}px)`,
+            zIndex: 2,
+          }}
+        />
+      </>
+    );
+  }
+
   if (project.variant === "film-system") {
     return (
       <>
@@ -697,7 +791,7 @@ function VariantLayers({
           />
         ))}
         <GlassPanel style={{ left: 330, bottom: 210, width: 520, padding: 34 }}>
-          <MetricRows color={project.accentColor} copy="carbon account +37" />
+          <MetricRows color={project.accentColor} copy={project.motionCopy} />
         </GlassPanel>
         <div style={{ position: "absolute", right: 310, bottom: 245, width: 260, height: 260, borderRadius: 999, background: `conic-gradient(${project.accentColor} ${progress * 360}deg, rgba(255,255,255,.42) 0deg)` }} />
       </>

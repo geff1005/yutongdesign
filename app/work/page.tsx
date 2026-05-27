@@ -16,13 +16,9 @@ export default function WorkIndexPage() {
   return (
     <main className="work-index">
       <header className="work-index-hero">
-        <div className="eyebrow">Index</div>
         <h1 className="work-index-title">
           All <em>work</em>
         </h1>
-        <p className="work-index-sub">
-          Product, service, and system design for AI-enabled futures.
-        </p>
       </header>
 
       <section className="work-index-section">
@@ -75,7 +71,14 @@ function WorkCard({
       />
       <div className="work-index-card-meta">
         <div className="work-index-card-row">
-          <div className="work-index-card-title">{project.title}</div>
+          <div>
+            <div className="work-index-card-title">
+              {project.title}
+            </div>
+            {project.cardHeadline && (
+              <div className="work-index-card-hook">{project.cardHeadline}</div>
+            )}
+          </div>
           <div className="work-index-card-year">{project.year}</div>
         </div>
         {project.type && (

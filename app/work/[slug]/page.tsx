@@ -3,7 +3,6 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import Spline from "@splinetool/react-spline/next";
 import { ModelViewer } from "@/components/ModelViewer";
-import { CASE_STORYTELLING } from "@/lib/case-storytelling";
 import { PROJECTS } from "@/lib/projects";
 
 // Pre-generate one static page per project at build time.
@@ -89,11 +88,7 @@ export default async function WorkDetailPage({
   if (!project) notFound();
 
   const embed = project.videoUrl ? vimeoEmbedUrl(project.videoUrl) : null;
-  const storyPatch = CASE_STORYTELLING[project.slug];
-  const cs =
-    project.caseStudy || storyPatch
-      ? { ...(project.caseStudy ?? {}), ...(storyPatch ?? {}) }
-      : undefined;
+  const cs = project.caseStudy;
   const otherProjects = PROJECTS.filter(
     (p) => p.slug !== project.slug && p.featured
   ).slice(0, 3);

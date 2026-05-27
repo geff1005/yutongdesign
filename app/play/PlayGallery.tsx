@@ -56,10 +56,6 @@ export function PlayGallery({ groups }: Props) {
   const [cursorVisible, setCursorVisible] = useState(false);
   const [cursorPressed, setCursorPressed] = useState(false);
 
-  const totalCount = useMemo(
-    () => groups.reduce((sum, group) => sum + group.items.length, 0),
-    [groups]
-  );
   const flatItems = useMemo<FlatPlayItem[]>(() => {
     let index = 0;
     return groups.flatMap((group) =>
@@ -130,6 +126,10 @@ export function PlayGallery({ groups }: Props) {
     },
     [scheduleRevealCleanup]
   );
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, []);
 
   useEffect(() => {
     const initialSlugs = flatItems
@@ -297,32 +297,7 @@ export function PlayGallery({ groups }: Props) {
 
         <div className="play-dashboard-main">
           <header className="play-index-hero">
-            <div className="eyebrow">Playground index / {totalCount}</div>
             <h1 className="play-index-title">Playground</h1>
-            <p className="play-index-sub">
-              Motion tests, visual systems, and small prototypes for emerging
-              interfaces.
-            </p>
-
-            <nav className="play-cat-nav" aria-label="Categories">
-              {groups.map((group) => (
-                <button
-                  key={group.category}
-                  type="button"
-                  className={`play-cat-pill ${
-                    activeCategory === group.category ? "is-active" : ""
-                  }`}
-                  onClick={() => scrollToCategory(group.category)}
-                >
-                  <span className="play-cat-pill-label">
-                    {CATEGORY_LABEL[group.category]}
-                  </span>
-                  <span className="play-cat-pill-count">
-                    {group.items.length}
-                  </span>
-                </button>
-              ))}
-            </nav>
           </header>
 
           <div className="play-artifact-stage">

@@ -5,12 +5,11 @@ const slugs = [
   "smataste",
   "co-cerebral",
   "skgplus",
-  "beatrol",
   "poeticform",
+  "lantern-festival",
   "greenmove",
-  "syncoe",
-  "meta-station",
   "bytedance",
+  "sprayscape",
 ];
 
 const mode = process.argv[2] ?? "all";

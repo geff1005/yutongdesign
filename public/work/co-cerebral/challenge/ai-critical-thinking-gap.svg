@@ -1,0 +1,43 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">AI critical thinking gap</title>
+  <desc id="desc">Original editorial-style visual showing one polished AI answer splitting into six visible reasoning roles.</desc>
+  <rect width="1600" height="900" rx="56" fill="#F4F5EA"/>
+  <rect x="84" y="88" width="1432" height="724" rx="42" fill="#10120F"/>
+  <path d="M219 238C354 148 506 147 610 244C704 332 830 334 948 251C1071 164 1233 161 1381 257" stroke="#D9FF3F" stroke-width="18" stroke-linecap="round"/>
+  <path d="M198 620C357 538 510 548 638 646C769 746 926 751 1077 641C1188 561 1318 548 1416 596" stroke="#8FE9FF" stroke-width="18" stroke-linecap="round"/>
+  <g filter="url(#shadow)">
+    <rect x="188" y="310" width="438" height="256" rx="28" fill="#F4F5EA"/>
+    <text x="234" y="383" fill="#10120F" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">One fluent answer</text>
+    <text x="234" y="448" fill="#394033" font-family="Arial, Helvetica, sans-serif" font-size="30">looks complete</text>
+    <text x="234" y="491" fill="#394033" font-family="Arial, Helvetica, sans-serif" font-size="30">before the thinking</text>
+    <text x="234" y="534" fill="#394033" font-family="Arial, Helvetica, sans-serif" font-size="30">has been tested.</text>
+  </g>
+  <g filter="url(#shadow)">
+    <rect x="926" y="260" width="486" height="356" rx="28" fill="#D9FF3F"/>
+    <text x="975" y="335" fill="#10120F" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700">Visible reasoning</text>
+    <g font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#10120F">
+      <text x="982" y="407">Facts</text>
+      <text x="1166" y="407">Emotion</text>
+      <text x="982" y="481">Risk</text>
+      <text x="1166" y="481">Optimism</text>
+      <text x="982" y="555">Creativity</text>
+      <text x="1166" y="555">Process</text>
+    </g>
+    <g fill="#10120F">
+      <circle cx="958" cy="397" r="9"/>
+      <circle cx="1142" cy="397" r="9"/>
+      <circle cx="958" cy="471" r="9"/>
+      <circle cx="1142" cy="471" r="9"/>
+      <circle cx="958" cy="545" r="9"/>
+      <circle cx="1142" cy="545" r="9"/>
+    </g>
+  </g>
+  <path d="M676 438H854" stroke="#F4F5EA" stroke-width="16" stroke-linecap="round"/>
+  <path d="M832 402L874 438L832 474" stroke="#F4F5EA" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="188" y="721" fill="#F4F5EA" font-family="Arial, Helvetica, sans-serif" font-size="32">Challenge: design AI that develops the thinking process, not only the final answer.</text>
+  <defs>
+    <filter id="shadow" x="160" y="232" width="1280" height="418" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="20" flood-color="#000000" flood-opacity="0.22"/>
+    </filter>
+  </defs>
+</svg>

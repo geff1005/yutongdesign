@@ -33,7 +33,6 @@ export function Hero() {
   return (
     <section className="hero" id="home">
       <div className="hero-content" key={`copy-${layoutKey}`}>
-        <div className="hero-eyebrow eyebrow">AI DESIGN SYSTEM / 2026</div>
         <h1 className="hero-name">
           {SITE.name} builds AI imagination tools.
         </h1>

@@ -8,6 +8,8 @@ This is context loading, not a blocking ceremony. For tiny direct answers, quick
 
 Resume-first rule: portfolio copy should support the current canonical resume. Cross-check `../../JobAppl* /CLAUDE.md` and the current resume before changing role titles, project metrics, ordering, or job-search-facing claims.
 
+Scaffold-first rule: when editing a project's case copy, look for `../../<PROJECT_FOLDER>/SCAFFOLD.md` first (e.g. `../../A06-SprayScape-Spatial/SCAFFOLD.md`). The scaffold is Julian's intent record: headline, what he actually did, anchor facts not to invent, framings to avoid, and pointers to the authoritative source files. Treat it as the primary brief. If a scaffold is absent or empty, ask before generating prose, do not invent intent from raw assets alone. The full Design Hub knowledge layer lives at `../../_wiki/` with the canonical scaffold template at `../../_wiki/_template-scaffold.md` and the wiki structure template at `../../_wiki/projects/_template.md`.
+
 Sync safety rule: `npm run sync` is paused behind `ALLOW_NOTION_PROJECTS_OVERWRITE=1` because it can overwrite hand-written rich case studies in `lib/projects.ts`. Do not run it with the overwrite flag unless the user explicitly approves.
 
 # Copy rules: banned punctuation in display copy
@@ -104,8 +106,8 @@ Full registry: `docs/_HUB_REGISTRY.md` and `Design hub/_HUB/REGISTRY.md`. Quick 
 - Next.js 16 (App Router, Turbopack)
 - Hosted: Vercel `judeforlove13-4509s-projects/yutongdesign`, deployed via auto-deploy on `main` push
 - Domain: yutongdesign.art (DNS at Aliyun: A @ 76.76.21.21 + CNAME www → cname.vercel-dns.com)
-- Content: `lib/site.ts` (identity), `lib/projects.ts` (auto-generated from Notion via sync), `lib/press.ts` (auto-generated via sync)
-- Sync: `npm run sync` locally OR daily GitHub Action (needs `NOTION_TOKEN` secret — see `docs/AUTOMATION_SETUP.md`)
+- Content: `lib/site.ts` (identity), `lib/projects.ts` (hand-authored portfolio source of truth), `lib/press.ts`
+- Sync: retired. Case-study copy is maintained directly in `lib/projects.ts`; do not reintroduce the old Notion sync path without an explicit decision.
 - Routes: `/` home, `/work/[slug]` per-project case study (statically pre-generated)
 
 # Per-Project README Convention (NEW)

@@ -238,16 +238,13 @@ export function Explorations() {
           className="explorations-arc-header"
           ref={headerRef}
         >
-          <div className="eyebrow">MOTION_LAB / GENERATED_STUDIES</div>
           <h2 className="section-heading">
-            Motion playground
+            Playground
           </h2>
-          <p className="section-sub">
-            Fast studies in motion, interface, and AI-native visual systems.
-          </p>
           <Link
             className="view-all-btn explorations-cta"
             href="/play"
+            scroll
           >
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
