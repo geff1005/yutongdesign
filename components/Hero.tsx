@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { HeroAsciiField } from "@/components/HeroAsciiField";
 import { SITE } from "@/lib/site";
 
 const ROLES = SITE.roles;
@@ -32,6 +33,7 @@ export function Hero() {
 
   return (
     <section className="hero" id="home">
+      <HeroAsciiField />
       <div className="hero-content" key={`copy-${layoutKey}`}>
         <h1 className="hero-name">
           {SITE.name} builds AI imagination tools.

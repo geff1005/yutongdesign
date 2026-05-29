@@ -152,9 +152,9 @@ export function Navbar() {
             </>
           ) : (
             <>
-              <Link className="nav-logo" href="/#home" aria-label="Home">
+              <a className="nav-logo" href="/about" aria-label="About Julian">
                 <span className="nav-logo-inner">JZ</span>
-              </Link>
+              </a>
               <span className="nav-divider" />
               {LINKS.map((l) =>
                 l.external ? (
@@ -200,9 +200,9 @@ export function Navbar() {
             <span>{back.label}</span>
           </Link>
         ) : (
-          <Link className="nav-logo nav-logo-mobile" href="/#home" aria-label="Home">
+          <a className="nav-logo nav-logo-mobile" href="/about" aria-label="About Julian">
             <span className="nav-logo-inner">JZ</span>
-          </Link>
+          </a>
         )}
         {isSubpage && (
           detailTitle ? (
