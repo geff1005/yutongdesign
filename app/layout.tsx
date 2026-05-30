@@ -36,13 +36,13 @@ export const metadata: Metadata = {
   title: "Julian Zhu — Portfolio",
   description:
     "Julian Yutong Zhu — Creative Technologist based in London. Designing AI-enabled creative workflows where emerging tech and human craft meet.",
-  metadataBase: new URL("https://yutongdesign.art"),
+  metadataBase: new URL("https://julianz.space"),
   openGraph: {
     title: "Julian Zhu — Portfolio",
     description:
       "Creative Technologist based in London. Featured in The Guardian (2026). Awards: Red Dot, IDA, EUPD.",
-    url: "https://yutongdesign.art",
-    siteName: "yutongdesign",
+    url: "https://julianz.space",
+    siteName: "julianz.space",
     images: [
       {
         url: "/thumbnails/co-cerebral.jpg",
