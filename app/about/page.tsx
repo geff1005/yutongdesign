@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About · Julian Yutong Zhu",
   description:
-    "About Julian Yutong Zhu, an AI product designer and creative technologist based in London.",
+    "About Julian Yutong Zhu, a product experience designer and future strategist based in London.",
 };
 
 const linkItems = [
@@ -70,15 +70,15 @@ export default function AboutPage() {
             I design AI products, workflows, and spatial interfaces for human judgment.
           </h1>
           <p className="about-intro">
-            I am Julian Yutong Zhu, a designer and creative technologist working across AI product UX,
-            service systems, motion, and emerging interfaces.
+            I am Julian Yutong Zhu, a product experience designer and future strategist exploring how
+            AI can support more equitable, creative, and human-flourishing futures.
           </p>
         </div>
 
         <aside className="about-side" aria-label="Contact links">
           <p className="about-side-note">
-            Currently focused on GenAI creative tools, agentic learning products, and portfolio systems
-            where the process is as legible as the outcome.
+            My practice bridges multimedia information design, speculative research, intelligent
+            systems, and embodied interaction.
           </p>
           <div className="about-links">
             {linkItems.map((item) => (
@@ -93,13 +93,14 @@ export default function AboutPage() {
 
       <section className="about-section about-profile" aria-label="Profile">
         <p>
-          My work usually starts with a messy translation problem: a canteen service has to remember
-          taste without becoming creepy, an AI learning tool has to support thinking instead of bypassing
-          it, or a poem has to become a navigable form without losing authorship.
+          I continually reflect on how we learn, create, interact, and coexist with emerging
+          technologies. My work often starts from a messy translation problem: turning uncertainty,
+          social context, or complex systems into experiences people can understand and act with.
         </p>
         <p>
-          I care about interfaces that explain themselves through use: clear roles, visible decisions,
-          useful constraints, and enough craft that the system feels worth trusting.
+          Trained in digital media and design futures, I work across disciplines to translate
+          complexity into clarity and provocative design. I am open to research collaborations,
+          critical dialogues, and future opportunities.
         </p>
       </section>
 
