@@ -66,13 +66,13 @@ export default function AboutPage() {
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-hero-main">
           <h1 id="about-title" className="about-title">
-            I design AI products, workflows, and spatial interfaces for human judgment.
+            I design human-centered AI products and collaborative workflows.
           </h1>
           <p className="about-intro">
             I am Julian Yutong Zhu, a product experience designer and future strategist exploring how
             AI can support more equitable, creative, and human-flourishing futures. My practice bridges
-            multimedia information design, speculative research, intelligent systems, and embodied
-            interaction.
+            human-AI interaction, multimedia information design, speculative research, and intelligent
+            systems.
           </p>
         </div>
 
