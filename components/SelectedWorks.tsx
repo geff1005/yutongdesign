@@ -29,13 +29,6 @@ const featuredCardTitles: Record<string, string> = {
   bytedance: "TikTok AR Effects",
 };
 
-const featuredMediaOverrides: Record<string, { poster: string; video: string }> = {
-  sprayscape: {
-    poster: "/play/highlights/sprayscape-mr.jpg",
-    video: "/play/highlights/sprayscape-mr-card.mp4",
-  },
-};
-
 export function SelectedWorks() {
   return (
     <section className="section sw-section" id="work">
@@ -52,11 +45,8 @@ export function SelectedWorks() {
           {SELECTED_FEATURED.map((p, i) => (
             <div key={p.slug} className="sw-card-shell">
               {(() => {
-                const mediaOverride = featuredMediaOverrides[p.slug];
-                const generatedPoster =
-                  mediaOverride?.poster ?? `/generated/featured/${p.slug}.jpg`;
-                const generatedVideo =
-                  mediaOverride?.video ?? `/generated/featured/${p.slug}.mp4`;
+                const generatedPoster = `/generated/featured/${p.slug}.jpg`;
+                const generatedVideo = `/generated/featured/${p.slug}.mp4`;
                 const displayTitle = featuredCardTitles[p.slug] ?? p.title;
                 const theme = featuredCardThemes[p.slug] ?? {
                   bg: "hsl(var(--surface))",

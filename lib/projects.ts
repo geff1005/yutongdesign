@@ -103,8 +103,8 @@ export const PROJECTS: Project[] = [
       "media": [
         {
           "section": "challenge",
-          "src": "/work/co-cerebral/challenge/ai-critical-thinking-gap.svg",
-          "caption": "Original challenge visual: the design problem is not that students use AI, but that open-answer tools can hide the thinking process that educators need to develop.",
+          "src": "/work/co-cerebral/challenge/problem-framing.jpg",
+          "caption": "Problem framing slide from the RCA thesis process. The case starts from critical-thinking erosion and creativity suppression in AI-assisted collaborative learning.",
           "aspectRatio": "16/9"
         },
         {
