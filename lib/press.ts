@@ -18,7 +18,7 @@ export const PRESS: PressItem[] = [
     date: "2026-03-05",
     title: "How art school creators are adapting to the age of AI",
     outlet: "The Guardian",
-    url: "https://www.theguardian.com/everything-you-never-imagined/2026/mar/05/how-art-school-creators-are-adapting-to-the-age-of-ai",
+    url: "/press/guardian-ai-art-school",
     tag: "Feature",
     thumbnail: "/press/guardian-enhanced.webp",
     pinned: true,

@@ -54,12 +54,14 @@ function PressInterviewCard({
   setCardRef: (index: number, node: HTMLAnchorElement | null) => void;
   setTextRef: (index: number, node: HTMLDivElement | null) => void;
 }) {
+  const isExternal = item.url.startsWith("http");
+
   return (
     <a
       ref={(node) => setCardRef(displayIndex, node)}
       href={item.url}
-      target="_blank"
-      rel="noopener noreferrer"
+      target={isExternal ? "_blank" : undefined}
+      rel={isExternal ? "noopener noreferrer" : undefined}
       className={"press-interview-slide" + (active ? " is-active" : "")}
       data-source-index={index}
       aria-label={`${item.outlet}: ${item.title}`}
