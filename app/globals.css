@@ -970,25 +970,22 @@ a { color: inherit; text-decoration: none; }
   text-decoration: none;
   background: hsl(var(--surface) / 0.72);
 }
-.press-reference-figure {
+.press-reference-pdf {
   margin: 0;
   border: 1px solid hsl(var(--stroke));
   border-radius: clamp(24px, 3vw, 42px);
   overflow: hidden;
   background: hsl(var(--surface));
   box-shadow: var(--shadow-soft);
+  min-height: min(76svh, 980px);
 }
-.press-reference-figure img {
+.press-reference-pdf iframe {
   display: block;
   width: 100%;
-  height: auto;
-}
-.press-reference-figure figcaption {
-  padding: 16px clamp(18px, 2.2vw, 28px) 20px;
-  color: hsl(var(--muted));
-  font-size: 0.95rem;
-  line-height: 1.4;
-  border-top: 1px solid hsl(var(--stroke));
+  height: min(76svh, 980px);
+  min-height: 680px;
+  border: 0;
+  background: white;
 }
 
 @media (max-width: 900px) {
@@ -1057,6 +1054,14 @@ a { color: inherit; text-decoration: none; }
   }
   .press-reference-actions a {
     width: 100%;
+  }
+  .press-reference-pdf {
+    min-height: 560px;
+    border-radius: 22px;
+  }
+  .press-reference-pdf iframe {
+    height: 560px;
+    min-height: 560px;
   }
 }
 
