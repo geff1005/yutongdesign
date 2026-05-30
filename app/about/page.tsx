@@ -9,9 +9,9 @@ export const metadata: Metadata = {
 };
 
 const linkItems = [
-  { label: "Email", href: SITE.socials.email, value: SITE.email },
-  { label: "LinkedIn", href: SITE.socials.linkedin, value: "yutongdesign" },
-  { label: "GitHub", href: SITE.socials.github, value: "geff1005" },
+  { label: "Email", href: SITE.socials.email },
+  { label: "LinkedIn", href: SITE.socials.linkedin },
+  { label: "GitHub", href: SITE.socials.github },
 ];
 
 const skillGroups = [
@@ -84,7 +84,7 @@ export default function AboutPage() {
             {linkItems.map((item) => (
               <a key={item.label} className="about-link" href={item.href}>
                 <span>{item.label}</span>
-                <span>{item.value}</span>
+                <span aria-hidden>↗</span>
               </a>
             ))}
           </div>
