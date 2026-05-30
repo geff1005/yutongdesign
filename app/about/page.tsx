@@ -65,21 +65,18 @@ export default function AboutPage() {
     <main className="about-page">
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-hero-main">
-          <p className="about-kicker">About / London</p>
           <h1 id="about-title" className="about-title">
             I design AI products, workflows, and spatial interfaces for human judgment.
           </h1>
           <p className="about-intro">
             I am Julian Yutong Zhu, a product experience designer and future strategist exploring how
-            AI can support more equitable, creative, and human-flourishing futures.
+            AI can support more equitable, creative, and human-flourishing futures. My practice bridges
+            multimedia information design, speculative research, intelligent systems, and embodied
+            interaction.
           </p>
         </div>
 
         <aside className="about-side" aria-label="Contact links">
-          <p className="about-side-note">
-            My practice bridges multimedia information design, speculative research, intelligent
-            systems, and embodied interaction.
-          </p>
           <div className="about-links">
             {linkItems.map((item) => (
               <a key={item.label} className="about-link" href={item.href}>
@@ -89,19 +86,6 @@ export default function AboutPage() {
             ))}
           </div>
         </aside>
-      </section>
-
-      <section className="about-section about-profile" aria-label="Profile">
-        <p>
-          I continually reflect on how we learn, create, interact, and coexist with emerging
-          technologies. My work often starts from a messy translation problem: turning uncertainty,
-          social context, or complex systems into experiences people can understand and act with.
-        </p>
-        <p>
-          Trained in digital media and design futures, I work across disciplines to translate
-          complexity into clarity and provocative design. I am open to research collaborations,
-          critical dialogues, and future opportunities.
-        </p>
       </section>
 
       <section className="about-section" aria-labelledby="about-skills-title">
