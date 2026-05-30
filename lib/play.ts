@@ -213,8 +213,8 @@ const MANUAL: PlayItem[] = [
     description:
       "A 48-hour AI film sprint exploring surreal self-perception through prompt-led image generation, Runway motion, sound, and edit direction.",
     videoSrc: "/play/highlights/isee.mp4",
-    previewEmbedUrl: "https://www.youtube.com/embed/yp9JvKkmid8?rel=0&modestbranding=1",
-    previewAspectRatio: "16/9",
+    previewVideoSrc: "/play/highlights/isee.mp4",
+    previewAspectRatio: "4/5",
     thumbnail: "/play/highlights/isee.jpg",
   },
   {
