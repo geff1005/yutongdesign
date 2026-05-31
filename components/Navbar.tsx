@@ -113,7 +113,8 @@ export function Navbar() {
           className={
             "nav-pill" +
             (scrolled ? " scrolled" : "") +
-            (isSubpage ? " nav-pill-subpage" : "")
+            (isSubpage ? " nav-pill-subpage" : "") +
+            (isSubpage && detailTitle ? " nav-pill-detail" : "")
           }
           style={GLASS_STYLE}
         >

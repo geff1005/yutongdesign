@@ -52,7 +52,7 @@ Source-of-truth identity facts (CV verified, do not invent). When the site needs
 - **Location**: London (NOT Chicago — that was placeholder text from the original Next.js template, now removed)
 - **LinkedIn**: linkedin.com/in/yutongdesign
 - **GitHub**: github.com/geff1005
-- **Site**: yutongdesign.art
+- **Site**: julianz.space
 - **Education**: RCA MDes Design Futures (Dec 2024 – Dec 2025), Sichuan Fine Arts BA Digital Media (Aug 2020 – Jun 2024)
 - **Industry**: RCA Executive Education facilitator → SKG Studio web designer → HUAWEI UX intern → ByteDance visual designer
 - **Key press**: The Guardian feature (Mar 2026) "How art school creators are adapting to the age of AI"
@@ -105,7 +105,7 @@ Full registry: `docs/_HUB_REGISTRY.md` and `Design hub/_HUB/REGISTRY.md`. Quick 
 
 - Next.js 16 (App Router, Turbopack)
 - Hosted: Vercel `judeforlove13-4509s-projects/yutongdesign`, deployed via auto-deploy on `main` push
-- Domain: yutongdesign.art (DNS at Aliyun: A @ 76.76.21.21 + CNAME www → cname.vercel-dns.com)
+- Primary domain: julianz.space. Legacy yutongdesign.art hosts redirect to julianz.space.
 - Content: `lib/site.ts` (identity), `lib/projects.ts` (hand-authored portfolio source of truth), `lib/press.ts`
 - Sync: retired. Case-study copy is maintained directly in `lib/projects.ts`; do not reintroduce the old Notion sync path without an explicit decision.
 - Routes: `/` home, `/work/[slug]` per-project case study (statically pre-generated)

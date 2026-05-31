@@ -226,7 +226,7 @@ JIANYING         = $T7/剪映文件/
 
 WEBSITE REPO     = $ICLOUD_ROOT/Julianyutongzhu /yutongdesign/
 WEBSITE DOCS     = $ICLOUD_ROOT/Julianyutongzhu /yutongdesign/docs/
-LIVE SITE        = https://yutongdesign.art
+LIVE SITE        = https://julianz.space
 GITHUB REPO      = https://github.com/geff1005/yutongdesign
 VERCEL PROJECT   = judeforlove13-4509s-projects/yutongdesign
 ```
