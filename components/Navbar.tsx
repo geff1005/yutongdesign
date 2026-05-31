@@ -204,7 +204,13 @@ export function Navbar() {
       </div>
 
       {/* Mobile bar — visible < 768px */}
-      <div className={"nav-wrap nav-wrap-mobile" + (isSubpage ? " nav-wrap-mobile-subpage" : "")}>
+      <div
+        className={
+          "nav-wrap nav-wrap-mobile" +
+          (isSubpage ? " nav-wrap-mobile-subpage" : "") +
+          (scrolled ? " nav-wrap-mobile-scrolled" : "")
+        }
+      >
         {isSubpage ? (
           <Link className="nav-sub-back nav-sub-back-mobile" href={back.href}>
             <span aria-hidden>←</span>
