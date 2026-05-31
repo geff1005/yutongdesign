@@ -232,15 +232,15 @@ export default async function WorkDetailPage({
       {/* Overview metadata block — Role / Timeline / Team (Impact is above) */}
       <section className="case-section case-overview">
         <div className="case-overview-grid case-overview-grid-3">
-          <div>
+          <div className="case-overview-item">
             <div className="eyebrow">Role</div>
             <div className="case-meta">{cs?.role ?? "—"}</div>
           </div>
-          <div>
+          <div className="case-overview-item">
             <div className="eyebrow">Timeline</div>
             <div className="case-meta">{cs?.timeline ?? String(project.year)}</div>
           </div>
-          <div>
+          <div className="case-overview-item case-overview-team">
             <div className="eyebrow">Team</div>
             <div className="case-meta">{cs?.team ?? "—"}</div>
           </div>
@@ -482,7 +482,6 @@ export default async function WorkDetailPage({
                       <details
                         key={decision.title}
                         className="case-decision-card"
-                        open={i === 0}
                       >
                         <summary className="case-decision-summary">
                           <span className="case-decision-index">

@@ -2208,6 +2208,9 @@ section { position: relative; }
   grid-template-columns: repeat(4, 1fr);
   gap: 32px;
 }
+.case-overview-item {
+  min-width: 0;
+}
 @media (max-width: 700px) {
   .case-overview-grid { grid-template-columns: repeat(2, 1fr); }
 }
@@ -2757,7 +2760,51 @@ section { position: relative; }
 /* 3-column overview grid (Impact promoted out of the strip) */
 .case-overview-grid-3 { grid-template-columns: repeat(3, 1fr); }
 @media (max-width: 700px) {
-  .case-overview-grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .case-overview {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  .case-overview-grid-3 {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .case-overview-grid-3 .case-overview-item {
+    display: inline-flex;
+    align-items: center;
+    max-width: 100%;
+    min-height: 34px;
+    padding: 7px 11px;
+    border: 1px solid hsl(var(--stroke));
+    border-radius: 999px;
+    background: hsl(var(--surface) / 0.68);
+  }
+  .case-overview-grid-3 .eyebrow {
+    flex: 0 0 auto;
+    margin: 0;
+    font-size: 10px;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    color: hsl(var(--muted));
+  }
+  .case-overview-grid-3 .eyebrow::after {
+    content: ":";
+    margin-right: 6px;
+  }
+  .case-overview-grid-3 .case-meta {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0;
+    color: hsl(var(--text));
+  }
+  .case-overview-team {
+    flex: 1 1 100%;
+  }
 }
 
 /* === /work index page === */
