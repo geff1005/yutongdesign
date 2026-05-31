@@ -90,8 +90,7 @@ export default function AboutPage() {
 
       <section className="about-section" aria-labelledby="about-skills-title">
         <div className="about-section-header">
-          <p className="about-kicker">Skills</p>
-          <h2 id="about-skills-title">What I bring into a project</h2>
+          <h2 id="about-skills-title">Skills</h2>
         </div>
         <div className="about-skill-list">
           {skillGroups.map((group) => (
@@ -111,8 +110,7 @@ export default function AboutPage() {
 
       <section className="about-section" aria-labelledby="about-work-title">
         <div className="about-section-header">
-          <p className="about-kicker">Experience</p>
-          <h2 id="about-work-title">Selected roles and collaborations</h2>
+          <h2 id="about-work-title">Experience</h2>
         </div>
         <div className="about-experience-list">
           {experience.map((item) => (
