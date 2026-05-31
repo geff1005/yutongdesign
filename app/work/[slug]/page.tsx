@@ -55,13 +55,7 @@ function ProseBlock({ text }: { text: string }) {
           );
         }
         return (
-          <p
-            key={i}
-            className={
-              "case-paragraph" +
-              (i === 0 ? " case-paragraph-lead" : " case-paragraph-support")
-            }
-          >
+          <p key={i} className="case-paragraph">
             {block}
           </p>
         );
