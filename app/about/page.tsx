@@ -115,12 +115,25 @@ export default function AboutPage() {
         <div className="about-experience-list">
           {experience.map((item) => (
             <div className="about-experience-row" key={`${item.org}-${item.role}`}>
-              <div>
+              <div className="about-experience-main">
                 <h3>{item.role}</h3>
                 <p>{item.detail}</p>
               </div>
-              <span>{item.org}</span>
-              <time>{item.time}</time>
+              <div className="about-experience-meta">
+                <span>{item.org}</span>
+                <time>{item.time}</time>
+              </div>
+              <details className="about-experience-mobile">
+                <summary>
+                  <span>{item.role}</span>
+                  <span aria-hidden>+</span>
+                </summary>
+                <p>{item.detail}</p>
+                <div>
+                  <span>{item.org}</span>
+                  <time>{item.time}</time>
+                </div>
+              </details>
             </div>
           ))}
         </div>

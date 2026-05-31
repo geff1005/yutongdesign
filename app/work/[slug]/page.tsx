@@ -54,14 +54,35 @@ function ProseBlock({ text }: { text: string }) {
             </ul>
           );
         }
+        const isLead =
+          blocks
+            .slice(0, i)
+            .every((previousBlock) =>
+              previousBlock
+                .split("\n")
+                .filter((l) => l.trim().length > 0)
+                .every((l) => l.trim().startsWith("- "))
+            );
         return (
-          <p key={i} className="case-paragraph">
+          <p
+            key={i}
+            className={
+              "case-paragraph" +
+              (isLead ? " case-paragraph-lead" : " case-paragraph-support")
+            }
+          >
             {block}
           </p>
         );
       })}
     </>
   );
+}
+
+function previewText(text: string, max = 104) {
+  if (text.length <= max) return text;
+  const trimmed = text.slice(0, max).replace(/\s+\S*$/, "");
+  return `${trimmed}...`;
 }
 
 const SECTION_META: Array<{
@@ -457,16 +478,32 @@ export default async function WorkDetailPage({
                 )}
                 {cs.keyDecisions && cs.keyDecisions.length > 0 && (
                   <div className="case-decision-grid">
-                    {cs.keyDecisions.map((decision) => (
-                      <article
+                    {cs.keyDecisions.map((decision, i) => (
+                      <details
                         key={decision.title}
                         className="case-decision-card"
+                        open={i === 0}
                       >
-                        <div className="eyebrow case-decision-card-eyebrow">
-                          Key decision
-                        </div>
-                        <h3>{decision.title}</h3>
-                        <dl>
+                        <summary className="case-decision-summary">
+                          <span className="case-decision-index">
+                            {String(i + 1).padStart(2, "0")}
+                          </span>
+                          <span className="case-decision-summary-main">
+                            <span className="case-decision-label">
+                              Key decision
+                            </span>
+                            <span className="case-decision-title">
+                              {decision.title}
+                            </span>
+                            <span className="case-decision-preview">
+                              {previewText(decision.problem || decision.decision)}
+                            </span>
+                          </span>
+                          <span className="case-decision-toggle" aria-hidden>
+                            +
+                          </span>
+                        </summary>
+                        <dl className="case-decision-details">
                           <div>
                             <dt>Problem</dt>
                             <dd>{decision.problem}</dd>
@@ -486,7 +523,7 @@ export default async function WorkDetailPage({
                             </div>
                           )}
                         </dl>
-                      </article>
+                      </details>
                     ))}
                   </div>
                 )}
