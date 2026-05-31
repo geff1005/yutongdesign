@@ -23,7 +23,7 @@ type NavLink = { label: string; href: string; external?: boolean };
 const LINKS: NavLink[] = [
   { label: "Home", href: "/#home" },
   { label: "Work", href: "/#work" },
-  { label: "Play", href: "/#explorations" },
+  { label: "Play", href: "/#play" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
@@ -77,7 +77,7 @@ export function Navbar() {
         setActive("Play");
       } else if (pathname.startsWith("/work")) {
         setActive("Work");
-      } else if (window.location.hash === "#explorations") {
+      } else if (window.location.hash === "#play" || window.location.hash === "#explorations") {
         setActive("Play");
       } else if (window.location.hash === "#work") {
         setActive("Work");

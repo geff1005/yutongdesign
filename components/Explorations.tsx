@@ -232,7 +232,7 @@ export function Explorations() {
   }, [items.length, layoutKey]);
 
   return (
-    <section className="explorations-arc-section" id="explorations">
+    <section className="explorations-arc-section" id="play">
       <div className="explorations-arc-inner">
         <div
           className="explorations-arc-header"

@@ -29,21 +29,27 @@ export function HeroAsciiField() {
 
     const coarse = window.matchMedia("(hover: none), (pointer: coarse)");
     const reduced = window.matchMedia("(prefers-reduced-motion: reduce)");
-    const disabled = () => coarse.matches || reduced.matches;
+    const disabled = () => reduced.matches;
+    const isCoarse = () => coarse.matches;
 
     let width = 0;
     let height = 0;
     let dpr = 1;
     let raf = 0;
-    let active = 0;
-    let target = 0;
+    let active = isCoarse() ? 0.28 : 0;
+    let target = isCoarse() ? 0.28 : 0;
     let pointerX = 0;
     let pointerY = 0;
+    let pressing = false;
 
     const resize = () => {
       const rect = canvas.getBoundingClientRect();
       width = rect.width;
       height = rect.height;
+      if (!pointerX && !pointerY) {
+        pointerX = width * 0.5;
+        pointerY = height * 0.42;
+      }
       dpr = Math.min(window.devicePixelRatio || 1, DPR_MAX);
       canvas.width = Math.max(1, Math.floor(width * dpr));
       canvas.height = Math.max(1, Math.floor(height * dpr));
@@ -70,7 +76,9 @@ export function HeroAsciiField() {
           const intensity = Math.pow(falloff, 1.8) * active;
           const seed = hash(x, y);
           const wave = (Math.sin(phase + seed * 8 + x * 0.12 + y * 0.18) + 1) / 2;
-          const baseVisible = seed > 0.86 ? 0.08 : 0;
+          const baseVisible = seed > (isCoarse() ? 0.74 : 0.86)
+            ? (isCoarse() ? 0.14 : 0.08)
+            : 0;
           const alpha = clamp(baseVisible + intensity * (0.28 + wave * 0.62), 0, 0.92);
 
           if (alpha <= 0.01) continue;
@@ -85,9 +93,14 @@ export function HeroAsciiField() {
     };
 
     const tick = (time: number) => {
+      if (isCoarse() && !pressing && !disabled()) {
+        pointerX = width * (0.5 + Math.sin(time * 0.00016) * 0.24);
+        pointerY = height * (0.44 + Math.cos(time * 0.00013) * 0.2);
+        target = 0.3;
+      }
       active += (target - active) * 0.11;
       draw(time);
-      if (target > 0 || active > 0.01) {
+      if (isCoarse() || target > 0 || active > 0.01) {
         raf = window.requestAnimationFrame(tick);
       } else {
         active = 0;
@@ -100,8 +113,26 @@ export function HeroAsciiField() {
       if (!raf && !disabled()) raf = window.requestAnimationFrame(tick);
     };
 
+    const press = (event: PointerEvent) => {
+      if (disabled() || !isCoarse()) return;
+      const rect = canvas.getBoundingClientRect();
+      const inside =
+        event.clientX >= rect.left &&
+        event.clientX <= rect.right &&
+        event.clientY >= rect.top &&
+        event.clientY <= rect.bottom;
+      if (!inside) return;
+
+      pressing = true;
+      pointerX = event.clientX - rect.left;
+      pointerY = event.clientY - rect.top;
+      target = 0.92;
+      start();
+    };
+
     const move = (event: PointerEvent) => {
       if (disabled()) return;
+      if (isCoarse() && !pressing) return;
       const rect = canvas.getBoundingClientRect();
       const inside =
         event.clientX >= rect.left &&
@@ -120,7 +151,14 @@ export function HeroAsciiField() {
     };
 
     const leave = () => {
-      target = 0;
+      pressing = false;
+      target = isCoarse() ? 0.3 : 0;
+      start();
+    };
+
+    const release = () => {
+      pressing = false;
+      target = isCoarse() ? 0.3 : 0;
       start();
     };
 
@@ -130,18 +168,24 @@ export function HeroAsciiField() {
     observer.observe(canvas);
 
     if (!disabled()) {
+      window.addEventListener("pointerdown", press, { passive: true });
       window.addEventListener("pointermove", move, { passive: true });
+      window.addEventListener("pointerup", release, { passive: true });
+      window.addEventListener("pointercancel", release, { passive: true });
       window.addEventListener("pointerleave", leave);
+      start();
     }
 
     const handleMediaChange = () => {
-      target = 0;
-      active = 0;
+      pressing = false;
+      target = isCoarse() ? 0.3 : 0;
+      active = isCoarse() ? 0.3 : 0;
       if (raf) {
         window.cancelAnimationFrame(raf);
         raf = 0;
       }
       draw(0);
+      start();
     };
 
     coarse.addEventListener("change", handleMediaChange);
@@ -149,7 +193,10 @@ export function HeroAsciiField() {
 
     return () => {
       observer.disconnect();
+      window.removeEventListener("pointerdown", press);
       window.removeEventListener("pointermove", move);
+      window.removeEventListener("pointerup", release);
+      window.removeEventListener("pointercancel", release);
       window.removeEventListener("pointerleave", leave);
       coarse.removeEventListener("change", handleMediaChange);
       reduced.removeEventListener("change", handleMediaChange);

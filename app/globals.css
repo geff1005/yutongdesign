@@ -632,6 +632,12 @@ a { color: inherit; text-decoration: none; }
 
 @media (hover: none), (pointer: coarse), (prefers-reduced-motion: reduce) {
   .hero-ascii-field {
+    opacity: 0.34;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-ascii-field {
     opacity: 0.18;
   }
 }

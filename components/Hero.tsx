@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useEffect, useState } from "react";
 import { HeroAsciiField } from "@/components/HeroAsciiField";
 import { SITE } from "@/lib/site";
@@ -46,12 +47,12 @@ export function Hero() {
           &nbsp;based in {SITE.location}.
         </p>
         <div className="hero-ctas">
-          <a className="btn btn-solid" href="#work">
+          <Link className="btn btn-solid" href="/#work">
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
               See Works <span aria-hidden>→</span>
             </span>
-          </a>
+          </Link>
           <a className="btn btn-outline" href={SITE.socials.email}>
             <span className="btn-gradient-ring" />
             <span className="btn-inner">
