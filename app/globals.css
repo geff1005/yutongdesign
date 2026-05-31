@@ -1,5 +1,21 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Mondwest";
+  src: url("/fonts/ppmondwest-regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Neuebit";
+  src: url("/fonts/ppneuebit-bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* === Design tokens — LIGHT THEME / AI minimal type system === */
 :root {
   /* Surface: warm off-white background, near-white cards, warm near-black text.
@@ -25,6 +41,8 @@
      This site uses free web-safe equivalents and keeps the metric layer tokenized. */
   --font-body: var(--font-geist), 'Geist', 'Inter', system-ui, sans-serif;
   --font-display: var(--font-geist), 'Geist', 'Inter', system-ui, sans-serif;
+  --font-mondwest: "Mondwest", Arial, sans-serif;
+  --font-neuebit: "Neuebit", Arial, sans-serif;
   --font-mono: var(--font-fragment-mono), var(--font-geist-mono), 'SF Mono', ui-monospace, monospace;
   --font-metric: var(--font-geist-mono), var(--font-fragment-mono), 'SF Mono', ui-monospace, monospace;
 
@@ -648,6 +666,8 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   max-width: min(1280px, 92vw);
   width: 100%;
+  user-select: none;
+  -webkit-user-select: none;
 }
 .hero-eyebrow {
   margin-bottom: 18px;
@@ -677,12 +697,14 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -0.01em;
 }
 .hero-role-word {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: var(--font-neuebit);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 1.22em;
+  line-height: 0.84;
   display: inline-block;
   color: #fff;
-  letter-spacing: -0.03em;
+  letter-spacing: -0.01em;
 }
 .hero-desc {
   font-size: 14px;
@@ -695,6 +717,18 @@ a { color: inherit; text-decoration: none; }
   display: inline-flex;
   gap: 12px;
   flex-wrap: wrap;
+  user-select: auto;
+  -webkit-user-select: auto;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .hero-content {
+    pointer-events: none;
+  }
+  .hero-ctas,
+  .hero-ctas * {
+    pointer-events: auto;
+  }
 }
 .hero .btn-solid {
   --cta-bg: #fff;
@@ -2358,8 +2392,11 @@ section { position: relative; }
   margin: 0 0 24px;
 }
 .case-h2 em {
-  font-style: italic;
+  font-family: var(--font-mondwest);
+  font-style: normal;
+  font-weight: 400;
   color: hsl(var(--muted));
+  letter-spacing: -0.015em;
 }
 .case-paragraph {
   font-size: 16px;
@@ -2368,12 +2405,12 @@ section { position: relative; }
   color: hsl(var(--text) / 0.9);
 }
 .case-paragraph-lead {
-  font-size: clamp(17px, 1.45vw, 20px);
-  line-height: 1.56;
-  font-weight: 520;
-  letter-spacing: -0.01em;
+  font-size: clamp(21px, 2vw, 30px);
+  line-height: 1.42;
+  font-weight: 700;
+  letter-spacing: -0.025em;
   color: hsl(var(--text));
-  max-width: 720px;
+  max-width: 880px;
 }
 .case-paragraph-support {
   font-size: clamp(14px, 1.12vw, 16px);
@@ -2731,9 +2768,9 @@ section { position: relative; }
     margin-bottom: 12px;
   }
   .case-paragraph-lead {
-    font-size: 18px;
-    line-height: 1.5;
-    font-weight: 520;
+    font-size: clamp(22px, 6vw, 29px);
+    line-height: 1.34;
+    font-weight: 700;
   }
   .case-paragraph-support {
     font-size: 14px;
@@ -4963,4 +5000,89 @@ section { position: relative; }
 [class*="stat"] {
   font-family: var(--font-metric);
   font-variant-numeric: tabular-nums;
+}
+
+/* Final nav/card tuning: keep the floating chrome bold and keep mobile card titles left-aligned. */
+.nav-sub-back,
+.nav-sub-name,
+.nav-sub-context,
+.nav-link,
+.say-hi,
+.nav-overlay-link {
+  font-family: var(--font-neuebit);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.nav-sub-back,
+.nav-link,
+.say-hi {
+  font-size: 15px;
+}
+
+.nav-sub-name {
+  font-size: 20px;
+}
+
+.nav-sub-context {
+  font-size: 15px;
+}
+
+.say-hi-inner {
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .nav-sub-back-mobile {
+    font-size: 19px;
+  }
+
+  .nav-sub-name-mobile {
+    font-size: 21px;
+  }
+
+  .sw-card-copy,
+  .sw-card-head,
+  .sw-card-head-left,
+  .sw-card-name,
+  .sw-card-hook {
+    text-align: left;
+  }
+
+  .sw-card-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: start;
+    justify-items: start;
+    gap: 18px 16px;
+  }
+
+  .sw-card-head-left {
+    display: contents;
+  }
+
+  .sw-card-name {
+    grid-column: 1 / 2;
+    justify-self: start;
+    align-self: center;
+    width: 100%;
+    white-space: normal;
+    font-size: clamp(24px, 7.2vw, 32px);
+    line-height: 1;
+  }
+
+  .sw-card-hook {
+    grid-column: 1 / -1;
+    justify-self: start;
+    max-width: 11.6ch;
+    margin-top: clamp(18px, 5.4vw, 30px);
+    font-size: clamp(42px, 12.8vw, 56px);
+    line-height: 0.94;
+    letter-spacing: -0.05em;
+  }
+
+  .sw-card-cta {
+    grid-column: 2 / 3;
+    justify-self: end;
+  }
 }

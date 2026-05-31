@@ -151,9 +151,8 @@ export default function AboutPage() {
       </section>
 
       <section className="about-outro" aria-label="Next action">
-        <h2>Want the project evidence?</h2>
         <Link className="about-work-link" href="/work">
-          Open work index <span aria-hidden>→</span>
+          Open all work <span aria-hidden>→</span>
         </Link>
       </section>
     </main>
