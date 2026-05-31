@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { SITE } from "@/lib/site";
 
@@ -66,17 +67,27 @@ export default function AboutPage() {
       <section className="about-hero" aria-labelledby="about-title">
         <div className="about-hero-main">
           <h1 id="about-title" className="about-title">
-            I design human-centered AI products and collaborative workflows.
+            I design human centered AI products and creative workflows.
           </h1>
           <p className="about-intro">
             I am Julian Yutong Zhu, a product experience designer and future strategist exploring how
-            AI can support more equitable, creative, and human-flourishing futures. My practice bridges
-            human-AI interaction, multimedia information design, speculative research, and intelligent
+            AI can support more equitable, creative, and human flourishing futures. My practice bridges
+            human AI interaction, multimedia information design, speculative research, and intelligent
             systems.
           </p>
         </div>
 
         <aside className="about-side" aria-label="Contact links">
+          <figure className="about-portrait">
+            <Image
+              src="/avatar/julian-yutong-zhu-about.webp"
+              alt="Julian Yutong Zhu"
+              width={1400}
+              height={1400}
+              className="about-portrait-image"
+              priority
+            />
+          </figure>
           <div className="about-links">
             {linkItems.map((item) => (
               <a key={item.label} className="about-link" href={item.href}>

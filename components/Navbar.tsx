@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SITE } from "@/lib/site";
@@ -154,7 +155,16 @@ export function Navbar() {
           ) : (
             <>
               <a className="nav-logo" href="/about" aria-label="About Julian">
-                <span className="nav-logo-inner">JZ</span>
+                <span className="nav-logo-inner">
+                  <Image
+                    src="/avatar/julian-yutong-zhu-nav.webp"
+                    alt=""
+                    width={72}
+                    height={72}
+                    className="nav-avatar"
+                    priority
+                  />
+                </span>
               </a>
               <span className="nav-divider" />
               {LINKS.map((l) =>
@@ -202,7 +212,16 @@ export function Navbar() {
           </Link>
         ) : (
           <a className="nav-logo nav-logo-mobile" href="/about" aria-label="About Julian">
-            <span className="nav-logo-inner">JZ</span>
+            <span className="nav-logo-inner">
+              <Image
+                src="/avatar/julian-yutong-zhu-nav.webp"
+                alt=""
+                width={88}
+                height={88}
+                className="nav-avatar"
+                priority
+              />
+            </span>
           </a>
         )}
         {isSubpage && (

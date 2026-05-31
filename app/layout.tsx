@@ -37,6 +37,15 @@ export const metadata: Metadata = {
   description:
     "Julian Yutong Zhu — Creative Technologist based in London. Designing AI-enabled creative workflows where emerging tech and human craft meet.",
   metadataBase: new URL("https://julianz.space"),
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", sizes: "512x512", type: "image/png" },
+      { url: "/icons/julian-icon-192.png", sizes: "192x192", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-icon.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     title: "Julian Zhu — Portfolio",
     description:
