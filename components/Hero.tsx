@@ -34,7 +34,11 @@ export function Hero() {
 
   return (
     <section className="hero" id="home">
-      <HeroAsciiField />
+      <div className="hero-media" aria-hidden>
+        <HeroAsciiField />
+      </div>
+      <div className="hero-bottom-glow" aria-hidden />
+      <div className="hero-bottom-arc" aria-hidden />
       <div className="hero-content" key={`copy-${layoutKey}`}>
         <h1 className="hero-name">
           {SITE.name} builds AI imagination tools.

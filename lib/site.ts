@@ -34,7 +34,7 @@ export const SITE = {
   // Awards (sourced from Resume + Notion awards)
   awards: [
     { name: "Red Dot Design Concept (Shortlist)", year: 2023 },
-    { name: "International Design Award — Silver & Bronze", year: 2023 },
+    { name: "International Design Award, Silver & Bronze", year: 2023 },
     { name: "European Product Design Award (Top Design)", year: 2023 },
     { name: "The Guardian feature", year: 2026, note: "How art school creators are adapting to the age of AI" },
   ] as const,

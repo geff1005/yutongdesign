@@ -344,7 +344,7 @@ export const PROJECTS: Project[] = [
     "cardHeadline": "BCI training companion",
     "description": "Next generation BCI Device for Esports Training",
     "researchQuestion": "How will brain-computer interfaces shape our brains in the future?",
-    "intro": "A speculative BCI device for pro-esports training. Designed to make the cognitive layer — the part traditional training treats as invisible — visible to coach and player in real time.",
+    "intro": "A speculative BCI device for pro-esports training. Designed to make the cognitive layer. the part traditional training treats as invisible. visible to coach and player in real time.",
     "type": "Innovation Product Design · UX · HCI",
     "year": 2024,
     "tags": [
@@ -359,36 +359,36 @@ export const PROJECTS: Project[] = [
     "href": "/work/syncoe",
     "caseStudy": {
       "role": "Solo design lead · Sichuan Fine Arts BA Digital Media graduation track",
-      "timeline": "2023–2024 graduation thesis (~16 weeks)",
+      "timeline": "2023 to 2024 graduation thesis (~16 weeks)",
       "team": "Solo project, supervised. Field research with the A1 E-Sports team in Hangzhou (9 positions, 64 shortlisted candidates, average retirement age 24, ~100,000 youth-camp participants nationally). 45-player survey across psychological pressure, age, and stress dimensions.",
-      "impact": "A speculative BCI device that asks whether the next generation of competitive players should be measured by their EEG response curves the way runners are measured by their heart-rate zones. Designed to make mental fortitude — the layer esports training treats as invisible — visible to coaches and players in real time.",
+      "impact": "A speculative BCI device that asks whether the next generation of competitive players should be measured by their EEG response curves the way runners are measured by their heart-rate zones. Designed to make mental fortitude. the layer esports training treats as invisible. visible to coaches and players in real time.",
       "challenge": "China's pro-esports pipeline is expanding faster than its mental-health infrastructure. Players retire at 24. The same cortisol load as a race-car driver, sustained for hours daily, with no recognised pathway for psychological recovery. Existing training maps reps and reaction time, but says nothing about cognitive fatigue, rumination, or the mental ceilings that limit a player's ability to break through performance plateaus.",
-      "research": "45-player survey across light-vs-severe psychological pressure, age group, and stress comparison. Coach interviews at the Hangzhou A1 academy.\n\nKey insight from one coach: 'Esports athletes hit up to 400 movements on the keyboard and mouse per minute — four times the general population. The cortisol output is comparable to a race-car driver.' The same insight made the inverse possible: brainwave training has documented effects on rumination and cognitive recovery.",
-      "strategy": "Three design commitments:\n\n- Make mental training visible. EEG + PPG + EDA + IR sensors feed a real-time cognitive dashboard for player and coach.\n- Design for the coach as much as the player. The neurofeedback loop only closes if the coach can read it during a match, not in a post-mortem PDF.\n- Modular, not monolithic. Bio-sensor band + detachable microphone + gaming earbuds + emotion-indicator LED ring — each component has a separate failure mode and a separate price point.",
-      "implementation": "Hardware: multichannel bio-sensor headset with 4-channel active EEG (TDCS anodes and cathodes), PPG, EDA, and an IR sensor. Modular gaming earbuds, detachable microphone, flexible PCB band, indicator LED ring for coach-facing emotion state. CMF in PC ABS with sandblasted finish. Three head-size variants (140 mm, 154 mm, and 179–186 mm).\n\nDigital: training-review platform pairing EEG traces with match replays. Comparative metrics chart 'traditional training' (mechanical memory + repetition) against 'advanced training with EEG' (enhanced accuracy, faster skill execution, better mental performance, boosted visual working memory).\n\nCutaway packaging model: easy carry plus organise on the go.",
+      "research": "45-player survey across light-vs-severe psychological pressure, age group, and stress comparison. Coach interviews at the Hangzhou A1 academy.\n\nKey insight from one coach: 'Esports athletes hit up to 400 movements on the keyboard and mouse per minute. four times the general population. The cortisol output is comparable to a race-car driver.' The same insight made the inverse possible: brainwave training has documented effects on rumination and cognitive recovery.",
+      "strategy": "Three design commitments:\n\n- Make mental training visible. EEG + PPG + EDA + IR sensors feed a real-time cognitive dashboard for player and coach.\n- Design for the coach as much as the player. The neurofeedback loop only closes if the coach can read it during a match, not in a post-mortem PDF.\n- Modular, not monolithic. Bio-sensor band + detachable microphone + gaming earbuds + emotion-indicator LED ring. each component has a separate failure mode and a separate price point.",
+      "implementation": "Hardware: multichannel bio-sensor headset with 4-channel active EEG (TDCS anodes and cathodes), PPG, EDA, and an IR sensor. Modular gaming earbuds, detachable microphone, flexible PCB band, indicator LED ring for coach-facing emotion state. CMF in PC ABS with sandblasted finish. Three head-size variants (140 mm, 154 mm, and 179 to 186 mm).\n\nDigital: training-review platform pairing EEG traces with match replays. Comparative metrics chart 'traditional training' (mechanical memory + repetition) against 'advanced training with EEG' (enhanced accuracy, faster skill execution, better mental performance, boosted visual working memory).\n\nCutaway packaging model: easy carry plus organise on the go.",
       "results": "Two design outputs:\n\n- An EEG training device positioned for esports coaches and players, not generic 'brain training' consumers.\n- A neurofeedback training framework that pairs match data with cognitive state for shared coach-player review.\n\nSelected for the 27th Sichuan Fine Arts Institute Graduation Showcase (2024).",
-      "lessons": "Three carry-forwards:\n\n- Mental health needs an interface, not just a campaign. Esports already has rich performance data; what was missing was a way for the cognitive layer to enter the conversation.\n- Two users, one device. A wearable that has to live on a player's head and on a coach's screen simultaneously is a different design problem than a consumer fitness tracker.\n- Speculative product, real measurement. Even if today's BCI fidelity is more aspirational than shipping-grade, the framework — pair every match with a cognitive-state trace — is real and adoptable now with cheaper sensors.",
+      "lessons": "Three carry-forwards:\n\n- Mental health needs an interface, not just a campaign. Esports already has rich performance data; what was missing was a way for the cognitive layer to enter the conversation.\n- Two users, one device. A wearable that has to live on a player's head and on a coach's screen simultaneously is a different design problem than a consumer fitness tracker.\n- Speculative product, real measurement. Even if today's BCI fidelity is more aspirational than shipping-grade, the framework. pair every match with a cognitive-state trace. is real and adoptable now with cheaper sensors.",
       "nextSteps": "The framework generalises: any high-cognitive-load profession with a coach in the loop (chess, surgery training, music performance) could ride the same neurofeedback-plus-replay structure. The harder open question is what privacy looks like when a player's cognitive state is owned by their team.",
       "media": [
         {
           "section": "challenge",
           "src": "/work/syncoe/portfolio/01-overview.jpg",
-          "caption": "Project overview — esports mental-load research, A1 academy data, and the case for visible cognitive training."
+          "caption": "Project overview. esports mental-load research, A1 academy data, and the case for visible cognitive training."
         },
         {
           "section": "research",
           "src": "/work/syncoe/portfolio/02-research-design.jpg",
-          "caption": "Research and design — survey results, comparative training framework, and the human-centred AI positioning."
+          "caption": "Research and design. survey results, comparative training framework, and the human-centred AI positioning."
         },
         {
           "section": "implementation",
           "src": "/work/syncoe/portfolio/03-product-structure.jpg",
-          "caption": "Product display — multichannel bio-sensor headset, modular components, CMF treatment, and exploded structure view."
+          "caption": "Product display. multichannel bio-sensor headset, modular components, CMF treatment, and exploded structure view."
         },
         {
           "section": "results",
           "src": "/work/syncoe/portfolio/04-platform.jpg",
-          "caption": "Training-review platform — pairs EEG traces with match replays for shared coach–player review."
+          "caption": "Training-review platform. pairs EEG traces with match replays for shared coach and player review."
         }
       ],
       "designQuestions": [
@@ -419,7 +419,7 @@ export const PROJECTS: Project[] = [
     "cardHeadline": "Helping tired drivers hand control back safely",
     "description": "L4 Safety Human-Vehicle Co-Driving Cockpit for Fatigue Intervention",
     "researchQuestion": "How can AI-driven systems enhance safety in autonomous driving?",
-    "intro": "A speculative L4 cockpit that treats driver fatigue as a design surface — not a single signal to wake someone up, but a graded handover where the vehicle takes more authority as the driver's attention degrades.",
+    "intro": "A speculative L4 cockpit that treats driver fatigue as a design surface. not a single signal to wake someone up, but a graded handover where the vehicle takes more authority as the driver's attention degrades.",
     "type": "HMI · Experience Design · Product Design",
     "year": 2023,
     "tags": [
@@ -435,21 +435,21 @@ export const PROJECTS: Project[] = [
     "href": "/work/beatrol",
     "caseStudy": {
       "role": "Solo design lead · Sichuan Fine Arts BA · Innovation Product Design",
-      "timeline": "Spring–Summer 2023 (~12 weeks)",
+      "timeline": "Spring to Summer 2023 (~12 weeks)",
       "team": "Solo project, faculty supervised. Comparative experiment ran in a simulated cab with an EAGOLAB sensor set (EEG, ECG, EDA, plus a forward-facing CV camera). Stimulus generators tested across tactile, vibration, and olfactory modules.",
-      "impact": "A speculative L4 cockpit that re-frames driver fatigue as a design surface — not a signal to wake the driver up, but a sequence for handing power back and forth between human and vehicle as attention degrades. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
-      "challenge": "Fatigue-related crashes account for around 30% of road accidents and a quarter of fatalities, with millions of incidents per year. The in-vehicle systems being shipped today can detect fatigue and beep — they cannot intervene. As autonomous driving moves toward L4, the design question stops being 'how do we wake a driver up?' and becomes 'how do we hand power back and forth between human and vehicle as the driver's attention degrades?'",
-      "research": "Two questions framed the inquiry:\n\n- How do existing fatigue-driving interventions work — olfactory, auditory, visual, tactile — and where do they fail?\n- How can drivers and machines collaborate to reach a shared safety goal, instead of one yelling at the other?\n\nThe literature converges on multimodality and on intervention curves keyed to fatigue level. The Karolinska Sleepiness Scale (KSS) anchors the measurement; the gap is in tying KSS bands to graded automation handovers.",
-      "strategy": "Three design commitments anchor the build:\n\n- A fatigue state graph as the spine. Awake → Mild fatigue → Deep fatigue maps to intervention layers, not single triggers.\n- Sensors as a stack, not a single source. EEG, EDA, ECG, eye tracking, and a forward-facing CV camera feed a fused fatigue estimate.\n- Handover as a designed sequence. Active → semi-active → passive transition — the system steadily takes more control as the driver's fatigue band rises, ending in vehicle-led parking when 'deep fatigue' is detected.",
-      "implementation": "Physical: a tactile steering wheel with programmable fabric (a Mini-LED display layer + flexible pressure sensors + vibration modules + camera location) that folds into a docking position when the system fully takes over.\n\nDigital: DIM dashboard with anti-fatigue pitch settings (mid fatigue 45–120 dB · deep fatigue 10–60 Hz), AI assistance with stand-by, listening, and response visual feedback, and a multimodal intervention flow.\n\nTested in a simulated cab with one driver across six lab sessions. SAM (subjective) and KSS (physiological) measures collected at each stimulus.",
-      "results": "Three design outputs the project carries:\n\n- A fatigue-graded intervention framework — KSS bands as design surfaces.\n- A tactile-first steering wheel with a foldable handover state.\n- An anti-fatigue DIM dashboard with multimodal sensory layers (audio, vibration, light, scent).\n\nSubmitted to industrial design competitions in 2023; the design language was framed as 'L4 sensory symbiosis space', not 'driver-monitoring product'.",
-      "lessons": "Two carry-forwards:\n\n- Designing the handover, not the alarm. The hardest design problem wasn't detecting fatigue — sensors do that — it was choreographing the 30-second window where the system is taking over and the driver still feels like an agent, not a passenger.\n- Sensors are vocabulary, not data. EEG, EDA, eye-tracking each speak a different language about attention. The job was translating between them and surfacing only the parts the driver needed to feel.",
-      "nextSteps": "Take the handover-as-choreography frame into other co-driving moments — lane-keeping under low confidence, urban-merge negotiations, valet handoff. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
+      "impact": "A speculative L4 cockpit that re-frames driver fatigue as a design surface. not a signal to wake the driver up, but a sequence for handing power back and forth between human and vehicle as attention degrades. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
+      "challenge": "Fatigue-related crashes account for around 30% of road accidents and a quarter of fatalities, with millions of incidents per year. The in-vehicle systems being shipped today can detect fatigue and beep. they cannot intervene. As autonomous driving moves toward L4, the design question stops being 'how do we wake a driver up?' and becomes 'how do we hand power back and forth between human and vehicle as the driver's attention degrades?'",
+      "research": "Two questions framed the inquiry:\n\n- How do existing fatigue-driving interventions work. olfactory, auditory, visual, tactile. and where do they fail?\n- How can drivers and machines collaborate to reach a shared safety goal, instead of one yelling at the other?\n\nThe literature converges on multimodality and on intervention curves keyed to fatigue level. The Karolinska Sleepiness Scale (KSS) anchors the measurement; the gap is in tying KSS bands to graded automation handovers.",
+      "strategy": "Three design commitments anchor the build:\n\n- A fatigue state graph as the spine. Awake → Mild fatigue → Deep fatigue maps to intervention layers, not single triggers.\n- Sensors as a stack, not a single source. EEG, EDA, ECG, eye tracking, and a forward-facing CV camera feed a fused fatigue estimate.\n- Handover as a designed sequence. Active → semi-active → passive transition. the system steadily takes more control as the driver's fatigue band rises, ending in vehicle-led parking when 'deep fatigue' is detected.",
+      "implementation": "Physical: a tactile steering wheel with programmable fabric (a Mini-LED display layer + flexible pressure sensors + vibration modules + camera location) that folds into a docking position when the system fully takes over.\n\nDigital: DIM dashboard with anti-fatigue pitch settings (mid fatigue 45 to 120 dB · deep fatigue 10 to 60 Hz), AI assistance with stand-by, listening, and response visual feedback, and a multimodal intervention flow.\n\nTested in a simulated cab with one driver across six lab sessions. SAM (subjective) and KSS (physiological) measures collected at each stimulus.",
+      "results": "Three design outputs the project carries:\n\n- A fatigue-graded intervention framework. KSS bands as design surfaces.\n- A tactile-first steering wheel with a foldable handover state.\n- An anti-fatigue DIM dashboard with multimodal sensory layers (audio, vibration, light, scent).\n\nSubmitted to industrial design competitions in 2023; the design language was framed as 'L4 sensory symbiosis space', not 'driver-monitoring product'.",
+      "lessons": "Two carry-forwards:\n\n- Designing the handover, not the alarm. The hardest design problem wasn't detecting fatigue. sensors do that. it was choreographing the 30-second window where the system is taking over and the driver still feels like an agent, not a passenger.\n- Sensors are vocabulary, not data. EEG, EDA, eye-tracking each speak a different language about attention. The job was translating between them and surfacing only the parts the driver needed to feel.",
+      "nextSteps": "Take the handover-as-choreography frame into other co-driving moments. lane-keeping under low confidence, urban-merge negotiations, valet handoff. The fatigue case is one slice of a larger question about how authority should move between humans and machines as their relative competence shifts.",
       "media": [
         {
           "section": "challenge",
           "src": "/work/beatrol/portfolio/01-overview.jpg",
-          "caption": "Project overview — abstract, research questions, fatigue-state framing, and the 'L4 sensory symbiosis' positioning."
+          "caption": "Project overview. abstract, research questions, fatigue-state framing, and the 'L4 sensory symbiosis' positioning."
         },
         {
           "section": "research",
@@ -459,12 +459,12 @@ export const PROJECTS: Project[] = [
         {
           "section": "strategy",
           "src": "/work/beatrol/portfolio/03-tactile-wheel.jpg",
-          "caption": "Tactile steering wheel — programmable fabric with Mini-LEDs, pressure sensors, and folding intervention states."
+          "caption": "Tactile steering wheel. programmable fabric with Mini-LEDs, pressure sensors, and folding intervention states."
         },
         {
           "section": "implementation",
           "src": "/work/beatrol/portfolio/04-multimodal-ai.jpg",
-          "caption": "Multimodal intervention process and DIM dashboard — voice, visual, vibration, tactile, audible, ambient light, and olfactory layers tied to fatigue level."
+          "caption": "Multimodal intervention process and DIM dashboard. voice, visual, vibration, tactile, audible, ambient light, and olfactory layers tied to fatigue level."
         }
       ],
       "designQuestions": [
@@ -607,26 +607,26 @@ export const PROJECTS: Project[] = [
     "href": "/work/wildfire-whispers",
     "caseStudy": {
       "role": "Solo design lead · Sichuan Fine Arts BA",
-      "timeline": "Late 2022 – early 2024 (multi-stage build)",
-      "team": "Solo project. Source data: Fire Information for Resource Management System (FIRMS) wildfire database, 2017–2021. Inspired by the August 2022 Jinyun Mountain wildfire in Chongqing.",
+      "timeline": "Late 2022 to early 2024 (multi-stage build)",
+      "team": "Solo project. Source data: Fire Information for Resource Management System (FIRMS) wildfire database, 2017 to 2021. Inspired by the August 2022 Jinyun Mountain wildfire in Chongqing.",
       "impact": "An immersive installation that turns five years of satellite wildfire data into something a body can feel. Gesture-driven projections plus a starburst-tree poster series invite a visitor to encounter climate intensity as a sensory event, not a chart.",
-      "challenge": "Wildfire awareness usually arrives as bar charts and dashboards — and gets scrolled past. As an undergraduate designer interested in how environmental data changes behaviour, the design question became: can the same data be felt rather than read, without trivialising the disaster, and without losing data integrity?",
-      "research": "Inspiration drawn from Arrival — the alien language as circular, ink-blot symbols evoking the cyclic nature of time. That visual primitive translated cleanly to wildfire data: each fire has a start, an expansion arc, and a fade.\n\nSource data: global satellite wildfire records, 2017–2021 (FIRMS). The work uses both the data itself and a fictional frame ('In a futuristic world called Whispering Wildfire, wildfire has a deep connection with both humans and animals…') drawn through the project, mapped to UN SDG Goal 15 (Life on Land).",
-      "strategy": "Three design commitments:\n\n- Two parts, one logic. Part 1 — a real-time installation with audio-visual mapping driven by gesture recognition. Part 2 — a data-visualisation poster series turning satellite wildfire data into 'starburst tree' compositions.\n- Body-first input. Leap Motion plus Unreal Engine for gesture-driven interaction; the visitor's hand becomes the cursor onto the data.\n- Role reversal as game design. In the interactive puzzle layer, players switch between 'New Human' and 'Animal' to experience two perspectives — as a New Human, you solve wildfire-related puzzles and protect the flora and fauna; as an Animal, you escape the flames and find food.",
-      "implementation": "Hardware: a 3m × 2m geometric wall-mounted setup with responsive projections. Leap Motion sensor for gesture recognition. NVIDIA PhysX SDK + NVIDIA FLOW + a custom node-flow and dataflow pipeline.\n\nSoftware: real-time gesture-driven particle effects and parametric arrays of flowing, leaf-like shapes; the visitor's hand sets a sense of spatial physicality and energetic flow. Music visualisation as a secondary input.\n\nVisualisation series: selected global satellite data (2017–2021) → starburst-tree posters where fire severity drives the visual cadence.",
+      "challenge": "Wildfire awareness usually arrives as bar charts and dashboards. and gets scrolled past. As an undergraduate designer interested in how environmental data changes behaviour, the design question became: can the same data be felt rather than read, without trivialising the disaster, and without losing data integrity?",
+      "research": "Inspiration drawn from Arrival. the alien language as circular, ink-blot symbols evoking the cyclic nature of time. That visual primitive translated cleanly to wildfire data: each fire has a start, an expansion arc, and a fade.\n\nSource data: global satellite wildfire records, 2017 to 2021 (FIRMS). The work uses both the data itself and a fictional frame ('In a futuristic world called Whispering Wildfire, wildfire has a deep connection with both humans and animals…') drawn through the project, mapped to UN SDG Goal 15 (Life on Land).",
+      "strategy": "Three design commitments:\n\n- Two parts, one logic. Part 1. a real-time installation with audio-visual mapping driven by gesture recognition. Part 2. a data-visualisation poster series turning satellite wildfire data into 'starburst tree' compositions.\n- Body-first input. Leap Motion plus Unreal Engine for gesture-driven interaction; the visitor's hand becomes the cursor onto the data.\n- Role reversal as game design. In the interactive puzzle layer, players switch between 'New Human' and 'Animal' to experience two perspectives. as a New Human, you solve wildfire-related puzzles and protect the flora and fauna; as an Animal, you escape the flames and find food.",
+      "implementation": "Hardware: a 3m × 2m geometric wall-mounted setup with responsive projections. Leap Motion sensor for gesture recognition. NVIDIA PhysX SDK + NVIDIA FLOW + a custom node-flow and dataflow pipeline.\n\nSoftware: real-time gesture-driven particle effects and parametric arrays of flowing, leaf-like shapes; the visitor's hand sets a sense of spatial physicality and energetic flow. Music visualisation as a secondary input.\n\nVisualisation series: selected global satellite data (2017 to 2021) → starburst-tree posters where fire severity drives the visual cadence.",
       "results": "Two design outputs:\n\n- An immersive embodied installation translating wildfire intensity into gesture-driven audio-visual response.\n- A data-visualisation poster series that holds up to scrutiny as both data work and as design objects.\n\nFinal exhibition at H.U.B Cherrytree Gallery, Chongqing.",
       "lessons": "Two carry-forwards:\n\n- Embodied data is design, not data. The same dataset earns a thousand different feelings depending on what the body does to interact with it. The design contribution sits in the gesture-to-mapping function, not in the dataset.\n- Speculative fiction earns the data its weight. Without the 'Whispering Wildfire' framing, the visualisations are pretty; with it, they have a story to live in.",
-      "nextSteps": "The pattern — pair satellite environmental data with a body-first input layer — is portable to deforestation, glacial retreat, ocean acidification. Each one needs its own gestural vocabulary, but the underlying technique transfers.",
+      "nextSteps": "The pattern. pair satellite environmental data with a body-first input layer. is portable to deforestation, glacial retreat, ocean acidification. Each one needs its own gestural vocabulary, but the underlying technique transfers.",
       "media": [
         {
           "section": "challenge",
           "src": "/work/wildfire-whispers/portfolio/01-overview.jpg",
-          "caption": "Project overview — concept, inspiration ('Arrival' as visual primitive), information architecture, and the New Human / Animal role-reversal frame."
+          "caption": "Project overview. concept, inspiration ('Arrival' as visual primitive), information architecture, and the New Human / Animal role-reversal frame."
         },
         {
           "section": "implementation",
           "src": "/work/wildfire-whispers/portfolio/02-installation.jpg",
-          "caption": "Installation build — gesture-driven audio-visual mapping with Leap Motion and Unreal, plus the satellite-data poster series and final exhibition at H.U.B Cherrytree Gallery, Chongqing."
+          "caption": "Installation build. gesture-driven audio-visual mapping with Leap Motion and Unreal, plus the satellite-data poster series and final exhibition at H.U.B Cherrytree Gallery, Chongqing."
         }
       ],
       "designQuestions": [
@@ -903,9 +903,9 @@ export const PROJECTS: Project[] = [
     "slug": "meta-station",
     "title": "HUAWEI Meta Station",
     "cardHeadline": "Making a lock screen feel social, not static",
-    "description": "Interactive UI theme for HUAWEI HarmonyOS — lockscreen interaction, 3D scene, and day-and-night sensing.",
+    "description": "Interactive UI theme for HUAWEI HarmonyOS with lockscreen interaction, a 3D scene, and day and night sensing.",
     "researchQuestion": "Will the metaverse be the future of online network and remote work?",
-    "intro": "As UX Designer intern at HUAWEI in Chengdu (Sep–Dec 2022), I shipped two design systems for phone and watch faces on the Huawei Theme Store. Alongside that, I redesigned 68 first-party icons, adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship of the work — a HarmonyOS theme that treats the lock screen as a small social place rather than a utility tile.",
+    "intro": "As UX Designer intern at HUAWEI in Chengdu (Sep to Dec 2022), I shipped two design systems for phone and watch faces on the Huawei Theme Store. Alongside that, I redesigned 68 first-party icons, adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship of the work. a HarmonyOS theme that treats the lock screen as a small social place rather than a utility tile.",
     "type": "HUAWEI HarmonyOS Theme",
     "year": 2022,
     "tags": [
@@ -922,25 +922,25 @@ export const PROJECTS: Project[] = [
     "caseStudy": {
       "role": "UX Intern · HUAWEI Co., Ltd · Chengdu, China",
       "timeline": "2022 (internship)",
-      "team": "UX intern under the HUAWEI Theme Design team. Designed the lockscreen interaction system, the day-and-night state mode, the 3D scene, and the multi-wallpaper variants for a single theme product.",
+      "team": "UX intern under the HUAWEI Theme Design team. Designed the lockscreen interaction system, the day and night state mode, the 3D scene, and the multi-wallpaper variants for a single theme product.",
       "impact": "Shipped a HarmonyOS theme package that translated the virtual social space brief into a coherent phone surface: low-poly 3D world, day/night states, press-triggered scene motion, multi-wallpaper variants, and matching icon/weather language.",
       "challenge": "During the pandemic, online work and social life became normal, but mobile lock screens still behaved like static skins: glanceable, decorative, and quickly dismissed. The original concept brief framed Meta Station around rising demand for online social spaces and the coming overlap between physical life and virtual worlds.\n\nThe design question became: how can a HarmonyOS theme make the phone's front door feel like a small virtual social space, without turning a lightweight lock screen into a heavy app?",
-      "research": "Style direction: 3D bright tone, virtual nostalgic, modernism, fashion style, future-of-the-past 80s–90s. Target age groups: 21–35-year-old hot-company employees and content seekers, the same fashion as the world.\n\nDesign philosophy borrowed from one internal note: 'Use the concept of meta-station to allow users to predict scenarios while navigating, creating fun in entertainment.'",
-      "strategy": "Three commitments shaped the work. The first was treating the lock screen as a front door rather than a doormat — somewhere the user could press to reveal a small anecdote, swipe sideways to look around the scene, and discover hidden eggs in the map. The second was making the scene aware of time. The same city shifts colour, light, and mood between morning and night, while keeping its characters and architecture intact, so it reads as one place living through a day rather than two unrelated palettes. The third was speaking a single visual language across every surface. City, desktop, weather widgets, and icons all sit inside the same lowpoly grammar so the theme feels like one inhabited world rather than a folder of loosely related assets.",
-      "implementation": "The work covered three connected pieces — authoring the 3D scene, designing the UI theme, and writing the lockscreen interaction logic. Out the other end came a meta-station city environment, multiple wallpaper variants, a day-and-night transition, and a weather-icon family that sits inside the same visual world as the rest of the theme.\n\nThe lockscreen interaction itself reads like a short sequence. When the desktop is pressed, a floating panorama of the meta-station appears. When released, the view returns to the city centre. Pressing reveals scene anecdotes, and the user can swipe left or right to move the camera and find hidden eggs in the map.",
-      "results": "A complete HUAWEI Theme product that ships as a single coherent world. It bundles the UI theme, the lockscreen interaction, the 3D scene, day-and-night mode, multiple wallpaper variants, and a matching weather-icon family. Released on HUAWEI Themes as Meta-Station UI.",
+      "research": "Style direction: 3D bright tone, virtual nostalgic, modernism, fashion style, future-of-the-past 80s to 90s. Target age groups: 21 to 35 year old hot-company employees and content seekers, the same fashion as the world.\n\nDesign philosophy borrowed from one internal note: 'Use the concept of meta-station to allow users to predict scenarios while navigating, creating fun in entertainment.'",
+      "strategy": "Three commitments shaped the work. The first was treating the lock screen as a front door rather than a doormat. somewhere the user could press to reveal a small anecdote, swipe sideways to look around the scene, and discover hidden eggs in the map. The second was making the scene aware of time. The same city shifts colour, light, and mood between morning and night, while keeping its characters and architecture intact, so it reads as one place living through a day rather than two unrelated palettes. The third was speaking a single visual language across every surface. City, desktop, weather widgets, and icons all sit inside the same lowpoly grammar so the theme feels like one inhabited world rather than a folder of loosely related assets.",
+      "implementation": "The work covered three connected pieces. authoring the 3D scene, designing the UI theme, and writing the lockscreen interaction logic. Out the other end came a meta-station city environment, multiple wallpaper variants, a day and night transition, and a weather-icon family that sits inside the same visual world as the rest of the theme.\n\nThe lockscreen interaction itself reads like a short sequence. When the desktop is pressed, a floating panorama of the meta-station appears. When released, the view returns to the city centre. Pressing reveals scene anecdotes, and the user can swipe left or right to move the camera and find hidden eggs in the map.",
+      "results": "A complete HUAWEI Theme product that ships as a single coherent world. It bundles the UI theme, the lockscreen interaction, the 3D scene, day and night mode, multiple wallpaper variants, and a matching weather-icon family. Released on HUAWEI Themes as Meta-Station UI.",
       "lessons": "Two ideas carry forward from this project. The first is that a theme is a tiny game world rather than a skin. Once the lockscreen has anecdotes, a swipeable point of view, and hidden details, it stops being decoration and becomes a place users return to between tasks. The second is that time itself can be a design surface. Day and night is not only a palette switch but an opportunity to give the theme a life cycle that maps to the rhythm of the user's day.",
-      "nextSteps": "Bring the same scene-as-place pattern into other small-screen surfaces — Apple Watch faces, in-flight entertainment lockscreens, smart-fridge ambient displays. Anywhere a screen sits in a person's life for hours but is treated as a static surface.",
+      "nextSteps": "Bring the same scene-as-place pattern into other small-screen surfaces. Apple Watch faces, in-flight entertainment lockscreens, smart-fridge ambient displays. Anywhere a screen sits in a person's life for hours but is treated as a static surface.",
       "media": [
         {
           "section": "challenge",
           "src": "/work/meta-station/portfolio/01-overview.jpg",
-          "caption": "Original concept framing — a pandemic-era virtual social space translated into a lightweight HarmonyOS lockscreen theme."
+          "caption": "Original concept framing. a pandemic-era virtual social space translated into a lightweight HarmonyOS lockscreen theme."
         },
         {
           "section": "implementation",
           "src": "/work/meta-station/portfolio/02-3d-scenes.jpg",
-          "caption": "3D scene system, lockscreen interaction (anecdote-pressing + swipeable POV), day-and-night mode, multiple wallpaper variants, and the weather-icon family."
+          "caption": "3D scene system, lockscreen interaction (anecdote-pressing + swipeable POV), day and night mode, multiple wallpaper variants, and the weather-icon family."
         }
       ],
       "designQuestions": [

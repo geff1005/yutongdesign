@@ -34,7 +34,7 @@ export const PRESS: PressItem[] = [
   },
   {
     date: "2023-12-15",
-    title: "SYNCOHE by Yutong Zhu — International Design Awards Winners",
+    title: "SYNCOHE by Yutong Zhu, International Design Awards Winners",
     outlet: "IDA",
     url: "https://www.idesignawards.com/winners/zoom.php?eid=9-49848-23",
     tag: "Award",
@@ -50,7 +50,7 @@ export const PRESS: PressItem[] = [
   },
   {
     date: "2023-08-10",
-    title: "Capacitor Vol.2 — Smart Sensing & TinyML Workshop Recap",
+    title: "Capacitor Vol.2, Smart Sensing & TinyML Workshop Recap",
     outlet: "Capacitor Magazine",
     url: "https://mp.weixin.qq.com/s/An2wXl44FVCy1TsqjspmXQ",
     tag: "Workshop",

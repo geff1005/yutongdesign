@@ -610,19 +610,50 @@ a { color: inherit; text-decoration: none; }
 /* === Hero === */
 .hero {
   position: relative;
+  z-index: 1;
   min-height: 100svh;
-  overflow: hidden;
+  overflow: visible;
+  margin-bottom: clamp(-64px, -9vw, -120px);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: clamp(18px, 3vw, 36px);
-  padding: clamp(112px, 10vw, 154px) clamp(20px, 6vw, 88px) clamp(104px, 10vw, 142px);
+  padding: clamp(112px, 10vw, 154px) clamp(20px, 6vw, 88px) clamp(128px, 12vw, 168px);
   background:
     radial-gradient(ellipse 74% 42% at 50% 45%, rgba(255, 255, 255, 0.13) 0%, rgba(255, 255, 255, 0.055) 34%, rgba(255, 255, 255, 0.018) 52%, transparent 72%),
-    radial-gradient(ellipse 118% 54% at 50% 100%, rgba(255, 255, 255, 0.09) 0%, rgba(255, 255, 255, 0.025) 36%, transparent 68%),
-    linear-gradient(180deg, #030303 0%, #070706 82%, hsl(var(--bg)) 100%);
+    radial-gradient(ellipse 90% 38% at 50% 92%, rgba(255, 255, 255, 0.07) 0%, transparent 62%),
+    linear-gradient(180deg, #030303 0%, #060605 100%);
   color: #fff;
+}
+.hero-bottom-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -6%;
+  z-index: 2;
+  width: min(168vw, 2600px);
+  height: clamp(200px, 32vw, 480px);
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse 100% 100% at 50% 100%,
+    rgba(255, 255, 255, 0.12) 0%,
+    rgba(255, 255, 255, 0.045) 38%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.hero-bottom-arc {
+  position: absolute;
+  left: 50%;
+  bottom: -1px;
+  z-index: 4;
+  width: min(196vw, 3200px);
+  height: clamp(160px, 24vw, 360px);
+  transform: translateX(-50%) translateY(54%);
+  border-radius: 50%;
+  background: hsl(var(--bg));
+  pointer-events: none;
 }
 .hero::before,
 .hero::after {
@@ -643,10 +674,16 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(270deg, #030303 0%, transparent 100%);
 }
 
-.hero-ascii-field {
+.hero-media {
   position: absolute;
   inset: 0;
   z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+}
+.hero-ascii-field {
+  position: absolute;
+  inset: 0;
   pointer-events: none;
   width: 100%;
   height: 100%;
@@ -1359,8 +1396,18 @@ a { color: inherit; text-decoration: none; }
     padding-bottom: clamp(56px, 9svh, 86px);
     background:
       radial-gradient(ellipse 96% 40% at 50% 44%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.052) 36%, transparent 72%),
-      radial-gradient(ellipse 132% 26% at 50% 100%, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0.095) 34%, transparent 72%),
-      linear-gradient(180deg, #030303 0%, #070706 82%, hsl(var(--bg)) 100%);
+      radial-gradient(ellipse 100% 34% at 50% 90%, rgba(255, 255, 255, 0.08) 0%, transparent 62%),
+      linear-gradient(180deg, #030303 0%, #060605 100%);
+  }
+  .hero-bottom-glow {
+    width: 220vw;
+    height: clamp(160px, 38vw, 280px);
+    bottom: -4%;
+  }
+  .hero-bottom-arc {
+    width: 240vw;
+    height: clamp(120px, 28vw, 220px);
+    transform: translateX(-50%) translateY(56%);
   }
   .hero::before,
   .hero::after {
@@ -2401,6 +2448,8 @@ section { position: relative; }
   font-family: var(--font-mondwest);
   font-style: normal;
   font-weight: 400;
+  font-size: 1.15em;
+  line-height: 1;
   color: hsl(var(--muted));
   letter-spacing: -0.015em;
 }
@@ -4480,6 +4529,8 @@ section { position: relative; }
  * "View case ↗" header, tagline, and a large thumbnail/GIF tile below.
  * Replaces the old bento (col-span 7/5) layout. */
 .sw-section {
+  position: relative;
+  z-index: 0;
   padding: 80px 0;
 }
 .sw-section .section-inner {
@@ -5012,30 +5063,16 @@ section { position: relative; }
   font-variant-numeric: tabular-nums;
 }
 
-/* Final nav/card tuning: keep the floating chrome bold and keep mobile card titles left-aligned. */
-.nav-sub-back,
+/* Centered subpage title only — rest of nav uses base / mono rules. */
 .nav-sub-name,
-.nav-sub-context,
-.nav-link,
-.say-hi,
-.nav-overlay-link {
+.nav-sub-name-mobile {
   font-family: var(--font-neuebit);
   font-weight: 700;
   letter-spacing: 0.01em;
 }
 
-.nav-sub-back,
-.nav-link,
-.say-hi {
-  font-size: 15px;
-}
-
 .nav-sub-name {
   font-size: 20px;
-}
-
-.nav-sub-context {
-  font-size: 15px;
 }
 
 .say-hi-inner {

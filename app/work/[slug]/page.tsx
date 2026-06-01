@@ -20,10 +20,10 @@ export async function generateMetadata({
   const project = PROJECTS.find((p) => p.slug === slug);
   if (!project) return {};
   return {
-    title: `${project.title} — Julian Zhu`,
+    title: `${project.title} · Julian Zhu`,
     description: project.description,
     openGraph: {
-      title: `${project.title} — Julian Zhu`,
+      title: `${project.title} · Julian Zhu`,
       description: project.description,
       images: [project.thumbnail],
     },
@@ -188,7 +188,7 @@ export default async function WorkDetailPage({
         <section className="case-section case-figma-hero">
           <div className="case-live-demo-eyebrow eyebrow">★ Live Prototype</div>
           <p className="case-figma-intro">
-            Clickable Figma prototypes — drive the diner flow on mobile, the kitchen flow on desktop.
+            Clickable Figma prototypes. Drive the diner flow on mobile, the kitchen flow on desktop.
           </p>
           <div className="case-figma-grid">
             {project.figmaEmbeds.map((fe, i) => (
@@ -234,7 +234,7 @@ export default async function WorkDetailPage({
         <div className="case-overview-grid case-overview-grid-3">
           <div className="case-overview-item">
             <div className="eyebrow">Role</div>
-            <div className="case-meta">{cs?.role ?? "—"}</div>
+            <div className="case-meta">{cs?.role ?? "Not listed"}</div>
           </div>
           <div className="case-overview-item">
             <div className="eyebrow">Timeline</div>
@@ -242,7 +242,7 @@ export default async function WorkDetailPage({
           </div>
           <div className="case-overview-item case-overview-team">
             <div className="eyebrow">Team</div>
-            <div className="case-meta">{cs?.team ?? "—"}</div>
+            <div className="case-meta">{cs?.team ?? "Not listed"}</div>
           </div>
         </div>
       </section>
@@ -461,7 +461,7 @@ export default async function WorkDetailPage({
                 <div className="case-prose">
                   <div className="eyebrow case-decision-eyebrow">Design logic</div>
                   <h2 className="case-h2">
-                    Questions &amp; <em>key decisions</em>
+                    Questions &amp; <em>Key Decisions</em>
                   </h2>
                 </div>
                 {cs.designQuestions && cs.designQuestions.length > 0 && (
@@ -540,8 +540,8 @@ export default async function WorkDetailPage({
               Process <em>&amp; reflection</em>
             </h2>
             <p className="case-paragraph case-paragraph-muted">
-              Detailed case study — research, design strategy, implementation,
-              outcomes, and lessons learned — coming soon.
+              Detailed case study with research, design strategy, implementation,
+              outcomes, and lessons learned is coming soon.
             </p>
           </div>
         </section>

@@ -282,7 +282,7 @@ const MANUAL: PlayItem[] = [
     category: "3d-art",
     aspectRatio: "16/10",
     chips: ["3D", "Spline", "Next.js"],
-    description: "Interactive Spline scene — drag to orbit, scroll to zoom.",
+    description: "Interactive Spline scene. Drag to orbit, scroll to zoom.",
     hasDetail: true,
     splineScene: "/play/spline-playground/scene.splinecode",
   },

@@ -33,9 +33,9 @@ const fragmentMono = Fragment_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Julian Zhu — Portfolio",
+  title: "Julian Zhu · Portfolio",
   description:
-    "Julian Yutong Zhu — Creative Technologist based in London. Designing AI-enabled creative workflows where emerging tech and human craft meet.",
+    "Julian Yutong Zhu, Creative Technologist based in London. Designing AI-enabled creative workflows where emerging tech and human craft meet.",
   metadataBase: new URL("https://julianz.space"),
   icons: {
     icon: [
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
     shortcut: "/favicon.ico",
   },
   openGraph: {
-    title: "Julian Zhu — Portfolio",
+    title: "Julian Zhu · Portfolio",
     description:
       "Creative Technologist based in London. Featured in The Guardian (2026). Awards: Red Dot, IDA, EUPD.",
     url: "https://julianz.space",
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Julian Zhu — Portfolio",
+    title: "Julian Zhu · Portfolio",
     description:
       "Creative Technologist based in London. Featured in The Guardian (2026). Awards: Red Dot, IDA, EUPD.",
     images: ["/thumbnails/co-cerebral.jpg"],

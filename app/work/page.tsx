@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { PROJECTS, SELECTED_FEATURED } from "@/lib/projects";
 
 export const metadata: Metadata = {
-  title: "Work — Julian Zhu",
+  title: "Work · Julian Zhu",
   description:
     "Product, service, and system design for AI-enabled futures by Julian Zhu.",
 };
