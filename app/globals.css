@@ -5039,6 +5039,16 @@ section { position: relative; }
 }
 
 @media (max-width: 767px) {
+  .sw-grid {
+    grid-auto-rows: auto;
+  }
+
+  .sw-card {
+    min-height: 0;
+    height: auto;
+    justify-content: flex-start;
+  }
+
   .nav-sub-back-mobile {
     font-size: 18px;
   }
@@ -5081,21 +5091,22 @@ section { position: relative; }
     grid-column: 1 / -1;
     justify-self: start;
     max-width: 11.6ch;
-    margin-top: clamp(12px, 3.5vw, 22px);
+    margin-top: clamp(10px, 3vw, 18px);
     font-size: clamp(40px, 12vw, 52px);
     line-height: 0.94;
     letter-spacing: -0.05em;
   }
 
   .sw-card-cta {
-    grid-column: 2 / 3;
-    grid-row: 1;
+    grid-column: 1 / -1;
+    grid-row: auto;
     justify-self: end;
     align-self: start;
+    margin-top: clamp(6px, 1.8vw, 10px);
   }
 
   .sw-card-media-wrap {
     aspect-ratio: 16 / 10.6;
-    margin-top: clamp(28px, 7.5vw, 44px);
+    margin-top: clamp(18px, 5vw, 30px);
   }
 }
