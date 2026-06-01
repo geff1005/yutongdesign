@@ -5105,18 +5105,20 @@ section { position: relative; }
   .sw-card-cta {
     grid-column: 1 / -1;
     grid-row: auto;
-    justify-self: end;
+    justify-self: center;
     align-self: start;
     margin-top: clamp(6px, 1.8vw, 10px);
   }
 
   .sw-card-media-wrap {
-    aspect-ratio: 16 / 8.8;
+    flex: 1 1 auto;
+    min-height: 0;
+    aspect-ratio: auto;
     margin-top: clamp(10px, 3vw, 18px);
   }
 
   .sw-card-media {
     object-fit: cover;
-    object-position: center bottom;
+    object-position: center top;
   }
 }
