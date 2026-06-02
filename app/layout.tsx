@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Fragment_Mono, Geist, Geist_Mono, Inter } from "next/font/google";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { SmoothScroll } from "@/components/SmoothScroll";
@@ -87,6 +88,7 @@ export default function RootLayout({
         <Navbar />
         {children}
         <SiteFooter />
+        <SpeedInsights />
       </body>
     </html>
   );
