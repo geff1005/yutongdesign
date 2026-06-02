@@ -67,6 +67,11 @@ export function SelectedWorks() {
                       <div className="sw-card-name">
                         {displayTitle}
                       </div>
+                      {p.type && (
+                        <div className="sw-card-proof">
+                          {p.year}, {p.type}
+                        </div>
+                      )}
                       {p.cardHeadline && (
                         <div className="sw-card-hook">{p.cardHeadline}</div>
                       )}

@@ -155,6 +155,22 @@ export function Navbar() {
           ) : (
             <>
               <a className="nav-logo" href="/about" aria-label="About Julian">
+                <span className="nav-logo-ghost nav-logo-ghost-a" aria-hidden>
+                  <Image
+                    src="/avatar/julian-yutong-zhu-about.webp"
+                    alt=""
+                    width={72}
+                    height={72}
+                  />
+                </span>
+                <span className="nav-logo-ghost nav-logo-ghost-b" aria-hidden>
+                  <Image
+                    src="/avatar/julian-yutong-zhu-web.webp"
+                    alt=""
+                    width={72}
+                    height={72}
+                  />
+                </span>
                 <span className="nav-logo-inner">
                   <Image
                     src="/avatar/julian-yutong-zhu-nav.webp"

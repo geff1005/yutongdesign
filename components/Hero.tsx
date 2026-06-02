@@ -11,6 +11,8 @@ const articleForRole = (role: string) => (/^[aeiou]/i.test(role) ? "An" : "A");
 export function Hero() {
   const [roleIdx, setRoleIdx] = useState(0);
   const [layoutKey, setLayoutKey] = useState(0);
+  const [londonDay, setLondonDay] = useState("");
+  const [londonTime, setLondonTime] = useState("");
 
   useEffect(() => {
     const id = setInterval(() => setRoleIdx((i) => (i + 1) % ROLES.length), 2000);
@@ -32,6 +34,27 @@ export function Hero() {
     };
   }, []);
 
+  useEffect(() => {
+    const dayFormatter = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London",
+      weekday: "short",
+    });
+    const timeFormatter = new Intl.DateTimeFormat("en-GB", {
+      timeZone: "Europe/London",
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: false,
+    });
+    const syncTime = () => {
+      const now = new Date();
+      setLondonDay(dayFormatter.format(now).toUpperCase());
+      setLondonTime(timeFormatter.format(now));
+    };
+    syncTime();
+    const id = window.setInterval(syncTime, 30_000);
+    return () => window.clearInterval(id);
+  }, []);
+
   return (
     <section className="hero" id="home">
       <div className="hero-media" aria-hidden>
@@ -48,7 +71,17 @@ export function Hero() {
           <span key={roleIdx} className="hero-role-word animate-role-fade-in">
             {ROLES[roleIdx]}
           </span>
-          &nbsp;based in {SITE.location}.
+          <span>based in</span>
+          <span
+            className="hero-time-pill"
+            aria-label={`London time ${londonDay} ${londonTime}`.trim()}
+          >
+            <span className="hero-time-dot" aria-hidden />
+            <span>London</span>
+            {londonDay && <span>{londonDay}</span>}
+            {londonTime && <time dateTime={londonTime}>{londonTime}</time>}
+          </span>
+          <span aria-hidden>.</span>
         </p>
         <div className="hero-ctas">
           <Link className="btn btn-solid" href="/#work">
@@ -66,10 +99,6 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="scroll-indicator">
-        <span className="eyebrow" style={{ letterSpacing: "0.2em" }}>SCROLL</span>
-        <span className="scroll-line" />
-      </div>
     </section>
   );
 }
