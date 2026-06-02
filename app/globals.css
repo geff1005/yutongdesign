@@ -2674,6 +2674,23 @@ section { position: relative; }
 }
 
 /* === Impact hero block on case-study pages — lead with results === */
+/* === Pixel divider (between SelectedWorks and Journal) ===
+   Voxel-skyline canvas band. Acts as the visual bridge from the
+   light Project section into the dark Press carousel. */
+.pixel-divider {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 22vw, 260px);
+  margin: 0;
+  background: #1a2542;
+  overflow: hidden;
+}
+.pixel-divider-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 .case-impact-hero {
   display: flex;
   flex-direction: column;

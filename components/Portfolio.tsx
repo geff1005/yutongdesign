@@ -1,5 +1,6 @@
 import { Hero } from "./Hero";
 import { SelectedWorks } from "./SelectedWorks";
+import { PixelDivider } from "./PixelDivider";
 import { Journal } from "./Journal";
 import { Explorations } from "./Explorations";
 import { Stats } from "./Stats";
@@ -18,6 +19,7 @@ export function Portfolio() {
     <>
       <Hero />
       <SelectedWorks />
+      <PixelDivider />
       <Journal />
       <Explorations />
       <Stats />
