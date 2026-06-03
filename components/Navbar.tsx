@@ -22,8 +22,8 @@ const GLASS_STYLE: React.CSSProperties = {
 type NavLink = { label: string; href: string; external?: boolean };
 const LINKS: NavLink[] = [
   { label: "Home", href: "/#home" },
-  { label: "Work", href: "/#work" },
-  { label: "Play", href: "/#play" },
+  { label: "Work", href: "/work" },
+  { label: "Play", href: "/play" },
   { label: "Resume", href: "/resume.pdf", external: true },
 ];
 
@@ -39,7 +39,7 @@ function subpageContext(pathname: string) {
     const project = PROJECTS.find((p) => p.slug === pageSlug(pathname));
     return {
       back: { href: "/work", label: "All work" },
-      title: project?.title ?? "Work",
+      title: project?.navTitle ?? project?.title ?? "Work",
     };
   }
   if (pathname === "/play") {

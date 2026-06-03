@@ -1,6 +1,7 @@
 export type Project = {
   slug: string;
   title: string;
+  navTitle?: string;
   cardHeadline?: string;
   description: string;
   researchQuestion?: string;
@@ -416,7 +417,7 @@ export const PROJECTS: Project[] = [
   {
     "slug": "beatrol",
     "title": "BEATROL",
-    "cardHeadline": "Helping tired drivers hand control back safely",
+    "cardHeadline": "Guiding safe handover from autonomous driving to tired drivers",
     "description": "L4 Safety Human-Vehicle Co-Driving Cockpit for Fatigue Intervention",
     "researchQuestion": "How can AI-driven systems enhance safety in autonomous driving?",
     "intro": "A speculative L4 cockpit that treats driver fatigue as a design surface. not a single signal to wake someone up, but a graded handover where the vehicle takes more authority as the driver's attention degrades.",
@@ -492,7 +493,7 @@ export const PROJECTS: Project[] = [
   {
     "slug": "sprayscape",
     "title": "SprayScape",
-    "cardHeadline": "Turning public walls into negotiable spatial archives",
+    "cardHeadline": "Building a street art archive for artists and communities",
     "description": "A spatial service concept for public wall negotiation, street-art authorship, and MR-based context preservation.",
     "researchQuestion": "How can public wall art keep authorship, context, and place?",
     "intro": "SprayScape treats street art as a public system, not only a visual feed. Artists, viewers, property owners, and cities negotiate wall context through capture, archive, and mixed-reality replay.",
@@ -654,7 +655,7 @@ export const PROJECTS: Project[] = [
   {
     "slug": "poeticform",
     "title": "Poetic Form",
-    "cardHeadline": "Turning poems into navigable AI-made forms",
+    "cardHeadline": "Visualizing poetic meaning through multimodal AI translation",
     "description": "A Human-AI workflow translating Song poetry into ComfyUI-generated, image-to-3D poem sculptures.",
     "researchQuestion": "How can a poem's mood become a navigable spatial form?",
     "intro": "AI Creative Technologist, Human-AI workflow. A compact case on structured prompting, ComfyUI production, image-to-3D reconstruction, and exhibition validation.",
@@ -902,7 +903,7 @@ export const PROJECTS: Project[] = [
   {
     "slug": "meta-station",
     "title": "HUAWEI Meta Station",
-    "cardHeadline": "Making a lock screen feel social, not static",
+    "cardHeadline": "Turning the lock screen into an interactive social space",
     "description": "Interactive UI theme for HUAWEI HarmonyOS with lockscreen interaction, a 3D scene, and day and night sensing.",
     "researchQuestion": "Will the metaverse be the future of online network and remote work?",
     "intro": "As UX Designer intern at HUAWEI in Chengdu (Sep to Dec 2022), I shipped two design systems for phone and watch faces on the Huawei Theme Store. Alongside that, I redesigned 68 first-party icons, adapted 51 third-party icons for HarmonyOS, and launched a new HarmonyOS interaction template. Meta Station is the flagship of the work. a HarmonyOS theme that treats the lock screen as a small social place rather than a utility tile.",
@@ -1014,7 +1015,7 @@ export const PROJECTS: Project[] = [
   },
   {
     "slug": "bytedance",
-    "title": "ByteDance · TikTok AR Effects",
+    "title": "TikTok AR Effects",
     "cardHeadline": "Shipping AR effects inside platform constraints",
     "description": "Production-ready AR effect loops for TikTok and TikTok Lite, shaped by trend analysis, instant camera feedback, and platform constraints.",
     "researchQuestion": "What makes an AR effect readable in the first few seconds?",
@@ -1085,6 +1086,7 @@ export const PROJECTS: Project[] = [
   {
     "slug": "lantern-festival",
     "title": "Guizhou Lantern Festival GenAI Promo",
+    "navTitle": "Lantern Promo",
     "cardHeadline": "Turning festival references into controllable AI shots",
     "description": "A commercial GenAI motion workflow that turns lantern-festival references into a curated promotional shot bank through AI generation, upscaling, and edit direction.",
     "researchQuestion": "How can static festival references become cinematic commercial motion while preserving cultural specificity?",

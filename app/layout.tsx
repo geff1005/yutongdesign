@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GeistPixelCircle } from "geist/font/pixel";
 import { Fragment_Mono, Geist, Geist_Mono, Inter } from "next/font/google";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Analytics } from "@vercel/analytics/next";
@@ -82,7 +83,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geist.variable} ${inter.variable} ${geistMono.variable} ${fragmentMono.variable}`}
+      className={`${geist.variable} ${inter.variable} ${geistMono.variable} ${fragmentMono.variable} ${GeistPixelCircle.variable}`}
     >
       <body>
         <SmoothScroll />

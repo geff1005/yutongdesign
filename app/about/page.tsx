@@ -30,7 +30,7 @@ const skillGroups = [
   },
   {
     title: "Build Tools",
-    items: ["Figma", "Next.js", "TypeScript", "Framer Motion", "Cinema 4D", "Adobe CC"],
+    items: ["Figma", "Adobe Creative Suite", "Next.js", "TypeScript", "Framer Motion", "Cinema 4D"],
   },
 ];
 

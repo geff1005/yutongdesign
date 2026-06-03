@@ -26,6 +26,7 @@ const featuredCardThemes: Record<string, { bg: string; ink?: string; muted?: str
 
 const featuredCardTitles: Record<string, string> = {
   "lantern-festival": "Lantern Promo",
+  "meta-station": "MetaStation",
   bytedance: "TikTok AR Effects",
 };
 
