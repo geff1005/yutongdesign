@@ -52,7 +52,6 @@ export function Explorations() {
     if (typeof window.addEventListener !== "function") return;
 
     let timeout: ReturnType<typeof setTimeout>;
-    let resizeObserver: ResizeObserver | undefined;
     const refreshLayout = () => {
       clearTimeout(timeout);
       timeout = setTimeout(() => setLayoutKey((key) => key + 1), 160);
@@ -60,18 +59,11 @@ export function Explorations() {
 
     window.addEventListener("resize", refreshLayout);
     window.addEventListener("orientationchange", refreshLayout);
-    window.visualViewport?.addEventListener("resize", refreshLayout);
-    if ("ResizeObserver" in window) {
-      resizeObserver = new ResizeObserver(refreshLayout);
-      resizeObserver.observe(document.body);
-    }
 
     return () => {
       clearTimeout(timeout);
       window.removeEventListener("resize", refreshLayout);
       window.removeEventListener("orientationchange", refreshLayout);
-      window.visualViewport?.removeEventListener("resize", refreshLayout);
-      resizeObserver?.disconnect();
     };
   }, []);
 
@@ -121,20 +113,20 @@ export function Explorations() {
           .timeline()
           .fromTo(
             header,
-            { opacity: 0.58, y: 50 },
-            { opacity: 1, y: 0, duration: 1, ease: "power2.out" },
+            { opacity: 0, y: 34 },
+            { opacity: 1, y: 0, duration: 0.95, ease: "power2.out" },
           )
           .fromTo(
             stage,
-            { opacity: 0.58, y: 150, filter: "blur(1.5px) grayscale(45%)" },
+            { opacity: 0, y: 96, filter: "blur(1.5px) grayscale(36%)" },
             {
               opacity: 1,
               y: 0,
               filter: "blur(0px) grayscale(0%)",
-              duration: 1,
+              duration: 1.05,
               ease: "power2.out",
             },
-            "<50%",
+            "<",
           )
           .to(
             ring,
@@ -159,7 +151,7 @@ export function Explorations() {
 
       const isStageVisible = () => {
         const rect = stage.getBoundingClientRect();
-        return rect.top < window.innerHeight * 0.76 && rect.bottom > window.innerHeight * 0.18;
+        return rect.top < window.innerHeight * 1.36 && rect.bottom > 0;
       };
 
       if (isStageVisible()) {
@@ -205,8 +197,8 @@ export function Explorations() {
             }
           },
           {
-            threshold: 0.28,
-            rootMargin: "0px 0px -12% 0px",
+            threshold: 0.01,
+            rootMargin: "0px 0px 42% 0px",
           },
         );
       }
@@ -254,7 +246,7 @@ export function Explorations() {
         </div>
 
         <div className="playground-cylinder-shell" role="list" ref={stageRef}>
-          <div className="playground-cylinder-ring" key={layoutKey} ref={ringRef}>
+          <div className="playground-cylinder-ring" ref={ringRef}>
           {items.map((item) => {
             const label = item.name ?? CATEGORY_LABEL[item.category];
             const thumb = previewAsset(item);

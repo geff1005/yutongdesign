@@ -5310,6 +5310,8 @@ section { position: relative; }
   text-align: center;
   position: relative;
   z-index: 7;
+  opacity: 0;
+  transform: translateY(34px);
 }
 .explorations-arc-section .eyebrow,
 .explorations-arc-section .section-sub {
@@ -5336,16 +5338,24 @@ section { position: relative; }
   color: #c9ff9f;
 }
 .explorations-arc-section .view-all-btn {
-  --cta-bg: #fff;
-  --cta-color: #10100f;
-  --cta-border: rgba(255, 255, 255, 0.92);
-  --cta-shadow: 0 1px 2px rgba(0, 0, 0, 0.22), 0 18px 52px -30px rgba(255, 255, 255, 0.8);
-  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.28), 0 28px 78px -34px rgba(255, 255, 255, 0.94);
+  --cta-bg: rgba(255, 255, 255, 0.16);
+  --cta-color: rgba(255, 255, 255, 0.9);
+  --cta-border: rgba(255, 255, 255, 0.28);
+  --cta-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.14), 0 16px 44px -32px rgba(255, 255, 255, 0.55);
+  --cta-shadow-hover: 0 4px 16px rgba(0, 0, 0, 0.24), 0 24px 70px -38px rgba(255, 255, 255, 0.78);
   position: relative;
   z-index: 8;
   margin-top: 24px;
   min-height: 56px;
   padding-inline: 30px;
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+}
+.explorations-arc-section .view-all-btn:hover,
+.explorations-arc-section .view-all-btn:focus-visible {
+  --cta-bg: rgba(255, 255, 255, 0.88);
+  --cta-color: #10100f;
+  --cta-border: rgba(255, 255, 255, 0.9);
 }
 
 .playground-cylinder-shell {
@@ -5361,7 +5371,9 @@ section { position: relative; }
   transform-style: preserve-3d;
   overflow-x: clip;
   z-index: 4;
-  opacity: 1;
+  opacity: 0;
+  transform: translateY(96px);
+  filter: blur(1.5px) grayscale(36%);
 }
 .playground-cylinder-ring {
   position: relative;
