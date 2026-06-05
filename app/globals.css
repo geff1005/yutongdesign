@@ -4981,12 +4981,12 @@ section { position: relative; }
   display: grid;
   grid-template-columns: 1fr;
   grid-auto-rows: 1fr;
-  gap: clamp(14px, 2vw, 24px);
+  gap: 24px;
 }
 @media (min-width: 1024px) {
   .sw-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: clamp(18px, 2vw, 28px);
+    gap: 48px;
   }
 }
 .sw-section-cta {
@@ -5003,12 +5003,6 @@ section { position: relative; }
   min-width: 0;
 }
 
-@media (min-width: 1024px) {
-  .sw-card-shell-primary {
-    grid-column: 1 / -1;
-  }
-}
-
 .sw-card {
   display: flex;
   flex-direction: column;
@@ -5023,7 +5017,6 @@ section { position: relative; }
   overflow: hidden;
   box-shadow: var(--artifact-card-shadow-rest);
   height: 100%;
-  min-height: clamp(560px, 78vh, 780px);
   transition: border-color var(--duration-base) var(--ease-apple),
               background var(--duration-base) var(--ease-apple),
               box-shadow var(--duration-base) var(--ease-apple),
@@ -5038,34 +5031,16 @@ section { position: relative; }
 }
 
 .sw-card-copy {
-  position: relative;
-  z-index: 2;
   padding: 24px 24px 0;
 }
 @media (min-width: 1024px) {
   .sw-card {
-    border-radius: 44px;
+    border-radius: 50px;
   }
   .sw-card-copy {
-    padding: clamp(28px, 3vw, 40px) clamp(28px, 3vw, 42px) 0;
-    min-height: clamp(176px, 24vh, 224px);
+    padding: 36px 32px 0 40px;
+    min-height: 169px;
     box-sizing: border-box;
-  }
-}
-
-@media (min-width: 1024px) {
-  .sw-card-shell-primary .sw-card {
-    min-height: clamp(660px, 86vh, 860px);
-  }
-
-  .sw-card-shell-compact .sw-card {
-    min-height: clamp(430px, 56vh, 560px);
-    border-radius: 34px;
-  }
-
-  .sw-card-shell-compact .sw-card-copy {
-    min-height: 150px;
-    padding: 28px 28px 0;
   }
 }
 
@@ -5084,22 +5059,18 @@ section { position: relative; }
   font-family: var(--font-display);
   font-style: normal;
   font-weight: 800;
-  font-size: clamp(20px, 1.9vw, 30px);
+  font-size: clamp(18px, 1.6vw, 24px);
   line-height: 1.08;
-  letter-spacing: 0;
+  letter-spacing: -0.02em;
   color: var(--sw-card-ink, hsl(var(--text)));
   max-width: 100%;
   white-space: normal;
   overflow-wrap: anywhere;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 1;
 }
 .sw-card-proof {
   grid-column: 1 / -1;
   grid-row: 2;
-  margin-top: 8px;
+  margin-top: 6px;
   max-width: 100%;
   font-family: var(--font-mono);
   font-size: 10px;
@@ -5113,17 +5084,13 @@ section { position: relative; }
   grid-row: 3;
   width: 100%;
   max-width: none;
-  margin-top: 12px;
+  margin-top: 10px;
   font-family: var(--font-display);
-  font-size: clamp(28px, 3.2vw, 48px);
+  font-size: clamp(28px, 2.75vw, 40px);
   font-weight: 800;
   line-height: 1.02;
   letter-spacing: 0;
   color: var(--sw-card-muted, hsl(var(--muted)));
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
 }
 .sw-card-cta {
   grid-column: 2;
@@ -5156,66 +5123,27 @@ section { position: relative; }
 .sw-card-media-wrap {
   position: relative;
   width: 100%;
-  flex: 1 1 auto;
-  min-height: 0;
-  aspect-ratio: auto;
+  /* Bending Spoons Products tile ~648×526 media + 169px copy header */
+  aspect-ratio: 648 / 526;
   border-radius: 0;
   overflow: hidden;
   background: var(--sw-card-bg, transparent);
-  margin-top: clamp(10px, 1.2vw, 18px);
+  margin-top: 16px;
 }
 @media (min-width: 1024px) {
   .sw-card-media-wrap {
-    margin-top: clamp(12px, 1.8vw, 24px);
+    margin-top: 32px;
   }
 }
 .sw-card-media {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: center;
+  object-fit: contain;
+  object-position: center bottom;
   display: block;
   border-radius: 0;
   filter: none;
   transition: transform var(--duration-slow) var(--ease-out-soft);
-}
-
-@media (min-width: 1024px) {
-  .sw-card-shell-primary .sw-card-media-wrap {
-    flex-basis: 68%;
-  }
-
-  .sw-card-shell-primary .sw-card-media {
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .sw-card-shell-compact .sw-card-name {
-    font-size: clamp(18px, 1.45vw, 23px);
-  }
-
-  .sw-card-shell-compact .sw-card-proof {
-    margin-top: 6px;
-    font-size: 9px;
-  }
-
-  .sw-card-shell-compact .sw-card-hook {
-    margin-top: 8px;
-    font-size: clamp(22px, 2.2vw, 32px);
-    line-height: 1;
-  }
-
-  .sw-card-shell-compact .sw-card-cta {
-    font-size: 0;
-    width: 34px;
-    height: 34px;
-    justify-content: center;
-    padding: 0;
-  }
-
-  .sw-card-shell-compact .sw-card-cta span {
-    font-size: 14px;
-  }
 }
 .sw-card-video {
   background: transparent;
@@ -5631,6 +5559,14 @@ section { position: relative; }
     font-size: clamp(72px, 21.5vw, 118px);
     letter-spacing: 0.01em;
     line-height: 0.92;
+  }
+
+  .play-index-title {
+    max-width: calc(100vw - 32px);
+    font-size: clamp(52px, 12.4vw, 84px);
+    letter-spacing: 0.006em;
+    overflow-wrap: normal;
+    word-break: normal;
   }
 }
 

@@ -44,13 +44,7 @@ export function SelectedWorks() {
 
         <div className="sw-grid">
           {SELECTED_FEATURED.map((p, i) => (
-            <div
-              key={p.slug}
-              className={
-                "sw-card-shell" +
-                (i < 3 ? " sw-card-shell-primary" : " sw-card-shell-compact")
-              }
-            >
+            <div key={p.slug} className="sw-card-shell">
               {(() => {
                 const generatedPoster = `/generated/featured/${p.slug}.jpg`;
                 const generatedVideo = `/generated/featured/${p.slug}.mp4`;

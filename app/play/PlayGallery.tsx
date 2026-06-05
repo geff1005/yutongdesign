@@ -297,7 +297,9 @@ export function PlayGallery({ groups }: Props) {
 
         <div className="play-dashboard-main">
           <header className="play-index-hero">
-            <h1 className="play-index-title">Playground</h1>
+            <h1 className="play-index-title">
+              Play<wbr />ground
+            </h1>
           </header>
 
           <div className="play-artifact-stage">
