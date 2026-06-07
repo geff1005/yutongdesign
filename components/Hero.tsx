@@ -64,7 +64,7 @@ export function Hero() {
       <div className="hero-bottom-arc" aria-hidden />
       <div className="hero-content" key={`copy-${layoutKey}`}>
         <h1 className="hero-name">
-          {SITE.name} builds AI imagination tools.
+          {SITE.name} designs for human flourishing.
         </h1>
         <p className="hero-role">
           {articleForRole(ROLES[roleIdx])}&nbsp;
